@@ -1,0 +1,24 @@
+{
+  "id": "microsoft-edge",
+  "name": "Microsoft Edge",
+  "vendor": "Microsoft",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.microsoft.com/edge",
+  "aliases": [
+    "Edge"
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-pro-arm-app-management",
+      "title": "Surface Pro on Arm app management",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

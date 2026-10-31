@@ -1,0 +1,31 @@
+{
+  "id": "vllm-systempanic",
+  "name": "vLLM Windows (SystemPanic)",
+  "vendor": "SystemPanic",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "high",
+  "version": "v0.32.0_spark",
+  "homepage": "https://github.com/SystemPanic/vllm-windows",
+  "aliases": [
+    "vLLM"
+  ],
+  "caveats": [
+    {
+      "en": "Unofficial beta for Python 3.14, CUDA 13.4, and PyTorch 2.14. Needs a manual source edit and self-compiled dependencies. The upstream vLLM project has no official Windows Arm64 wheel.",
+      "zh-TW": "非官方 Beta 版，需要 Python 3.14、CUDA 13.4、PyTorch 2.14，還要手動修改原始碼並自行編譯相依套件。上游 vLLM 沒有官方 Windows Arm64 wheel。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/SystemPanic/vllm-windows/releases/tag/v0.32.0_spark",
+      "title": "SystemPanic/vllm-windows v0.32.0_spark",
+      "type": "community",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

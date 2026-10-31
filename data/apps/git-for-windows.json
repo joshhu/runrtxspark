@@ -1,0 +1,25 @@
+{
+  "id": "git-for-windows",
+  "name": "Git for Windows",
+  "vendor": "Git for Windows",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.56.0",
+  "homepage": "https://gitforwindows.org",
+  "aliases": [
+    "Git"
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/git-for-windows/git/releases/tag/v2.56.0.windows.4",
+      "title": "Git for Windows 2.56.0 release",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

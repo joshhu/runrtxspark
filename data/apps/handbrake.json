@@ -1,0 +1,28 @@
+{
+  "id": "handbrake",
+  "name": "HandBrake",
+  "vendor": "HandBrake",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.11.2",
+  "homepage": "https://handbrake.fr",
+  "caveats": [
+    {
+      "en": "NVENC on RTX Spark is unverified.",
+      "zh-TW": "RTX Spark 上的 NVENC 尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://handbrake.fr/downloads.php",
+      "title": "HandBrake downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

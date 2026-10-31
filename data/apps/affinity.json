@@ -1,0 +1,25 @@
+{
+  "id": "affinity",
+  "name": "Affinity",
+  "vendor": "Canva",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://affinity.studio",
+  "aliases": [
+    "Affinity Photo",
+    "Affinity Designer"
+  ],
+  "evidence": [
+    {
+      "url": "https://affinity.studio/download",
+      "title": "Affinity downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

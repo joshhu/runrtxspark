@@ -1,0 +1,31 @@
+{
+  "id": "capcut",
+  "name": "CapCut",
+  "vendor": "ByteDance",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "9.7.0.4153",
+  "homepage": "https://www.capcut.com",
+  "aliases": [
+    "剪映"
+  ],
+  "caveats": [
+    {
+      "en": "Only the installer architecture was confirmed. GPU acceleration and effects are untested.",
+      "zh-TW": "只確認了安裝檔架構，GPU 加速和特效尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XP9KN75RRB9NHS?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: CapCut",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

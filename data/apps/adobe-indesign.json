@@ -1,0 +1,31 @@
+{
+  "id": "adobe-indesign",
+  "name": "Adobe InDesign",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "beta",
+  "confidence": "medium",
+  "version": "22.0 beta+",
+  "homepage": "https://www.adobe.com/products/indesign.html",
+  "aliases": [
+    "ID"
+  ],
+  "caveats": [
+    {
+      "en": "Beta only. Adobe's stated minimum requirements name Snapdragon only.",
+      "zh-TW": "僅限 Beta 版，Adobe 的最低需求只列 Snapdragon。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/indesign/desktop/get-started/system-and-product-info/support-for-windows-arm.html",
+      "title": "Adobe: InDesign support for Windows on Arm",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

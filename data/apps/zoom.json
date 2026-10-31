@@ -1,0 +1,37 @@
+{
+  "id": "zoom",
+  "name": "Zoom Workplace",
+  "vendor": "Zoom",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "5.15.7+",
+  "homepage": "https://zoom.us",
+  "aliases": [
+    "Zoom"
+  ],
+  "caveats": [
+    {
+      "en": "Zoom Rooms and Zoom VDI are listed separately as emulated.",
+      "zh-TW": "Zoom Rooms 與 Zoom VDI 另被列為模擬執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/z/Zoom/Zoom",
+      "title": "winget manifest: Zoom",
+      "type": "release",
+      "checked": "2026-10-31"
+    },
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

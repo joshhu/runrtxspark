@@ -1,0 +1,32 @@
+{
+  "id": "wsl",
+  "name": "Windows Subsystem for Linux",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.7.13",
+  "homepage": "https://learn.microsoft.com/windows/wsl/",
+  "aliases": [
+    "WSL",
+    "WSL2"
+  ],
+  "caveats": [
+    {
+      "en": "CUDA inside WSL 2 has only community evidence so far.",
+      "zh-TW": "WSL 2 內的 CUDA 目前只有社群證據。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "title": "NVIDIA: RTX Spark PCs available today",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,66 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { LOCALES } from '../../../lib/locale.mjs';
+import { fill, getDict } from '../../../lib/i18n.mjs';
+import { formatDate, machines, reports } from '../../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const t = getDict(locale);
+const base = import.meta.env.BASE_URL;
+const statusLabel = { 'on-sale': t.machines.onSale, preorder: t.machines.preorder, announced: t.machines.announced };
+const reportCount = (id) => reports.filter((r) => r.machine === id).length;
+---
+<Base locale={locale} title={t.machines.title} path="machines/" active="machines">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>{t.machines.title}</h1>
+      <p>{t.machines.intro}</p>
+    </header>
+    <ul class="grid">
+      {machines.map((m) => (
+        <li>
+          <div class="photo">
+            {m.image
+              ? <img src={`${base}machines/${m.image}`} alt={`${m.brand} ${m.name}`} width="320" height="240" loading="lazy" />
+              : <span class="placeholder" aria-hidden="true">{m.brand}</span>}
+          </div>
+          <p class="muted small">{m.brand}</p>
+          <h2>{m.name}</h2>
+          <p class="state"><span class="tag">{statusLabel[m.availability]}</span></p>
+          <dl>
+            {m.display && (<div><dt>{t.machines.display}</dt><dd>{m.display}</dd></div>)}
+            {m.memory?.length > 0 && (<div><dt>{t.machines.memory}</dt><dd>{m.memory.join(', ')}</dd></div>)}
+          </dl>
+          {m.priceUsd && <p class="price">{fill(t.machines.from, { price: `US$${m.priceUsd.toLocaleString('en-US')}` })}</p>}
+          <p class="small links">
+            {m.url && <a href={m.url} rel="noopener">{t.machines.official}</a>}
+            {reportCount(m.id) > 0 && <span class="muted">{fill(t.machines.reportCount, { n: reportCount(m.id) })}</span>}
+          </p>
+          <p class="muted fine">{fill(t.machines.verified, { date: formatDate(m.verifiedAt, locale) })}</p>
+          {m.image && <p class="muted fine credit"><a href={m.imageSource} rel="noopener nofollow">{fill(t.machines.imageCredit, { brand: m.brand })}</a></p>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+  .photo { aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 12px; background: #fff; border-bottom: 2px solid var(--ink); margin-bottom: 12px; }
+  .photo img { max-height: 100%; width: auto; object-fit: contain; }
+  .placeholder { font-family: var(--display); font-weight: 700; color: #4f6176; font-size: 1.25rem; }
+  .state { margin-top: 6px; }
+  dl { margin: 10px 0 0; display: grid; gap: 4px; }
+  dl div { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 8px; font-size: 0.9375rem; }
+  dt { color: var(--muted); }
+  dd { margin: 0; }
+  .price { margin-top: 8px; font-weight: 600; }
+  .links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  .fine { margin-top: 6px; font-size: 0.75rem; }
+  .credit { margin-top: 0; }
+  .credit a { color: inherit; }
+</style>

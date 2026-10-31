@@ -1,0 +1,22 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "vendor": "Anysphere",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.50.5+",
+  "homepage": "https://cursor.com",
+  "evidence": [
+    {
+      "url": "https://cursor.com/downloads",
+      "title": "Cursor downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

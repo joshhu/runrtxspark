@@ -1,0 +1,32 @@
+{
+  "id": "vs-code",
+  "name": "Visual Studio Code",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.143.1",
+  "homepage": "https://code.visualstudio.com",
+  "aliases": [
+    "VS Code",
+    "VSCode"
+  ],
+  "caveats": [
+    {
+      "en": "Extensions with x64 native modules may not load.",
+      "zh-TW": "含 x64 原生模組的擴充功能可能無法載入。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://code.visualstudio.com/download",
+      "title": "VS Code downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

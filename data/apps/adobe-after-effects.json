@@ -1,0 +1,31 @@
+{
+  "id": "adobe-after-effects",
+  "name": "Adobe After Effects",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "26.0+",
+  "homepage": "https://www.adobe.com/products/aftereffects.html",
+  "aliases": [
+    "AE"
+  ],
+  "caveats": [
+    {
+      "en": "x64 plug-ins do not load. MKV import and some hardware-accelerated exports are still missing.",
+      "zh-TW": "x64 外掛無法載入，MKV 匯入和部分硬體加速匯出仍未支援。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/x-productkb/multi/windows-arm-support.html",
+      "title": "Adobe: Windows on Arm support",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

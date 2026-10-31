@@ -1,0 +1,31 @@
+{
+  "id": "visual-studio",
+  "name": "Visual Studio",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2022 17.4+",
+  "homepage": "https://visualstudio.microsoft.com",
+  "aliases": [
+    "VS"
+  ],
+  "caveats": [
+    {
+      "en": "Windows 11 only. Remove older versions before installing.",
+      "zh-TW": "僅支援 Windows 11，安裝前請移除舊版。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/en-us/visualstudio/install/visual-studio-on-arm-devices",
+      "title": "Visual Studio on Arm devices",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

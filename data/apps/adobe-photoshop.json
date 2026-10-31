@@ -1,0 +1,34 @@
+{
+  "id": "adobe-photoshop",
+  "name": "Adobe Photoshop",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "beta",
+  "confidence": "high",
+  "homepage": "https://www.adobe.com/products/photoshop.html",
+  "aliases": [
+    "PS"
+  ],
+  "caveats": [
+    {
+      "en": "RTX Spark support is in the beta release at launch.",
+      "zh-TW": "RTX Spark 支援在上市時僅限 Beta 版。"
+    },
+    {
+      "en": "Adobe's last published feature-gap list on Arm dates from 2022, so current gaps are unconfirmed.",
+      "zh-TW": "Adobe 上次公布 Arm 功能缺口是 2022 年，目前缺口尚未確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "title": "NVIDIA: RTX Spark PCs available today",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

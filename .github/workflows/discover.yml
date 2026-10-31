@@ -1,0 +1,23 @@
+name: Daily GitHub discovery
+
+on:
+  schedule:
+    # 22:17 UTC is 06:17 in Taiwan, ahead of the daily review.
+    - cron: '17 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/discover-github.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,21 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code",
+  "vendor": "Anthropic",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://code.claude.com",
+  "evidence": [
+    {
+      "url": "https://code.claude.com/docs/en/setup",
+      "title": "Claude Code setup",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

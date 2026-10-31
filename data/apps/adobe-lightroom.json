@@ -1,0 +1,30 @@
+{
+  "id": "adobe-lightroom",
+  "name": "Adobe Lightroom",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.adobe.com/products/photoshop-lightroom.html",
+  "aliases": [
+    "LR"
+  ],
+  "caveats": [
+    {
+      "en": "Adobe's pages disagree: its compatibility page says native, while another requirements page lists only Intel and AMD.",
+      "zh-TW": "Adobe 的頁面說法不一：相容性頁面標示原生，另一份系統需求頁只列 Intel 與 AMD。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/download-install/apps/system-requirements/apps-compatibility-copilot.html",
+      "title": "Adobe: app compatibility on Copilot+ PCs",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

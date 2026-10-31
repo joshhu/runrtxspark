@@ -1,0 +1,25 @@
+{
+  "id": "vlc",
+  "name": "VLC media player",
+  "vendor": "VideoLAN",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "3.0.24",
+  "homepage": "https://www.videolan.org/vlc/",
+  "aliases": [
+    "VLC"
+  ],
+  "evidence": [
+    {
+      "url": "https://www.videolan.org/vlc/download-windows.html",
+      "title": "VLC for Windows downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

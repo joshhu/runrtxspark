@@ -1,0 +1,31 @@
+{
+  "id": "obs-studio",
+  "name": "OBS Studio",
+  "vendor": "OBS Project",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "31.1.0+",
+  "homepage": "https://obsproject.com",
+  "aliases": [
+    "OBS"
+  ],
+  "caveats": [
+    {
+      "en": "GitHub offers the Arm64 build as a zip only. x64 plug-ins do not load. NVENC is enabled on Arm64, but nobody has confirmed it on RTX Spark yet.",
+      "zh-TW": "GitHub 上的 Arm64 版只有 zip，x64 外掛無法載入。NVENC 已在 Arm64 啟用，但尚未在 RTX Spark 確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.1",
+      "title": "OBS Studio 33.0.1 release",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

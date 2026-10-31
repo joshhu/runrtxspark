@@ -1,0 +1,28 @@
+{
+  "id": "steam",
+  "name": "Steam",
+  "vendor": "Valve",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "x86 2.10.91.91",
+  "homepage": "https://store.steampowered.com",
+  "caveats": [
+    {
+      "en": "The client runs under Prism. Whether a game runs depends on the game and its anti-cheat.",
+      "zh-TW": "用戶端透過 Prism 執行。遊戲能否執行要看遊戲本身和反作弊系統。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/v/Valve/Steam",
+      "title": "winget manifest: Steam",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

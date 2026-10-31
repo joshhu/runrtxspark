@@ -1,0 +1,24 @@
+{
+  "id": "adobe-lightroom-classic",
+  "name": "Adobe Lightroom Classic",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.adobe.com/products/photoshop-lightroom-classic.html",
+  "aliases": [
+    "LrC"
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/lightroom-classic/desktop/introduction-to-lightroom-classic/system-requirements.html",
+      "title": "Adobe: Lightroom Classic system requirements",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

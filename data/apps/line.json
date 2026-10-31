@@ -1,0 +1,22 @@
+{
+  "id": "line",
+  "name": "LINE",
+  "vendor": "LY Corporation",
+  "category": "communication",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "8.7.0.3303",
+  "homepage": "https://line.me",
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XPFCC4CD725961?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: LINE",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

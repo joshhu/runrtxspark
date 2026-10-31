@@ -1,0 +1,27 @@
+{
+  "id": "fortnite",
+  "name": "Fortnite",
+  "vendor": "Epic Games",
+  "category": "game",
+  "status": "prism",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.fortnite.com",
+  "caveats": [
+    {
+      "en": "Easy Anti-Cheat runs natively, but the game itself is emulated.",
+      "zh-TW": "Easy Anti-Cheat 是原生執行，但遊戲本身是模擬執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.xda-developers.com/tested-two-decades-of-windows-gaming-history-on-arm-rtx-spark-nvidia/",
+      "title": "XDA: two decades of Windows games on RTX Spark",
+      "type": "review",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

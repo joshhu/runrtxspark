@@ -1,0 +1,28 @@
+{
+  "id": "opera",
+  "name": "Opera",
+  "vendor": "Opera",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "112+",
+  "homepage": "https://www.opera.com",
+  "caveats": [
+    {
+      "en": "Opera GX is a separate product, and one catalog lists it as emulated.",
+      "zh-TW": "Opera GX 是獨立產品，有資料庫將它列為模擬執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.opera.com/download",
+      "title": "Opera downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "microsoft-outlook",
+  "name": "Microsoft Outlook",
+  "vendor": "Microsoft",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2308+",
+  "homepage": "https://www.microsoft.com/microsoft-365/outlook",
+  "aliases": [
+    "Office",
+    "Microsoft 365"
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

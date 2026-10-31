@@ -1,0 +1,31 @@
+{
+  "id": "vllm-devjeonghwan",
+  "name": "vLLM for RTX Spark (devjeonghwan)",
+  "vendor": "devjeonghwan",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "high",
+  "version": "0.1.2 (vLLM 0.32.0)",
+  "homepage": "https://github.com/devjeonghwan/vllm-for-rtx-spark",
+  "aliases": [
+    "vLLM"
+  ],
+  "caveats": [
+    {
+      "en": "Unofficial preview. Supports only the 128GB machine with Qwen3.8-Flash-Next-FP4-Local. Performance numbers are the author's own.",
+      "zh-TW": "非官方預覽版，只支援 128GB 機種搭配 Qwen3.8-Flash-Next-FP4-Local。效能數字是作者自測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/devjeonghwan/vllm-for-rtx-spark",
+      "title": "devjeonghwan/vllm-for-rtx-spark",
+      "type": "community",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

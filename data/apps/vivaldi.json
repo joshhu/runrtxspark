@@ -1,0 +1,28 @@
+{
+  "id": "vivaldi",
+  "name": "Vivaldi",
+  "vendor": "Vivaldi",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "6.1+",
+  "homepage": "https://vivaldi.com",
+  "caveats": [
+    {
+      "en": "The vendor labels this build Windows ARM64 (Snapdragon) and doesn't name RTX Spark.",
+      "zh-TW": "原廠標示為 Windows ARM64 (Snapdragon)，未提到 RTX Spark。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://vivaldi.com/download/",
+      "title": "Vivaldi downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

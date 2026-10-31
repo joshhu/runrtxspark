@@ -1,0 +1,27 @@
+{
+  "id": "openclaw",
+  "name": "OpenClaw",
+  "vendor": "OpenClaw",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://docs.openclaw.ai",
+  "caveats": [
+    {
+      "en": "A ProArt P16 user reports Gateway restart problems under WSL 2.",
+      "zh-TW": "有 ProArt P16 使用者回報 WSL 2 下的 Gateway 重啟問題。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://docs.openclaw.ai/platforms/windows",
+      "title": "OpenClaw on Windows",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

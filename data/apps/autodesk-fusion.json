@@ -1,0 +1,35 @@
+{
+  "id": "autodesk-fusion",
+  "name": "Autodesk Fusion",
+  "vendor": "Autodesk",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 2.0.17457",
+  "homepage": "https://www.autodesk.com/products/fusion-360",
+  "aliases": [
+    "Fusion 360"
+  ],
+  "caveats": [
+    {
+      "en": "Autodesk says Arm devices are not officially supported, even if the program installs and starts.",
+      "zh-TW": "Autodesk 表示 Arm 裝置不受官方支援，即使能安裝和啟動。"
+    },
+    {
+      "en": "Result comes from one catalog, not a test on RTX Spark.",
+      "zh-TW": "結果只來自單一資料庫，並非在 RTX Spark 實測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog",
+      "type": "aggregator",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

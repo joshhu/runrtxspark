@@ -1,0 +1,22 @@
+{
+  "id": "obsidian",
+  "name": "Obsidian",
+  "vendor": "Obsidian",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.5.12+",
+  "homepage": "https://obsidian.md",
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/o/Obsidian/Obsidian",
+      "title": "winget manifest: Obsidian",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

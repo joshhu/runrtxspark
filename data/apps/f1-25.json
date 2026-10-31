@@ -1,0 +1,27 @@
+{
+  "id": "f1-25",
+  "name": "F1 25",
+  "vendor": "Electronic Arts / Codemasters",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.ea.com/games/f1",
+  "caveats": [
+    {
+      "en": "Doesn't launch in testing. EA Javelin anti-cheat is the suspected cause, not confirmed.",
+      "zh-TW": "實測無法啟動。推測原因是 EA Javelin 反作弊系統，但尚未證實。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.notebookcheck.net/Asus-ProArt-P16-RTX-Spark-Laptop-Review-The-future-of-multimedia-laptops.1422366.0.html",
+      "title": "Notebookcheck: ASUS ProArt P16 review",
+      "type": "review",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

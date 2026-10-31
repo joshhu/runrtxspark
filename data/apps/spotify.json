@@ -1,0 +1,28 @@
+{
+  "id": "spotify",
+  "name": "Spotify",
+  "vendor": "Spotify",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.3.6.1921",
+  "homepage": "https://www.spotify.com",
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Spotify/Spotify",
+      "title": "winget manifest: Spotify",
+      "type": "release",
+      "checked": "2026-10-31"
+    },
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

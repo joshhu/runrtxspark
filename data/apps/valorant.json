@@ -1,0 +1,30 @@
+{
+  "id": "valorant",
+  "name": "Valorant",
+  "vendor": "Riot Games",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://playvalorant.com",
+  "aliases": [
+    "特戰英豪"
+  ],
+  "caveats": [
+    {
+      "en": "The blocker is the Vanguard anti-cheat, not Prism. Riot says support is coming without giving a date.",
+      "zh-TW": "阻擋的是 Vanguard 反作弊系統，而不是 Prism。Riot 表示會支援，但沒有給日期。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.xda-developers.com/tested-two-decades-of-windows-gaming-history-on-arm-rtx-spark-nvidia/",
+      "title": "XDA: two decades of Windows games on RTX Spark",
+      "type": "review",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

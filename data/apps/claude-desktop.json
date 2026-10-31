@@ -1,0 +1,24 @@
+{
+  "id": "claude-desktop",
+  "name": "Claude Desktop",
+  "vendor": "Anthropic",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://claude.ai/download",
+  "aliases": [
+    "Claude"
+  ],
+  "evidence": [
+    {
+      "url": "https://claude.ai/download",
+      "title": "Claude downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

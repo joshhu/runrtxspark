@@ -1,0 +1,22 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "vendor": "Ollama",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.32.3+",
+  "homepage": "https://ollama.com",
+  "evidence": [
+    {
+      "url": "https://developer.nvidia.com/topics/ai/local-ai/port-apps",
+      "title": "NVIDIA: porting local AI apps",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "adobe-acrobat",
+  "name": "Adobe Acrobat",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.adobe.com/acrobat.html",
+  "aliases": [
+    "Acrobat Reader",
+    "PDF"
+  ],
+  "caveats": [
+    {
+      "en": "No Arm64 build. Test deployment first: installing the 32-bit edition on Arm needed a fix as recently as August 2026.",
+      "zh-TW": "沒有 Arm64 版本。部署前請先測試：32 位元版在 Arm 上的安裝問題，2026 年 8 月才有修正紀錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/download-install/apps/system-requirements/apps-compatibility-copilot.html",
+      "title": "Adobe: app compatibility on Copilot+ PCs",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

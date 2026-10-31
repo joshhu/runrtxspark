@@ -1,0 +1,59 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StatusGlyph from '../../../components/StatusGlyph.astro';
+import { LOCALES } from '../../../lib/locale.mjs';
+import { getDict } from '../../../lib/i18n.mjs';
+import { REPO_URL } from '../../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const t = getDict(locale);
+const a = t.about;
+const base = import.meta.env.BASE_URL;
+---
+<Base locale={locale} title={a.title} path="about/" active="about">
+  <div class="narrow">
+    <header class="page-head">
+      <h1>{a.title}</h1>
+      <p>{a.lead}</p>
+    </header>
+
+    <section>
+      <h2>{a.resultsTitle}</h2>
+      <dl>
+        {['native', 'prism', 'broken'].map((s) => (
+          <div>
+            <dt class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</dt>
+            <dd>{t.status[`${s}Def`]}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+    <section><h2>{a.sourcesTitle}</h2><p>{a.sources}</p></section>
+    <section><h2>{a.reviewTitle}</h2><p>{a.review}</p><p class="link"><a href={`${REPO_URL}/issues?q=is%3Aissue+is%3Aopen+label%3Apending-review`}>{a.queue}</a></p></section>
+    <section><h2>{a.dailyTitle}</h2><p>{a.daily}</p></section>
+    <section>
+      <h2>{a.dataTitle}</h2>
+      <p>{a.data}</p>
+      <ul>
+        <li><a href={`${base}api/apps.json`}>apps.json</a></li>
+        <li><a href={`${base}api/machines.json`}>machines.json</a></li>
+        <li><a href={`${base}api/reports.json`}>reports.json</a></li>
+        <li><a href={REPO_URL}>{a.repo}</a></li>
+      </ul>
+    </section>
+    <section><h2>{a.legalTitle}</h2><p>{a.legal}</p></section>
+  </div>
+</Base>
+
+<style>
+  section { margin-top: 36px; }
+  section p { margin-top: 10px; max-width: 66ch; }
+  dl { margin: 10px 0 0; }
+  dl div { padding: 10px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; }
+  dd { margin: 0; color: var(--muted); }
+  ul { margin: 10px 0 0; padding-inline-start: 20px; }
+</style>

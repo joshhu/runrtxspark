@@ -1,0 +1,32 @@
+---
+import { LOCALES, LOCALE_META, pickLocale } from '../lib/locale.mjs';
+import { SITE_NAME, getDict } from '../lib/i18n.mjs';
+
+const base = import.meta.env.BASE_URL;
+const script = `(function(){var pick=${pickLocale.toString()};var locales=${JSON.stringify(LOCALES)};var saved=null;try{saved=localStorage.getItem('rtxspark-locale')}catch(e){}var locale=locales.indexOf(saved)>-1?saved:pick(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language]);location.replace(${JSON.stringify(base)}+locale+'/'+location.search+location.hash)})();`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{SITE_NAME}</title>
+    <meta name="description" content={getDict('en').metaDescription} />
+    <link rel="canonical" href={new URL(base, Astro.site)} />
+    {LOCALES.map((l) => (
+      <link rel="alternate" hreflang={LOCALE_META[l].lang} href={new URL(`${base}${l}/`, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(base, Astro.site)} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <script is:inline set:html={script}></script>
+    <style>
+      body { font: 1rem/1.6 system-ui, sans-serif; margin: 0 auto; padding: 48px 16px; max-width: 480px; }
+    </style>
+  </head>
+  <body>
+    <h1>{SITE_NAME}</h1>
+    <ul>
+      {LOCALES.map((l) => <li><a href={`${base}${l}/`} lang={LOCALE_META[l].lang}>{LOCALE_META[l].label}</a></li>)}
+    </ul>
+  </body>
+</html>

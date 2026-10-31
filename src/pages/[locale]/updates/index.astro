@@ -1,0 +1,58 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StatusGlyph from '../../../components/StatusGlyph.astro';
+import { LOCALES } from '../../../lib/locale.mjs';
+import { getDict } from '../../../lib/i18n.mjs';
+import { apps, appById, formatDate, reports } from '../../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const t = getDict(locale);
+const home = `${import.meta.env.BASE_URL}${locale}/`;
+
+const events = [
+  ...apps.map((a) => ({ date: a.addedAt, kind: 'added', app: a, status: a.status })),
+  ...apps
+    .filter((a) => a.verifiedAt && a.verifiedAt !== a.addedAt)
+    .map((a) => ({ date: a.verifiedAt, kind: 'verified', app: a, status: a.status })),
+  ...reports
+    .filter((r) => appById[r.appId])
+    .map((r) => ({ date: r.approvedAt, kind: 'reported', app: appById[r.appId], status: r.status })),
+].sort((a, b) => b.date.localeCompare(a.date) || a.app.name.localeCompare(b.app.name, 'en')).slice(0, 200);
+
+const days = Object.entries(Object.groupBy(events, (e) => e.date));
+---
+<Base locale={locale} title={t.updates.title} path="updates/" active="updates">
+  <div class="narrow">
+    <header class="page-head">
+      <h1>{t.updates.title}</h1>
+      <p>{t.updates.intro}</p>
+    </header>
+    {days.length === 0 && <p class="muted">{t.updates.empty}</p>}
+    {days.map(([date, list]) => (
+      <section>
+        <h2><time datetime={date}>{formatDate(date, locale)}</time></h2>
+        <ul>
+          {list.map((e) => (
+            <li>
+              <a href={`${home}apps/${e.app.id}/`}>{e.app.name}</a>
+              <span class="status" data-status={e.status}><StatusGlyph status={e.status} />{t.status[e.status]}</span>
+              <span class="muted small">{t.updates[e.kind]}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  section { margin-top: 32px; }
+  h2 { font-size: 1.125rem; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  li a { font-weight: 600; flex: 1 1 200px; }
+</style>

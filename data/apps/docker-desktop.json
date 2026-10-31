@@ -1,0 +1,31 @@
+{
+  "id": "docker-desktop",
+  "name": "Docker Desktop",
+  "vendor": "Docker",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "preview",
+  "confidence": "high",
+  "version": "4.97.0",
+  "homepage": "https://www.docker.com/products/docker-desktop/",
+  "aliases": [
+    "Docker"
+  ],
+  "caveats": [
+    {
+      "en": "Windows on Arm support is in Early Access and requires the WSL 2 backend. CUDA inside containers has no official confirmation.",
+      "zh-TW": "Windows on Arm 支援為 Early Access，只能使用 WSL 2 後端。容器內的 CUDA 尚無官方確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://docs.docker.com/desktop/setup/install/windows-install/",
+      "title": "Install Docker Desktop on Windows",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

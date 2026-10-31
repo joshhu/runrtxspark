@@ -1,0 +1,28 @@
+{
+  "id": "lm-studio",
+  "name": "LM Studio",
+  "vendor": "Element Labs",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.2.31+",
+  "homepage": "https://lmstudio.ai",
+  "caveats": [
+    {
+      "en": "Documentation names Snapdragon only. Don't assume GPU acceleration on RTX Spark.",
+      "zh-TW": "文件只提到 Snapdragon，不要預設 RTX Spark 有 GPU 加速。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://lmstudio.ai/docs/app/system-requirements",
+      "title": "LM Studio system requirements",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

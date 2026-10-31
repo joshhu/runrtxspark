@@ -1,0 +1,265 @@
+---
+import Base from '../../layouts/Base.astro';
+import Wafer from '../../components/Wafer.astro';
+import StatusGlyph from '../../components/StatusGlyph.astro';
+import { LOCALES } from '../../lib/locale.mjs';
+import { fill, getDict } from '../../lib/i18n.mjs';
+import { apps, formatDate, localized, statusCounts, usedCategories } from '../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const t = getDict(locale);
+const base = import.meta.env.BASE_URL;
+const home = `${base}${locale}/`;
+const statuses = ['native', 'prism', 'broken'];
+const total = apps.length;
+const messages = {
+  count: t.list.count,
+  none: t.list.none,
+};
+---
+<Base locale={locale} active="list">
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <h1>{t.hero.title}</h1>
+      <div class="search">
+        <label class="visually-hidden" for="q">{t.hero.search}</label>
+        <input id="q" type="search" placeholder={t.hero.search} autocomplete="off" />
+      </div>
+      <fieldset class="tally">
+        <legend class="visually-hidden">{t.list.filterStatus}</legend>
+        <div class="bar" aria-hidden="true">
+          {statuses.map((s) => <span class={`seg seg-${s}`} style={`flex-grow:${statusCounts[s]}`}></span>)}
+        </div>
+        {statuses.map((s) => (
+          <label class="tally-option" data-status={s}>
+            <input type="checkbox" name="status" value={s} />
+            <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</span>
+            <span class="tally-num">{statusCounts[s]}</span>
+            <span class="tally-def muted small">{t.status[`${s}Def`]}</span>
+          </label>
+        ))}
+      </fieldset>
+    </div>
+    <Wafer apps={apps} locale={locale} />
+  </section>
+
+  <section class="wrap catalog" id="catalog" data-messages={JSON.stringify(messages)} data-report={`${home}report/`}>
+    <div class="catalog-tools">
+      <div class="cats" role="group" aria-label={t.list.category}>
+        <button type="button" class="cat" data-cat="" aria-pressed="true">{t.list.all}</button>
+        {usedCategories.map((c) => (
+          <button type="button" class="cat" data-cat={c} aria-pressed="false">{t.categories[c]}</button>
+        ))}
+      </div>
+      <p class="count muted small" id="count" aria-live="polite">{fill(t.list.count, { n: total })}</p>
+    </div>
+
+    <div class="table" role="table" aria-label={t.nav.list}>
+      <div class="head" role="row">
+        <span role="columnheader">{t.list.software}</span>
+        <span role="columnheader">{t.list.result}</span>
+        <span role="columnheader">{t.list.version}</span>
+        <span role="columnheader">{t.list.reports}</span>
+        <span role="columnheader">{t.list.checked}</span>
+      </div>
+      {apps.map((app) => (
+        <div
+          class="row"
+          role="row"
+          data-id={app.id}
+          data-status={app.status}
+          data-cat={app.category}
+          data-search={[app.name, app.vendor, ...(app.aliases ?? [])].join(' ').toLowerCase()}
+        >
+          <span class="name" role="cell">
+            <span class="mono" aria-hidden="true" data-cat={app.category}>{app.name.slice(0, 1)}</span>
+            <span class="name-text">
+              <a class="row-link" href={`${home}apps/${app.id}/`}>{app.name}</a>
+              <span class="muted small">{app.vendor}</span>
+            </span>
+          </span>
+          <span class="result" role="cell">
+            <span class="status" data-status={app.status}><StatusGlyph status={app.status} />{t.status[app.status]}</span>
+            <span class="flags">
+              {app.maturity && app.maturity !== 'stable' && <span class="tag">{t.maturity[app.maturity]}</span>}
+              {app.caveats?.length > 0 && <span class="tag">{t.list.caveat}</span>}
+            </span>
+          </span>
+          <span class="version small muted" role="cell">{app.version ?? ''}</span>
+          <span class="reports small muted" role="cell">{app.reports.length || ''}</span>
+          <span class="checked small muted" role="cell">{formatDate(app.verifiedAt, locale)}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="empty" id="empty" hidden>
+      <p id="empty-text"></p>
+      <a class="button" id="empty-action" href={`${home}report/`}>{t.list.noneAction}</a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const catalog = document.getElementById('catalog');
+  const messages = JSON.parse(catalog.dataset.messages);
+  const search = document.getElementById('q');
+  const rows = [...catalog.querySelectorAll('.row')];
+  const cats = [...catalog.querySelectorAll('.cat')];
+  const statusBoxes = [...document.querySelectorAll('input[name="status"]')];
+  const count = document.getElementById('count');
+  const empty = document.getElementById('empty');
+  const emptyText = document.getElementById('empty-text');
+  const emptyAction = document.getElementById('empty-action');
+  const table = catalog.querySelector('.table');
+  const wafer = document.querySelector('.wafer');
+  const dies = new Map(
+    [...document.querySelectorAll('[data-wafer-die]')].map((d) => [d.dataset.waferDie, d]),
+  );
+
+  let cat = '';
+
+  function apply({ syncUrl = true } = {}) {
+    const q = search.value.trim().toLowerCase();
+    const wanted = statusBoxes.filter((b) => b.checked).map((b) => b.value);
+    let shown = 0;
+    for (const row of rows) {
+      const match =
+        (!q || row.dataset.search.includes(q)) &&
+        (!cat || row.dataset.cat === cat) &&
+        (!wanted.length || wanted.includes(row.dataset.status));
+      row.hidden = !match;
+      dies.get(row.dataset.id)?.classList.toggle('is-match', match);
+      if (match) shown += 1;
+    }
+    wafer.classList.toggle('wafer-filtered', Boolean(q || cat || wanted.length));
+    // On phones the results would sit a full screen below the search box.
+    document.querySelector('.hero').classList.toggle('is-searching', Boolean(q));
+    count.textContent = messages.count.replace('{n}', shown);
+    empty.hidden = shown > 0;
+    table.hidden = shown === 0;
+    if (!shown) {
+      emptyText.textContent = messages.none.replace('{q}', search.value.trim());
+      emptyAction.href = `${catalog.dataset.report}?software=${encodeURIComponent(search.value.trim())}`;
+    }
+    if (syncUrl) {
+      const params = new URLSearchParams();
+      if (q) params.set('q', search.value.trim());
+      if (cat) params.set('cat', cat);
+      if (wanted.length) params.set('status', wanted.join(','));
+      const qs = params.toString();
+      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+    }
+  }
+
+  function setCat(value) {
+    cat = value;
+    cats.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
+  }
+
+  const params = new URLSearchParams(location.search);
+  if (params.get('q')) search.value = params.get('q');
+  if (cats.some((b) => b.dataset.cat === params.get('cat'))) setCat(params.get('cat'));
+  const fromUrl = (params.get('status') ?? '').split(',');
+  statusBoxes.forEach((b) => { b.checked = fromUrl.includes(b.value); });
+
+  search.addEventListener('input', () => apply());
+  statusBoxes.forEach((b) => b.addEventListener('change', () => apply()));
+  cats.forEach((b) => b.addEventListener('click', () => { setCat(b.dataset.cat); apply(); }));
+
+  apply({ syncUrl: false });
+</script>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 32px;
+    padding-block: clamp(32px, 6vw, 72px) clamp(32px, 5vw, 56px);
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .hero :global(.wafer) { width: min(100%, 440px); justify-self: center; }
+  @media (min-width: 900px) {
+    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 64px; }
+    .hero :global(.wafer) { justify-self: end; }
+  }
+  @media (max-width: 899px) {
+    .hero :global(.wafer) { width: min(70%, 300px); }
+    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar { display: none; }
+    .hero.is-searching { padding-bottom: 16px; gap: 0; }
+    .hero.is-searching .tally-option { padding-block: 6px; }
+  }
+  .search { margin-top: 24px; }
+  .search input {
+    width: 100%; font: inherit; font-size: clamp(1.125rem, 1rem + 0.8vw, 1.5rem);
+    padding: 14px 16px; min-height: 56px;
+    background: var(--surface); color: var(--ink);
+    border: 2px solid var(--ink); border-radius: var(--radius-control);
+  }
+  .search input::placeholder { color: var(--muted); }
+
+  .tally { border: 0; margin: 28px 0 0; padding: 0; }
+  .bar { display: flex; height: 8px; gap: 2px; margin-bottom: 8px; }
+  .seg { flex: 0 0 auto; flex-basis: 0; min-width: 4px; border-radius: 1px; }
+  .seg-native { background: var(--die-native); }
+  .seg-prism { background: var(--die-prism); }
+  .seg-broken { background: var(--die-broken); }
+  .tally-option {
+    display: grid; grid-template-columns: 22px auto 1fr; gap: 0 8px; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid var(--rule); cursor: pointer;
+  }
+  .tally-option input { width: 18px; height: 18px; margin: 0; accent-color: var(--ink); }
+  .tally-num { justify-self: end; font-family: var(--display); font-size: 1.375rem; font-weight: 700; line-height: 1; }
+  .tally-def { grid-column: 2 / -1; margin-top: 2px; }
+
+  .catalog { scroll-margin-top: 16px; }
+  .catalog-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+  .cats { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cat {
+    font: inherit; font-size: 0.9375rem; color: var(--ink); background: transparent;
+    border: 1px solid var(--rule); border-radius: var(--radius-control); padding: 6px 12px; min-height: 40px; cursor: pointer;
+  }
+  .cat:hover { border-color: var(--ink); }
+  .cat[aria-pressed='true'] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  .table { border-top: 2px solid var(--ink); }
+  .head, .row {
+    display: grid;
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.8fr) minmax(0, 1fr) 64px 112px;
+    gap: 16px; align-items: center;
+  }
+  .head { padding: 8px 4px; font-size: 0.8125rem; color: var(--muted); border-bottom: 1px solid var(--rule); }
+  .row { position: relative; padding: 10px 4px; border-bottom: 1px solid var(--rule); }
+  .row[hidden] { display: none; }
+  .row:hover { background: var(--surface); }
+  .row-link { color: var(--ink); font-weight: 600; text-decoration: none; }
+  .row-link::after { content: ''; position: absolute; inset: 0; }
+  .row:hover .row-link { text-decoration: underline; }
+  .row-link:focus-visible { outline: none; }
+  .row-link:focus-visible::after { outline: 3px solid var(--accent); outline-offset: -3px; }
+  .name { display: flex; gap: 12px; align-items: center; min-width: 0; }
+  .name-text { display: grid; min-width: 0; line-height: 1.35; }
+  .mono {
+    flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 5px;
+    background: var(--surface); border: 1px solid var(--rule);
+    font-family: var(--display); font-weight: 700; color: var(--muted);
+  }
+  .result { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .flags { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+  .version { overflow-wrap: anywhere; }
+  .empty { padding: 40px 0; display: grid; gap: 16px; justify-items: start; }
+  .empty[hidden] { display: none; }
+
+  @media (max-width: 760px) {
+    .head { display: none; }
+    .row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding-block: 12px; }
+    .name { grid-column: 1 / -1; }
+    .result { grid-column: 1 / -1; padding-inline-start: 48px; }
+    .version { grid-column: 1; padding-inline-start: 48px; }
+    .checked { grid-column: 2; grid-row: 3; text-align: end; }
+    .reports { display: none; }
+  }
+</style>

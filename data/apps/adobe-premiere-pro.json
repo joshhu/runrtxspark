@@ -1,0 +1,42 @@
+{
+  "id": "adobe-premiere-pro",
+  "name": "Adobe Premiere Pro",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "beta",
+  "confidence": "high",
+  "version": "26.0+",
+  "homepage": "https://www.adobe.com/products/premiere.html",
+  "aliases": [
+    "Premiere",
+    "PR"
+  ],
+  "caveats": [
+    {
+      "en": "RTX Spark support is in the beta release.",
+      "zh-TW": "RTX Spark 支援在 Beta 版。"
+    },
+    {
+      "en": "x64 plug-ins do not load. MKV and several RAW video formats are still missing.",
+      "zh-TW": "x64 外掛無法載入，MKV 和多種 RAW 影片格式仍未支援。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.windowscentral.com/hardware/nvidia/rtx-spark-review-benchmarks-2026",
+      "title": "Windows Central: RTX Spark review",
+      "type": "review",
+      "checked": "2026-10-31"
+    },
+    {
+      "url": "https://helpx.adobe.com/x-productkb/multi/windows-arm-support.html",
+      "title": "Adobe: Windows on Arm support",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

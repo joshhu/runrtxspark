@@ -1,0 +1,28 @@
+{
+  "id": "discord",
+  "name": "Discord",
+  "vendor": "Discord",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.0.58",
+  "homepage": "https://discord.com",
+  "caveats": [
+    {
+      "en": "Where you install from matters: winget and the Microsoft Store list x64 only, and those installs run under Prism.",
+      "zh-TW": "安裝來源會決定架構：winget 和 Microsoft Store 只有 x64，這些安裝會透過 Prism 執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://discord.com/api/downloads/distributions/app/installers/latest?arch=arm64&channel=stable&platform=win",
+      "title": "Discord Arm64 installer (starts a download)",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

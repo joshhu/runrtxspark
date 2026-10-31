@@ -1,0 +1,26 @@
+{
+  "id": "microsoft-teams",
+  "name": "Microsoft Teams",
+  "vendor": "Microsoft",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.25.24601",
+  "homepage": "https://www.microsoft.com/microsoft-teams",
+  "aliases": [
+    "Office",
+    "Microsoft 365"
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

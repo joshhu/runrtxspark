@@ -1,0 +1,22 @@
+{
+  "id": "whatsapp",
+  "name": "WhatsApp",
+  "vendor": "Meta",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.2421.1.0+",
+  "homepage": "https://www.whatsapp.com",
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

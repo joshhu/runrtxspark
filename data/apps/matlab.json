@@ -1,0 +1,28 @@
+{
+  "id": "matlab",
+  "name": "MATLAB",
+  "vendor": "MathWorks",
+  "category": "developer",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "R2026a+",
+  "homepage": "https://www.mathworks.com/products/matlab.html",
+  "caveats": [
+    {
+      "en": "Officially supported through Prism. Simulink Desktop Real-Time, TensorFlow, QEMU, and third-party hardware interfaces are not.",
+      "zh-TW": "透過 Prism 獲官方支援，但不支援 Simulink Desktop Real-Time、TensorFlow、QEMU 和第三方硬體介面。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.mathworks.com/matlabcentral/answers/2182415-is-matlab-supported-on-windows-on-arm-devices",
+      "title": "MathWorks: MATLAB on Windows on Arm",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

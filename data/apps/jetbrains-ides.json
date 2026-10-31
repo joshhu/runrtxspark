@@ -1,0 +1,33 @@
+{
+  "id": "jetbrains-ides",
+  "name": "JetBrains IDEs",
+  "vendor": "JetBrains",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2023.3.3+",
+  "homepage": "https://www.jetbrains.com",
+  "aliases": [
+    "IntelliJ IDEA",
+    "PyCharm",
+    "WebStorm"
+  ],
+  "caveats": [
+    {
+      "en": "The official page confirms IntelliJ IDEA only. Other IDEs rely on catalog records.",
+      "zh-TW": "官方頁面只確認 IntelliJ IDEA，其他 IDE 依據資料庫記錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "title": "IntelliJ IDEA installation guide",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

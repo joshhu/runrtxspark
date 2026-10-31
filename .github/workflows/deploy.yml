@@ -1,0 +1,55 @@
+name: Deploy to josh.hu/rtxspark
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Deploys publish whole snapshots, so a newer run can safely replace a queued one.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      # `npm run build` validates data first, so bad data never reaches the site.
+      - run: npm run build
+        env:
+          PUBLIC_REPORT_ENDPOINT: ${{ vars.PUBLIC_REPORT_ENDPOINT }}
+          PUBLIC_TURNSTILE_SITEKEY: ${{ vars.PUBLIC_TURNSTILE_SITEKEY }}
+
+      - name: Check out the josh.hu site
+        uses: actions/checkout@v4
+        with:
+          repository: joshhu/joshhu.github.io
+          ref: master
+          path: site
+          ssh-key: ${{ secrets.SITE_DEPLOY_KEY }}
+
+      - name: Publish only the rtxspark folder
+        working-directory: site
+        run: |
+          rm -rf rtxspark
+          mkdir rtxspark
+          cp -R ../dist/. rtxspark/
+          git add rtxspark
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git config user.name "runrtxspark deploy"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update rtxspark from joshhu/runrtxspark@${GITHUB_SHA::7}"
+          git push origin master

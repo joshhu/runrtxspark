@@ -1,0 +1,28 @@
+{
+  "id": "sketchup",
+  "name": "SketchUp",
+  "vendor": "Trimble",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 23.1.329",
+  "homepage": "https://www.sketchup.com",
+  "caveats": [
+    {
+      "en": "SketchUp says running x64 under emulation on Arm64 in a virtual machine is not supported. Running does not mean officially supported.",
+      "zh-TW": "SketchUp 表示在 Arm64 虛擬機器中模擬 x64 不受支援，能執行不代表有官方支援。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog",
+      "type": "aggregator",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

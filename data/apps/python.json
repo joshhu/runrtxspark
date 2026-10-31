@@ -1,0 +1,28 @@
+{
+  "id": "python",
+  "name": "Python",
+  "vendor": "Python Software Foundation",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "3.13+",
+  "homepage": "https://www.python.org",
+  "caveats": [
+    {
+      "en": "x64 extensions do not load. NVIDIA reports support for 97% of the top 15,000 packages. Some, such as cryptography, grpcio, PyArrow, and OpenCV, may need compiling.",
+      "zh-TW": "x64 擴充模組無法載入。NVIDIA 稱支援前 15,000 大套件的 97%，cryptography、grpcio、PyArrow、OpenCV 等可能要自行編譯。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.python.org/downloads/windows/",
+      "title": "Python downloads for Windows",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

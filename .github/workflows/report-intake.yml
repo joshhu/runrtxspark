@@ -1,0 +1,25 @@
+name: Report intake
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  intake:
+    # Skip anything already decided, so editing a closed report cannot reopen it.
+    if: github.event.issue.state == 'open' && !contains(github.event.issue.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # No install step: the script has no dependencies, and untrusted input never
+      # reaches a shell because it is read from the event file.
+      - run: node scripts/report-intake.mjs intake
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

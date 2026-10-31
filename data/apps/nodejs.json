@@ -1,0 +1,31 @@
+{
+  "id": "nodejs",
+  "name": "Node.js",
+  "vendor": "OpenJS Foundation",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "20.5.1+",
+  "homepage": "https://nodejs.org",
+  "aliases": [
+    "Node"
+  ],
+  "caveats": [
+    {
+      "en": "Native npm add-ons need a win32-arm64 build from each package.",
+      "zh-TW": "原生 npm 附加元件需要各套件提供 win32-arm64 版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://nodejs.org/dist/latest/",
+      "title": "Node.js latest downloads",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

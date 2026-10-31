@@ -1,0 +1,31 @@
+{
+  "id": "cuda-toolkit",
+  "name": "CUDA Toolkit",
+  "vendor": "NVIDIA",
+  "category": "developer",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "13.4.2",
+  "homepage": "https://developer.nvidia.com/cuda-toolkit",
+  "aliases": [
+    "CUDA"
+  ],
+  "caveats": [
+    {
+      "en": "Requires RTX Spark driver 616.41 or later.",
+      "zh-TW": "需要 RTX Spark 驅動程式 616.41 以上。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/rtx-spark-getting-started-with-development/385976",
+      "title": "NVIDIA: getting started with RTX Spark development",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

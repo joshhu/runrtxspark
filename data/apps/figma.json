@@ -1,0 +1,22 @@
+{
+  "id": "figma",
+  "name": "Figma",
+  "vendor": "Figma",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "124.0.2+",
+  "homepage": "https://www.figma.com",
+  "evidence": [
+    {
+      "url": "https://www.figma.com/downloads/",
+      "title": "Figma downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

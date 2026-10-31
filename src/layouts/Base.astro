@@ -1,0 +1,112 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/ibm-plex-sans';
+import '../styles/global.css';
+import { LOCALES, LOCALE_META } from '../lib/locale.mjs';
+import { SITE_NAME, fill, getDict } from '../lib/i18n.mjs';
+import { REPO_URL, formatDate, lastUpdated } from '../lib/data.mjs';
+
+const { locale, title, description, path = '', active } = Astro.props;
+const t = getDict(locale);
+const base = import.meta.env.BASE_URL;
+const home = `${base}${locale}/`;
+const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+const metaDescription = description ?? t.metaDescription;
+const nav = [
+  { key: 'list', href: home, label: t.nav.list },
+  { key: 'machines', href: `${home}machines/`, label: t.nav.machines },
+  { key: 'updates', href: `${home}updates/`, label: t.nav.updates },
+  { key: 'about', href: `${home}about/`, label: t.nav.about },
+];
+---
+<!doctype html>
+<html lang={LOCALE_META[locale].lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(`${base}${locale}/${path}`, Astro.site)} />
+    <link rel="canonical" href={new URL(`${base}${locale}/${path}`, Astro.site)} />
+    {LOCALES.map((l) => (
+      <link rel="alternate" hreflang={LOCALE_META[l].lang} href={new URL(`${base}${l}/${path}`, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(path ? `${base}en/${path}` : base, Astro.site)} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.nav.skip}</a>
+    <header class="site-header">
+      <div class="wrap bar">
+        <a class="wordmark" href={home}>{SITE_NAME}</a>
+        <nav aria-label={SITE_NAME}>
+          {nav.map((item) => (
+            <a href={item.href} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+        <a class="button report-link" href={`${home}report/`}>{t.nav.report}</a>
+      </div>
+    </header>
+
+    <main id="main"><slot /></main>
+
+    <footer class="site-footer">
+      <div class="wrap foot">
+        <div>
+          <p>{t.footer.independent}</p>
+          {lastUpdated && <p class="muted small">{fill(t.footer.updated, { date: formatDate(lastUpdated, locale) })}</p>}
+          <p class="small"><a href="https://josh.hu/">{t.footer.by}</a></p>
+        </div>
+        <div class="foot-links">
+          <a href={REPO_URL}>{t.footer.source}</a>
+          <a href={`${base}api/apps.json`}>{t.footer.api}</a>
+          <details class="lang">
+            <summary><span class="visually-hidden">{t.nav.language} </span>{LOCALE_META[locale].label}</summary>
+            <ul>
+              {LOCALES.map((l) => (
+                <li><a data-set-locale={l} lang={LOCALE_META[l].lang} href={`${base}${l}/${path}`} aria-current={l === locale ? 'true' : undefined}>{LOCALE_META[l].label}</a></li>
+              ))}
+            </ul>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // A deliberate language choice beats browser detection on later visits.
+      document.querySelectorAll('[data-set-locale]').forEach((link) => {
+        link.addEventListener('click', () => {
+          try {
+            localStorage.setItem('rtxspark-locale', link.getAttribute('data-set-locale'));
+          } catch {
+            // Storage can be blocked; the link still navigates to the chosen language.
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-header { border-bottom: 1px solid var(--rule); background: var(--bg); }
+  .bar { display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
+  .wordmark { font-family: var(--display); font-weight: 800; font-size: 1.125rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 4px 16px; flex-wrap: wrap; order: 3; width: 100%; }
+  nav a { color: var(--muted); text-decoration: none; padding-block: 8px; min-height: 40px; }
+  nav a:hover, nav a[aria-current='page'] { color: var(--ink); }
+  nav a[aria-current='page'] { box-shadow: inset 0 -2px 0 var(--ink); }
+  .report-link { margin-inline-start: auto; font-size: 0.9375rem; }
+  @media (min-width: 760px) {
+    nav { order: 0; width: auto; }
+  }
+  .site-footer { margin-top: 72px; border-top: 1px solid var(--rule); padding-block: 32px 40px; font-size: 0.9375rem; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
+  .foot p + p { margin-top: 4px; }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; }
+  .lang summary { cursor: pointer; color: var(--accent); }
+  .lang ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
+  .lang a[aria-current] { color: var(--ink); font-weight: 600; text-decoration: none; }
+</style>

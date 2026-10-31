@@ -1,0 +1,32 @@
+{
+  "id": "microsoft-powerpoint",
+  "name": "Microsoft PowerPoint",
+  "vendor": "Microsoft",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2308+",
+  "homepage": "https://www.microsoft.com/microsoft-365/powerpoint",
+  "aliases": [
+    "Office",
+    "Microsoft 365"
+  ],
+  "caveats": [
+    {
+      "en": "Support for 32-bit Microsoft 365 on Arm ends in December 2026. Perpetual versions such as Office 2021 need the 32-bit edition.",
+      "zh-TW": "Arm 版 32 位元 Microsoft 365 的安全更新於 2026 年 12 月結束。Office 2021 等買斷版需安裝 32 位元版。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

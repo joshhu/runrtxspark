@@ -1,0 +1,451 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StatusGlyph from '../../../components/StatusGlyph.astro';
+import { LOCALES } from '../../../lib/locale.mjs';
+import { getDict } from '../../../lib/i18n.mjs';
+import { apps, machineLabel, machines } from '../../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const t = getDict(locale);
+const r = t.report;
+const base = import.meta.env.BASE_URL;
+const endpoint = import.meta.env.PUBLIC_REPORT_ENDPOINT ?? '';
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY ?? '';
+const anonymous = Boolean(endpoint);
+
+const pickable = machines.filter((m) => m.availability === 'on-sale');
+const config = {
+  endpoint,
+  machineIds: machines.map((m) => m.id),
+  memories: Object.fromEntries(machines.map((m) => [m.id, m.memory ?? []])),
+  apps: Object.fromEntries(apps.map((a) => [a.name.toLowerCase(), a.id])),
+  appNames: Object.fromEntries(apps.map((a) => [a.id, a.name])),
+  messages: {
+    fields: r.fields, errorNetwork: r.errorNetwork, errorRate: r.errorRate, errorVerify: r.errorVerify,
+    sending: r.sending, submit: anonymous ? r.submit : r.submitGithub, memoryUnknown: r.memoryUnknown,
+  },
+};
+const statuses = ['native', 'prism', 'broken'];
+---
+<Base locale={locale} title={r.title} path="report/">
+  <div class="narrow">
+    <header class="page-head">
+      <h1>{r.title}</h1>
+      <p>{r.intro}</p>
+    </header>
+
+    <form id="report-form" novalidate data-config={JSON.stringify(config)}>
+      <div class="error-summary" id="errors" role="alert" tabindex="-1" hidden>
+        <h2>{r.errorHeading}</h2>
+        <ul></ul>
+      </div>
+
+      <div class="field" data-field="machine">
+        <span class="label" id="machine-label">{r.machine}</span>
+        <div class="picker" id="machine-picker">
+          <input type="hidden" name="machine" />
+          <button type="button" class="picker-button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="machine-label picker-value">
+            <span class="picker-thumb" id="picker-thumb" aria-hidden="true"></span>
+            <span id="picker-value">{r.machineChoose}</span>
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+          </button>
+          <ul class="picker-list" role="listbox" aria-labelledby="machine-label" tabindex="-1" hidden>
+            {pickable.map((m) => (
+              <li role="option" id={`machine-${m.id}`} data-value={m.id} data-image={m.image ? `${base}machines/${m.image}` : ''} aria-selected="false">
+                <span class="picker-thumb">{m.image && <img src={`${base}machines/${m.image}`} alt="" width="56" height="42" loading="lazy" />}</span>
+                <span>{machineLabel(m)}</span>
+              </li>
+            ))}
+            <li role="option" id="machine-other" data-value="other" data-image="" aria-selected="false">
+              <span class="picker-thumb"></span>
+              <span>{r.machineOther}</span>
+            </li>
+          </ul>
+        </div>
+        <p class="field-error" hidden></p>
+      </div>
+
+      <div class="field" data-field="machineName" id="machine-name-field" hidden>
+        <label for="machineName">{r.machineName}</label>
+        <input id="machineName" name="machineName" maxlength="80" autocomplete="off" />
+        <p class="field-error" hidden></p>
+      </div>
+
+      <div class="field" data-field="memory" id="memory-field" hidden>
+        <label for="memory">{r.memory} <span class="muted small">({r.optional})</span></label>
+        <select id="memory" name="memory"></select>
+      </div>
+
+      <div class="field" data-field="software">
+        <label for="software">{r.software}</label>
+        <input id="software" name="software" list="software-list" maxlength="80" autocomplete="off" aria-describedby="software-help" />
+        <datalist id="software-list">{apps.map((a) => <option value={a.name} />)}</datalist>
+        <p class="help muted small" id="software-help">{r.softwareHelp}</p>
+        <p class="field-error" hidden></p>
+      </div>
+
+      <div class="field" data-field="version">
+        <label for="version">{r.version}</label>
+        <input id="version" name="version" maxlength="40" autocomplete="off" aria-describedby="version-help" />
+        <p class="help muted small" id="version-help">{r.versionHelp}</p>
+        <p class="field-error" hidden></p>
+      </div>
+
+      <fieldset class="field" data-field="status">
+        <legend>{r.status}</legend>
+        <p class="help muted small">{r.statusHelp}</p>
+        <div class="status-options">
+          {statuses.map((s) => (
+            <label class="status-option">
+              <input type="radio" name="status" value={s} />
+              <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</span>
+              <span class="muted small">{t.status[`${s}Def`]}</span>
+            </label>
+          ))}
+        </div>
+        <p class="field-error" hidden></p>
+      </fieldset>
+
+      <fieldset class="field" data-field="experience">
+        <legend>{r.experience} <span class="muted small">({r.optional})</span></legend>
+        <div class="inline-options">
+          {Object.entries(t.experience).map(([value, label]) => (
+            <label><input type="radio" name="experience" value={value} /> {label}</label>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset class="field" data-field="gpu">
+        <legend>{r.gpu} <span class="muted small">({r.optional})</span></legend>
+        <div class="inline-options">
+          {Object.entries(t.gpu).map(([value, label]) => (
+            <label><input type="radio" name="gpu" value={value} /> {label}</label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div class="two">
+        <div class="field" data-field="windowsBuild">
+          <label for="windowsBuild">{r.windowsBuild} <span class="muted small">({r.optional})</span></label>
+          <input id="windowsBuild" name="windowsBuild" maxlength="40" autocomplete="off" aria-describedby="windows-help" />
+          <p class="help muted small" id="windows-help">{r.windowsHelp}</p>
+          <p class="field-error" hidden></p>
+        </div>
+        <div class="field" data-field="gpuDriver">
+          <label for="gpuDriver">{r.gpuDriver} <span class="muted small">({r.optional})</span></label>
+          <input id="gpuDriver" name="gpuDriver" maxlength="40" autocomplete="off" />
+          <p class="field-error" hidden></p>
+        </div>
+      </div>
+
+      <div class="field" data-field="notes">
+        <label for="notes">{r.notes} <span class="muted small">({r.optional})</span></label>
+        <textarea id="notes" name="notes" rows="5" maxlength="1000" aria-describedby="notes-help"></textarea>
+        <p class="help muted small" id="notes-help">{r.notesHelp}</p>
+        <p class="field-error" hidden></p>
+      </div>
+
+      <div class="field" data-field="evidenceUrl">
+        <label for="evidenceUrl">{r.evidenceUrl} <span class="muted small">({r.optional})</span></label>
+        <input id="evidenceUrl" name="evidenceUrl" type="url" inputmode="url" maxlength="300" autocomplete="off" aria-describedby="evidence-help" />
+        <p class="help muted small" id="evidence-help">{r.evidenceHelp}</p>
+        <p class="field-error" hidden></p>
+      </div>
+
+      {/* Bots tend to fill every input. People never see this one. */}
+      <div class="trap" aria-hidden="true">
+        <label>Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      {turnstileKey && <div class="cf-turnstile" data-sitekey={turnstileKey}></div>}
+
+      <p class="note muted small">{anonymous ? r.anonNote : r.githubNote}</p>
+      <button class="button" type="submit" id="submit">{anonymous ? r.submit : r.submitGithub}</button>
+    </form>
+
+    <div id="done" class="done" tabindex="-1" hidden>
+      <h2>{r.sent}</h2>
+      <p>{r.sentBody}</p>
+      <p class="done-actions">
+        <a class="button quiet" id="track" href="#" rel="noopener">{r.track}</a>
+        <a class="button quiet" href="">{r.another}</a>
+      </p>
+    </div>
+  </div>
+</Base>
+
+{turnstileKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  import { reportToIssue, validateReport } from '../../../../shared/report.mjs';
+
+  const REPO_ISSUES = 'https://github.com/joshhu/runrtxspark/issues/new';
+  const form = document.getElementById('report-form');
+  const config = JSON.parse(form.dataset.config);
+  const { messages } = config;
+
+  // Machine picker: a listbox, because a native select cannot show photos.
+  const picker = document.getElementById('machine-picker');
+  const hidden = picker.querySelector('input[name="machine"]');
+  const button = picker.querySelector('.picker-button');
+  const list = picker.querySelector('.picker-list');
+  const options = [...list.querySelectorAll('[role="option"]')];
+  const valueEl = document.getElementById('picker-value');
+  const thumb = document.getElementById('picker-thumb');
+  let active = -1;
+
+  function setActive(index) {
+    active = (index + options.length) % options.length;
+    options.forEach((o, i) => o.classList.toggle('is-active', i === active));
+    list.setAttribute('aria-activedescendant', options[active].id);
+    options[active].scrollIntoView({ block: 'nearest' });
+  }
+
+  function openList() {
+    list.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    const selected = options.findIndex((o) => o.dataset.value === hidden.value);
+    setActive(selected >= 0 ? selected : 0);
+    list.focus();
+  }
+
+  function closeList({ refocus = true } = {}) {
+    list.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+    if (refocus) button.focus();
+  }
+
+  function choose(option) {
+    hidden.value = option.dataset.value;
+    options.forEach((o) => o.setAttribute('aria-selected', String(o === option)));
+    valueEl.textContent = option.lastElementChild.textContent;
+    thumb.replaceChildren();
+    if (option.dataset.image) {
+      const img = document.createElement('img');
+      img.src = option.dataset.image;
+      img.alt = '';
+      thumb.append(img);
+    }
+    document.getElementById('machine-name-field').hidden = hidden.value !== 'other';
+
+    const memories = config.memories[hidden.value] ?? [];
+    const memoryField = document.getElementById('memory-field');
+    const memorySelect = document.getElementById('memory');
+    memorySelect.replaceChildren(new Option(messages.memoryUnknown, ''), ...memories.map((m) => new Option(m, m)));
+    memoryField.hidden = memories.length === 0;
+    clearFieldError('machine');
+  }
+
+  button.addEventListener('click', () => (list.hidden ? openList() : closeList()));
+  button.addEventListener('keydown', (e) => {
+    if (['ArrowDown', 'ArrowUp'].includes(e.key)) {
+      e.preventDefault();
+      openList();
+    }
+  });
+  list.addEventListener('keydown', (e) => {
+    const actions = {
+      ArrowDown: () => setActive(active + 1),
+      ArrowUp: () => setActive(active - 1),
+      Home: () => setActive(0),
+      End: () => setActive(options.length - 1),
+      Enter: () => { choose(options[active]); closeList(); },
+      ' ': () => { choose(options[active]); closeList(); },
+      Escape: () => closeList(),
+    };
+    if (actions[e.key]) {
+      e.preventDefault();
+      actions[e.key]();
+    } else if (e.key === 'Tab') {
+      closeList({ refocus: false });
+    }
+  });
+  options.forEach((option, i) => {
+    option.addEventListener('mousemove', () => { if (active !== i) setActive(i); });
+    option.addEventListener('click', () => { choose(option); closeList(); });
+  });
+  document.addEventListener('click', (e) => {
+    if (!list.hidden && !picker.contains(e.target)) closeList({ refocus: false });
+  });
+
+  // Prefill from links such as ?app=vllm or ?software=Foo.
+  const params = new URLSearchParams(location.search);
+  const software = document.getElementById('software');
+  if (params.get('app') && config.appNames[params.get('app')]) {
+    software.value = config.appNames[params.get('app')];
+  } else if (params.get('software')) {
+    software.value = params.get('software').slice(0, 80);
+  }
+
+  function clearFieldError(name) {
+    const field = form.querySelector(`[data-field="${name}"]`);
+    const error = field?.querySelector('.field-error');
+    if (error) {
+      error.hidden = true;
+      error.textContent = '';
+    }
+    field?.classList.remove('has-error');
+  }
+
+  function showErrors(errors) {
+    const summary = document.getElementById('errors');
+    const ul = summary.querySelector('ul');
+    ul.replaceChildren();
+    form.querySelectorAll('.has-error').forEach((f) => f.classList.remove('has-error'));
+    form.querySelectorAll('.field-error').forEach((e) => { e.hidden = true; e.textContent = ''; });
+    for (const name of errors) {
+      const text = messages.fields[name] ?? name;
+      const li = document.createElement('li');
+      li.textContent = text;
+      ul.append(li);
+      const field = form.querySelector(`[data-field="${name}"]`);
+      const error = field?.querySelector('.field-error');
+      if (error) {
+        error.textContent = text;
+        error.hidden = false;
+        field.classList.add('has-error');
+      }
+    }
+    summary.hidden = false;
+    summary.focus();
+  }
+
+  function showMessage(text) {
+    const summary = document.getElementById('errors');
+    summary.querySelector('ul').replaceChildren(Object.assign(document.createElement('li'), { textContent: text }));
+    summary.hidden = false;
+    summary.focus();
+  }
+
+  function collect() {
+    const data = new FormData(form);
+    const raw = {};
+    for (const key of ['machine', 'machineName', 'memory', 'software', 'version', 'status', 'experience', 'gpu', 'windowsBuild', 'gpuDriver', 'notes', 'evidenceUrl']) {
+      raw[key] = data.get(key) ?? '';
+    }
+    raw.appId = config.apps[String(raw.software).trim().toLowerCase()];
+    return raw;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (new FormData(form).get('website')) return;
+
+    const result = validateReport(collect(), { machineIds: config.machineIds });
+    if (!result.ok) {
+      showErrors(result.errors);
+      return;
+    }
+    document.getElementById('errors').hidden = true;
+
+    if (!config.endpoint) {
+      const { title, body } = reportToIssue(result.report);
+      location.href = `${REPO_ISSUES}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
+    const submit = document.getElementById('submit');
+    submit.disabled = true;
+    submit.textContent = messages.sending;
+    try {
+      const response = await fetch(config.endpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          report: result.report,
+          turnstileToken: new FormData(form).get('cf-turnstile-response') ?? '',
+        }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (response.ok) {
+        form.hidden = true;
+        document.getElementById('track').href = payload.url;
+        const done = document.getElementById('done');
+        done.hidden = false;
+        done.focus();
+        return;
+      }
+      if (response.status === 422 && payload.errors) showErrors(payload.errors);
+      else if (response.status === 429) showMessage(messages.errorRate);
+      else if (response.status === 403) showMessage(messages.errorVerify);
+      else showMessage(messages.errorNetwork);
+    } catch {
+      showMessage(messages.errorNetwork);
+    } finally {
+      submit.disabled = false;
+      submit.textContent = messages.submit;
+      window.turnstile?.reset?.();
+    }
+  });
+</script>
+
+<style>
+  form { display: grid; gap: 28px; }
+  .field { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 6px; }
+  .field[hidden] { display: none; }
+  label, legend, .label { font-weight: 600; padding: 0; }
+  legend { margin-bottom: 6px; }
+  .help { font-weight: 400; }
+  input:not([type='radio']), select, textarea {
+    width: 100%; font: inherit; padding: 10px 12px; min-height: 44px;
+    background: var(--surface); color: var(--ink);
+    border: 1px solid var(--muted); border-radius: var(--radius-control);
+  }
+  textarea { resize: vertical; }
+  .has-error input:not([type='radio']), .has-error .picker-button { border: 2px solid var(--broken); }
+  .field-error { color: var(--broken); font-size: 0.9375rem; font-weight: 600; }
+  .field-error[hidden] { display: none; }
+  .two { display: grid; gap: 28px; align-items: start; }
+  @media (min-width: 600px) { .two { grid-template-columns: 1fr 1fr; gap: 20px; } }
+
+  .picker { position: relative; }
+  .picker-button {
+    width: 100%; display: flex; align-items: center; gap: 12px; text-align: start;
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1px solid var(--muted); border-radius: var(--radius-control);
+    padding: 8px 12px; min-height: 60px; cursor: pointer;
+  }
+  .picker-button > span:nth-child(2) { flex: 1; font-weight: 500; }
+  .picker-thumb { flex: none; width: 56px; height: 42px; display: grid; place-items: center; }
+  .picker-thumb:empty { width: 0; }
+  .picker-list .picker-thumb:empty { width: 56px; }
+  .picker-thumb :global(img) { max-width: 56px; max-height: 42px; object-fit: contain; background: #fff; border-radius: 3px; }
+  .picker-list {
+    position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px);
+    margin: 0; padding: 4px; list-style: none; max-height: min(420px, 60vh); overflow-y: auto;
+    background: var(--surface); border: 1px solid var(--ink); border-radius: var(--radius-control);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+  .picker-list[hidden] { display: none; }
+  .picker-list li { display: flex; align-items: center; gap: 12px; padding: 6px 8px; cursor: pointer; border-radius: 4px; min-height: 54px; }
+  .picker-list li.is-active { background: var(--bg); box-shadow: inset 0 0 0 2px var(--accent); }
+  .picker-list li[aria-selected='true'] { font-weight: 600; }
+
+  .status-options { display: grid; gap: 8px; }
+  .status-option {
+    display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 2px 8px; align-items: center;
+    font-weight: 400; padding: 12px; background: var(--surface);
+    border: 1px solid var(--rule); border-radius: var(--radius-control); cursor: pointer;
+  }
+  .status-option:has(input:checked) { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .status-option input { margin: 0; width: 18px; height: 18px; accent-color: var(--ink); }
+  .status-option > .muted { grid-column: 2; }
+  .inline-options { display: grid; gap: 6px; }
+  .inline-options label { font-weight: 400; display: flex; gap: 8px; align-items: center; min-height: 32px; }
+  .inline-options input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--ink); }
+
+  .trap { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+  .error-summary { padding: 16px; border: 2px solid var(--broken); border-radius: var(--radius-control); }
+  .error-summary[hidden] { display: none; }
+  .error-summary h2 { font-size: 1.0625rem; }
+  .error-summary ul { margin: 8px 0 0; padding-inline-start: 20px; }
+  .note { margin-bottom: -16px; }
+  form > .button { justify-self: start; }
+  .done { padding: 24px; border: 2px solid var(--native); border-radius: var(--radius-control); display: grid; gap: 12px; }
+  .done[hidden] { display: none; }
+  .done-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+</style>

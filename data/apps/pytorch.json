@@ -1,0 +1,31 @@
+{
+  "id": "pytorch",
+  "name": "PyTorch (CUDA)",
+  "vendor": "PyTorch / NVIDIA",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.14.0+cu134",
+  "homepage": "https://pytorch.org",
+  "aliases": [
+    "torch"
+  ],
+  "caveats": [
+    {
+      "en": "The CUDA build comes from NVIDIA's package index and not from pytorch.org. Follow NVIDIA's guide exactly, and check CUDA again after installing other packages, which can replace torch.",
+      "zh-TW": "CUDA 版來自 NVIDIA 的套件索引，不是 pytorch.org。請完全依照 NVIDIA 指南安裝。安裝其他套件可能會換掉 torch，裝完後要再確認 CUDA。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/rtx-spark-getting-started-with-development/385976",
+      "title": "NVIDIA: getting started with RTX Spark development",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

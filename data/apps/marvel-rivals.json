@@ -1,0 +1,21 @@
+{
+  "id": "marvel-rivals",
+  "name": "Marvel Rivals",
+  "vendor": "NetEase Games",
+  "category": "game",
+  "status": "prism",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.marvelrivals.com",
+  "evidence": [
+    {
+      "url": "https://www.xda-developers.com/tested-two-decades-of-windows-gaming-history-on-arm-rtx-spark-nvidia/",
+      "title": "XDA: two decades of Windows games on RTX Spark",
+      "type": "review",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

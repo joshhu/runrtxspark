@@ -1,0 +1,35 @@
+{
+  "id": "autodesk-maya",
+  "name": "Autodesk Maya",
+  "vendor": "Autodesk",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 2024.1",
+  "homepage": "https://www.autodesk.com/products/maya",
+  "aliases": [
+    "Maya"
+  ],
+  "caveats": [
+    {
+      "en": "Autodesk says Arm devices are not officially supported, even if the program installs and starts.",
+      "zh-TW": "Autodesk 表示 Arm 裝置不受官方支援，即使能安裝和啟動。"
+    },
+    {
+      "en": "Plug-ins and GPU features are unverified.",
+      "zh-TW": "外掛和 GPU 功能尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog",
+      "type": "aggregator",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

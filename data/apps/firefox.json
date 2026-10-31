@@ -1,0 +1,25 @@
+{
+  "id": "firefox",
+  "name": "Mozilla Firefox",
+  "vendor": "Mozilla",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "123+",
+  "homepage": "https://www.mozilla.org/firefox/",
+  "aliases": [
+    "Firefox"
+  ],
+  "evidence": [
+    {
+      "url": "https://www.mozilla.org/en-US/firefox/all/desktop-release/",
+      "title": "Firefox downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

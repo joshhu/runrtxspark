@@ -1,0 +1,37 @@
+{
+  "id": "hermes-agent",
+  "name": "Hermes Agent",
+  "vendor": "Nous Research",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.21.3",
+  "homepage": "https://github.com/NousResearch/hermes-agent",
+  "aliases": [
+    "Hermes"
+  ],
+  "caveats": [
+    {
+      "en": "NVIDIA confirms RTX Spark support but doesn't state the architecture. Installer issues have been reported.",
+      "zh-TW": "NVIDIA 確認支援 RTX Spark，但未說明架構，也有安裝問題的回報。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "title": "NVIDIA: RTX Spark PCs available today",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    },
+    {
+      "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog",
+      "type": "aggregator",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

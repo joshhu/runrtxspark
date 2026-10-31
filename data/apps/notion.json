@@ -1,0 +1,22 @@
+{
+  "id": "notion",
+  "name": "Notion",
+  "vendor": "Notion Labs",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.2.1+",
+  "homepage": "https://www.notion.com",
+  "evidence": [
+    {
+      "url": "https://www.notion.com/desktop",
+      "title": "Notion desktop downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "nvidia-broadcast",
+  "name": "NVIDIA Broadcast",
+  "vendor": "NVIDIA",
+  "category": "utility",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.3.0",
+  "homepage": "https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/",
+  "caveats": [
+    {
+      "en": "Requires Windows on Arm driver 617.42 or later.",
+      "zh-TW": "需要 Windows on Arm 驅動程式 617.42 以上。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/",
+      "title": "NVIDIA Broadcast app",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

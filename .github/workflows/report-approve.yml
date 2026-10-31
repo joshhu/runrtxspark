@@ -1,0 +1,54 @@
+name: Publish approved report
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: report-approve
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  publish:
+    # Only people with triage access or above can apply labels on this repo.
+    if: github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'report')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/report-intake.mjs approve
+      - run: node scripts/validate-data.mjs
+      - name: Commit the report
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "runrtxspark bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/reports
+          git commit -m "Add community report from issue #${ISSUE_NUMBER}"
+          git pull --rebase origin main
+          git push origin main
+      # A push made with GITHUB_TOKEN does not trigger other workflows, so start the deploy here.
+      - name: Deploy and close the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh workflow run deploy.yml --ref main
+          gh issue edit "$ISSUE_NUMBER" --remove-label pending-review || true
+          gh issue close "$ISSUE_NUMBER" --comment "Accepted. Thanks for testing. It will appear on the software page within a few minutes."
+      - name: Say what failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --remove-label approved || true
+          gh issue comment "$ISSUE_NUMBER" --body "This report could not be published. If the software is not in the catalog yet, add it first or apply an app:<id> label, then approve again. See the workflow log for details."

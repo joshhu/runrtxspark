@@ -1,0 +1,212 @@
+{
+  "machines": [
+    {
+      "id": "asus-proart-p14",
+      "brand": "ASUS",
+      "name": "ProArt P14 (H7407)",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "14\" 3K OLED",
+      "memory": [
+        "24GB",
+        "32GB",
+        "48GB",
+        "128GB"
+      ],
+      "priceUsd": 2599,
+      "url": "https://www.asus.com/us/laptops/for-creators/proart/proart-p14-h7407/",
+      "image": "asus-proart-p14.webp",
+      "imageSource": "https://dlcdnwebimgs.asus.com/gain/02543bb8-4dfa-4e30-9d68-42bc2886cfce/",
+      "source": "https://www.asus.com/us/news/proart-rtx-spark/",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "asus-proart-p16",
+      "brand": "ASUS",
+      "name": "ProArt P16 (H7607)",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "16\" 3K / 4K OLED",
+      "memory": [
+        "24GB",
+        "32GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 2799,
+      "url": "https://www.asus.com/laptops/for-creators/proart/proart-p16-h7607/",
+      "image": "asus-proart-p16.webp",
+      "imageSource": "https://dlcdnwebimgs.asus.com/gain/d4db26d7-4633-4bb7-8919-4a29b70416fb/",
+      "source": "https://www.asus.com/us/news/proart-rtx-spark/",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "dell-xps-16",
+      "brand": "Dell",
+      "name": "XPS 16 Creator Edition (DX16263)",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "16\" 3.2K Tandem OLED",
+      "memory": [
+        "32GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 3799,
+      "url": "https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263",
+      "image": "dell-xps-16.webp",
+      "imageSource": "https://i.dell.com/assetlink/img/global/laptop-xps-dx16263-gy-gallery-1-dl12v3lo-large.png?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=549&qlt=100,0&resMode=sharp2&size=549,402",
+      "source": "https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "hp-omnibook-ultra-16",
+      "brand": "HP",
+      "name": "OmniBook Ultra 16 (16-bk000)",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "16\" 3K OLED",
+      "memory": [
+        "32GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 3199,
+      "url": "https://www.hp.com/us-en/shop/pdp/hp-omnibook-ultra-laptop-next-gen-ai-16-bk000-16-bg9s9av-1",
+      "image": "hp-omnibook-ultra-16.webp",
+      "imageSource": "https://hp.widen.net/content/waofuqkjn4/webp/waofuqkjn4.png?w=573&h=430&dpi=72&color=ffffff00",
+      "source": "https://www.hp.com/us-en/newsroom/press-releases/2026/hp-leads-the-expansion-of-the-local-ai-era-from-gb300-ai-workstations-to-rtx-spark-windows-pcs.html",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "hp-omnibook-x-14",
+      "brand": "HP",
+      "name": "OmniBook X 14 (14-KS000)",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "14\" 3K OLED",
+      "memory": [
+        "32GB",
+        "64GB"
+      ],
+      "priceUsd": 2999,
+      "url": "https://www.hp.com/us-en/shop/pdp/hp-omnibook-x-laptop-next-gen-ai-14-ks000-14-cb1l6av-1",
+      "image": "hp-omnibook-x-14.webp",
+      "imageSource": "https://hp.widen.net/content/jhh69tvbeo/webp/jhh69tvbeo.png?w=573&h=430&dpi=72&color=ffffff00",
+      "source": "https://www.hp.com/us-en/newsroom/press-releases/2026/hp-leads-the-expansion-of-the-local-ai-era-from-gb300-ai-workstations-to-rtx-spark-windows-pcs.html",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "lenovo-yoga-pro-9n",
+      "brand": "Lenovo",
+      "name": "Yoga Pro 9n Gen 11 / Pro 9n",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "15.3\" WQXGA OLED",
+      "memory": [
+        "32GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 2999,
+      "url": "https://www.lenovo.com/us/en/p/laptops/yoga/yoga-pro-series/lenovo-pro-9n-gen-11-15-inch-nvidia/len101l0078",
+      "image": "lenovo-yoga-pro-9n.webp",
+      "imageSource": "https://p3-ofp.static.pub/ShareResource/na/subseries/gallery/lenovo-pro-9n-gen11-15inch-nvidia-01.png",
+      "source": "https://psref.lenovo.com/Product/Yoga/Yoga_Pro_9_15N1X11?MT=83SR",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "microsoft-surface-laptop-ultra",
+      "brand": "Microsoft",
+      "name": "Surface Laptop Ultra",
+      "form": "laptop",
+      "availability": "on-sale",
+      "display": "15\" PixelSense Ultra",
+      "memory": [
+        "24GB",
+        "32GB",
+        "48GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 2599,
+      "url": "https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra",
+      "image": "microsoft-surface-laptop-ultra.webp",
+      "imageSource": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Nightfall-Front?fmt=png-alpha&wid=1000",
+      "source": "https://www.microsoft.com/en-us/store/configure/surface-laptop-ultra/8wg5vqp0x4b8",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "msi-prestige-n16-flip",
+      "brand": "MSI",
+      "name": "Prestige N16 Flip AI+",
+      "form": "convertible",
+      "availability": "on-sale",
+      "display": "16\" UHD+ Tandem OLED / 2.8K OLED",
+      "memory": [
+        "32GB",
+        "64GB",
+        "128GB"
+      ],
+      "priceUsd": 3299,
+      "url": "https://www.msi.com/Business-Productivity/Prestige-N16-Flip-AI-Plus-C1XMX",
+      "image": "msi-prestige-n16-flip.webp",
+      "imageSource": "https://storage-asset.msi.com/global/picture/product/product_179142378538dfb85452a9e7c8ad443331b27632e3.webp",
+      "source": "https://us-store.msi.com/Prestige-N16-Flip-AI-C1XMT-067USY",
+      "verifiedAt": "2026-10-31",
+      "imageCrop": {
+        "left": 0,
+        "top": 320,
+        "width": 1800,
+        "height": 1120
+      }
+    },
+    {
+      "id": "microsoft-surface-dev-box",
+      "brand": "Microsoft",
+      "name": "Surface RTX Spark Dev Box",
+      "form": "desktop",
+      "availability": "preorder",
+      "memory": [
+        "128GB"
+      ],
+      "priceUsd": 5999,
+      "url": "https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box",
+      "image": "microsoft-surface-dev-box.webp",
+      "imageSource": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-RTX-Spark-Dev-Box-Logo-Corner-Angled?fmt=png-alpha&wid=1000",
+      "source": "https://www.microsoft.com/en-us/store/configure/surface-rtx-spark-dev-box/8wg5vqp0x4gr",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "asus-proart-gr1x",
+      "brand": "ASUS",
+      "name": "ProArt GR1X",
+      "form": "desktop",
+      "availability": "announced",
+      "memory": [
+        "64GB",
+        "128GB"
+      ],
+      "url": "https://www.asus.com/us/displays-desktops/mini-pcs/proart-mini-pc-series/proart-gr1x-mini-pc/",
+      "image": "asus-proart-gr1x.webp",
+      "imageSource": "https://dlcdnwebimgs.asus.com/gain/4962aa42-efe6-4db1-bad9-5b61e99b30ca/",
+      "source": "https://www.asus.com/us/news/proart-rtx-spark/",
+      "verifiedAt": "2026-10-31",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "width": 2400,
+        "height": 1750
+      }
+    },
+    {
+      "id": "msi-prestige-n16",
+      "brand": "MSI",
+      "name": "Prestige N16",
+      "form": "laptop",
+      "availability": "announced",
+      "source": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "verifiedAt": "2026-10-31"
+    }
+  ]
+}

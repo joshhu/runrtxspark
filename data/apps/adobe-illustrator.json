@@ -1,0 +1,31 @@
+{
+  "id": "adobe-illustrator",
+  "name": "Adobe Illustrator",
+  "vendor": "Adobe",
+  "category": "adobe",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "beta",
+  "confidence": "medium",
+  "version": "28.7 beta+",
+  "homepage": "https://www.adobe.com/products/illustrator.html",
+  "aliases": [
+    "AI"
+  ],
+  "caveats": [
+    {
+      "en": "Only the beta runs on Arm. A community expert says the beta has since gone native, but Adobe hasn't confirmed this.",
+      "zh-TW": "Arm 上只有 Beta 版可用。社群專家稱 Beta 已改為原生，但 Adobe 尚未證實。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpx.adobe.com/download-install/apps/system-requirements/apps-compatibility-copilot.html",
+      "title": "Adobe: app compatibility on Copilot+ PCs",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "brave",
+  "name": "Brave",
+  "vendor": "Brave Software",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.58+",
+  "homepage": "https://brave.com",
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/b/Brave/Brave",
+      "title": "winget manifest: Brave",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

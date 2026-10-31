@@ -1,0 +1,28 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI",
+  "vendor": "Comfy Org",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.40.0+",
+  "homepage": "https://www.comfy.org",
+  "caveats": [
+    {
+      "en": "Applies to the portable nvidia_arm64 build. Comfy Desktop is listed as emulated. Custom nodes with x64 DLLs do not load.",
+      "zh-TW": "適用於可攜式 nvidia_arm64 版本。Comfy Desktop 被列為模擬執行，含 x64 DLL 的自訂節點無法載入。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.43.0",
+      "title": "ComfyUI v0.43.0 release",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

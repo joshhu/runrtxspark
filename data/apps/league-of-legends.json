@@ -1,0 +1,31 @@
+{
+  "id": "league-of-legends",
+  "name": "League of Legends",
+  "vendor": "Riot Games",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.leagueoflegends.com",
+  "aliases": [
+    "LoL",
+    "英雄聯盟"
+  ],
+  "caveats": [
+    {
+      "en": "Vanguard support is listed as coming after launch, so treat this as not supported yet. No test of the failure itself was found.",
+      "zh-TW": "Vanguard 支援列為上市後推出，應視為尚未支援。未找到實際失敗的測試紀錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark games",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

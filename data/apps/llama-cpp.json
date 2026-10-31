@@ -1,0 +1,28 @@
+{
+  "id": "llama-cpp",
+  "name": "llama.cpp",
+  "vendor": "ggml-org",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "b12020",
+  "homepage": "https://github.com/ggml-org/llama.cpp",
+  "caveats": [
+    {
+      "en": "Ships a win-cuda-13.4-arm64 build. A performance regression on arm64 and Blackwell is being tracked upstream.",
+      "zh-TW": "提供 win-cuda-13.4-arm64 版本。上游仍在追蹤 arm64 與 Blackwell 的效能回歸問題。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12020",
+      "title": "llama.cpp b12020 release",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

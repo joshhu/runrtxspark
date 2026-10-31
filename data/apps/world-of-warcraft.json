@@ -1,0 +1,37 @@
+{
+  "id": "world-of-warcraft",
+  "name": "World of Warcraft",
+  "vendor": "Blizzard",
+  "category": "game",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "9.1+",
+  "homepage": "https://worldofwarcraft.blizzard.com",
+  "aliases": [
+    "WoW"
+  ],
+  "caveats": [
+    {
+      "en": "NVIDIA lists it as supported at launch without naming the architecture, and catalogs disagree on native versus emulated.",
+      "zh-TW": "NVIDIA 列為上市支援但未說明架構，各資料庫對原生或模擬的說法不一。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.wowhead.com/news/windows-10-arm64-support-on-the-patch-9-1-ptr-322303",
+      "title": "Wowhead: Arm64 support in the patch 9.1 PTR",
+      "type": "community",
+      "checked": "2026-10-31"
+    },
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "title": "NVIDIA: RTX Spark PCs available today",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

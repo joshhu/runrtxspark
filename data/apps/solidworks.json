@@ -1,0 +1,31 @@
+{
+  "id": "solidworks",
+  "name": "SolidWorks",
+  "vendor": "Dassault Systèmes",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "homepage": "https://www.solidworks.com",
+  "caveats": [
+    {
+      "en": "Result comes from one catalog, not a test on RTX Spark.",
+      "zh-TW": "結果只來自單一資料庫，並非在 RTX Spark 實測。"
+    },
+    {
+      "en": "No official support statement was found.",
+      "zh-TW": "未找到官方支援聲明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog",
+      "type": "aggregator",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "arc",
+  "name": "Arc",
+  "vendor": "The Browser Company",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.22.2+",
+  "homepage": "https://arc.net",
+  "caveats": [
+    {
+      "en": "Arc now receives Chromium updates only, and its maker recommends moving to Dia.",
+      "zh-TW": "Arc 現在只接收 Chromium 更新，開發商建議改用 Dia。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/microsoft-365/education/guide/1-windows/windows-arm",
+      "title": "Microsoft: Windows on Arm guide",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

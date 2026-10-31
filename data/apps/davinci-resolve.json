@@ -1,0 +1,31 @@
+{
+  "id": "davinci-resolve",
+  "name": "DaVinci Resolve",
+  "vendor": "Blackmagic Design",
+  "category": "creative",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "21.1",
+  "homepage": "https://www.blackmagicdesign.com/products/davinciresolve",
+  "aliases": [
+    "Resolve"
+  ],
+  "caveats": [
+    {
+      "en": "Requires NVIDIA Studio Driver 616.0 or later, according to a third party quoting the official readme. CUDA acceleration has no test report yet.",
+      "zh-TW": "需要 NVIDIA Studio Driver 616.0 以上，這是第三方轉述官方說明。CUDA 加速尚無實測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://davinciresolveclub.com/davinci-resolve-windows-x86-vs-arm/",
+      "title": "DaVinci Resolve Club: Windows x86 vs Arm",
+      "type": "community",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

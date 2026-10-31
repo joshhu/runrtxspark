@@ -1,0 +1,22 @@
+{
+  "id": "slack",
+  "name": "Slack",
+  "vendor": "Salesforce",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "4.38.87+",
+  "homepage": "https://slack.com",
+  "evidence": [
+    {
+      "url": "https://slack.com/downloads/windows",
+      "title": "Slack for Windows downloads",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

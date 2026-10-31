@@ -1,0 +1,30 @@
+{
+  "id": "genshin-impact",
+  "name": "Genshin Impact",
+  "vendor": "HoYoverse",
+  "category": "game",
+  "status": "prism",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://genshin.hoyoverse.com",
+  "aliases": [
+    "原神"
+  ],
+  "caveats": [
+    {
+      "en": "NVIDIA says it's playable. No independent test has been found.",
+      "zh-TW": "NVIDIA 稱可以遊玩，但未找到獨立實測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark games",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

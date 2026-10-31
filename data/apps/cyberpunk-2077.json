@@ -1,0 +1,27 @@
+{
+  "id": "cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "vendor": "CD PROJEKT RED",
+  "category": "game",
+  "status": "prism",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.cyberpunk.net",
+  "caveats": [
+    {
+      "en": "Runs well at 1440p with frame generation, but ray tracing is demanding. PC Gamer measured an average of 36 fps at 1080p RT Ultra.",
+      "zh-TW": "1440p 開啟畫格生成時運作良好，但光線追蹤較吃力。PC Gamer 測得 1080p RT Ultra 平均 36 fps。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.windowscentral.com/hardware/nvidia/rtx-spark-review-benchmarks-2026",
+      "title": "Windows Central: RTX Spark review",
+      "type": "review",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

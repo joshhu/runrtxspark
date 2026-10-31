@@ -1,0 +1,25 @@
+{
+  "id": "microsoft-onenote",
+  "name": "Microsoft OneNote",
+  "vendor": "Microsoft",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.onenote.com",
+  "aliases": [
+    "Office",
+    "Microsoft 365"
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Surface Arm FAQ",
+      "type": "vendor",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}

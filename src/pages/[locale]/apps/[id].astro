@@ -1,0 +1,165 @@
+---
+import Base from '../../../layouts/Base.astro';
+import StatusGlyph from '../../../components/StatusGlyph.astro';
+import { LOCALES } from '../../../lib/locale.mjs';
+import { fill, getDict } from '../../../lib/i18n.mjs';
+import { apps, formatDate, localized, machineById, machineLabel } from '../../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    apps.map((app) => ({ params: { locale, id: app.id }, props: { app } })),
+  );
+}
+
+const { locale } = Astro.params;
+const { app } = Astro.props;
+const t = getDict(locale);
+const base = import.meta.env.BASE_URL;
+const home = `${base}${locale}/`;
+const reportHref = `${home}report/?app=${app.id}`;
+
+const byMachine = Object.entries(Object.groupBy(app.reports, (r) => r.machine)).map(
+  ([machineId, list]) => ({
+    machine: machineById[machineId],
+    machineName: list[0].machineName,
+    counts: {
+      native: list.filter((r) => r.status === 'native').length,
+      prism: list.filter((r) => r.status === 'prism').length,
+      broken: list.filter((r) => r.status === 'broken').length,
+    },
+    total: list.length,
+  }),
+);
+---
+<Base locale={locale} title={app.name} description={`${app.name}: ${t.status[app.status]}. ${localized(app.summary, locale)}`} path={`apps/${app.id}/`} active="list">
+  <article class="narrow">
+    <p class="crumb small"><a href={home}>{t.app.back}</a></p>
+    <header class="verdict" data-status={app.status}>
+      <p class="vendor muted">{app.vendor}</p>
+      <h1>{app.name}</h1>
+      <p class="answer status" data-status={app.status}><StatusGlyph status={app.status} />{t.status[app.status]}</p>
+      <p class="definition muted">{t.status[`${app.status}Def`]}</p>
+      <div class="tags">
+        {app.maturity && app.maturity !== 'stable' && <span class="tag">{t.maturity[app.maturity]}</span>}
+        <span class="tag">{t.scope[app.scope]}</span>
+      </div>
+    </header>
+
+    {app.hasConflict && <p class="conflict" role="note">{t.app.conflict}</p>}
+
+    {app.summary && <p class="summary">{localized(app.summary, locale)}</p>}
+
+    {app.caveats?.length > 0 && (
+      <section>
+        <h2>{t.app.limits}</h2>
+        <ul class="caveats">
+          {app.caveats.map((c) => <li>{localized(c, locale)}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <dl class="facts">
+      {app.version && (<div><dt>{t.app.testedVersion}</dt><dd>{app.version}</dd></div>)}
+      <div><dt>{t.app.checkedOn}</dt><dd>{formatDate(app.verifiedAt, locale)}</dd></div>
+      <div><dt>{t.app.confidence}</dt><dd>{t.confidence[app.confidence]}</dd></div>
+      {app.homepage && (<div><dt>{t.app.website}</dt><dd><a href={app.homepage} rel="noopener">{new URL(app.homepage).hostname.replace(/^www\./, '')}</a></dd></div>)}
+    </dl>
+
+    <section>
+      <h2>{t.app.sources}</h2>
+      <ul class="sources">
+        {app.evidence.map((e) => (
+          <li>
+            <a href={e.url} rel="noopener nofollow">{e.title}</a>
+            <span class="tag">{t.sourceType[e.type]}</span>
+            {e.checked && <span class="muted small">{formatDate(e.checked, locale)}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t.app.communityTitle}</h2>
+      {app.reports.length === 0 && <p class="muted none">{t.app.communityNone}</p>}
+      {byMachine.length > 0 && (
+        <>
+          <h3 class="sub">{t.app.byMachine}</h3>
+          <ul class="machines">
+            {byMachine.map((row) => (
+              <li>
+                {row.machine?.image && <img src={`${base}machines/${row.machine.image}`} alt="" width="64" height="48" loading="lazy" />}
+                <span class="machine-name">{row.machine ? machineLabel(row.machine) : row.machineName}</span>
+                <span class="counts">
+                  {['native', 'prism', 'broken'].map((s) => row.counts[s] > 0 && (
+                    <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]} {row.counts[s]}</span>
+                  ))}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {app.reports.length > 0 && (
+        <ul class="reports">
+          {app.reports.map((r) => (
+            <li>
+              <p class="report-head">
+                <span class="status" data-status={r.status}><StatusGlyph status={r.status} />{t.status[r.status]}</span>
+                <span class="muted small">{r.version}</span>
+                <span class="muted small">{machineById[r.machine] ? machineLabel(machineById[r.machine]) : r.machineName}</span>
+                <span class="muted small">{formatDate(r.reportedAt, locale)}</span>
+              </p>
+              <p class="small report-meta">
+                {r.experience && <span class="tag">{t.experience[r.experience]}</span>}
+                {r.gpu && <span class="tag">{t.gpu[r.gpu]}</span>}
+                {r.memory && <span class="tag">{r.memory}</span>}
+                {r.windowsBuild && <span class="tag">Windows {r.windowsBuild}</span>}
+                {r.gpuDriver && <span class="tag">{r.gpuDriver}</span>}
+              </p>
+              {r.notes && <p class="report-notes">{r.notes}</p>}
+              <p class="small">
+                {r.evidenceUrl && <a href={r.evidenceUrl} rel="noopener nofollow ugc">{t.app.sources}</a>}{' '}
+                {r.issue && <a href={`https://github.com/joshhu/runrtxspark/issues/${r.issue}`} rel="noopener">{fill(t.app.viaIssue, { n: r.issue })}</a>}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p class="cta"><a class="button" href={reportHref}>{t.app.confirm}</a></p>
+      <p class="muted small">{t.app.fix} <a href={`https://github.com/joshhu/runrtxspark/issues/new?title=${encodeURIComponent(`[Correction] ${app.name}`)}`} rel="noopener">{t.app.fixAction}</a></p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  article { padding-top: 24px; }
+  section { margin-top: 40px; }
+  section h2 { padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+  .crumb { margin-bottom: 28px; }
+  .vendor { margin-bottom: 4px; }
+  .answer { display: flex; font-family: var(--display); font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem); line-height: 1.2; margin-top: 16px; gap: 12px; white-space: normal; }
+  .answer :global(svg) { width: 0.85em; height: 0.85em; }
+  .definition { margin-top: 8px; }
+  .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags .tag { white-space: normal; }
+  .summary { margin-top: 24px; font-size: 1.0625rem; max-width: 66ch; }
+  .conflict { margin-top: 24px; padding: 12px 16px; border: 2px solid var(--broken); border-radius: var(--radius-control); }
+  .caveats { margin: 12px 0 0; padding-inline-start: 20px; display: grid; gap: 8px; }
+  .facts { margin: 32px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+  .facts dt { color: var(--muted); font-size: 0.875rem; }
+  .facts dd { margin: 0; font-weight: 600; }
+  .sources, .machines, .reports { list-style: none; margin: 0; padding: 0; }
+  .sources li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .none { margin-top: 12px; }
+  .sub { margin-top: 20px; }
+  .machines li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .machines img { grid-row: span 2; object-fit: contain; background: #fff; border-radius: 3px; }
+  .machine-name { font-weight: 600; }
+  .counts { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.875rem; }
+  .reports li { padding: 16px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 6px; }
+  .report-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+  .report-meta { display: flex; flex-wrap: wrap; gap: 4px; }
+  .report-meta:empty { display: none; }
+  .report-notes { white-space: pre-line; max-width: 66ch; }
+  .cta { margin: 24px 0 12px; }
+</style>

@@ -1,0 +1,25 @@
+{
+  "id": "google-chrome",
+  "name": "Google Chrome",
+  "vendor": "Google",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "116+",
+  "homepage": "https://www.google.com/chrome/",
+  "aliases": [
+    "Chrome"
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/g/Google/Chrome",
+      "title": "winget manifest: Google Chrome",
+      "type": "release",
+      "checked": "2026-10-31"
+    }
+  ],
+  "addedAt": "2026-10-31",
+  "verifiedAt": "2026-10-31"
+}
