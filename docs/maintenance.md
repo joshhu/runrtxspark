@@ -14,7 +14,7 @@ Skipping a step is a failed run, even when nothing new turns up. Finding nothing
 
 - Run at least 6 distinct web searches and all three GitHub searches in step 2, and list them in your summary.
 - Open and read every discovery candidate that could be a Windows program or port. Skip only those whose title or description clearly shows Linux-only, DGX-only, or non-software projects, and say how many you skipped.
-- Re-read the sources of 10 entries (step 3): the oldest `verifiedAt` first, and among equal dates the next ones alphabetically after the entries that have already been re-checked.
+- Actually read the sources of 10 entries (step 3), taking the oldest `verifiedAt` first. Some vendors refuse automated requests (`helpx.adobe.com` returns 403). A source you could not read doesn't count: leave that entry's dates alone, list it in your summary, and move on to the next entry until you have read 10. Update `verifiedAt` and `checked` on each entry you confirmed, so tomorrow's run moves on to different entries.
 - Check the machine sources (step 4).
 
 ## GitHub access
