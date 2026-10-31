@@ -6,7 +6,7 @@
   "status": "native",
   "scope": "rtx-spark",
   "maturity": "stable",
-  "confidence": "high",
+  "confidence": "medium",
   "version": "5.2 LTS",
   "homepage": "https://www.blender.org",
   "caveats": [
