@@ -66,9 +66,9 @@ npm run build      # validate, then build to dist/
 
 A push to `main` validates, tests, builds, and publishes `dist/` into the `rtxspark/` folder of [`joshhu.github.io`](https://github.com/joshhu/joshhu.github.io), which GitHub Pages serves at `josh.hu/rtxspark/`. It uses the `SITE_DEPLOY_KEY` secret, a deploy key with write access to that one repository.
 
-### Turn on anonymous reports
+### Anonymous reports
 
-The Worker needs a Cloudflare account, and it needs no paid plan.
+These are live through a Cloudflare Worker on the free plan. To set them up again from scratch:
 
 ```bash
 cd worker
