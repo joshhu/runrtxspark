@@ -15,7 +15,8 @@ Skipping a step is a failed run, even when nothing new turns up. Finding nothing
 - Run at least 6 distinct web searches and all three GitHub searches in step 2, and list them in your summary.
 - Open and read every discovery candidate that could be a Windows program or port. Skip only those whose title or description clearly shows Linux-only, DGX-only, or non-software projects, and say how many you skipped.
 - Actually read the sources of 10 entries (step 3), taking the oldest `verifiedAt` first. Some vendors refuse automated requests (`helpx.adobe.com` returns 403). A source you could not read doesn't count: leave that entry's dates alone, list it in your summary, and move on to the next entry until you have read 10. Update `verifiedAt` and `checked` on each entry you confirmed, so tomorrow's run moves on to different entries.
-- Check the machine sources (step 4).
+- Read the machine sources (step 4). Trying one news site that turns out to be blocked does not count.
+- Write every date as the Taiwan date from `TZ=Asia/Taipei date +%F`. This run starts while UTC is still on the previous day.
 
 ## GitHub access
 
@@ -90,7 +91,7 @@ Re-check 10 entries each day, so the whole catalog cycles regularly. If a source
 
 ## 4. Machines
 
-Check NVIDIA's RTX Spark marketplace and vendor pages for new models or status changes in `data/machines.json`. A machine appears in the report form once its `availability` is `on-sale`. For a new image, set `imageSource` to an official product image with `image` as `<id>.webp`, run `npm run machines:thumbs <id>`, and **look at the result**: remove marketing badges with `imageCrop`, and reject images that do not show the product.
+Look for new models and status changes in `data/machines.json`. Start with the pages the file already lists: read the `url` and `source` of every machine whose `availability` is not `on-sale`, then one NVIDIA or vendor page that lists RTX Spark models. These hosts are allowed in the cloud environment. Other sites may not be, so try them only after these, and list any that are blocked in your summary. Update `verifiedAt` on each machine you confirmed. A machine appears in the report form once its `availability` is `on-sale`. For a new image, set `imageSource` to an official product image with `image` as `<id>.webp`, run `npm run machines:thumbs <id>`, and **look at the result**: remove marketing badges with `imageCrop`, and reject images that do not show the product.
 
 ## 5. Finish
 

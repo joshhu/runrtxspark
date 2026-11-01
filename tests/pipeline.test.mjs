@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildStoredReport, triage } from '../scripts/report-intake.mjs';
 import { formatCandidates, sanitize, selectCandidates } from '../scripts/discover-github.mjs';
 import { reportToIssue } from '../shared/report.mjs';
-import { validateApp, validateMachine, validateStoredReport } from '../scripts/validate-data.mjs';
+import { taipeiToday, validateApp, validateMachine, validateStoredReport } from '../scripts/validate-data.mjs';
 
 const machineIds = ['asus-proart-p16'];
 const report = { machine: 'asus-proart-p16', software: 'vLLM', version: '0.32', status: 'native', appId: 'vllm' };
@@ -98,6 +98,11 @@ describe('data validators', () => {
   const today = '2026-10-31';
 
   it('accepts a complete app', () => expect(validateApp(app, today)).toEqual([]));
+
+  it('counts the date in Taiwan, where the daily run starts before UTC midnight', () => {
+    expect(taipeiToday(new Date('2026-10-31T23:06:00Z'))).toBe('2026-11-01');
+    expect(taipeiToday(new Date('2026-10-31T15:59:00Z'))).toBe('2026-10-31');
+  });
 
   it.each([
     ['no evidence', { evidence: [] }, /evidence/],

@@ -107,7 +107,12 @@ const readJsonDir = (dir) =>
     .filter((f) => f.endsWith('.json'))
     .map((f) => ({ file: join(dir, f), name: f.replace(/\.json$/, ''), data: JSON.parse(readFileSync(join(dir, f), 'utf8')) }));
 
-export function validateAll(root = ROOT, today = new Date().toISOString().slice(0, 10)) {
+// Catalog dates are Taiwan calendar dates. The daily run starts at 07:05 in Taiwan, when
+// UTC is still on the previous day, so a UTC check would reject its dates as future ones.
+export const taipeiToday = (now = new Date()) =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei' }).format(now);
+
+export function validateAll(root = ROOT, today = taipeiToday()) {
   const problems = [];
   const report = (where, list) => list.forEach((msg) => problems.push(`${where}: ${msg}`));
 
