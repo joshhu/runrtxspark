@@ -175,7 +175,7 @@
       "image": "microsoft-surface-dev-box.webp",
       "imageSource": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-RTX-Spark-Dev-Box-Logo-Corner-Angled?fmt=png-alpha&wid=1000",
       "source": "https://www.microsoft.com/en-us/store/configure/surface-rtx-spark-dev-box/8wg5vqp0x4gr",
-      "verifiedAt": "2026-10-31"
+      "verifiedAt": "2026-11-02"
     },
     {
       "id": "asus-proart-gr1x",
@@ -191,7 +191,7 @@
       "image": "asus-proart-gr1x.webp",
       "imageSource": "https://dlcdnwebimgs.asus.com/gain/4962aa42-efe6-4db1-bad9-5b61e99b30ca/",
       "source": "https://www.asus.com/us/news/proart-rtx-spark/",
-      "verifiedAt": "2026-10-31",
+      "verifiedAt": "2026-11-02",
       "imageCrop": {
         "left": 0,
         "top": 0,
@@ -206,7 +206,7 @@
       "form": "laptop",
       "availability": "announced",
       "source": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
-      "verifiedAt": "2026-10-31"
+      "verifiedAt": "2026-11-02"
     }
   ]
 }
