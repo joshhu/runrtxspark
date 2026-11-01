@@ -47,6 +47,17 @@ const nav = [
             <a href={item.href} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>
           ))}
         </nav>
+        <details class="lang">
+          <summary>
+            <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="8" cy="8" r="6.5" /><ellipse cx="8" cy="8" rx="2.75" ry="6.5" /><path d="M1.5 8h13" /></svg>
+            <span class="visually-hidden">{t.nav.language} </span>{LOCALE_META[locale].label}
+          </summary>
+          <ul>
+            {LOCALES.map((l) => (
+              <li><a data-set-locale={l} lang={LOCALE_META[l].lang} href={`${base}${l}/${path}`} aria-current={l === locale ? 'true' : undefined}>{LOCALE_META[l].label}</a></li>
+            ))}
+          </ul>
+        </details>
         <a class="button report-link" href={`${home}report/`}>{t.nav.report}</a>
       </div>
     </header>
@@ -63,14 +74,6 @@ const nav = [
         <div class="foot-links">
           <a href={REPO_URL}>{t.footer.source}</a>
           <a href={`${base}api/apps.json`}>{t.footer.api}</a>
-          <details class="lang">
-            <summary><span class="visually-hidden">{t.nav.language} </span>{LOCALE_META[locale].label}</summary>
-            <ul>
-              {LOCALES.map((l) => (
-                <li><a data-set-locale={l} lang={LOCALE_META[l].lang} href={`${base}${l}/${path}`} aria-current={l === locale ? 'true' : undefined}>{LOCALE_META[l].label}</a></li>
-              ))}
-            </ul>
-          </details>
         </div>
       </div>
     </footer>
@@ -86,6 +89,18 @@ const nav = [
           }
         });
       });
+
+      // The menu floats over the page, so it has to close without another click on its label.
+      const languageMenu = document.querySelector('details.lang');
+      document.addEventListener('click', (event) => {
+        if (languageMenu.open && !languageMenu.contains(event.target)) languageMenu.open = false;
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && languageMenu.open) {
+          languageMenu.open = false;
+          languageMenu.querySelector('summary').focus();
+        }
+      });
     </script>
   </body>
 </html>
@@ -98,15 +113,27 @@ const nav = [
   nav a { color: var(--muted); text-decoration: none; padding-block: 8px; min-height: 40px; }
   nav a:hover, nav a[aria-current='page'] { color: var(--ink); }
   nav a[aria-current='page'] { box-shadow: inset 0 -2px 0 var(--ink); }
-  .report-link { margin-inline-start: auto; font-size: 0.9375rem; }
-  @media (min-width: 760px) {
+  .report-link { font-size: 0.9375rem; }
+  .lang { position: relative; margin-inline-start: auto; }
+  .lang summary { display: flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; color: var(--muted); font-size: 0.9375rem; list-style: none; white-space: nowrap; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary:hover, .lang[open] summary { color: var(--ink); }
+  .lang ul { position: absolute; z-index: 10; inset-block-start: 100%; inset-inline-end: 0; min-width: 9em; margin: 4px 0 0; padding: 4px; list-style: none; background: var(--bg); border: 1px solid var(--rule); }
+  .lang li a { display: block; padding: 8px 12px; white-space: nowrap; text-decoration: none; }
+  .lang li a:hover { background: var(--rule); }
+  .lang a[aria-current] { color: var(--ink); font-weight: 600; }
+  /* A phone cannot fit the name, the language and the button on one line, so the language goes above them. */
+  @media (max-width: 479px) {
+    .bar { gap: 4px 8px; padding-block-start: 4px; }
+    .lang { order: -1; width: 100%; margin-inline-start: 0; }
+    .lang summary { width: fit-content; margin-inline-start: auto; }
+    .report-link { margin-inline-start: auto; }
+  }
+  @media (min-width: 860px) {
     nav { order: 0; width: auto; }
   }
   .site-footer { margin-top: 72px; border-top: 1px solid var(--rule); padding-block: 32px 40px; font-size: 0.9375rem; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
   .foot p + p { margin-top: 4px; }
   .foot-links { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; }
-  .lang summary { cursor: pointer; color: var(--accent); }
-  .lang ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
-  .lang a[aria-current] { color: var(--ink); font-weight: 600; text-decoration: none; }
 </style>

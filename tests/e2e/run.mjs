@@ -33,6 +33,47 @@ for (const [locale, want] of [['zh-TW', 'zh-tw'], ['zh-HK', 'zh-tw'], ['zh-CN', 
   await ctx.close();
 }
 
+// The language menu sits in the page header and floats over the content.
+for (const width of [360, 1280]) {
+  const ctx = await browser.newContext({ locale: 'zh-TW', viewport: { width, height: 800 } });
+  const page = await ctx.newPage();
+  await page.goto(`${BASE}zh-tw/`);
+  const menu = page.locator('details.lang');
+  check(`${width}px: one language menu, in the header`, (await menu.count()) === 1 && (await page.locator('.site-header details.lang').count()) === 1);
+  const headerBefore = await page.locator('.site-header').boundingBox();
+  await menu.locator('summary').click();
+  const list = await menu.locator('ul').boundingBox();
+  const headerOpen = await page.locator('.site-header').boundingBox();
+  check(`${width}px: opening the menu does not move the page`, headerOpen.height === headerBefore.height);
+  check(`${width}px: the open menu fits the screen`, list.x >= 0 && list.x + list.width <= width, `${list.x}..${list.x + list.width}`);
+  await page.keyboard.press('Escape');
+  check(`${width}px: Escape closes the menu`, !(await menu.evaluate((d) => d.open)));
+  await menu.locator('summary').click();
+  await page.locator('main').click({ position: { x: 5, y: 5 } });
+  check(`${width}px: clicking elsewhere closes the menu`, !(await menu.evaluate((d) => d.open)));
+  await menu.locator('summary').click();
+  await page.waitForTimeout(100);
+  await page.screenshot({ path: `tmpcode/shot-lang-${width}.png` });
+  await ctx.close();
+}
+
+// The site name and the report button stay on one line in every language, down to phone width.
+for (const width of [360, 479, 480, 859, 860]) {
+  const ctx = await browser.newContext({ viewport: { width, height: 800 } });
+  const page = await ctx.newPage();
+  for (const locale of ['en', 'zh-tw', 'zh-cn', 'ja', 'ko']) {
+    await page.goto(`${BASE}${locale}/`);
+    const name = await page.locator('.wordmark').boundingBox();
+    const button = await page.locator('.report-link').boundingBox();
+    const language = await page.locator('details.lang summary').boundingBox();
+    const sameLine = button.y < name.y + name.height && name.y < button.y + button.height;
+    const onScreen = language.x + language.width <= width && button.x + button.width <= width;
+    if (!sameLine || !onScreen) check(`header at ${width}px /${locale}/`, false, `sameLine=${sameLine} onScreen=${onScreen}`);
+  }
+  await ctx.close();
+}
+check('header layout pass finished', true);
+
 const ctx = await browser.newContext({ locale: 'zh-TW', viewport: { width: 1280, height: 900 } });
 const page = await ctx.newPage();
 const errors = [];
