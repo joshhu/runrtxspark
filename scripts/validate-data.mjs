@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EXPERIENCES, GPU_RESULTS, STATUSES, OTHER_MACHINE } from '../shared/report.mjs';
+import { validateIndexEntry } from '../shared/software-index.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
@@ -142,7 +143,13 @@ export function validateAll(root = ROOT, today = taipeiToday()) {
     report(`report ${name}`, validateStoredReport(data, { machineIds, appIds, today }));
   }
 
-  return { problems, counts: { machines: machines.length, apps: appIds.size } };
+  let indexCount = 0;
+  for (const { name, data } of readJsonDir(join(root, 'data/index'))) {
+    data.forEach((entry, i) => report(`index ${name}[${i}]`, validateIndexEntry(entry)));
+    indexCount += data.length;
+  }
+
+  return { problems, counts: { machines: machines.length, apps: appIds.size, index: indexCount } };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -152,5 +159,5 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     problems.forEach((p) => console.error(`  - ${p}`));
     process.exit(1);
   }
-  console.log(`Data OK: ${counts.apps} apps, ${counts.machines} machines.`);
+  console.log(`Data OK: ${counts.apps} apps, ${counts.machines} machines, ${counts.index} index entries.`);
 }

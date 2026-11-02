@@ -1,5 +1,8 @@
 import { LOCALE_META } from './locale.mjs';
 import machinesFile from '../../data/machines.json';
+import woaIndex from '../../data/index/woa.json';
+import wingetIndex from '../../data/index/winget-arm64.json';
+import { mergeIndex } from '../../shared/software-index.mjs';
 
 const appModules = import.meta.glob('../../data/apps/*.json', { eager: true, import: 'default' });
 const reportModules = import.meta.glob('../../data/reports/*.json', { eager: true, import: 'default' });
@@ -28,6 +31,8 @@ export const apps = Object.values(appModules)
   .sort((a, b) => a.name.localeCompare(b.name, 'en'));
 
 export const appById = Object.fromEntries(apps.map((a) => [a.id, a]));
+
+export const softwareIndex = mergeIndex({ woa: woaIndex, winget: wingetIndex, curated: apps });
 
 export const lastUpdated = [
   ...apps.flatMap((a) => [a.addedAt, a.verifiedAt]),

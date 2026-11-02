@@ -1,0 +1,32 @@
+{
+  "id": "tailscale",
+  "name": "Tailscale",
+  "vendor": "Tailscale Inc.",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.104.4",
+  "homepage": "https://tailscale.com",
+  "summary": {
+    "en": "Tailscale publishes a Windows Arm64 installer on its package site.",
+    "zh-TW": "Tailscale 在官方套件網站提供 Windows Arm64 安裝檔。"
+  },
+  "evidence": [
+    {
+      "url": "https://pkgs.tailscale.com/stable/#windows",
+      "title": "Tailscale stable packages: tailscale-setup-1.104.4-arm64.msi",
+      "type": "vendor",
+      "checked": "2026-11-02"
+    },
+    {
+      "url": "https://worksonwoa.com/en/applications/tailscale/",
+      "title": "Linaro Works on WoA: Tailscale",
+      "type": "aggregator",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}

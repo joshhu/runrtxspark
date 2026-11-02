@@ -53,7 +53,7 @@ export function knownEvidenceUrls(root = ROOT) {
   return urls;
 }
 
-async function gh(path, init = {}) {
+export async function gh(path, init = {}) {
   const response = await fetch(`https://api.github.com${path}`, {
     ...init,
     headers: {
@@ -65,6 +65,20 @@ async function gh(path, init = {}) {
   });
   if (!response.ok) throw new Error(`GitHub API ${path}: ${response.status}`);
   return response.json();
+}
+
+export async function findOrCreateTracker(repo) {
+  const issues = await gh(`/repos/${repo}/issues?state=open&labels=${TRACKER_LABEL}&per_page=10`);
+  const tracker = issues.find((i) => i.title === TRACKER_TITLE);
+  if (tracker) return tracker;
+  return gh(`/repos/${repo}/issues`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title: TRACKER_TITLE,
+      labels: [TRACKER_LABEL],
+      body: 'New repositories found by the daily search. The daily review checks each one and adds real ports to the catalog with a source link.',
+    }),
+  });
 }
 
 async function main() {
@@ -81,18 +95,7 @@ async function main() {
     await new Promise((resolve) => setTimeout(resolve, 2500));
   }
 
-  const issues = await gh(`/repos/${repo}/issues?state=open&labels=${TRACKER_LABEL}&per_page=10`);
-  let tracker = issues.find((i) => i.title === TRACKER_TITLE);
-  if (!tracker) {
-    tracker = await gh(`/repos/${repo}/issues`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title: TRACKER_TITLE,
-        labels: [TRACKER_LABEL],
-        body: 'New repositories found by the daily search. The daily review checks each one and adds real ports to the catalog with a source link.',
-      }),
-    });
-  }
+  const tracker = await findOrCreateTracker(repo);
 
   const comments = await gh(`/repos/${repo}/issues/${tracker.number}/comments?per_page=100`);
   const seen = new Set(

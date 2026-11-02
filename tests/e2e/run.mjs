@@ -82,9 +82,9 @@ page.on('pageerror', (e) => errors.push(e.message));
 
 // Search and filters.
 await page.goto(`${BASE}zh-tw/`);
-const visible = () => page.locator('.row:visible').count();
+const visible = () => page.locator('#catalog > .table .row:visible').count();
 const total = await visible();
-check('catalog lists all programs', total === 76, `${total}`);
+check('catalog lists all programs', total === 77, `${total}`);
 await page.fill('#q', 'vllm');
 check('search finds both vLLM builds', (await visible()) === 2, `${await visible()}`);
 check('search syncs to the URL', page.url().includes('q=vllm'));
@@ -92,8 +92,50 @@ check('wafer highlights matches', (await page.locator('[data-wafer-die].is-match
 await page.fill('#q', 'office');
 check('alias search finds Office apps', (await visible()) === 6, `${await visible()}`);
 await page.fill('#q', 'notarealprogram');
+await page.locator('#empty').waitFor();
 check('empty state appears', await page.locator('#empty').isVisible());
 check('empty state links to report', (await page.locator('#empty-action').getAttribute('href')).includes('software=notarealprogram'));
+// The broad index loads only when needed, and shows programs the catalog does not list.
+{
+  const c = await browser.newContext({ locale: 'zh-TW' });
+  const pg = await c.newPage();
+  const asked = [];
+  pg.on('request', (r) => { if (r.url().includes('software-index')) asked.push(r.url()); });
+  await pg.goto(`${BASE}zh-tw/`, { waitUntil: 'networkidle' });
+  check('index is not downloaded on page load', asked.length === 0);
+  await pg.fill('#q', 'tailscale');
+  check('Tailscale is a catalog entry', (await pg.locator('#catalog > .table .row:visible').count()) === 1);
+  await pg.locator('#more-title').filter({ hasText: /\d/ }).waitFor();
+  const dupes = await pg.locator('#more-rows .row-link').evaluateAll((a) => a.filter((x) => x.textContent.trim().toLowerCase() === 'tailscale').length);
+  check('a catalog entry is not repeated from the index', dupes === 0, String(dupes));
+  await pg.fill('#q', 'wireguard');
+  await pg.locator('#more-rows .row-link').first().waitFor();
+  check('search finds a program only in the index', (await pg.locator('#more-rows .row-link').first().textContent()).toLowerCase().includes('wireguard'));
+  check('index rows link to https sources', (await pg.locator('#more-rows .row-link').first().getAttribute('href')).startsWith('https://'));
+  check('index rows show one result', (await pg.locator('#more-rows .row').first().locator('.result > .status').count()) === 1);
+  check('catalog empty state stays hidden when the index has results', !(await pg.locator('#empty').isVisible()));
+  await pg.fill('#q', '');
+  await pg.locator('#more-browse').click();
+  await pg.locator('#more-rows .row').first().waitFor();
+  check('browse shows one page of the index', (await pg.locator('#more-rows .row').count()) === 50, String(await pg.locator('#more-rows .row').count()));
+  check('browsing leaves the category filter alone', (await pg.locator('.cats .cat[aria-pressed=true]').getAttribute('data-cat')) === '');
+  await pg.locator('#more-next').click();
+  check('show more adds rows', (await pg.locator('#more-rows .row').count()) === 150, String(await pg.locator('#more-rows .row').count()));
+  await pg.locator('input[name=status][value=broken]').check();
+  const statuses = await pg.locator('#more-rows .result > .status').evaluateAll((a) => [...new Set(a.map((x) => x.dataset.status))]);
+  check('status filter applies to the index', statuses.length === 1 && statuses[0] === 'broken', statuses.join());
+  await pg.locator('input[name=status][value=broken]').uncheck();
+  await pg.fill('#q', 'wire');
+  await pg.locator('#more-rows .row').first().waitFor();
+  await pg.setViewportSize({ width: 1280, height: 900 });
+  await pg.locator('#more').scrollIntoViewIfNeeded();
+  await pg.screenshot({ path: 'tmpcode/shot-index-desktop.png' });
+  await pg.setViewportSize({ width: 360, height: 800 });
+  await pg.locator('#more').scrollIntoViewIfNeeded();
+  await pg.screenshot({ path: 'tmpcode/shot-index-phone.png' });
+  check('index rows do not scroll sideways on a phone', await pg.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth));
+  await c.close();
+}
 await page.fill('#q', '');
 await page.locator('input[name=status][value=broken]').check();
 check('status filter works', (await visible()) === 4, `${await visible()}`);
@@ -117,7 +159,7 @@ check('filters restore from a URL', (await visible()) === 2 && (await page.input
 
 // Wafer.
 await page.goto(`${BASE}zh-tw/`);
-check('every program has a die', (await page.locator('[data-wafer-die]').count()) === 76);
+check('every program has a die', (await page.locator('[data-wafer-die]').count()) === 77);
 await page.locator('[data-wafer-die="adobe-photoshop"]').focus();
 await page.keyboard.press('Enter');
 await page.waitForURL('**/apps/adobe-photoshop/');

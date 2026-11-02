@@ -15,6 +15,8 @@ Skipping a step is a failed run, even when nothing new turns up. Finding nothing
 - Run at least 6 distinct web searches and all three GitHub searches in step 2, and list them in your summary.
 - Open and read every discovery candidate that could be a Windows program or port. Skip only those whose title or description clearly shows Linux-only, DGX-only, or non-software projects, and say how many you skipped.
 - Actually read the sources of 10 entries (step 3), taking the oldest `verifiedAt` first. Some vendors refuse automated requests (`helpx.adobe.com` returns 403). A source you could not read doesn't count: leave that entry's dates alone, list it in your summary, and move on to the next entry until you have read 10. Update `verifiedAt` and `checked` on each entry you confirmed, so tomorrow's run moves on to different entries.
+- Handle the latest `Arm64 changes` comment on the discovery issue (step 2). Every program it flags as not native gets re-read and updated today.
+- Promote at least 5 widely used programs from `data/index/` to catalog entries (step 2), reading a source for each, and name them in your summary. A catalog that only re-checks what it already lists misses software people use.
 - Read the machine sources (step 4). Trying one news site that turns out to be blocked does not count.
 - Write every date as the Taiwan date from `TZ=Asia/Taipei date +%F`. This run starts while UTC is still on the previous day.
 
@@ -36,6 +38,10 @@ For each report:
 A community report never changes an entry's `status` by itself. When several reports disagree with an entry, re-research the entry, and change it only with a checkable source. The site flags a conflict automatically in the meantime.
 
 ## 2. Find new software
+
+A daily workflow refreshes `data/index/` from Linaro's Works on WoA catalog (`woa.json`) and from winget packages with their own Arm64 build (`winget-arm64.json`). Never edit those two files, because the next refresh replaces them. The site already shows them as unchecked results in search.
+
+Your job is to promote programs from there into `data/apps/`, which means reading a source yourself. Choose by how many people use the program, starting with the `Arm64 changes` list and entries marked `"nvidia": true`. An index entry is a lead and not a source: read the vendor's download page, release notes, or the Linaro page, and use `rtx-spark` as the scope only when the source covers RTX Spark.
 
 Check the open issue titled `Daily discovery: RTX Spark candidates`, then search for more:
 

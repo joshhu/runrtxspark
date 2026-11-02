@@ -4,7 +4,7 @@ import Wafer from '../../components/Wafer.astro';
 import StatusGlyph from '../../components/StatusGlyph.astro';
 import { LOCALES } from '../../lib/locale.mjs';
 import { fill, getDict } from '../../lib/i18n.mjs';
-import { apps, formatDate, localized, statusCounts, usedCategories } from '../../lib/data.mjs';
+import { apps, formatDate, localized, softwareIndex, statusCounts, usedCategories } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -19,7 +19,11 @@ const total = apps.length;
 const messages = {
   count: t.list.count,
   none: t.list.none,
+  moreTitle: t.more.title,
+  moreLoading: t.more.loading,
+  moreError: t.more.error,
 };
+const indexTotal = softwareIndex.length.toLocaleString('en');
 ---
 <Base locale={locale} active="list">
   <section class="wrap hero">
@@ -28,6 +32,7 @@ const messages = {
       <div class="search">
         <label class="visually-hidden" for="q">{t.hero.search}</label>
         <input id="q" type="search" placeholder={t.hero.search} autocomplete="off" />
+        <p class="muted small search-note">{fill(t.more.searchNote, { n: indexTotal })}</p>
       </div>
       <fieldset class="tally">
         <legend class="visually-hidden">{t.list.filterStatus}</legend>
@@ -96,6 +101,35 @@ const messages = {
       ))}
     </div>
 
+    <div class="more" id="more" data-src={`${base}api/software-index.json`}>
+      <h2 class="more-title" id="more-title" aria-live="polite"></h2>
+      <p class="muted small">{t.more.note}</p>
+      <div class="table" id="more-rows" role="table" aria-labelledby="more-title" hidden></div>
+      <button type="button" class="cat more-button" id="more-browse">{fill(t.more.browse, { n: indexTotal })}</button>
+      <button type="button" class="cat more-button" id="more-next" hidden>{t.more.next}</button>
+    </div>
+
+    <template id="more-row">
+      <div class="row" role="row">
+        <span class="name" role="cell">
+          <span class="mono" aria-hidden="true"></span>
+          <span class="name-text">
+            <a class="row-link" rel="noopener nofollow"></a>
+            <span class="muted small publisher"></span>
+          </span>
+        </span>
+        <span class="result" role="cell">
+          {statuses.map((s) => (
+            <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</span>
+          ))}
+          <span class="flags"><span class="tag nvidia">{t.more.nvidia}</span></span>
+        </span>
+        <span class="version small muted" role="cell"></span>
+        <span class="reports small muted" role="cell"></span>
+        <span class="checked small muted" role="cell"></span>
+      </div>
+    </template>
+
     <div class="empty" id="empty" hidden>
       <p id="empty-text"></p>
       <a class="button" id="empty-action" href={`${home}report/`}>{t.list.noneAction}</a>
@@ -108,7 +142,7 @@ const messages = {
   const messages = JSON.parse(catalog.dataset.messages);
   const search = document.getElementById('q');
   const rows = [...catalog.querySelectorAll('.row')];
-  const cats = [...catalog.querySelectorAll('.cat')];
+  const cats = [...catalog.querySelectorAll('.cats .cat')];
   const statusBoxes = [...document.querySelectorAll('input[name="status"]')];
   const count = document.getElementById('count');
   const empty = document.getElementById('empty');
@@ -121,6 +155,74 @@ const messages = {
   );
 
   let cat = '';
+
+  // The index holds thousands of programs, so it loads only when someone needs it.
+  const PAGE = 50;
+  const more = document.getElementById('more');
+  const moreTitle = document.getElementById('more-title');
+  const moreRows = document.getElementById('more-rows');
+  const moreBrowse = document.getElementById('more-browse');
+  const moreNext = document.getElementById('more-next');
+  const rowTemplate = document.getElementById('more-row');
+  let index = null;
+  let indexFailed = false;
+  let loading = null;
+  let browsing = false;
+  let limit = PAGE;
+
+  function loadIndex() {
+    loading ??= fetch(more.dataset.src)
+      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then((body) => {
+        index = body.software.map((e) => ({ ...e, hay: `${e.name} ${e.publisher ?? ''}`.toLowerCase() }));
+      })
+      .catch(() => { indexFailed = true; loading = null; })
+      .finally(() => apply({ syncUrl: false }));
+    return loading;
+  }
+
+  function buildRow(entry) {
+    const row = rowTemplate.content.firstElementChild.cloneNode(true);
+    row.querySelector('.mono').textContent = entry.name.slice(0, 1);
+    const link = row.querySelector('.row-link');
+    link.textContent = entry.name;
+    if (entry.url.startsWith('https://')) link.href = entry.url;
+    row.querySelector('.publisher').textContent = entry.publisher ?? '';
+    row.querySelectorAll('.result > .status').forEach((s) => { if (s.dataset.status !== entry.status) s.remove(); });
+    if (!entry.nvidia) row.querySelector('.flags').remove();
+    row.querySelector('.version').textContent = entry.version ?? '';
+    row.querySelector('.checked').textContent = entry.checked ?? '';
+    return row;
+  }
+
+  /** Returns how many index entries match, or null while they are unknown. */
+  function renderMore(q, wanted) {
+    const relevant = !cat || cat === 'game';
+    const active = relevant && (q.length >= 2 || browsing);
+    moreBrowse.hidden = active || !relevant;
+    more.hidden = !relevant;
+    moreRows.hidden = true;
+    moreNext.hidden = true;
+    moreTitle.textContent = '';
+    if (!active) return 0;
+    if (indexFailed) { moreTitle.textContent = messages.moreError; indexFailed = false; return 0; }
+    if (!index) { moreTitle.textContent = messages.moreLoading; loadIndex(); return null; }
+    const found = index.filter((e) =>
+      e.hay.includes(q) && (!wanted.length || wanted.includes(e.status)) && (cat !== 'game' || e.game));
+    // Names that start with the search come first, then programs NVIDIA tested.
+    if (q) {
+      const rank = (e) => (e.name.toLowerCase().startsWith(q) ? 0 : 2) + (e.nvidia ? 0 : 1);
+      found.sort((a, b) => rank(a) - rank(b));
+    }
+    moreTitle.textContent = messages.moreTitle.replace('{n}', found.length.toLocaleString('en'));
+    moreRows.replaceChildren(...found.slice(0, limit).map(buildRow));
+    moreRows.hidden = found.length === 0;
+    moreNext.hidden = found.length <= limit;
+    return found.length;
+  }
+
+  moreBrowse.addEventListener('click', () => { browsing = true; apply({ syncUrl: false }); });
+  moreNext.addEventListener('click', () => { limit += 100; apply({ syncUrl: false }); });
 
   function apply({ syncUrl = true } = {}) {
     const q = search.value.trim().toLowerCase();
@@ -139,9 +241,12 @@ const messages = {
     // On phones the results would sit a full screen below the search box.
     document.querySelector('.hero').classList.toggle('is-searching', Boolean(q));
     count.textContent = messages.count.replace('{n}', shown);
-    empty.hidden = shown > 0;
+    const inIndex = renderMore(q, wanted);
+    // Stay quiet while the index loads, so "no results" does not flash before it arrives.
+    const nothing = shown === 0 && inIndex === 0;
+    empty.hidden = !nothing;
     table.hidden = shown === 0;
-    if (!shown) {
+    if (nothing) {
       emptyText.textContent = messages.none.replace('{q}', search.value.trim());
       emptyAction.href = `${catalog.dataset.report}?software=${encodeURIComponent(search.value.trim())}`;
     }
@@ -166,7 +271,7 @@ const messages = {
   const fromUrl = (params.get('status') ?? '').split(',');
   statusBoxes.forEach((b) => { b.checked = fromUrl.includes(b.value); });
 
-  search.addEventListener('input', () => apply());
+  search.addEventListener('input', () => { limit = PAGE; apply(); });
   statusBoxes.forEach((b) => b.addEventListener('change', () => apply()));
   cats.forEach((b) => b.addEventListener('click', () => { setCat(b.dataset.cat); apply(); }));
 
@@ -188,7 +293,7 @@ const messages = {
   }
   @media (max-width: 899px) {
     .hero :global(.wafer) { width: min(70%, 300px); }
-    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar { display: none; }
+    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .search-note { display: none; }
     .hero.is-searching { padding-bottom: 16px; gap: 0; }
     .hero.is-searching .tally-option { padding-block: 6px; }
   }
@@ -200,6 +305,13 @@ const messages = {
     border: 2px solid var(--ink); border-radius: var(--radius-control);
   }
   .search input::placeholder { color: var(--muted); }
+  .search-note { margin-top: 8px; }
+  .more { margin-top: 32px; display: grid; gap: 10px; justify-items: start; }
+  .more[hidden] { display: none; }
+  .more-title { font-size: 1.125rem; margin: 0; }
+  .more-title:empty { display: none; }
+  .more .table { width: 100%; }
+  .more-button[hidden] { display: none; }
 
   .tally { border: 0; margin: 28px 0 0; padding: 0; }
   .bar { display: flex; height: 8px; gap: 2px; margin-bottom: 8px; }

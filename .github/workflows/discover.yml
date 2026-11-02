@@ -1,4 +1,4 @@
-name: Daily GitHub discovery
+name: Daily discovery
 
 on:
   schedule:
@@ -7,9 +7,14 @@ on:
     - cron: '17 19 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: discover
+  cancel-in-progress: false
+
 permissions:
-  contents: read
+  contents: write
   issues: write
+  actions: write
 
 jobs:
   discover:
@@ -22,3 +27,23 @@ jobs:
       - run: node scripts/discover-github.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: node scripts/sync-sources.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: node scripts/validate-data.mjs
+      - name: Publish the refreshed index
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add data/index
+          if git diff --cached --quiet; then
+            echo "The index did not change."
+            exit 0
+          fi
+          git config user.name "runrtxspark bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh the software index"
+          git pull --rebase origin main
+          git push origin main
+          # A push made with GITHUB_TOKEN does not trigger other workflows, so start the deploy here.
+          gh workflow run deploy.yml --ref main
