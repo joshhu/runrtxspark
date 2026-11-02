@@ -4,7 +4,7 @@ import Wafer from '../../components/Wafer.astro';
 import StatusGlyph from '../../components/StatusGlyph.astro';
 import { LOCALES } from '../../lib/locale.mjs';
 import { fill, getDict } from '../../lib/i18n.mjs';
-import { apps, formatDate, localized, softwareIndex, statusCounts, usedCategories } from '../../lib/data.mjs';
+import { apps, formatDate, listedCount, nvidiaApps, otherIndexCount, statusCounts, usedCategories } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -15,7 +15,7 @@ const t = getDict(locale);
 const base = import.meta.env.BASE_URL;
 const home = `${base}${locale}/`;
 const statuses = ['native', 'prism', 'broken'];
-const total = apps.length;
+const total = listedCount;
 const messages = {
   count: t.list.count,
   none: t.list.none,
@@ -23,7 +23,7 @@ const messages = {
   moreLoading: t.more.loading,
   moreError: t.more.error,
 };
-const indexTotal = softwareIndex.length.toLocaleString('en');
+const indexTotal = otherIndexCount.toLocaleString('en');
 ---
 <Base locale={locale} active="list">
   <section class="wrap hero">
@@ -63,7 +63,7 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
       <p class="count muted small" id="count" aria-live="polite">{fill(t.list.count, { n: total })}</p>
     </div>
 
-    <div class="table" role="table" aria-label={t.nav.list}>
+    <div class="table" id="own" role="table" aria-label={t.nav.list}>
       <div class="head" role="row">
         <span role="columnheader">{t.list.software}</span>
         <span role="columnheader">{t.list.result}</span>
@@ -101,6 +101,31 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
       ))}
     </div>
 
+    <div class="nv" id="nv">
+      <h2 class="more-title" id="nv-title">{fill(t.nv.title, { n: nvidiaApps.length.toLocaleString('en') })}</h2>
+      <p class="muted small">{t.nv.note}</p>
+      <div class="table" role="table" aria-labelledby="nv-title">
+        {nvidiaApps.map((e) => (
+          <div class="row" role="row" data-status={e.status} data-cat={e.category} data-search={`${e.name} ${e.publisher ?? ''}`.toLowerCase()}>
+            <span class="name" role="cell">
+              <span class="mono" aria-hidden="true">{e.name.slice(0, 1)}</span>
+              <span class="name-text">
+                <a class="row-link" href={e.url} rel="noopener nofollow">{e.name}</a>
+                <span class="muted small">{e.publisher ?? ''}</span>
+              </span>
+            </span>
+            <span class="result" role="cell">
+              <span class="status" data-status={e.status}><StatusGlyph status={e.status} />{t.status[e.status]}</span>
+              <span class="flags"><span class="tag">{t.nv.tag}</span></span>
+            </span>
+            <span class="version small muted" role="cell">{e.version ?? ''}</span>
+            <span class="reports small muted" role="cell"></span>
+            <span class="checked small muted" role="cell">{formatDate(e.checked, locale)}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <div class="more" id="more" data-src={`${base}api/software-index.json`}>
       <h2 class="more-title" id="more-title" aria-live="polite"></h2>
       <p class="muted small">{t.more.note}</p>
@@ -122,7 +147,6 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
           {statuses.map((s) => (
             <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</span>
           ))}
-          <span class="flags"><span class="tag nvidia">{t.more.nvidia}</span></span>
         </span>
         <span class="version small muted" role="cell"></span>
         <span class="reports small muted" role="cell"></span>
@@ -148,7 +172,8 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
   const empty = document.getElementById('empty');
   const emptyText = document.getElementById('empty-text');
   const emptyAction = document.getElementById('empty-action');
-  const table = catalog.querySelector('.table');
+  const own = document.getElementById('own');
+  const nv = document.getElementById('nv');
   const wafer = document.querySelector('.wafer');
   const dies = new Map(
     [...document.querySelectorAll('[data-wafer-die]')].map((d) => [d.dataset.waferDie, d]),
@@ -174,7 +199,8 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
     loading ??= fetch(more.dataset.src)
       .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
       .then((body) => {
-        index = body.software.map((e) => ({ ...e, hay: `${e.name} ${e.publisher ?? ''}`.toLowerCase() }));
+        // Programs NVIDIA verified are already in the page.
+        index = body.software.filter((e) => !e.nvidia).map((e) => ({ ...e, hay: `${e.name} ${e.publisher ?? ''}`.toLowerCase() }));
       })
       .catch(() => { indexFailed = true; loading = null; })
       .finally(() => apply({ syncUrl: false }));
@@ -189,7 +215,6 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
     if (entry.url.startsWith('https://')) link.href = entry.url;
     row.querySelector('.publisher').textContent = entry.publisher ?? '';
     row.querySelectorAll('.result > .status').forEach((s) => { if (s.dataset.status !== entry.status) s.remove(); });
-    if (!entry.nvidia) row.querySelector('.flags').remove();
     row.querySelector('.version').textContent = entry.version ?? '';
     row.querySelector('.checked').textContent = entry.checked ?? '';
     return row;
@@ -209,9 +234,9 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
     if (!index) { moreTitle.textContent = messages.moreLoading; loadIndex(); return null; }
     const found = index.filter((e) =>
       e.hay.includes(q) && (!wanted.length || wanted.includes(e.status)) && (cat !== 'game' || e.game));
-    // Names that start with the search come first, then programs NVIDIA tested.
+    // Names that start with the search come first.
     if (q) {
-      const rank = (e) => (e.name.toLowerCase().startsWith(q) ? 0 : 2) + (e.nvidia ? 0 : 1);
+      const rank = (e) => (e.name.toLowerCase().startsWith(q) ? 0 : 1);
       found.sort((a, b) => rank(a) - rank(b));
     }
     moreTitle.textContent = messages.moreTitle.replace('{n}', found.length.toLocaleString('en'));
@@ -228,6 +253,7 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
     const q = search.value.trim().toLowerCase();
     const wanted = statusBoxes.filter((b) => b.checked).map((b) => b.value);
     let shown = 0;
+    let ownShown = 0;
     for (const row of rows) {
       const match =
         (!q || row.dataset.search.includes(q)) &&
@@ -236,6 +262,7 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
       row.hidden = !match;
       dies.get(row.dataset.id)?.classList.toggle('is-match', match);
       if (match) shown += 1;
+      if (match && row.dataset.id) ownShown += 1;
     }
     wafer.classList.toggle('wafer-filtered', Boolean(q || cat || wanted.length));
     // On phones the results would sit a full screen below the search box.
@@ -245,7 +272,8 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
     // Stay quiet while the index loads, so "no results" does not flash before it arrives.
     const nothing = shown === 0 && inIndex === 0;
     empty.hidden = !nothing;
-    table.hidden = shown === 0;
+    own.hidden = ownShown === 0;
+    nv.hidden = shown === ownShown;
     if (nothing) {
       emptyText.textContent = messages.none.replace('{q}', search.value.trim());
       emptyAction.href = `${catalog.dataset.report}?software=${encodeURIComponent(search.value.trim())}`;
@@ -306,8 +334,9 @@ const indexTotal = softwareIndex.length.toLocaleString('en');
   }
   .search input::placeholder { color: var(--muted); }
   .search-note { margin-top: 8px; }
-  .more { margin-top: 32px; display: grid; gap: 10px; justify-items: start; }
-  .more[hidden] { display: none; }
+  .more, .nv { margin-top: 32px; display: grid; gap: 10px; justify-items: start; }
+  .nv[hidden], .table[hidden] { display: none; }
+  .nv .table { width: 100%; }  .more[hidden] { display: none; }
   .more-title { font-size: 1.125rem; margin: 0; }
   .more-title:empty { display: none; }
   .more .table { width: 100%; }

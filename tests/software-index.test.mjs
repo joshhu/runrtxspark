@@ -29,6 +29,17 @@ describe('normalizeWoa', () => {
     expect(normalizeWoa([project()])[0]).not.toHaveProperty('nvidia');
   });
 
+  it('files each program under one of this site\'s categories', () => {
+    const cat = (over) => normalizeWoa([project(over)])[0].category;
+    expect(cat({ categories: ['dev-tools'] })).toBe('developer');
+    expect(cat({ categories: ['oss', 'dev-tools'] })).toBe('developer');
+    expect(cat({ categories: ['browsers'] })).toBe('browser');
+    expect(cat({ categories: ['photo'], publisher: 'Adobe Inc.' })).toBe('adobe');
+    expect(cat({ categories: ['prod'], type: 'game' })).toBe('game');
+    expect(cat({ categories: ['printers'] })).toBe('utility');
+    expect(cat({ categories: [] })).toBe('utility');
+  });
+
   it('links to the page that states the result', () => {
     expect(normalizeWoa([project({ slug: 'tailscale' })])[0].url).toBe('https://worksonwoa.com/en/applications/tailscale/');
     expect(normalizeWoa([project({ slug: 'celeste', type: 'game' })])[0].url).toBe('https://worksonwoa.com/en/games/celeste/');

@@ -1,10 +1,15 @@
 // Browser tests against a built site. Run `npx astro preview --port 4321` first, then `npm run test:e2e`.
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 
 mkdirSync('tmpcode', { recursive: true });
 
 const BASE = 'http://localhost:4321/rtxspark/';
+const OWN = readdirSync('data/apps').filter((f) => f.endsWith('.json')).length;
+const ownNames = new Set(readdirSync('data/apps').filter((f) => f.endsWith('.json'))
+  .map((f) => JSON.parse(readFileSync(`data/apps/${f}`, 'utf8')).name.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '')));
+const NV = JSON.parse(readFileSync('data/index/woa.json', 'utf8'))
+  .filter((e) => e.nvidia && !ownNames.has(e.name.toLowerCase().replace(/[^\p{L}\p{N}]/gu, ''))).length;
 const results = [];
 const check = (name, ok, detail = '') => { results.push({ name, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name}${detail ? `: ${detail}` : ''}`); };
 const browser = await chromium.launch();
@@ -84,7 +89,26 @@ page.on('pageerror', (e) => errors.push(e.message));
 await page.goto(`${BASE}zh-tw/`);
 const visible = () => page.locator('#catalog > .table .row:visible').count();
 const total = await visible();
-check('catalog lists all programs', total === 77, `${total}`);
+check('catalog lists all programs', total === OWN, `${total}`);
+const nvRows = () => page.locator('#nv .row:visible').count();
+const nvHeading = Number((await page.locator('#nv-title').textContent()).replace(/\D/g, ''));
+check('programs NVIDIA verified are listed', (await nvRows()) === nvHeading && nvHeading > NV * 0.9, `${await nvRows()} rows, heading ${nvHeading}, Linaro ${NV}`);
+check('count covers both lists', (await page.locator('#count').textContent()).includes(String(OWN + (await nvRows()))));
+await page.fill('#q', '1password');
+check('search finds an NVIDIA-verified program', (await nvRows()) === 1, `${await nvRows()}`);
+check('NVIDIA rows link to Works on WoA', (await page.locator('#nv .row:visible .row-link').getAttribute('href')).startsWith('https://worksonwoa.com/'));
+check('NVIDIA rows carry their tag', (await page.locator('#nv .row:visible .tag').count()) === 1);
+await page.fill('#q', 'vllm');
+check('NVIDIA list hides when nothing in it matches', !(await page.locator('#nv').isVisible()));
+await page.fill('#q', '');
+await page.locator('.cats .cat[data-cat="browser"]').click();
+const nvCats = await page.locator('#nv .row:visible').evaluateAll((a) => [...new Set(a.map((x) => x.dataset.cat))]);
+check('category filter applies to NVIDIA rows', nvCats.length === 1 && nvCats[0] === 'browser', nvCats.join());
+await page.locator('.cats .cat[data-cat=""]').click();
+await page.locator('input[name="status"][value="broken"]').check();
+const nvStatus = await page.locator('#nv .row:visible').evaluateAll((a) => [...new Set(a.map((x) => x.dataset.status))]);
+check('status filter applies to NVIDIA rows', nvStatus.every((x) => x === 'broken'), nvStatus.join());
+await page.locator('input[name="status"][value="broken"]').uncheck();
 await page.fill('#q', 'vllm');
 check('search finds both vLLM builds', (await visible()) === 2, `${await visible()}`);
 check('search syncs to the URL', page.url().includes('q=vllm'));
@@ -108,9 +132,13 @@ check('empty state links to report', (await page.locator('#empty-action').getAtt
   await pg.locator('#more-title').filter({ hasText: /\d/ }).waitFor();
   const dupes = await pg.locator('#more-rows .row-link').evaluateAll((a) => a.filter((x) => x.textContent.trim().toLowerCase() === 'tailscale').length);
   check('a catalog entry is not repeated from the index', dupes === 0, String(dupes));
-  await pg.fill('#q', 'wireguard');
+  await pg.fill('#q', '1password');
+  await pg.locator('#more-title').filter({ hasText: /\d/ }).waitFor();
+  const nvDupes = await pg.locator('#more-rows .row-link').evaluateAll((a) => a.filter((x) => x.textContent.trim().toLowerCase() === '1password').length);
+  check('an NVIDIA-verified program is not repeated from the index', nvDupes === 0, String(nvDupes));
+  await pg.fill('#q', 'keepassxc');
   await pg.locator('#more-rows .row-link').first().waitFor();
-  check('search finds a program only in the index', (await pg.locator('#more-rows .row-link').first().textContent()).toLowerCase().includes('wireguard'));
+  check('search finds a program only in the index', (await pg.locator('#more-rows .row-link').first().textContent()).toLowerCase().includes('keepassxc'));
   check('index rows link to https sources', (await pg.locator('#more-rows .row-link').first().getAttribute('href')).startsWith('https://'));
   check('index rows show one result', (await pg.locator('#more-rows .row').first().locator('.result > .status').count()) === 1);
   check('catalog empty state stays hidden when the index has results', !(await pg.locator('#empty').isVisible()));
@@ -159,7 +187,7 @@ check('filters restore from a URL', (await visible()) === 2 && (await page.input
 
 // Wafer.
 await page.goto(`${BASE}zh-tw/`);
-check('every program has a die', (await page.locator('[data-wafer-die]').count()) === 77);
+check('every program has a die', (await page.locator('[data-wafer-die]').count()) === OWN);
 await page.locator('[data-wafer-die="adobe-photoshop"]').focus();
 await page.keyboard.press('Enter');
 await page.waitForURL('**/apps/adobe-photoshop/');

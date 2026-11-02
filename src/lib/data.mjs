@@ -34,6 +34,11 @@ export const appById = Object.fromEntries(apps.map((a) => [a.id, a]));
 
 export const softwareIndex = mergeIndex({ woa: woaIndex, winget: wingetIndex, curated: apps });
 
+// NVIDIA tested these for Linaro's catalog, so they are listed with the site's own entries.
+// The rest of the index loads only when someone searches.
+export const nvidiaApps = softwareIndex.filter((e) => e.nvidia);
+export const otherIndexCount = softwareIndex.length - nvidiaApps.length;
+
 export const lastUpdated = [
   ...apps.flatMap((a) => [a.addedAt, a.verifiedAt]),
   ...reports.map((r) => r.approvedAt),
@@ -42,14 +47,17 @@ export const lastUpdated = [
   .sort()
   .at(-1);
 
+const listed = [...apps, ...nvidiaApps];
+export const listedCount = listed.length;
+
 export const statusCounts = {
-  native: apps.filter((a) => a.status === 'native').length,
-  prism: apps.filter((a) => a.status === 'prism').length,
-  broken: apps.filter((a) => a.status === 'broken').length,
+  native: listed.filter((a) => a.status === 'native').length,
+  prism: listed.filter((a) => a.status === 'prism').length,
+  broken: listed.filter((a) => a.status === 'broken').length,
 };
 
 const CATEGORY_ORDER = ['productivity', 'adobe', 'creative', 'browser', 'developer', 'ai', 'communication', 'utility', 'game'];
-export const usedCategories = CATEGORY_ORDER.filter((c) => apps.some((a) => a.category === c));
+export const usedCategories = CATEGORY_ORDER.filter((c) => listed.some((a) => a.category === c));
 
 /** Picks the localized string, falling back to English. Data text exists in en and zh-TW. */
 export function localized(text, locale) {

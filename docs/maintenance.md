@@ -39,9 +39,9 @@ A community report never changes an entry's `status` by itself. When several rep
 
 ## 2. Find new software
 
-A daily workflow refreshes `data/index/` from Linaro's Works on WoA catalog (`woa.json`) and from winget packages with their own Arm64 build (`winget-arm64.json`). Never edit those two files, because the next refresh replaces them. The site already shows them as unchecked results in search.
+A daily workflow refreshes `data/index/` from Linaro's Works on WoA catalog (`woa.json`) and from winget packages with their own Arm64 build (`winget-arm64.json`). Never edit those two files, because the next refresh replaces them. Entries marked `"nvidia": true` are listed on the home page under "Verified by NVIDIA" with Linaro's result. The rest appear only as unchecked results in search.
 
-Your job is to promote programs from there into `data/apps/`, which means reading a source yourself. Choose by how many people use the program, starting with the `Arm64 changes` list and entries marked `"nvidia": true`. An index entry is a lead and not a source: read the vendor's download page, release notes, or the Linaro page, and use `rtx-spark` as the scope only when the source covers RTX Spark.
+Your job is to promote programs from there into `data/apps/`, which means reading a source yourself. Choose by how many people use the program, starting with the `Arm64 changes` list. A catalog entry replaces the matching NVIDIA row, so promote an NVIDIA-verified program only when you can add something to it, such as a newer native build or known limits. An index entry is a lead and not a source: read the vendor's download page, release notes, or the Linaro page, and use `rtx-spark` as the scope only when the source covers RTX Spark.
 
 Check the open issue titled `Daily discovery: RTX Spark candidates`, then search for more:
 

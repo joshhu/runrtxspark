@@ -28,6 +28,25 @@ export const WOA_REPO = 'https://github.com/Linaro/works-on-woa';
 const woaPage = ({ slug, type }) =>
   /^[\w-]+$/.test(slug ?? '') ? `https://worksonwoa.com/en/${type === 'game' ? 'games' : 'applications'}/${slug}/` : WOA_REPO;
 
+// Linaro's categories folded into this site's, so its filters work on both.
+const WOA_CATEGORIES = {
+  ai: 'ai', 'ai-tool': 'ai',
+  browsers: 'browser',
+  'web-social': 'communication', collaboration: 'communication',
+  'dev-tools': 'developer', oss: 'developer', database: 'developer', library: 'developer',
+  creative: 'creative', photo: 'creative', video: 'creative', cad: 'creative', engineering: 'creative',
+  multimedia: 'creative', music: 'creative', audio: 'creative',
+  prod: 'productivity', business: 'productivity', personalfin: 'productivity', education: 'productivity',
+  enterprise: 'productivity',
+};
+
+export function woaCategory({ type, categories, publisher }) {
+  if (type === 'game') return 'game';
+  if (/^adobe\b/i.test(publisher ?? '')) return 'adobe';
+  for (const c of categories ?? []) if (WOA_CATEGORIES[c]) return WOA_CATEGORIES[c];
+  return 'utility';
+}
+
 /** Converts Linaro's projects.json. Entries with no clear result are left out. */
 export function normalizeWoa(projects) {
   const out = [];
@@ -42,6 +61,7 @@ export function normalizeWoa(projects) {
       version: text(p.versionFrom, 40),
       checked: /^\d{4}-\d{2}-\d{2}/.test(p.lastUpdated ?? '') ? p.lastUpdated.slice(0, 10) : undefined,
       url: woaPage(p),
+      category: woaCategory(p),
       nvidia: (p.validation ?? []).includes('nvidia'),
       game: p.type === 'game',
     }));
@@ -102,6 +122,7 @@ export function mergeIndex({ woa, winget, curated }) {
       version: w.version,
       checked: w.date,
       url: w.url,
+      category: known?.category,
       game: known?.game,
     }));
   }
