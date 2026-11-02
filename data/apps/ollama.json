@@ -14,9 +14,21 @@
       "url": "https://developer.nvidia.com/topics/ai/local-ai/port-apps",
       "title": "NVIDIA: porting local AI apps",
       "type": "vendor",
-      "checked": "2026-10-31"
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/releases/expanded_assets/v0.32.3",
+      "title": "Ollama v0.32.3 release assets (ollama-windows-arm64.zip)",
+      "type": "release",
+      "checked": "2026-11-03"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-03",
+  "caveats": [
+    {
+      "en": "The Arm64 build ships as a ZIP; the release has no Arm64 OllamaSetup.exe.",
+      "zh-TW": "Arm64 版本以 ZIP 提供，該版本沒有 Arm64 的 OllamaSetup.exe。"
+    }
+  ]
 }

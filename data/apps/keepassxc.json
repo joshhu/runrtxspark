@@ -1,0 +1,32 @@
+{
+  "id": "keepassxc",
+  "name": "KeePassXC",
+  "vendor": "KeePassXC Team",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.8.0",
+  "homepage": "https://keepassxc.org",
+  "summary": {
+    "en": "Open-source password manager with official Windows ARM64 MSI and ZIP.",
+    "zh-TW": "開源密碼管理員，官方提供 Windows ARM64 的 MSI 與 ZIP。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/keepassxreboot/keepassxc/releases/expanded_assets/2.8.0",
+      "title": "KeePassXC 2.8.0 release assets (KeePassXC-2.8.0-ARM64.msi)",
+      "type": "release",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

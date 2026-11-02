@@ -6,7 +6,7 @@
   "status": "native",
   "scope": "rtx-spark",
   "maturity": "stable",
-  "confidence": "medium",
+  "confidence": "low",
   "version": "0.21.3",
   "homepage": "https://github.com/NousResearch/hermes-agent",
   "aliases": [
@@ -23,7 +23,7 @@
       "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
       "title": "NVIDIA: RTX Spark PCs available today",
       "type": "vendor",
-      "checked": "2026-10-31"
+      "checked": "2026-11-03"
     },
     {
       "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",

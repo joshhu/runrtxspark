@@ -1,0 +1,32 @@
+{
+  "id": "cmake",
+  "name": "CMake",
+  "vendor": "Kitware",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "4.4.5",
+  "homepage": "https://cmake.org",
+  "summary": {
+    "en": "Build system generator with official windows-arm64 MSI and ZIP.",
+    "zh-TW": "建置系統產生器，官方提供 windows-arm64 的 MSI 與 ZIP。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/Kitware/CMake/releases/expanded_assets/v4.4.5",
+      "title": "CMake 4.4.5 release assets (cmake-4.4.5-windows-arm64.msi)",
+      "type": "release",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

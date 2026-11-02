@@ -1,0 +1,32 @@
+{
+  "id": "gimp",
+  "name": "GIMP",
+  "vendor": "GIMP team",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "3.2.6",
+  "homepage": "https://www.gimp.org",
+  "summary": {
+    "en": "Image editor whose official Windows installer covers both x86_64 and ARM64.",
+    "zh-TW": "影像編輯軟體，官方 Windows 安裝程式同時涵蓋 x86_64 與 ARM64。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.gimp.org/downloads/",
+      "title": "GIMP downloads (3.2.6, x86_64 and ARM64 installer)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}
