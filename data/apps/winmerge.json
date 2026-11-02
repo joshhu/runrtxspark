@@ -1,0 +1,32 @@
+{
+  "id": "winmerge",
+  "name": "WinMerge",
+  "vendor": "WinMerge project",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.16.60",
+  "homepage": "https://winmerge.org",
+  "summary": {
+    "en": "File and folder diff tool with an official ARM64 installer.",
+    "zh-TW": "檔案與資料夾比較工具，官方提供 ARM64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/winmerge/winmerge/releases/expanded_assets/v2.16.60",
+      "title": "WinMerge 2.16.60 release assets (WinMerge-2.16.60-ARM64-Setup.exe)",
+      "type": "release",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}

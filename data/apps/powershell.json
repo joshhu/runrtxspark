@@ -1,0 +1,32 @@
+{
+  "id": "powershell",
+  "name": "PowerShell",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "7.6.9",
+  "homepage": "https://github.com/PowerShell/PowerShell",
+  "summary": {
+    "en": "PowerShell 7 ships a native win-arm64 MSI and zip.",
+    "zh-TW": "PowerShell 7 提供原生 win-arm64 的 MSI 與 zip 套件。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/PowerShell/PowerShell/releases/latest",
+      "title": "PowerShell 7.6.9 release (PowerShell-7.6.9-win-arm64.msi)",
+      "type": "release",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}

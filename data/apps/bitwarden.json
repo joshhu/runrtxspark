@@ -1,0 +1,32 @@
+{
+  "id": "bitwarden",
+  "name": "Bitwarden",
+  "vendor": "Bitwarden",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2026.10.2",
+  "homepage": "https://bitwarden.com",
+  "summary": {
+    "en": "Password manager desktop app with native Windows Arm64 packages.",
+    "zh-TW": "提供原生 Windows Arm64 套件的密碼管理員桌面版。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/bitwarden/clients/releases",
+      "title": "Bitwarden Desktop v2026.10.2 release (Bitwarden-2026.10.2-arm64.appx)",
+      "type": "release",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}

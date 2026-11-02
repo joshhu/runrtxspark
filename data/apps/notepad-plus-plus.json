@@ -1,0 +1,32 @@
+{
+  "id": "notepad-plus-plus",
+  "name": "Notepad++",
+  "vendor": "Notepad++ team",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "8.9.8.1",
+  "homepage": "https://notepad-plus-plus.org",
+  "summary": {
+    "en": "Text and code editor with an official native Arm64 installer.",
+    "zh-TW": "官方提供原生 Arm64 安裝程式的文字與程式碼編輯器。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest",
+      "title": "Notepad++ 8.9.8.1 release assets (npp.8.9.8.1.Installer.arm64.exe)",
+      "type": "release",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "powertoys",
+  "name": "Microsoft PowerToys",
+  "vendor": "Microsoft",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.102.3001",
+  "homepage": "https://github.com/microsoft/PowerToys",
+  "summary": {
+    "en": "Windows utility suite with official Arm64 installers.",
+    "zh-TW": "提供官方 Arm64 安裝程式的 Windows 實用工具集。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/PowerToys/releases/latest",
+      "title": "PowerToys v0.102.3001 release (PowerToysSetup-0.102.3001.0-arm64.exe)",
+      "type": "release",
+      "checked": "2026-11-02"
+    }
+  ],
+  "addedAt": "2026-11-02",
+  "verifiedAt": "2026-11-02"
+}
