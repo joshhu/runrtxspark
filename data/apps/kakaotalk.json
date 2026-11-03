@@ -1,0 +1,40 @@
+{
+  "id": "kakaotalk",
+  "name": "KakaoTalk",
+  "vendor": "Kakao Corp.",
+  "category": "communication",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "x64 26.8.1",
+  "homepage": "https://www.kakaocorp.com",
+  "aliases": [
+    "카카오톡",
+    "Kakao Talk"
+  ],
+  "summary": {
+    "en": "Korean messenger. The Microsoft Store package offers only x64 and x86 installers, so it runs under Prism.",
+    "zh-TW": "南韓常用的通訊軟體。Microsoft Store 套件只提供 x64 與 x86 安裝程式，在 Arm 上以 Prism 轉譯執行。"
+  },
+  "caveats": [
+    {
+      "en": "No Arm64 build is listed. Linaro's catalog records it as working under emulation, but I did not test it on RTX Spark.",
+      "zh-TW": "Store 未列出 Arm64 版本。Linaro 目錄記錄為轉譯可運作，但未在 RTX Spark 上實測。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XP9K178L5G0JQ0?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: 카카오톡 26.8.1.5315 (x64, x86 only)",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}

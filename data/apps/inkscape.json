@@ -1,0 +1,36 @@
+{
+  "id": "inkscape",
+  "name": "Inkscape",
+  "vendor": "Inkscape Project",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "Store build",
+  "homepage": "https://inkscape.org",
+  "summary": {
+    "en": "Vector graphics editor whose Microsoft Store package includes an arm64 build.",
+    "zh-TW": "向量繪圖軟體，Microsoft Store 套件內含 arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "The Store manifest gives no version number. Linaro's catalog lists native 1.3.2.0 and an NVIDIA validation, but the Linaro result was not independently read for RTX Spark.",
+      "zh-TW": "Store 資訊未標示版本號。Linaro 目錄列為原生 1.3.2.0 並有 NVIDIA 驗證，但未另行確認 RTX Spark 的結果。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/9pd9bhglfc7h?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: Inkscape (arm64, x64, x86)",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}

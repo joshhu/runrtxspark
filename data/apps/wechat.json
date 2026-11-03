@@ -1,0 +1,40 @@
+{
+  "id": "wechat",
+  "name": "WeChat",
+  "vendor": "Tencent",
+  "category": "communication",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "x64 4.1",
+  "homepage": "https://www.wechat.com",
+  "aliases": [
+    "微信",
+    "Weixin"
+  ],
+  "summary": {
+    "en": "Chinese messenger. The Microsoft Store package offers only x64 and x86 installers, so it runs under Prism.",
+    "zh-TW": "微信。Microsoft Store 套件只提供 x64 與 x86 安裝程式，在 Arm 上以 Prism 轉譯執行。"
+  },
+  "caveats": [
+    {
+      "en": "No Arm64 build is listed. Linaro's catalog records it as working under emulation, but I did not test it on RTX Spark.",
+      "zh-TW": "Store 未列出 Arm64 版本。Linaro 目錄記錄為轉譯可運作，但未在 RTX Spark 上實測。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XPFCKBRNFZQ62G?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: 微信 4.1.15.12 (x64, x86 only)",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}

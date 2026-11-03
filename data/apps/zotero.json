@@ -1,0 +1,32 @@
+{
+  "id": "zotero",
+  "name": "Zotero",
+  "vendor": "Corporation for Digital Scholarship",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "10.0.7",
+  "homepage": "https://www.zotero.org",
+  "summary": {
+    "en": "Reference manager with an arm64 Windows installer published on download.zotero.org.",
+    "zh-TW": "文獻管理軟體，download.zotero.org 提供 Windows arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/DigitalScholar/Zotero/10.0.7/DigitalScholar.Zotero.installer.yaml",
+      "title": "winget manifest 10.0.7: Zotero-10.0.7_arm64_setup.exe",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}

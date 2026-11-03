@@ -1,0 +1,32 @@
+{
+  "id": "putty",
+  "name": "PuTTY",
+  "vendor": "Simon Tatham",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.85",
+  "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+  "summary": {
+    "en": "SSH and telnet client whose Microsoft Store package ships an arm64 MSI.",
+    "zh-TW": "SSH 與 Telnet 用戶端，Microsoft Store 套件提供 arm64 的 MSI。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XPFNZKSKLBP7RJ?Market=US&Locale=en-US",
+      "title": "Microsoft Store package manifest: PuTTY 0.85.0.0 (arm64 MSI)",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}

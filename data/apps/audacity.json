@@ -1,0 +1,42 @@
+{
+  "id": "audacity",
+  "name": "Audacity",
+  "vendor": "Audacity Team",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "4.0.2",
+  "homepage": "https://www.audacityteam.org",
+  "summary": {
+    "en": "Audio editor with an official Arm64 MSI installer and portable archive on the download page.",
+    "zh-TW": "音訊編輯軟體，官方下載頁提供 Arm64 的 MSI 安裝程式與免安裝版。"
+  },
+  "caveats": [
+    {
+      "en": "The download page says the Arm64 builds have no plugin support.",
+      "zh-TW": "官方下載頁註明 Arm64 版本不支援外掛。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.audacityteam.org/download/windows/",
+      "title": "Audacity download page: ARM64 MSI and portable, version 4.0.2",
+      "type": "vendor",
+      "checked": "2026-11-04"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Audacity/Audacity/4.0.2.263060742/Audacity.Audacity.installer.yaml",
+      "title": "winget manifest: audacity-win-4.0.2-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-04"
+    }
+  ],
+  "addedAt": "2026-11-04",
+  "verifiedAt": "2026-11-04"
+}
