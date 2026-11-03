@@ -17,6 +17,7 @@ Skipping a step is a failed run, even when nothing new turns up. Finding nothing
 - Actually read the sources of 10 entries (step 3), taking the oldest `verifiedAt` first. Some vendors refuse automated requests (`helpx.adobe.com` returns 403). A source you could not read doesn't count: leave that entry's dates alone, list it in your summary, and move on to the next entry until you have read 10. Update `verifiedAt` and `checked` on each entry you confirmed, so tomorrow's run moves on to different entries.
 - Handle the latest `Arm64 changes` comment on the discovery issue (step 2). Every program it flags as not native gets re-read and updated today.
 - Promote at least 5 widely used programs from `data/index/` to catalog entries (step 2), reading a source for each, and name them in your summary. A catalog that only re-checks what it already lists misses software people use.
+- Add at least 2 programs that people in the site's regions rely on and that the index lacks, searching the vendor's own site in the local language: Taiwan (input methods such as 嘸蝦米 and 自然輸入法, 自然人憑證 and 健保卡 card components, bank and tax software), Japan, Korea and China. The Linaro and winget index is mostly Western software, so regional programs never reach it. Programs that fail count too.
 - Read the machine sources (step 4). Trying one news site that turns out to be blocked does not count.
 - Write every date as the Taiwan date from `TZ=Asia/Taipei date +%F`. This run starts while UTC is still on the previous day.
 

@@ -1,0 +1,37 @@
+{
+  "id": "boshiamy",
+  "name": "嘸蝦米輸入法 (Boshiamy)",
+  "vendor": "行易有限公司 (Boshiamy)",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "J rev 476+",
+  "homepage": "https://boshiamy.com",
+  "aliases": [
+    "嘸蝦米",
+    "Boshiamy",
+    "Liu"
+  ],
+  "summary": {
+    "en": "The Boshiamy input method supports Windows on Arm from J edition update rev 476 (November 2025). The current update is rev 478.",
+    "zh-TW": "嘸蝦米輸入法從 J 版更新檔 rev 476（2025 年 11 月）起支援 Windows on Arm，目前最新的更新檔是 rev 478。"
+  },
+  "caveats": [
+    {
+      "en": "Install the update from the member login page; older J editions do not support Arm. The vendor says only that it supports Windows on Arm, and it has not been confirmed on RTX Spark yet.",
+      "zh-TW": "要從官網「會員登入」下載更新檔，舊版 J 版不支援 Arm。原廠只寫了支援 Windows on Arm，還沒有人在 RTX Spark 上確認過。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://boshiamy.com/news_news.php",
+      "title": "嘸蝦米最新消息：2025-11-04 J 版更新檔 rev 476，支援 Windows on Arm",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}
