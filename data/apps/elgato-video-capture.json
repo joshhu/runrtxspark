@@ -1,0 +1,27 @@
+{
+  "id": "elgato-video-capture",
+  "name": "Elgato Video Capture",
+  "vendor": "Elgato (Corsair)",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.elgato.com/us/en/s/downloads",
+  "caveats": [
+    {
+      "en": "Elgato lists Video Capture (and its device) as 'does not work' on Windows on Arm; Prism cannot emulate its DirectShow driver. No Arm version is announced.",
+      "zh-TW": "Elgato 將 Video Capture（及其擷取裝置）列為在 Windows on Arm 上「無法使用」；Prism 無法模擬它的 DirectShow 驅動程式。尚未宣布 Arm 版。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://help.elgato.com/hc/en-us/articles/29935411773837-Windows-on-ARM-compatibility",
+      "title": "Elgato: Windows on ARM compatibility table",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

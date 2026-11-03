@@ -1,0 +1,43 @@
+{
+  "id": "ea-sports-fc-26",
+  "name": "EA SPORTS FC 26",
+  "vendor": "Electronic Arts",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.ea.com/games/ea-sports-fc/fc-26",
+  "caveats": [
+    {
+      "en": "The PC version requires EA Javelin anti-cheat, which has no Arm64 driver yet; Battlefield 6, which uses the same anti-cheat, refuses to launch on RTX Spark. EA says Javelin reaches RTX Spark in early 2027.",
+      "zh-TW": "PC 版需要 EA Javelin 反作弊，而它還沒有 Arm64 驅動程式；同樣使用 Javelin 的《戰地風雲 6》在 RTX Spark 上無法啟動。EA 表示 Javelin 會在 2027 年初支援 RTX Spark。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.ea.com/games/ea-sports-fc/news/pitch-notes-fc26-pc-deep-dive",
+      "title": "EA: FC 26 PC deep dive, protected by EA Javelin Anticheat",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03",
+  "aliases": [
+    "FC 26",
+    "EA FC 26"
+  ]
+}

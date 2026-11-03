@@ -1,0 +1,27 @@
+{
+  "id": "mackie-drivers",
+  "name": "Mackie Windows audio drivers",
+  "vendor": "Mackie (LOUD Audio)",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://mackie.com",
+  "caveats": [
+    {
+      "en": "Mackie says its Windows drivers are x64-only and 'will not install or function correctly' on Snapdragon/Arm PCs, since hardware drivers can't be emulated. No Arm driver is announced.",
+      "zh-TW": "Mackie 表示其 Windows 驅動程式只有 x64 版，在 Snapdragon/Arm 電腦上「無法安裝或正常運作」，因為硬體驅動程式無法模擬。尚未宣布 Arm 版驅動。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://help.mackie.com/hc/en-us/articles/15022597422607-Why-Can-t-I-Install-the-Windows-Driver-for-My-Mackie-Product",
+      "title": "Mackie: why the Windows driver won't install on Snapdragon/Arm PCs",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

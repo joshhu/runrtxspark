@@ -1,0 +1,27 @@
+{
+  "id": "quickbooks-desktop",
+  "name": "QuickBooks Desktop",
+  "vendor": "Intuit",
+  "category": "productivity",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://quickbooks.intuit.com/desktop/",
+  "caveats": [
+    {
+      "en": "Intuit says QuickBooks Desktop is built for Intel/AMD, doesn't work properly on Arm, and the 6123 error can't be fixed by an update. Intuit points Arm users to hosted desktops or QuickBooks Online.",
+      "zh-TW": "Intuit 表示 QuickBooks Desktop 是為 Intel/AMD 設計，在 Arm 上無法正常運作，6123 錯誤也無法靠更新修正。Intuit 建議 Arm 使用者改用代管桌面或 QuickBooks Online。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://quickbooks.intuit.com/learn-support/en-us/help-articles/how-to-fix-error-6123-0/00/262247",
+      "title": "Intuit: Error 6123 on ARM computers, QuickBooks Desktop not compatible",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

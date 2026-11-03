@@ -1,0 +1,43 @@
+{
+  "id": "call-of-duty",
+  "name": "Call of Duty (Black Ops 7, Warzone)",
+  "vendor": "Activision",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.callofduty.com",
+  "aliases": [
+    "決勝時刻",
+    "決勝時刻：戰區"
+  ],
+  "caveats": [
+    {
+      "en": "Ricochet kernel anti-cheat has no Arm64 driver yet. XDA saw Warzone crash on launch on RTX Spark, and Activision lists only Intel/AMD CPUs. NVIDIA says Call of Duty is coming to RTX Spark in 2027.",
+      "zh-TW": "Ricochet 核心層反作弊尚無 Arm64 驅動程式。XDA 在 RTX Spark 上實測《戰區》一啟動就當掉，Activision 也只列出 Intel/AMD 處理器。NVIDIA 表示《決勝時刻》要到 2027 年才會支援 RTX Spark。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://support.activision.com/black-ops-7/articles/pc-system-requirements-for-black-ops-7",
+      "title": "Activision: Black Ops 7 PC requirements, only Intel/AMD CPUs with AVX supported",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

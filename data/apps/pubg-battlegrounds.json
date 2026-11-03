@@ -1,0 +1,36 @@
+{
+  "id": "pubg-battlegrounds",
+  "name": "PUBG: BATTLEGROUNDS",
+  "vendor": "KRAFTON",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://pubg.com",
+  "aliases": [
+    "絕地求生"
+  ],
+  "caveats": [
+    {
+      "en": "Not playable on RTX Spark yet: the developer has not finished its side of Arm anti-cheat support. KRAFTON intends to bring it to the platform by the first half of 2027.",
+      "zh-TW": "目前在 RTX Spark 上還不能玩：開發商尚未完成 Arm 版反作弊的整合。KRAFTON 預計在 2027 年上半年前讓它支援這個平台。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "delta-force",
+  "name": "Delta Force",
+  "vendor": "Team Jade (Tencent)",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.playdeltaforce.com",
+  "aliases": [
+    "三角洲行動"
+  ],
+  "caveats": [
+    {
+      "en": "Tencent ACE kernel anti-cheat blocks it: XDA got an unsupported-platform pop-up on RTX Spark. Tencent says it will support RTX Spark, with limited testing planned for a future season; no date.",
+      "zh-TW": "被騰訊 ACE 核心層反作弊擋下：XDA 在 RTX Spark 上啟動時跳出「不支援的平台」。騰訊表示會支援 RTX Spark，並計畫在之後的賽季做小規模測試，沒有給日期。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

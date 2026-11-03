@@ -1,0 +1,27 @@
+{
+  "id": "elgato-camera-hub",
+  "name": "Elgato Camera Hub",
+  "vendor": "Elgato (Corsair)",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.elgato.com/us/en/s/downloads",
+  "caveats": [
+    {
+      "en": "Elgato marks Camera Hub as 'does not work: software installation fails' on Windows on Arm. Facecam hardware still works as a standard webcam in other apps.",
+      "zh-TW": "Elgato 將 Camera Hub 標示為「無法使用：軟體安裝失敗」。Facecam 硬體本身仍可在其他 App 中當一般網路攝影機使用。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://help.elgato.com/hc/en-us/articles/29935411773837-Windows-on-ARM-compatibility",
+      "title": "Elgato: Windows on ARM compatibility table",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

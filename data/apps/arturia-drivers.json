@@ -1,0 +1,27 @@
+{
+  "id": "arturia-drivers",
+  "name": "Arturia ASIO and MIDI drivers",
+  "vendor": "Arturia",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.arturia.com",
+  "caveats": [
+    {
+      "en": "Arturia says none of its drivers (audio interfaces, controllers, synths) support Windows on Arm; the installer stops with 'The Current system is not supported'. Its plug-ins may run under emulation but are untested.",
+      "zh-TW": "Arturia 表示旗下所有驅動程式（錄音介面、控制器、合成器）都不支援 Windows on Arm，安裝程式會顯示「The Current system is not supported」。外掛在模擬下或許能跑，但未經測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://support.arturia.com/hc/en-us/articles/4407871884818-Compatibility-with-Windows-11",
+      "title": "Arturia: Windows 11 compatibility, drivers not compatible with Windows on Arm",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

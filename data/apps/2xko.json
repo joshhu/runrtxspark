@@ -1,0 +1,33 @@
+{
+  "id": "2xko",
+  "name": "2XKO",
+  "vendor": "Riot Games",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://2xko.riotgames.com",
+  "caveats": [
+    {
+      "en": "Riot lists x64 as the required OS architecture and needs the Vanguard anti-cheat setup (TPM 2.0, Secure Boot). On RTX Spark the Vanguard driver refuses to install. Riot has not given an Arm date.",
+      "zh-TW": "Riot 規定作業系統架構須為 x64，並需要 Vanguard 反作弊環境（TPM 2.0、安全開機）。在 RTX Spark 上 Vanguard 驅動程式無法安裝。Riot 尚未公布 Arm 支援時程。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://support.riotgames.com/2xko/performance/2xko-system-requirements",
+      "title": "Riot: 2XKO system requirements, OS architecture x64",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

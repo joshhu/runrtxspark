@@ -1,0 +1,27 @@
+{
+  "id": "presonus-universal-control",
+  "name": "PreSonus Universal Control",
+  "vendor": "PreSonus (Fender)",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.presonus.com",
+  "caveats": [
+    {
+      "en": "PreSonus says Snapdragon/Windows on Arm is currently not supported in Universal Control with PreSonus hardware, and will update when Arm drivers ship. No date given.",
+      "zh-TW": "PreSonus 表示 Universal Control 搭配其硬體目前不支援 Snapdragon/Windows on Arm，等 Arm 驅動推出後會更新說明，沒有給日期。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://support.presonus.com/hc/en-us/articles/36667812249357-Windows-Arm-Processors-Snapdragon-are-currently-NOT-supported-in-Universal-Control-with-PreSonus-hardware",
+      "title": "PreSonus: Windows Arm (Snapdragon) not supported in Universal Control (May 2025)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

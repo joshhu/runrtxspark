@@ -1,0 +1,30 @@
+{
+  "id": "arena-breakout-infinite",
+  "name": "Arena Breakout: Infinite",
+  "vendor": "MoreFun Studios (Tencent)",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.arenabreakoutinfinite.com",
+  "aliases": [
+    "暗區突圍：無限"
+  ],
+  "caveats": [
+    {
+      "en": "Its anti-cheat is not on RTX Spark yet. Tencent says the game is coming to RTX Spark laptops with anti-cheat in 2027. No independent launch test found.",
+      "zh-TW": "反作弊系統尚未支援 RTX Spark。騰訊表示本作會在 2027 年連同反作弊一起登上 RTX Spark 筆電。目前找不到獨立實測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

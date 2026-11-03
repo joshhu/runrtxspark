@@ -6,6 +6,8 @@ mkdirSync('tmpcode', { recursive: true });
 
 const BASE = 'http://localhost:4321/rtxspark/';
 const OWN = readdirSync('data/apps').filter((f) => f.endsWith('.json')).length;
+const OWN_BROKEN = readdirSync('data/apps').filter((f) => f.endsWith('.json'))
+  .filter((f) => JSON.parse(readFileSync(`data/apps/${f}`, 'utf8')).status === 'broken').length;
 const ownNames = new Set(readdirSync('data/apps').filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(`data/apps/${f}`, 'utf8')).name.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '')));
 const NV = JSON.parse(readFileSync('data/index/woa.json', 'utf8'))
@@ -99,7 +101,7 @@ const lastPage = Math.ceil(listed / 50);
 check('pager offers the last page', (await page.locator(`#pager-nums [data-page="${lastPage}"]`).count()) === 1);
 await page.locator('#pager-next').click();
 check('next page moves on', page.url().includes('page=2') && (await page.locator('#pager-nums [aria-current="page"]').textContent()) === '2');
-check('page two mixes the rest of this site\'s entries with NVIDIA\'s', (await visible()) === 50 && (await nvRows()) === 100 - OWN, `${await nvRows()}`);
+check('page two continues where page one stopped', (await visible()) === 50 && (await nvRows()) === Math.max(0, 100 - OWN), `${await nvRows()}`);
 await page.locator(`#pager-nums [data-page="${lastPage}"]`).click();
 check('last page holds the remainder', (await visible()) === listed - (lastPage - 1) * 50, `${await visible()}`);
 check('previous is enabled on the last page and next is not', !(await page.locator('#pager-prev').isDisabled()) && (await page.locator('#pager-next').isDisabled()));
@@ -177,7 +179,7 @@ check('empty state links to report', (await page.locator('#empty-action').getAtt
 }
 await page.fill('#q', '');
 await page.locator('input[name=status][value=broken]').check();
-check('status filter works', (await ownVisible()) === 4, `${await ownVisible()}`);
+check('status filter works', (await ownVisible()) === OWN_BROKEN, `${await ownVisible()} of ${OWN_BROKEN}`);
 await page.locator('input[name=status][value=broken]').uncheck();
 await page.locator('.cat[data-cat=adobe]').click();
 check('category filter works', (await ownVisible()) === 8, `${await ownVisible()}`);

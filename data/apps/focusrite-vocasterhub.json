@@ -1,0 +1,27 @@
+{
+  "id": "focusrite-vocasterhub",
+  "name": "Vocaster Hub",
+  "vendor": "Focusrite",
+  "category": "utility",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://focusrite.com",
+  "caveats": [
+    {
+      "en": "Focusrite says Vocaster Hub is not currently compatible with Windows on Arm. Vocaster audio still works through the standalone Arm driver; only the control app is missing.",
+      "zh-TW": "Focusrite 表示 Vocaster Hub 目前與 Windows on Arm 不相容。Vocaster 的聲音仍可透過獨立的 Arm 驅動程式使用，只是少了控制 App。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://support.focusrite.com/hc/en-gb/articles/21643588192146-Focusrite-compatibility-with-Windows-on-Arm",
+      "title": "Focusrite: interface and app compatibility with Windows on Arm",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

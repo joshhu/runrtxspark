@@ -1,0 +1,33 @@
+{
+  "id": "slate-digital-plugins",
+  "name": "Slate Digital plug-ins",
+  "vendor": "Slate Digital",
+  "category": "creative",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://slatedigital.com",
+  "caveats": [
+    {
+      "en": "Slate Digital says its plug-ins are not compatible with Windows on Arm (Snapdragon) and recommends Intel/AMD PCs. Arm support is being explored with no date.",
+      "zh-TW": "Slate Digital 表示其外掛與 Windows on Arm（Snapdragon）不相容，建議使用 Intel/AMD 電腦。Arm 支援仍在評估中，沒有時程。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://support.slatedigital.com/hc/en-us/articles/33265225047955-ARM-Based-Windows-Devices-Why-Slate-Digital-Plugins-Aren-t-Ready-for-Snapdragon-Yet",
+      "title": "Slate Digital: plug-ins not compatible with Snapdragon/Windows on Arm (Apr 2025)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.production-expert.com/production-expert-1/windows-on-arm-for-your-studio-what-audio-pros-need-to-know",
+      "title": "Production Expert: Windows on Arm for audio pros (Jul 13, 2026)",
+      "type": "review",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

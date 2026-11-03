@@ -1,0 +1,27 @@
+{
+  "id": "st-link-driver",
+  "name": "ST-LINK USB driver",
+  "vendor": "STMicroelectronics",
+  "category": "developer",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.st.com/en/development-tools/stsw-link009.html",
+  "caveats": [
+    {
+      "en": "ST says it does not yet ship native Windows on Arm drivers for ST-LINK probes, so STM32CubeProgrammer can't use them out of the box. A user-reported WinUSB registry workaround exists but is unofficial.",
+      "zh-TW": "ST 表示尚未提供 ST-LINK 的原生 Windows on Arm 驅動程式，STM32CubeProgrammer 無法直接使用。有使用者分享改用 WinUSB 並修改登錄檔的做法，但並非官方方案。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://community.st.com/t5/stm32cubeprogrammer-mcus/snapdragon-stlink-interface/td-p/840979",
+      "title": "ST Community: no native Windows on Arm ST-LINK drivers yet (ST moderator, Oct 2025)",
+      "type": "community",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

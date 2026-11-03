@@ -1,0 +1,27 @@
+{
+  "id": "vmware-workstation-pro",
+  "name": "VMware Workstation Pro",
+  "vendor": "Broadcom",
+  "category": "developer",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion",
+  "caveats": [
+    {
+      "en": "Built for x86 only and its drivers are x64-only, which Prism cannot emulate. A June 2026 install attempt on Snapdragon ended during driver installation. Use Hyper-V or VirtualBox 7.2 (Arm host, experimental) instead.",
+      "zh-TW": "只為 x86 開發，驅動程式也只有 x64 版，Prism 無法模擬。2026 年 6 月有人在 Snapdragon 上安裝，到驅動程式階段就失敗。可改用 Hyper-V 或 VirtualBox 7.2（Arm 主機，實驗性質）。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://community.broadcom.com/vmware-cloud-foundation/question/snapdragon-x-laptops-does-vmware-workstation-work",
+      "title": "Broadcom community: Workstation not supported on Snapdragon; install fails (Jun 2026)",
+      "type": "community",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "skate",
+  "name": "skate.",
+  "vendor": "Electronic Arts",
+  "category": "game",
+  "status": "broken",
+  "scope": "rtx-spark",
+  "maturity": "stable",
+  "confidence": "medium",
+  "homepage": "https://www.ea.com/games/skate/skate",
+  "caveats": [
+    {
+      "en": "Protected by EA Javelin anti-cheat, which still requires x86-64 Windows; Battlefield 6 with the same anti-cheat refuses to launch on RTX Spark. EA says Javelin reaches RTX Spark in early 2027.",
+      "zh-TW": "使用 EA Javelin 反作弊，目前仍需要 x86-64 版 Windows；同樣使用 Javelin 的《戰地風雲 6》在 RTX Spark 上無法啟動。EA 表示 Javelin 會在 2027 年初支援 RTX Spark。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.ea.com/news/ea-javelin-anticheat-2026-update",
+      "title": "EA: Javelin Anticheat 2026 update, native ARM64 support 'in the near future'",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
+      "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
+      "type": "vendor",
+      "checked": "2026-11-03"
+    },
+    {
+      "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
+      "title": "XDA: RTX Spark anti-cheat tests (Oct 21, 2026), 5 of 9 worked",
+      "type": "review",
+      "checked": "2026-11-03"
+    }
+  ],
+  "addedAt": "2026-11-03",
+  "verifiedAt": "2026-11-03"
+}
