@@ -19,9 +19,10 @@ const en = {
     all: 'All', allStatuses: 'All results', software: 'Software', result: 'Result', version: 'Version', checked: 'Checked', reports: 'Reports',
     count: '{n} programs', none: 'No results for “{q}”.', noneAction: 'Report the first result', caveat: 'Has limits',
     category: 'Category', filterStatus: 'Filter by result',
+    pages: "Pages", prev: "Previous", next: "Next", range: "{from}–{to} of {n}", pageN: "Page {n}", brokenNote: "Catalogs mostly record software that works, so failures are under-counted. If something fails for you, report it.",
   },
   more: { searchNote: 'Search also covers {n} programs from other catalogs.', title: '{n} more from other catalogs', note: 'From Linaro Works on WoA and winget, mostly tested on other Windows on Arm laptops. This site has not checked these. Select one to open its source.', browse: 'Browse all {n}', next: 'Show more', loading: 'Searching other catalogs', error: 'Other catalogs could not be loaded. Try again.' },
-  nv: { title: 'Verified by NVIDIA ({n})', note: "NVIDIA verified these for Linaro's Works on WoA catalog, and they are listed with NVIDIA's result as published. Select one to open it on Works on WoA.", tag: 'Verified by NVIDIA' },
+  nv: { note: "Rows marked “Verified by NVIDIA” show the result NVIDIA verified for Linaro’s Works on WoA catalog, and open on that site. The other rows open this site’s page with its sources.", tag: "Verified by NVIDIA" },
   categories: { productivity: 'Productivity', adobe: 'Adobe', creative: 'Creative & CAD', browser: 'Browsers', developer: 'Developer tools', ai: 'AI & inference', utility: 'Utilities', game: 'Games', communication: 'Communication' },
   app: {
     back: 'All software', confirm: 'Report your result', fix: 'Something wrong here?', fixAction: 'Report a correction', sources: 'Sources',
@@ -95,9 +96,10 @@ const zhTW = {
     all: '全部', allStatuses: '全部結果', software: '軟體', result: '相容性', version: '版本', checked: '查證日期', reports: '回報',
     count: '{n} 套軟體', none: '找不到「{q}」。', noneAction: '回報第一筆結果', caveat: '有限制',
     category: '分類', filterStatus: '依相容性篩選',
+    pages: "分頁", prev: "上一頁", next: "下一頁", range: "第 {from}–{to} 筆，共 {n} 筆", pageN: "第 {n} 頁", brokenNote: "各資料庫大多只記錄能用的軟體，所以無法執行的數量偏低。遇到不能用的軟體，歡迎回報。",
   },
   more: { searchNote: '搜尋範圍還包含其他資料庫的 {n} 套軟體。', title: '其他資料庫還有 {n} 筆', note: '來自 Linaro Works on WoA 和 winget，大多在其他 Windows on Arm 筆電上測試，本站沒有逐筆查證。選取即可開啟來源。', browse: '瀏覽全部 {n} 筆', next: '顯示更多', loading: '正在搜尋其他資料庫', error: '無法載入其他資料庫，請再試一次。' },
-  nv: { title: 'NVIDIA 驗證（{n} 套）', note: 'NVIDIA 為 Linaro 的 Works on WoA 目錄驗證過這些軟體，本站照 NVIDIA 公布的結果列出。選取即可在 Works on WoA 開啟。', tag: 'NVIDIA 驗證' },
+  nv: { note: "標示「NVIDIA 驗證」的是 NVIDIA 為 Linaro Works on WoA 目錄驗證的結果，選取會開啟該網站的頁面。其餘項目會開啟本站附有來源的頁面。", tag: "NVIDIA 驗證" },
   categories: { productivity: '辦公', adobe: 'Adobe', creative: '創作與 CAD', browser: '瀏覽器', developer: '開發工具', ai: 'AI 與推論', utility: '工具程式', game: '遊戲', communication: '通訊' },
   app: {
     back: '全部軟體', confirm: '回報你的結果', fix: '這裡的資料有誤？', fixAction: '回報更正', sources: '資料來源',
@@ -167,9 +169,10 @@ const zhCN = {
   list: {
     all: '全部', allStatuses: '全部结果', software: '软件', result: '兼容性', version: '版本', checked: '核实日期', reports: '报告',
     count: '{n} 款软件', none: '找不到“{q}”。', noneAction: '报告第一条结果', caveat: '有限制', category: '分类', filterStatus: '按兼容性筛选',
+    pages: "分页", prev: "上一页", next: "下一页", range: "第 {from}–{to} 条，共 {n} 条", pageN: "第 {n} 页", brokenNote: "各数据库大多只记录能用的软件，所以无法运行的数量偏低。遇到不能用的软件，欢迎反馈。",
   },
   more: { searchNote: '搜索范围还包含其他数据库的 {n} 款软件。', title: '其他数据库还有 {n} 条', note: '来自 Linaro Works on WoA 和 winget，大多在其他 Windows on Arm 笔记本上测试，本站没有逐条核实。选择即可打开来源。', browse: '浏览全部 {n} 条', next: '显示更多', loading: '正在搜索其他数据库', error: '无法加载其他数据库，请重试。' },
-  nv: { title: 'NVIDIA 验证（{n} 款）', note: 'NVIDIA 为 Linaro 的 Works on WoA 目录验证过这些软件，本站按 NVIDIA 公布的结果列出。选择即可在 Works on WoA 打开。', tag: 'NVIDIA 验证' },
+  nv: { note: "标有“NVIDIA 验证”的是 NVIDIA 为 Linaro Works on WoA 目录验证的结果，选择会打开该网站的页面。其余条目会打开本站附有来源的页面。", tag: "NVIDIA 验证" },
   categories: { productivity: '办公', adobe: 'Adobe', creative: '创作与 CAD', browser: '浏览器', developer: '开发工具', ai: 'AI 与推理', utility: '实用工具', game: '游戏', communication: '通讯' },
   app: {
     back: '全部软件', confirm: '报告你的结果', fix: '这里的数据有误？', fixAction: '报告更正', sources: '数据来源', limits: '已知限制', testedVersion: '版本', confidence: '证据强度', checkedOn: '核实日期', website: '官方网站',
@@ -228,9 +231,10 @@ const ja = {
   list: {
     all: 'すべて', allStatuses: 'すべての結果', software: 'ソフト', result: '互換性', version: 'バージョン', checked: '確認日', reports: '報告',
     count: '{n} 本', none: '「{q}」は見つかりませんでした。', noneAction: '最初の結果を報告', caveat: '制限あり', category: 'カテゴリ', filterStatus: '互換性で絞り込む',
+    pages: "ページ", prev: "前へ", next: "次へ", range: "{n} 件中 {from}–{to} 件", pageN: "{n} ページ目", brokenNote: "多くのカタログは動くソフトだけを記録するため、動かないソフトの数は少なめに出ています。動かないソフトを見つけたら報告してください。",
   },
   more: { searchNote: '検索対象には他のカタログの {n} 本のソフトも含まれます。', title: '他のカタログにあと {n} 件', note: 'Linaro Works on WoA と winget の情報で、大半は他の Windows on Arm ノートでテストされたものです。当サイトでは個別に確認していません。選択すると情報源を開きます。', browse: '全 {n} 件を見る', next: 'さらに表示', loading: '他のカタログを検索中', error: '他のカタログを読み込めませんでした。もう一度お試しください。' },
-  nv: { title: 'NVIDIA 検証済み（{n} 本）', note: 'NVIDIA が Linaro の Works on WoA カタログ向けに検証したソフトで、NVIDIA が公開した結果のまま掲載しています。選択すると Works on WoA で開きます。', tag: 'NVIDIA 検証済み' },
+  nv: { note: "「NVIDIA 検証済み」の行は、NVIDIA が Linaro の Works on WoA カタログ向けに検証した結果で、選択するとそのサイトのページを開きます。その他の行は情報源付きの当サイトのページを開きます。", tag: "NVIDIA 検証済み" },
   categories: { productivity: 'オフィス', adobe: 'Adobe', creative: 'クリエイティブ・CAD', browser: 'ブラウザ', developer: '開発ツール', ai: 'AI・推論', utility: 'ユーティリティ', game: 'ゲーム', communication: 'コミュニケーション' },
   app: {
     back: 'すべてのソフト', confirm: '結果を報告', fix: '情報に誤りがありますか？', fixAction: '修正を報告', sources: '出典', limits: '既知の制限', testedVersion: 'バージョン', confidence: '根拠の強さ', checkedOn: '確認日', website: '公式サイト',
@@ -289,9 +293,10 @@ const ko = {
   list: {
     all: '전체', allStatuses: '모든 결과', software: '소프트웨어', result: '호환성', version: '버전', checked: '확인일', reports: '보고',
     count: '{n}개 프로그램', none: '“{q}” 결과가 없습니다.', noneAction: '첫 결과 보고하기', caveat: '제한 있음', category: '분류', filterStatus: '호환성으로 필터',
+    pages: "페이지", prev: "이전", next: "다음", range: "{n}개 중 {from}–{to}", pageN: "{n}페이지", brokenNote: "대부분의 카탈로그는 작동하는 프로그램만 기록하므로 실행되지 않는 프로그램 수가 적게 나옵니다. 실행되지 않는 프로그램을 발견하면 제보해 주세요.",
   },
   more: { searchNote: '검색 범위에는 다른 카탈로그의 프로그램 {n}개도 포함됩니다.', title: '다른 카탈로그의 결과 {n}개', note: 'Linaro Works on WoA와 winget의 정보로, 대부분 다른 Windows on Arm 노트북에서 테스트되었습니다. 이 사이트에서 하나하나 확인하지 않았습니다. 선택하면 출처가 열립니다.', browse: '{n}개 모두 보기', next: '더 보기', loading: '다른 카탈로그 검색 중', error: '다른 카탈로그를 불러오지 못했습니다. 다시 시도하세요.' },
-  nv: { title: 'NVIDIA 검증 ({n}개)', note: 'NVIDIA가 Linaro의 Works on WoA 카탈로그를 위해 검증한 프로그램으로, NVIDIA가 공개한 결과 그대로 싣습니다. 선택하면 Works on WoA에서 열립니다.', tag: 'NVIDIA 검증' },
+  nv: { note: "“NVIDIA 검증” 표시가 있는 행은 NVIDIA가 Linaro의 Works on WoA 카탈로그를 위해 검증한 결과이며, 선택하면 해당 사이트의 페이지가 열립니다. 나머지 행은 출처가 담긴 이 사이트의 페이지를 엽니다.", tag: "NVIDIA 검증" },
   categories: { productivity: '오피스', adobe: 'Adobe', creative: '크리에이티브·CAD', browser: '브라우저', developer: '개발 도구', ai: 'AI·추론', utility: '유틸리티', game: '게임', communication: '커뮤니케이션' },
   app: {
     back: '모든 소프트웨어', confirm: '내 결과 보고', fix: '잘못된 정보가 있나요?', fixAction: '수정 보고', sources: '출처', limits: '알려진 제한', testedVersion: '버전', confidence: '근거 수준', checkedOn: '확인일', website: '공식 사이트',
