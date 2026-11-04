@@ -1,0 +1,32 @@
+{
+  "id": "dropbox",
+  "name": "Dropbox",
+  "vendor": "Dropbox, Inc.",
+  "category": "productivity",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "270.4+",
+  "homepage": "https://www.dropbox.com",
+  "summary": {
+    "en": "Cloud sync client whose offline EXE and enterprise MSI installers both have an arm64 build.",
+    "zh-TW": "雲端同步用戶端，離線 EXE 與企業版 MSI 安裝程式都有 arm64 版本。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/Dropbox/Dropbox/270.4.3312/Dropbox.Dropbox.installer.yaml",
+      "title": "winget manifest 270.4.3312: Offline Installer.arm64.exe and Enterprise Installer.arm64.msi",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "zeal",
+  "name": "Zeal",
+  "vendor": "Zeal contributors",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.9.2",
+  "homepage": "https://zealdocs.org",
+  "summary": {
+    "en": "Offline API documentation browser with a zeal-0.9.2-windows-arm64.msi release asset.",
+    "zh-TW": "離線 API 文件瀏覽器，GitHub 發行版提供 zeal-0.9.2-windows-arm64.msi。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OlegShparber/Zeal/0.9.2/OlegShparber.Zeal.installer.yaml",
+      "title": "winget manifest 0.9.2: zeal-0.9.2-windows-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

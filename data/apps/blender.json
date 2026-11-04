@@ -5,14 +5,14 @@
   "category": "creative",
   "status": "native",
   "scope": "rtx-spark",
-  "maturity": "stable",
+  "maturity": "beta",
   "confidence": "medium",
-  "version": "5.2 LTS",
+  "version": "5.3 beta",
   "homepage": "https://www.blender.org",
   "caveats": [
     {
-      "en": "GPU rendering with OptiX was tested on the 5.3 beta. Sources disagree about GPU support in stable versions.",
-      "zh-TW": "OptiX GPU 算圖是以 5.3 Beta 實測，各來源對穩定版的 GPU 支援說法不一。"
+      "en": "GPU rendering with OptiX was tested on the 5.3 beta; the review does not say whether the build is native Arm64. Microsoft's Surface Arm FAQ lists Blender as running natively on Arm, but that is not RTX Spark specific.",
+      "zh-TW": "OptiX GPU 算圖是以 5.3 Beta 實測，該評測未說明是否為原生 Arm64。微軟 Surface Arm 常見問題將 Blender 列為原生 Arm 執行，但並非針對 RTX Spark。"
     }
   ],
   "evidence": [
@@ -20,9 +20,15 @@
       "url": "https://www.xda-developers.com/rtx-spark-laptop-rendered-blender-scene-too-big-rtx-5090-local-llm/",
       "title": "XDA: Blender scene rendered on RTX Spark",
       "type": "review",
-      "checked": "2026-10-31"
+      "checked": "2026-11-05"
+    },
+    {
+      "url": "https://learn.microsoft.com/surface/surface-arm-faq",
+      "title": "Microsoft Surface Arm FAQ: Blender runs natively on Arm",
+      "type": "vendor",
+      "checked": "2026-11-05"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-05"
 }

@@ -1,0 +1,36 @@
+{
+  "id": "doubao",
+  "name": "豆包 (Doubao)",
+  "vendor": "ByteDance",
+  "category": "ai",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.32.5",
+  "homepage": "https://www.doubao.com",
+  "aliases": [
+    "Doubao",
+    "豆包"
+  ],
+  "summary": {
+    "en": "ByteDance's AI assistant desktop app, with a separate Doubao_Arm64_installer on the vendor's CDN.",
+    "zh-TW": "字節跳動的 AI 助理桌面版，官方 CDN 另有 Doubao_Arm64_installer 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/Doubao/2.32.5/ByteDance.Doubao.installer.yaml",
+      "title": "winget manifest 2.32.5: Doubao_Arm64_installer_2.32.5.exe",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

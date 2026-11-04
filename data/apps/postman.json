@@ -1,0 +1,32 @@
+{
+  "id": "postman",
+  "name": "Postman",
+  "vendor": "Postman, Inc.",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "12.35.1",
+  "homepage": "https://www.postman.com",
+  "summary": {
+    "en": "API client with a dedicated windows_arm64 download.",
+    "zh-TW": "API 測試用戶端，提供專屬的 windows_arm64 下載。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/p/Postman/Postman/arm64/12.35.1/Postman.Postman.arm64.installer.yaml",
+      "title": "winget manifest 12.35.1: dl.pstmn.io/download/version/12.35.1/windows_arm64",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

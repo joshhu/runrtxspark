@@ -1,0 +1,32 @@
+{
+  "id": "winbox",
+  "name": "WinBox",
+  "vendor": "MikroTik",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "4.5",
+  "homepage": "https://mikrotik.com",
+  "summary": {
+    "en": "RouterOS management tool with a WinBox_Windows_arm64.zip on MikroTik's download server.",
+    "zh-TW": "RouterOS 管理工具，MikroTik 下載伺服器提供 WinBox_Windows_arm64.zip。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Mikrotik/Winbox/4.5/Mikrotik.Winbox.installer.yaml",
+      "title": "winget manifest 4.5: download.mikrotik.com/.../WinBox_Windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

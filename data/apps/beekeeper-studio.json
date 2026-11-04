@@ -1,0 +1,32 @@
+{
+  "id": "beekeeper-studio",
+  "name": "Beekeeper Studio",
+  "vendor": "Beekeeper Studio",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "6.2.1",
+  "homepage": "https://www.beekeeperstudio.io",
+  "summary": {
+    "en": "SQL editor and database manager whose release ships a separate arm64 installer.",
+    "zh-TW": "SQL 編輯器與資料庫管理工具，發行版另外提供 arm64 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/beekeeper-studio/beekeeper-studio/6.2.1/beekeeper-studio.beekeeper-studio.installer.yaml",
+      "title": "winget manifest 6.2.1: Beekeeper-Studio-Setup-6.2.1-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

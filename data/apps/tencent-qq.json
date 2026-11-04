@@ -1,0 +1,37 @@
+{
+  "id": "tencent-qq",
+  "name": "QQ",
+  "vendor": "Tencent",
+  "category": "communication",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "9.9.33",
+  "homepage": "https://im.qq.com",
+  "aliases": [
+    "騰訊 QQ",
+    "Tencent QQ",
+    "QQ NT"
+  ],
+  "summary": {
+    "en": "Tencent's messenger (QQ NT), whose release ships a QQ_9.9.33_260813_arm64 installer.",
+    "zh-TW": "騰訊的即時通訊軟體（QQ NT），發行版提供 QQ_9.9.33_260813_arm64 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Tencent/QQ/NT/9.9.33.52230/Tencent.QQ.NT.installer.yaml",
+      "title": "winget manifest 9.9.33.52230: QQ_9.9.33_260813_arm64_01.exe",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}

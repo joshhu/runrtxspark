@@ -1,0 +1,36 @@
+{
+  "id": "reaper",
+  "name": "REAPER",
+  "vendor": "Cockos",
+  "category": "creative",
+  "status": "native",
+  "maturity": "beta",
+  "confidence": "medium",
+  "version": "7.84",
+  "homepage": "https://www.reaper.fm",
+  "summary": {
+    "en": "Digital audio workstation with an ARM64EC beta installer for Windows 11.",
+    "zh-TW": "數位音訊工作站，提供 Windows 11 用的 ARM64EC beta 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/Cockos/REAPER/7.84/Cockos.REAPER.installer.yaml",
+      "title": "winget manifest 7.84: reaper784_win11_arm64ec_beta-install.exe",
+      "type": "release",
+      "checked": "2026-11-05"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "The Arm installer is an ARM64EC build labeled beta (reaper784_win11_arm64ec_beta).",
+      "zh-TW": "Arm 安裝程式是標示為 beta 的 ARM64EC 版本（reaper784_win11_arm64ec_beta）。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-05",
+  "verifiedAt": "2026-11-05"
+}
