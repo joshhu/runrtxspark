@@ -11,12 +11,12 @@
   "homepage": "https://brave.com",
   "evidence": [
     {
-      "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/b/Brave/Brave",
-      "title": "winget manifest: Brave",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/Brave/Brave/155.1.97.57/Brave.Brave.installer.yaml",
+      "title": "winget manifest 155.1.97.57: BraveBrowserStandaloneSilentSetupArm64.exe",
       "type": "release",
-      "checked": "2026-10-31"
+      "checked": "2026-11-06"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-06"
 }

@@ -1,0 +1,38 @@
+{
+  "id": "miniconda",
+  "name": "Miniconda",
+  "vendor": "Anaconda",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "py314_26.9.3-0",
+  "homepage": "https://www.anaconda.com/docs/getting-started/miniconda/main",
+  "summary": {
+    "en": "Minimal conda installer for Python environments, with a Windows-arm64 installer.",
+    "zh-TW": "精簡版 conda 安裝程式，用於管理 Python 環境，提供 Windows-arm64 安裝檔。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Anaconda/Miniconda3/py314_26.9.3-0/Anaconda.Miniconda3.installer.yaml",
+      "title": "winget manifest py314_26.9.3-0: Miniconda3-py314_26.9.3-0-Windows-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-06"
+    },
+    {
+      "url": "https://forums.developer.nvidia.com/t/rtx-spark-getting-started-with-development/385976",
+      "title": "NVIDIA: RTX Spark getting started with development (native Windows ARM64 Miniconda installer)",
+      "type": "vendor",
+      "checked": "2026-11-06"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "NVIDIA's RTX Spark guide recommends this installer, but it does not test every conda package. Some Python packages still lack Windows Arm64 wheels.",
+      "zh-TW": "NVIDIA 的 RTX Spark 指南建議使用此安裝程式，但並未測試所有 conda 套件，部分 Python 套件仍缺少 Windows Arm64 wheel。"
+    }
+  ],
+  "scope": "rtx-spark",
+  "addedAt": "2026-11-06",
+  "verifiedAt": "2026-11-06"
+}

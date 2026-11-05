@@ -1,0 +1,32 @@
+{
+  "id": "github-desktop",
+  "name": "GitHub Desktop",
+  "vendor": "GitHub",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.6.10",
+  "homepage": "https://desktop.github.com",
+  "summary": {
+    "en": "Git GUI client with separate arm64 EXE and MSI installers on GitHub's release host.",
+    "zh-TW": "Git 圖形化用戶端，GitHub 發行主機另提供 arm64 的 EXE 與 MSI 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/GitHubDesktop/3.6.10/GitHub.GitHubDesktop.installer.yaml",
+      "title": "winget manifest 3.6.10: GitHubDesktopSetup-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-06"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-06",
+  "verifiedAt": "2026-11-06"
+}

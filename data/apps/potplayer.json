@@ -1,0 +1,32 @@
+{
+  "id": "potplayer",
+  "name": "PotPlayer",
+  "vendor": "Kakao (Daum)",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "26.10.21.0",
+  "homepage": "https://potplayer.daum.net",
+  "summary": {
+    "en": "Popular Korean media player with a separate PotPlayerSetupARM64.exe installer.",
+    "zh-TW": "南韓常用的媒體播放器，官方 CDN 另有 PotPlayerSetupARM64.exe 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/Daum/PotPlayer/26.10.21.0/Daum.PotPlayer.installer.yaml",
+      "title": "winget manifest 26.10.21.0: PotPlayerSetupARM64.exe",
+      "type": "release",
+      "checked": "2026-11-06"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-06",
+  "verifiedAt": "2026-11-06"
+}

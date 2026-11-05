@@ -1,0 +1,32 @@
+{
+  "id": "go",
+  "name": "Go",
+  "vendor": "The Go Authors",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.27.3",
+  "homepage": "https://go.dev",
+  "summary": {
+    "en": "Go programming language toolchain with an official windows-arm64 MSI installer.",
+    "zh-TW": "Go 程式語言工具鏈，官方提供 windows-arm64 MSI 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GoLang/Go/1.27.3/GoLang.Go.installer.yaml",
+      "title": "winget manifest 1.27.3: go1.27.3.windows-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-06"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-06",
+  "verifiedAt": "2026-11-06"
+}

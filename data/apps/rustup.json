@@ -1,0 +1,32 @@
+{
+  "id": "rustup",
+  "name": "Rustup",
+  "vendor": "The Rust Project",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.29.3",
+  "homepage": "https://rustup.rs",
+  "summary": {
+    "en": "Rust toolchain installer with an aarch64-pc-windows-msvc rustup-init.exe.",
+    "zh-TW": "Rust 工具鏈安裝程式，提供 aarch64-pc-windows-msvc 版 rustup-init.exe。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/Rustlang/Rustup/1.29.3/Rustlang.Rustup.installer.yaml",
+      "title": "winget manifest 1.29.3: aarch64-pc-windows-msvc/rustup-init.exe",
+      "type": "release",
+      "checked": "2026-11-06"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-06",
+  "verifiedAt": "2026-11-06"
+}
