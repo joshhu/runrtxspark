@@ -1,0 +1,32 @@
+{
+  "id": "anki",
+  "name": "Anki",
+  "vendor": "Anki",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "26.09.4",
+  "homepage": "https://apps.ankiweb.net",
+  "summary": {
+    "en": "Spaced-repetition flashcard app. The official release ships a separate win-arm64 MSI.",
+    "zh-TW": "間隔重複的字卡學習軟體。官方釋出另有 win-arm64 的 MSI 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Anki/Anki/26.09.4/Anki.Anki.installer.yaml",
+      "title": "winget manifest 26.09.4: anki-26.09.4-win-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

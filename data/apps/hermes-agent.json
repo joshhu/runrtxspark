@@ -23,7 +23,7 @@
       "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
       "title": "NVIDIA: RTX Spark PCs available today",
       "type": "vendor",
-      "checked": "2026-11-03"
+      "checked": "2026-11-07"
     },
     {
       "url": "https://github.com/Linaro/works-on-woa/blob/staging/src/data/content/projects.json",
@@ -33,5 +33,5 @@
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-07"
 }

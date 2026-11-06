@@ -1,0 +1,32 @@
+{
+  "id": "neovim",
+  "name": "Neovim",
+  "vendor": "Neovim contributors",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.12.6",
+  "homepage": "https://neovim.io",
+  "summary": {
+    "en": "Vim-based text editor. The official release ships nvim-win-arm64.msi.",
+    "zh-TW": "以 Vim 為基礎的文字編輯器。官方釋出提供 nvim-win-arm64.msi。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/n/Neovim/Neovim/0.12.6/Neovim.Neovim.installer.yaml",
+      "title": "winget manifest 0.12.6: nvim-win-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

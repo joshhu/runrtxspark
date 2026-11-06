@@ -1,0 +1,32 @@
+{
+  "id": "bun",
+  "name": "Bun",
+  "vendor": "Oven",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.4.4",
+  "homepage": "https://bun.sh",
+  "summary": {
+    "en": "JavaScript runtime and package manager. The official release ships bun-windows-aarch64.zip.",
+    "zh-TW": "JavaScript 執行環境與套件管理工具。官方釋出提供 bun-windows-aarch64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/Oven-sh/Bun/1.4.4/Oven-sh.Bun.installer.yaml",
+      "title": "winget manifest 1.4.4: bun-windows-aarch64.zip",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

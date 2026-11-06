@@ -35,8 +35,14 @@
       "title": "Adobe: Windows on Arm support",
       "type": "vendor",
       "checked": "2026-10-31"
+    },
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "title": "NVIDIA: RTX Spark PCs available today (Photoshop and Premiere native beta at launch)",
+      "type": "vendor",
+      "checked": "2026-11-07"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-07"
 }

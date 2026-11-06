@@ -14,9 +14,9 @@
       "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/o/Obsidian/Obsidian",
       "title": "winget manifest: Obsidian",
       "type": "release",
-      "checked": "2026-10-31"
+      "checked": "2026-11-07"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-10-31"
+  "verifiedAt": "2026-11-07"
 }

@@ -1,0 +1,32 @@
+{
+  "id": "syncthing",
+  "name": "Syncthing",
+  "vendor": "Syncthing Foundation",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.1.7",
+  "homepage": "https://syncthing.net",
+  "summary": {
+    "en": "Peer-to-peer file synchronisation. The official release ships a windows-arm64 build.",
+    "zh-TW": "點對點檔案同步工具。官方釋出提供 windows-arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/s/Syncthing/Syncthing/2.1.7/Syncthing.Syncthing.installer.yaml",
+      "title": "winget manifest 2.1.7: syncthing-windows-arm64-v2.1.7.zip",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

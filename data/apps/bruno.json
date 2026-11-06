@@ -1,0 +1,32 @@
+{
+  "id": "bruno",
+  "name": "Bruno",
+  "vendor": "Bruno Software",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "4.3.0",
+  "homepage": "https://www.usebruno.com",
+  "summary": {
+    "en": "Open-source API client. The official release ships arm64 exe, msi and zip builds.",
+    "zh-TW": "開源的 API 測試工具。官方釋出提供 arm64 的 exe、msi 與 zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/Bruno/Bruno/4.3.0/Bruno.Bruno.installer.yaml",
+      "title": "winget manifest 4.3.0: bruno_4.3.0_arm64_win installers",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

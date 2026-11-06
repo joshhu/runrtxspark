@@ -1,0 +1,39 @@
+{
+  "id": "baidu-input",
+  "name": "Baidu Input",
+  "vendor": "Baidu",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "homepage": "https://shurufa.baidu.com",
+  "aliases": [
+    "百度输入法",
+    "Baidu IME"
+  ],
+  "summary": {
+    "en": "Chinese input method. Linaro's Works on WoA data lists it as working under emulation, validated by NVIDIA.",
+    "zh-TW": "中文輸入法。Linaro 的 Works on WoA 資料列為以轉譯執行可運作，並經 NVIDIA 驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Input methods load DLLs into other programs, so the Arm64 type matters; no vendor statement or version was found.",
+      "zh-TW": "輸入法會把 DLL 載入其他程式，Arm64 與否影響很大；未找到原廠說明或版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: baidu-input (emulation)",
+      "type": "aggregator",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}
