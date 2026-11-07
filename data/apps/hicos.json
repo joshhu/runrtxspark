@@ -1,0 +1,50 @@
+{
+  "id": "hicos",
+  "name": "HiCOS 自然人憑證跨平台網頁元件",
+  "vendor": "內政部憑證管理中心 / 中華電信",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.2.8",
+  "homepage": "https://moica.nat.gov.tw/rac_plugin.html",
+  "aliases": [
+    "自然人憑證",
+    "HiCOS",
+    "HiCOS PKI Smart Card",
+    "MOICA",
+    "工商憑證",
+    "報稅"
+  ],
+  "summary": {
+    "en": "The card component for Taiwan citizen digital certificates (自然人憑證) installs and reads the card on a Snapdragon X laptop, in a community test.",
+    "zh-TW": "自然人憑證的 HiCOS 元件在 Snapdragon X 筆電上可以安裝並讀卡，這是網友實測的結果。"
+  },
+  "caveats": [
+    {
+      "en": "There is one Windows installer with no Arm build mentioned, so it is listed as running under Prism. The test used an older version on a Snapdragon X laptop, not RTX Spark. A USB card reader is needed; most need no driver.",
+      "zh-TW": "官方只提供一個 Windows 安裝檔，沒有提到 Arm 版，所以列為透過 Prism 執行。實測用的是較舊的版本和 Snapdragon X 筆電，不是 RTX Spark。需要 USB 晶片讀卡機，大多數不用另裝驅動程式。"
+    },
+    {
+      "en": "The official download page asks for a CAPTCHA, so the version comes from its HiNet mirror.",
+      "zh-TW": "官方下載頁要先通過真人驗證，版本號是從 HiNet 鏡像頁讀到的。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.mobile01.com/topicdetail.php?f=233&t=7076123",
+      "title": "Mobile01：ARM 高通筆電讀卡機、政府憑證測試（ASUS S5507QA，2025-01-25）",
+      "type": "community",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://api-hisecurecdn.cdn.hinet.net/HiPKILocalSignServer/downloadMain.html",
+      "title": "自然人憑證跨平台網頁元件下載（HiNet 鏡像）：Windows 版 HiCOS 3.2.8",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

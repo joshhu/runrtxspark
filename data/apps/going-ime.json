@@ -1,0 +1,44 @@
+{
+  "id": "going-ime",
+  "name": "自然輸入法 (GOING)",
+  "vendor": "網際智慧 (IQ Technology)",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "V13.1.1+",
+  "homepage": "https://www.text.tw/",
+  "aliases": [
+    "自然輸入法",
+    "GOING",
+    "Going IME",
+    "新自然輸入法"
+  ],
+  "summary": {
+    "en": "The GOING Chinese input method supports Windows on Arm from V13 Professional (V13.1.1.35084).",
+    "zh-TW": "自然輸入法從 V13 專業版（V13.1.1.35084）起支援 Windows on Arm。"
+  },
+  "caveats": [
+    {
+      "en": "The free V13 Lite edition and V12 and older do not support Arm. The vendor says only that it supports Windows on Arm, and it has not been confirmed on RTX Spark yet.",
+      "zh-TW": "免費的 V13 Lite 版和 V12 以前的版本都不支援 Arm。原廠只寫了支援 Windows on Arm，還沒有人在 RTX Spark 上確認過。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.text.tw/download",
+      "title": "自然輸入法 V13 專業版下載：重大更新！支援 Windows on Arm 作業系統",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://www.text.tw/old-download",
+      "title": "自然輸入法舊版下載：V12 不支援 Arm 版 Windows",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

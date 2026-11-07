@@ -1,0 +1,44 @@
+{
+  "id": "cyberlink-powerdirector",
+  "name": "CyberLink PowerDirector 威力導演",
+  "vendor": "CyberLink 訊連科技",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "x64 23.3",
+  "homepage": "https://www.cyberlink.com/products/powerdirector-video-editing-software/",
+  "aliases": [
+    "威力導演",
+    "PowerDirector",
+    "PowerDirector 365",
+    "訊連"
+  ],
+  "summary": {
+    "en": "CyberLink supports PowerDirector 2025, 2026 and 365 (22.6 or later) on Windows on Arm. Linaro lists it as running under emulation, and NVIDIA verified it.",
+    "zh-TW": "訊連官方支援在 Windows on Arm 上執行威力導演 2025、2026 和 365（22.6 以上）。Linaro 目錄記錄它透過模擬執行，NVIDIA 也驗證過。"
+  },
+  "caveats": [
+    {
+      "en": "The AI Style plugin does not work, and BorisFX effects preview slowly. PowerDirector 2024 is not supported on Arm.",
+      "zh-TW": "不支援 AI 風格外掛，BorisFX 特效預覽會很慢。威力導演 2024 不支援 Arm。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.cyberlink.com/support-center/faq/content?id=29176",
+      "title": "CyberLink FAQ: What versions of CyberLink software support Windows 11 ARM platforms with Qualcomm CPU?",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://worksonwoa.com/en/applications/cyberlinkpowerdirector/",
+      "title": "Works on WoA: Cyberlink PowerDirector 23.3.1614.0, emulation, verified by NVIDIA",
+      "type": "aggregator",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

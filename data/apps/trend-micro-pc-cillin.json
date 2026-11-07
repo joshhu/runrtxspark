@@ -1,0 +1,51 @@
+{
+  "id": "trend-micro-pc-cillin",
+  "name": "PC-cillin 雲端版 (Trend Micro Maximum Security)",
+  "vendor": "Trend Micro 趨勢科技",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "homepage": "https://www.trendmicro.com/zh_tw/forHome/products/pccillin.html",
+  "aliases": [
+    "PC-cillin",
+    "趨勢科技",
+    "Trend Micro",
+    "Maximum Security",
+    "Virus Buster",
+    "ウイルスバスター"
+  ],
+  "summary": {
+    "en": "Trend Micro supports Windows 11 on Arm in PC-cillin Cloud (Maximum Security). Linaro lists it as native, verified by NVIDIA.",
+    "zh-TW": "趨勢科技的 PC-cillin 雲端版支援 Windows 11 on ARM。Linaro 目錄記錄為原生版本，NVIDIA 也驗證過。"
+  },
+  "caveats": [
+    {
+      "en": "Only PC-cillin Cloud has an Arm installer, and you download it after signing in to a Trend Micro account. Performance optimization, the security settings check and Do Not Disturb mode are not available on Arm.",
+      "zh-TW": "只有 PC-cillin 雲端版有 Arm 安裝檔，要先註冊趨勢科技會員才能下載。效能最佳化、安全設定檢查和無干擾模式在 Arm 上無法使用。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://helpcenter.trendmicro.com/zh-tw/article/TMKA-19439",
+      "title": "PC-cillin 防毒軟體：Windows 安裝需求（ARM 架構僅雲端版支援）",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://www.trendmicro.com/zh_tw/forHome/products/pccillin.html",
+      "title": "PC-cillin 產品頁：支援 Windows 11 on ARM，部分功能不支援",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://worksonwoa.com/en/applications/trendmicromaximumsecurity/",
+      "title": "Works on WoA: Trend Micro Maximum Security, native, verified by NVIDIA",
+      "type": "aggregator",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

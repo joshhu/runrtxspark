@@ -1,0 +1,44 @@
+{
+  "id": "cyberlink-photodirector",
+  "name": "CyberLink PhotoDirector 相片大師",
+  "vendor": "CyberLink 訊連科技",
+  "category": "creative",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "x64 16.0",
+  "homepage": "https://www.cyberlink.com/products/photodirector-photo-editing-software-365/",
+  "aliases": [
+    "相片大師",
+    "PhotoDirector",
+    "PhotoDirector 365",
+    "訊連"
+  ],
+  "summary": {
+    "en": "CyberLink supports PhotoDirector 2025, 2026 and 365 (15.7 or later) on Windows on Arm. Linaro lists PhotoDirector 365 as running under emulation.",
+    "zh-TW": "訊連官方支援在 Windows on Arm 上執行相片大師 2025、2026 和 365（15.7 以上）。Linaro 目錄記錄相片大師 365 透過模擬執行。"
+  },
+  "caveats": [
+    {
+      "en": "WMV video export is not available. PhotoDirector 2024 is not recommended on Arm, because AI background removal does not work.",
+      "zh-TW": "無法匯出 WMV 影片。相片大師 2024 不建議在 Arm 上使用，因為 AI 去背無法運作。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.cyberlink.com/support-center/faq/content?id=29176",
+      "title": "CyberLink FAQ: What versions of CyberLink software support Windows 11 ARM platforms with Qualcomm CPU?",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    },
+    {
+      "url": "https://www.cyberlink.com/support-center/faq/content?id=30002",
+      "title": "CyberLink PhotoDirector 2026 system requirements: Qualcomm Snapdragon X (Windows 11 ARM)",
+      "type": "vendor",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

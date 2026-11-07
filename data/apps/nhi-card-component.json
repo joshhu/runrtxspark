@@ -1,0 +1,42 @@
+{
+  "id": "nhi-card-component",
+  "name": "健保卡網路服務註冊元件",
+  "vendor": "衛生福利部中央健康保險署",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "homepage": "https://www.nhi.gov.tw/",
+  "aliases": [
+    "健保卡",
+    "健保卡元件",
+    "健康存摺",
+    "NHI card",
+    "健保署"
+  ],
+  "summary": {
+    "en": "The component that lets a browser read Taiwan NHI health insurance cards installs and works on a Snapdragon X laptop, in a community test.",
+    "zh-TW": "讓瀏覽器讀取健保卡的元件在 Snapdragon X 筆電上可以安裝使用，這是網友實測的結果。"
+  },
+  "caveats": [
+    {
+      "en": "Only one community test, on a Snapdragon X laptop and not RTX Spark. The agency does not mention Arm, so it is listed as running under Prism. The agency site blocks automated reading, so its own pages were not checked.",
+      "zh-TW": "只有一篇網友實測，用的是 Snapdragon X 筆電，不是 RTX Spark。健保署沒有提到 Arm，所以列為透過 Prism 執行。健保署網站擋自動讀取，所以沒有查到官方頁面。"
+    },
+    {
+      "en": "The NHI mobile app (健保快易通) avoids the card reader entirely.",
+      "zh-TW": "改用手機「健保快易通」App 就不需要讀卡機。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.mobile01.com/topicdetail.php?f=233&t=7076123",
+      "title": "Mobile01：ARM 高通筆電讀卡機、政府憑證測試（ASUS S5507QA，2025-01-25）",
+      "type": "community",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}
