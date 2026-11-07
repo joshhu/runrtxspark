@@ -4,7 +4,7 @@ import Wafer from '../../components/Wafer.astro';
 import StatusGlyph from '../../components/StatusGlyph.astro';
 import { LOCALES, LOCALE_META } from '../../lib/locale.mjs';
 import { fill, getDict } from '../../lib/i18n.mjs';
-import { apps, formatDate, listedCount, nvidiaApps, otherIndexCount, statusCounts, usedCategories } from '../../lib/data.mjs';
+import { apps, formatDate, listedCount, nvidiaApps, otherIndex, statusCounts, usedCategories } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -21,11 +21,16 @@ const messages = {
   none: t.list.none,
   range: t.list.range,
   pageN: t.list.pageN,
-  moreTitle: t.more.title,
-  moreLoading: t.more.loading,
-  moreError: t.more.error,
+  loading: t.src.loading,
+  error: t.src.error,
 };
-const indexTotal = otherIndexCount.toLocaleString('en');
+const indexTotal = otherIndex.length.toLocaleString('en');
+const sources = [
+  ['', t.src.all, listedCount],
+  ['own', t.src.own, apps.length],
+  ['nvidia', t.src.nvidia, nvidiaApps.length],
+  ['index', t.src.index, otherIndex.length],
+];
 // NVIDIA's rows are drawn a page at a time from this, which keeps the page small.
 const nvRows = JSON.stringify(
   nvidiaApps.map((e) => [e.name, e.publisher ?? '', e.status, e.version ?? '', e.checked ?? '', e.url, e.category]),
@@ -38,7 +43,6 @@ const nvRows = JSON.stringify(
       <div class="search">
         <label class="visually-hidden" for="q">{t.hero.search}</label>
         <input id="q" type="search" placeholder={t.hero.search} autocomplete="off" />
-        <p class="muted small search-note">{fill(t.more.searchNote, { n: indexTotal })}</p>
       </div>
       <fieldset class="tally">
         <legend class="visually-hidden">{t.list.filterStatus}</legend>
@@ -66,7 +70,16 @@ const nvRows = JSON.stringify(
     data-report={`${home}report/`}
     data-lang={LOCALE_META[locale].lang}
     data-per-page={PER_PAGE}
+    data-index={`${base}api/index-rows.json`}
+    data-index-total={otherIndex.length}
   >
+    <div class="cats sources" role="group" aria-label={t.src.label}>
+      {sources.map(([value, label, n]) => (
+        <button type="button" class="cat" data-src={value} aria-pressed={String(value === '')}>
+          {label} <span class="cat-num">{n.toLocaleString('en')}</span>
+        </button>
+      ))}
+    </div>
     <div class="catalog-tools">
       <div class="cats" role="group" aria-label={t.list.category}>
         <button type="button" class="cat" data-cat="" aria-pressed="true">{t.list.all}</button>
@@ -113,7 +126,7 @@ const nvRows = JSON.stringify(
           <span class="checked small muted" role="cell">{formatDate(app.verifiedAt, locale)}</span>
         </div>
       ))}
-      <div id="nv-rows" class="rowgroup" role="rowgroup"></div>
+      <div id="ext-rows" class="rowgroup" role="rowgroup"></div>
     </div>
     <script type="application/json" id="nv-data" is:inline set:html={nvRows} />
 
@@ -125,17 +138,10 @@ const nvRows = JSON.stringify(
         <button type="button" class="cat pager-step" id="pager-next">{t.list.next}</button>
       </div>
     </nav>
+    <p class="muted small index-status" id="index-status" aria-live="polite">{fill(t.src.loading, { n: indexTotal })}</p>
     <p class="muted small list-note">{t.nv.note}</p>
 
-    <div class="more" id="more" data-src={`${base}api/software-index.json`}>
-      <h2 class="more-title" id="more-title" aria-live="polite"></h2>
-      <p class="muted small">{t.more.note}</p>
-      <div class="table" id="more-rows" role="table" aria-labelledby="more-title" hidden></div>
-      <button type="button" class="cat more-button" id="more-browse">{fill(t.more.browse, { n: indexTotal })}</button>
-      <button type="button" class="cat more-button" id="more-next" hidden>{t.more.next}</button>
-    </div>
-
-    <template id="more-row">
+    <template id="ext-row">
       <div class="row" role="row">
         <span class="name" role="cell">
           <span class="mono" aria-hidden="true"></span>
@@ -148,7 +154,7 @@ const nvRows = JSON.stringify(
           {statuses.map((s) => (
             <span class="status" data-status={s}><StatusGlyph status={s} />{t.status[s]}</span>
           ))}
-          <span class="flags"><span class="tag">{t.nv.tag}</span></span>
+          <span class="flags"><span class="tag" data-tag="nvidia">{t.nv.tag}</span><span class="tag tag-unchecked" data-tag="index">{t.src.tag}</span></span>
         </span>
         <span class="version small muted" role="cell"></span>
         <span class="reports small muted" role="cell"></span>
@@ -171,8 +177,9 @@ const nvRows = JSON.stringify(
   const search = document.getElementById('q');
   const list = document.getElementById('list');
   const ownRows = [...list.querySelectorAll('.row[data-id]')];
-  const nvBox = document.getElementById('nv-rows');
-  const cats = [...catalog.querySelectorAll('.cats .cat')];
+  const extBox = document.getElementById('ext-rows');
+  const srcButtons = [...catalog.querySelectorAll('.sources .cat')];
+  const cats = [...catalog.querySelectorAll('.catalog-tools .cats .cat')];
   const statusBoxes = [...document.querySelectorAll('input[name="status"]')];
   const count = document.getElementById('count');
   const empty = document.getElementById('empty');
@@ -187,47 +194,32 @@ const nvRows = JSON.stringify(
   const dies = new Map(
     [...document.querySelectorAll('[data-wafer-die]')].map((d) => [d.dataset.waferDie, d]),
   );
-  const nvData = JSON.parse(document.getElementById('nv-data').textContent).map(
-    ([name, publisher, status, version, checked, url, category]) => ({
-      name, publisher, status, version, checked, url, category, nvidia: true,
-      hay: `${name} ${publisher}`.toLowerCase(),
-    }),
-  );
+  const fromTuple = (source) => ([name, publisher, status, version, checked, url, category]) => ({
+    name, publisher, status, version, checked, url, category, source,
+    hay: `${name} ${publisher}`.toLowerCase(),
+  });
+  const nvData = JSON.parse(document.getElementById('nv-data').textContent).map(fromTuple('nvidia'));
+  const indexStatus = document.getElementById('index-status');
+
+  // The rest of the index holds thousands of programs, so it loads after the page.
+  let indexData = [];
+  let indexState = 'loading';
+  fetch(catalog.dataset.index)
+    .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+    .then((rows) => { indexData = rows.map(fromTuple('index')); indexState = 'ready'; })
+    .catch(() => { indexState = 'failed'; })
+    .finally(() => apply({ syncUrl: false }));
 
   let cat = '';
+  let src = '';
   let page = 1;
   let pages = 1;
-
-  // The rest of the index holds thousands of programs, so it loads only when someone needs it.
-  const MORE_STEP = 50;
-  const more = document.getElementById('more');
-  const moreTitle = document.getElementById('more-title');
-  const moreRows = document.getElementById('more-rows');
-  const moreBrowse = document.getElementById('more-browse');
-  const moreNext = document.getElementById('more-next');
-  const rowTemplate = document.getElementById('more-row');
-  let index = null;
-  let indexFailed = false;
-  let loading = null;
-  let browsing = false;
-  let limit = MORE_STEP;
-
-  function loadIndex() {
-    loading ??= fetch(more.dataset.src)
-      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-      .then((body) => {
-        // Programs NVIDIA verified are already in the list above.
-        index = body.software.filter((e) => !e.nvidia).map((e) => ({ ...e, hay: `${e.name} ${e.publisher ?? ''}`.toLowerCase() }));
-      })
-      .catch(() => { indexFailed = true; loading = null; })
-      .finally(() => apply({ syncUrl: false }));
-    return loading;
-  }
 
   const showDate = (iso) => (/^\d{4}-\d{2}-\d{2}$/.test(iso ?? '') ? dateFormat.format(new Date(`${iso}T00:00:00Z`)) : '');
 
   function buildRow(entry) {
     const row = rowTemplate.content.firstElementChild.cloneNode(true);
+    row.dataset.source = entry.source;
     row.dataset.status = entry.status;
     if (entry.category) row.dataset.cat = entry.category;
     row.querySelector('.mono').textContent = entry.name.slice(0, 1);
@@ -236,40 +228,13 @@ const nvRows = JSON.stringify(
     if (entry.url.startsWith('https://')) link.href = entry.url;
     row.querySelector('.publisher').textContent = entry.publisher ?? '';
     row.querySelectorAll('.result > .status').forEach((s) => { if (s.dataset.status !== entry.status) s.remove(); });
-    if (!entry.nvidia) row.querySelector('.flags').remove();
+    row.querySelectorAll('.flags > .tag').forEach((t) => { if (t.dataset.tag !== entry.source) t.remove(); });
     row.querySelector('.version').textContent = entry.version ?? '';
     row.querySelector('.checked').textContent = showDate(entry.checked);
     return row;
   }
 
-  /** Returns how many index entries match, or null while they are unknown. */
-  function renderMore(q, wanted) {
-    const relevant = !cat || cat === 'game';
-    const active = relevant && (q.length >= 2 || browsing);
-    moreBrowse.hidden = active || !relevant;
-    more.hidden = !relevant;
-    moreRows.hidden = true;
-    moreNext.hidden = true;
-    moreTitle.textContent = '';
-    if (!active) return 0;
-    if (indexFailed) { moreTitle.textContent = messages.moreError; indexFailed = false; return 0; }
-    if (!index) { moreTitle.textContent = messages.moreLoading; loadIndex(); return null; }
-    const found = index.filter((e) =>
-      e.hay.includes(q) && (!wanted.length || wanted.includes(e.status)) && (cat !== 'game' || e.game));
-    // Names that start with the search come first.
-    if (q) {
-      const rank = (e) => (e.name.toLowerCase().startsWith(q) ? 0 : 1);
-      found.sort((a, b) => rank(a) - rank(b));
-    }
-    moreTitle.textContent = messages.moreTitle.replace('{n}', found.length.toLocaleString('en'));
-    moreRows.replaceChildren(...found.slice(0, limit).map(buildRow));
-    moreRows.hidden = found.length === 0;
-    moreNext.hidden = found.length <= limit;
-    return found.length;
-  }
-
-  moreBrowse.addEventListener('click', () => { browsing = true; apply({ syncUrl: false }); });
-  moreNext.addEventListener('click', () => { limit += 100; apply({ syncUrl: false }); });
+  const rowTemplate = document.getElementById('ext-row');
 
   /** Page numbers to offer: the ends, and the pages around the current one. */
   // Phones have room for the first, current and last page only.
@@ -336,13 +301,23 @@ const nvRows = JSON.stringify(
     const wanted = statusBoxes.filter((b) => b.checked).map((b) => b.value);
     const keep = (status, category, hay) =>
       (!q || hay.includes(q)) && (!cat || category === cat) && (!wanted.length || wanted.includes(status));
+    const from_ = (s) => !src || src === s;
 
-    // This site's own entries come first, then NVIDIA's, split into pages.
-    const ownMatch = ownRows.filter((r) => keep(r.dataset.status, r.dataset.cat, r.dataset.search));
-    const nvMatch = nvData.filter((e) => keep(e.status, e.category, e.hay));
-    const total = ownMatch.length + nvMatch.length;
+    // This site's own entries come first, then NVIDIA's, then the rest of the index, split into pages.
+    const ownMatch = from_('own') ? ownRows.filter((r) => keep(r.dataset.status, r.dataset.cat, r.dataset.search)) : [];
+    const nvMatch = from_('nvidia') ? nvData.filter((e) => keep(e.status, e.category, e.hay)) : [];
+    const indexMatch = from_('index') ? indexData.filter((e) => keep(e.status, e.category, e.hay)) : [];
+    // Within the index, names that start with the search come first.
+    if (q) {
+      const rank = (e) => (e.name.toLowerCase().startsWith(q) ? 0 : 1);
+      indexMatch.sort((a, b) => rank(a) - rank(b));
+    }
+    const ext = [...nvMatch, ...indexMatch];
+    const total = ownMatch.length + ext.length;
+    const settled = indexState !== 'loading';
     pages = Math.max(1, Math.ceil(total / PER_PAGE));
-    page = Math.min(Math.max(1, page), pages);
+    // A page from the address may only exist once the index arrives.
+    page = Math.max(1, settled ? Math.min(page, pages) : page);
     const from = (page - 1) * PER_PAGE;
     const to = Math.min(from + PER_PAGE, total);
 
@@ -352,18 +327,23 @@ const nvRows = JSON.stringify(
       row.hidden = !onPage.has(row);
       dies.get(row.dataset.id)?.classList.toggle('is-match', matched.has(row));
     }
-    nvBox.replaceChildren(...nvMatch
+    extBox.replaceChildren(...ext
       .slice(Math.max(0, from - ownMatch.length), Math.max(0, to - ownMatch.length))
       .map(buildRow));
 
-    wafer.classList.toggle('wafer-filtered', Boolean(q || cat || wanted.length));
+    srcButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.src === src)));
+    indexStatus.hidden = indexState === 'ready' || src === 'own' || src === 'nvidia';
+    indexStatus.textContent = indexState === 'failed'
+      ? messages.error
+      : messages.loading.replace('{n}', Number(catalog.dataset.indexTotal).toLocaleString('en'));
+
+    wafer.classList.toggle('wafer-filtered', Boolean(q || cat || wanted.length || src));
     // On phones the results would sit a full screen below the search box.
     document.querySelector('.hero').classList.toggle('is-searching', Boolean(q));
     count.textContent = messages.count.replace('{n}', total.toLocaleString('en'));
     renderPager(from, to, total);
-    const inIndex = renderMore(q, wanted);
     // Stay quiet while the index loads, so "no results" does not flash before it arrives.
-    const nothing = total === 0 && inIndex === 0;
+    const nothing = total === 0 && (settled || src === 'own' || src === 'nvidia');
     empty.hidden = !nothing;
     list.hidden = total === 0;
     if (nothing) {
@@ -373,6 +353,7 @@ const nvRows = JSON.stringify(
     if (syncUrl) {
       const params = new URLSearchParams();
       if (q) params.set('q', search.value.trim());
+      if (src) params.set('src', src);
       if (cat) params.set('cat', cat);
       if (wanted.length) params.set('status', wanted.join(','));
       if (page > 1) params.set('page', String(page));
@@ -391,10 +372,12 @@ const nvRows = JSON.stringify(
   if (cats.some((b) => b.dataset.cat === params.get('cat'))) setCat(params.get('cat'));
   const fromUrl = (params.get('status') ?? '').split(',');
   statusBoxes.forEach((b) => { b.checked = fromUrl.includes(b.value); });
+  if (srcButtons.some((b) => b.dataset.src === params.get('src'))) src = params.get('src');
   page = Number.parseInt(params.get('page') ?? '1', 10) || 1;
 
   // A new search or filter starts again from the first page.
-  search.addEventListener('input', () => { limit = MORE_STEP; page = 1; apply(); });
+  search.addEventListener('input', () => { page = 1; apply(); });
+  srcButtons.forEach((b) => b.addEventListener('click', () => { src = b.dataset.src; page = 1; apply(); }));
   statusBoxes.forEach((b) => b.addEventListener('change', () => { page = 1; apply(); }));
   cats.forEach((b) => b.addEventListener('click', () => { setCat(b.dataset.cat); page = 1; apply(); }));
 
@@ -416,7 +399,7 @@ const nvRows = JSON.stringify(
   }
   @media (max-width: 899px) {
     .hero :global(.wafer) { width: min(70%, 300px); }
-    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .search-note, .hero.is-searching .broken-note { display: none; }
+    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .broken-note { display: none; }
     .hero.is-searching { padding-bottom: 16px; gap: 0; }
     .hero.is-searching .tally-option { padding-block: 6px; }
   }
@@ -428,9 +411,11 @@ const nvRows = JSON.stringify(
     border: 2px solid var(--ink); border-radius: var(--radius-control);
   }
   .search input::placeholder { color: var(--muted); }
-  .search-note { margin-top: 8px; }
-  .more { margin-top: 32px; display: grid; gap: 10px; justify-items: start; }
-  .more[hidden], .table[hidden], .pager[hidden] { display: none; }
+  .table[hidden], .pager[hidden], .index-status[hidden] { display: none; }
+  .sources { margin-bottom: 10px; }
+  .cat-num { font-variant-numeric: tabular-nums; opacity: 0.7; margin-inline-start: 4px; }
+  .index-status { margin: 12px 0 0; }
+  .tag-unchecked { border-style: dashed; }
   .rowgroup { display: contents; }
   .broken-note { margin-top: 12px; max-width: 46ch; }
   .list-note { margin: 12px 0 0; max-width: 72ch; }
@@ -443,10 +428,6 @@ const nvRows = JSON.stringify(
   .pager-num[aria-current='page'] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .pager-step:disabled { opacity: 0.4; cursor: default; }
   .pager-gap { padding-inline: 2px; color: var(--muted); }
-  .more-title { font-size: 1.125rem; margin: 0; }
-  .more-title:empty { display: none; }
-  .more .table { width: 100%; }
-  .more-button[hidden] { display: none; }
 
   .tally { border: 0; margin: 28px 0 0; padding: 0; }
   .bar { display: flex; height: 8px; gap: 2px; margin-bottom: 8px; }
@@ -501,6 +482,11 @@ const nvRows = JSON.stringify(
   .empty[hidden] { display: none; }
 
   @media (max-width: 760px) {
+    /* One swipeable line each, so results still start on the first screen. */
+    .cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+    .cats::-webkit-scrollbar { display: none; }
+    .cats .cat { flex: none; white-space: nowrap; }
+    .catalog-tools { display: grid; min-width: 0; }
     .head { display: none; }
     .row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding-block: 12px; }
     .name { grid-column: 1 / -1; }

@@ -34,10 +34,10 @@ export const appById = Object.fromEntries(apps.map((a) => [a.id, a]));
 
 export const softwareIndex = mergeIndex({ woa: woaIndex, winget: wingetIndex, curated: apps });
 
-// NVIDIA tested these for Linaro's catalog, so they are listed with the site's own entries.
-// The rest of the index loads only when someone searches.
+// NVIDIA tested these for Linaro's catalog, so they ship with the page.
+// The rest of the index is listed too, but loads after the page does.
 export const nvidiaApps = softwareIndex.filter((e) => e.nvidia);
-export const otherIndexCount = softwareIndex.length - nvidiaApps.length;
+export const otherIndex = softwareIndex.filter((e) => !e.nvidia);
 
 export const lastUpdated = [
   ...apps.flatMap((a) => [a.addedAt, a.verifiedAt]),
@@ -47,7 +47,7 @@ export const lastUpdated = [
   .sort()
   .at(-1);
 
-const listed = [...apps, ...nvidiaApps];
+const listed = [...apps, ...softwareIndex];
 export const listedCount = listed.length;
 
 export const statusCounts = {
