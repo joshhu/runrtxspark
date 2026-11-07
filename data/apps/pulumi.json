@@ -1,0 +1,32 @@
+{
+  "id": "pulumi",
+  "name": "Pulumi",
+  "vendor": "Pulumi Corporation",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "3.274.1",
+  "homepage": "https://www.pulumi.com",
+  "summary": {
+    "en": "Infrastructure-as-code CLI with a native Windows Arm64 archive.",
+    "zh-TW": "提供原生 Windows Arm64 壓縮檔的基礎架構即程式碼命令列工具。"
+  },
+  "caveats": [
+    {
+      "en": "The release lists pulumi-v3.274.1-windows-arm64.zip; language runtimes you use with it (Node.js, Python and so on) are separate installs.",
+      "zh-TW": "發行頁列出 pulumi-v3.274.1-windows-arm64.zip；搭配使用的語言執行環境（如 Node.js、Python）需另外安裝。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.274.1",
+      "title": "Pulumi v3.274.1 release (pulumi-v3.274.1-windows-arm64.zip)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

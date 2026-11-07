@@ -1,0 +1,32 @@
+{
+  "id": "fzf",
+  "name": "fzf",
+  "vendor": "Junegunn Choi",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.75.0",
+  "homepage": "https://junegunn.github.io/fzf/",
+  "summary": {
+    "en": "Command-line fuzzy finder with Windows Arm64 zip and MSI builds.",
+    "zh-TW": "提供 Windows Arm64 zip 與 MSI 的命令列模糊搜尋工具。"
+  },
+  "caveats": [
+    {
+      "en": "The release lists fzf-0.75.0-windows_arm64.zip and .msi; no RTX Spark test is stated on the page.",
+      "zh-TW": "發行頁列出 fzf-0.75.0-windows_arm64.zip 與 .msi；頁面沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/junegunn/fzf/releases/tag/v0.75.0",
+      "title": "fzf 0.75.0 release (fzf-0.75.0-windows_arm64.msi, .zip)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

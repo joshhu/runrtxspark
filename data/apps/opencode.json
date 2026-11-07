@@ -1,0 +1,32 @@
+{
+  "id": "opencode",
+  "name": "OpenCode",
+  "vendor": "Anomaly",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.19.5",
+  "homepage": "https://opencode.ai",
+  "summary": {
+    "en": "Open-source AI coding agent with Windows Arm64 builds of both the CLI and the desktop app.",
+    "zh-TW": "開源 AI 程式碼代理，命令列版與桌面版都提供 Windows Arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "The release assets include opencode-windows-arm64.zip and opencode-desktop-win-arm64.exe; no RTX Spark test is stated on the page.",
+      "zh-TW": "發行頁資產包含 opencode-windows-arm64.zip 與 opencode-desktop-win-arm64.exe；頁面沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.5",
+      "title": "OpenCode v1.19.5 release (opencode-windows-arm64.zip, opencode-desktop-win-arm64.exe)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

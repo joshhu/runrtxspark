@@ -1,0 +1,32 @@
+{
+  "id": "zed",
+  "name": "Zed",
+  "vendor": "Zed Industries",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.27.0",
+  "homepage": "https://zed.dev",
+  "summary": {
+    "en": "Code editor with an official Windows Arm64 installer.",
+    "zh-TW": "提供官方 Windows Arm64 安裝程式的程式碼編輯器。"
+  },
+  "caveats": [
+    {
+      "en": "The release asset is named Zed-aarch64.exe next to Zed-x86_64.exe; the release page does not say it was tested on RTX Spark.",
+      "zh-TW": "發行頁的資產為 Zed-aarch64.exe，與 Zed-x86_64.exe 並列；頁面沒有說明是否在 RTX Spark 上測試過。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/zed-industries/zed/releases/tag/v1.27.0",
+      "title": "Zed v1.27.0 release (Zed-aarch64.exe)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

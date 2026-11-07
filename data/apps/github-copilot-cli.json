@@ -1,0 +1,32 @@
+{
+  "id": "github-copilot-cli",
+  "name": "GitHub Copilot CLI",
+  "vendor": "GitHub",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.0.107",
+  "homepage": "https://github.com/features/copilot/cli",
+  "summary": {
+    "en": "Terminal AI coding agent with Windows Arm64 zip and MSI packages.",
+    "zh-TW": "提供 Windows Arm64 zip 與 MSI 套件的終端機 AI 程式碼代理。"
+  },
+  "caveats": [
+    {
+      "en": "The release lists copilot-win32-arm64.zip and copilot-arm64.msi; no RTX Spark test is stated on the page.",
+      "zh-TW": "發行頁列出 copilot-win32-arm64.zip 與 copilot-arm64.msi；頁面沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.107",
+      "title": "GitHub Copilot CLI v1.0.107 release (copilot-win32-arm64.zip, copilot-arm64.msi)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

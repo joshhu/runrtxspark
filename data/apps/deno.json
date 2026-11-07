@@ -1,0 +1,32 @@
+{
+  "id": "deno",
+  "name": "Deno",
+  "vendor": "Deno Land Inc.",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "2.9.8",
+  "homepage": "https://deno.com",
+  "summary": {
+    "en": "JavaScript and TypeScript runtime with a native Windows Arm64 build.",
+    "zh-TW": "提供原生 Windows Arm64 版本的 JavaScript 與 TypeScript 執行環境。"
+  },
+  "caveats": [
+    {
+      "en": "The release publishes deno-aarch64-pc-windows-msvc.zip; the page does not report an RTX Spark test.",
+      "zh-TW": "發行頁提供 deno-aarch64-pc-windows-msvc.zip；頁面沒有 RTX Spark 的測試紀錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/denoland/deno/releases/tag/v2.9.8",
+      "title": "Deno v2.9.8 release (deno-aarch64-pc-windows-msvc.zip)",
+      "type": "release",
+      "checked": "2026-11-07"
+    }
+  ],
+  "addedAt": "2026-11-07",
+  "verifiedAt": "2026-11-07"
+}

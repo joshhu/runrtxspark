@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "2026.10.2",
+  "version": "2026.10.4",
   "homepage": "https://bitwarden.com",
   "summary": {
     "en": "Password manager desktop app with native Windows Arm64 packages.",
@@ -22,11 +22,11 @@
   "evidence": [
     {
       "url": "https://github.com/bitwarden/clients/releases",
-      "title": "Bitwarden Desktop v2026.10.2 release (Bitwarden-2026.10.2-arm64.appx)",
+      "title": "Bitwarden Desktop v2026.10.4 release (Bitwarden-2026.10.4-arm64.appx)",
       "type": "release",
-      "checked": "2026-11-02"
+      "checked": "2026-11-07"
     }
   ],
   "addedAt": "2026-11-02",
-  "verifiedAt": "2026-11-02"
+  "verifiedAt": "2026-11-07"
 }
