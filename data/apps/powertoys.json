@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "0.102.3001",
+  "version": "0.102.3101",
   "homepage": "https://github.com/microsoft/PowerToys",
   "summary": {
     "en": "Windows utility suite with official Arm64 installers.",
@@ -22,11 +22,11 @@
   "evidence": [
     {
       "url": "https://github.com/microsoft/PowerToys/releases/latest",
-      "title": "PowerToys v0.102.3001 release (PowerToysSetup-0.102.3001.0-arm64.exe)",
+      "title": "PowerToys v0.102.3101 release (PowerToysSetup-0.102.3101.0-arm64.exe)",
       "type": "release",
-      "checked": "2026-11-02"
+      "checked": "2026-11-08"
     }
   ],
   "addedAt": "2026-11-02",
-  "verifiedAt": "2026-11-02"
+  "verifiedAt": "2026-11-08"
 }

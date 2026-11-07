@@ -1,0 +1,32 @@
+{
+  "id": "libation",
+  "name": "Libation",
+  "vendor": "rmcrackan",
+  "category": "utility",
+  "status": "native",
+  "version": "14.2.5",
+  "homepage": "https://github.com/rmcrackan/Libation",
+  "summary": {
+    "en": "Audiobook library manager with Windows Arm64 setup and zip builds.",
+    "zh-TW": "有聲書書庫管理工具，提供 Windows Arm64 安裝程式與 zip。"
+  },
+  "caveats": [
+    {
+      "en": "The release lists Libation.14.2.5-windows-chardonnay-arm64-setup.exe and an arm64 zip; the Classic edition is x64 only. No RTX Spark test is stated.",
+      "zh-TW": "發行頁列出 Libation.14.2.5-windows-chardonnay-arm64-setup.exe 與 arm64 zip；Classic 版只有 x64。頁面沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/rmcrackan/Libation/releases/tag/v14.2.5",
+      "title": "Libation v14.2.5 release (windows-chardonnay-arm64 setup and zip)",
+      "type": "release",
+      "checked": "2026-11-08"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "addedAt": "2026-11-08",
+  "verifiedAt": "2026-11-08"
+}

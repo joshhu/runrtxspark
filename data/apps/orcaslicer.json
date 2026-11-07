@@ -1,0 +1,32 @@
+{
+  "id": "orcaslicer",
+  "name": "OrcaSlicer",
+  "vendor": "SoftFever",
+  "category": "creative",
+  "status": "native",
+  "version": "2.5.0",
+  "homepage": "https://github.com/SoftFever/OrcaSlicer",
+  "summary": {
+    "en": "3D-printing slicer with native Windows Arm64 installer and portable zip.",
+    "zh-TW": "3D 列印切片軟體，提供原生 Windows Arm64 安裝程式與可攜版 zip。"
+  },
+  "caveats": [
+    {
+      "en": "The release lists OrcaSlicer_Windows_Installer_V2.5.0_arm64.exe and a portable arm64 zip; no RTX Spark test is stated.",
+      "zh-TW": "發行頁列出 OrcaSlicer_Windows_Installer_V2.5.0_arm64.exe 與 arm64 可攜版 zip；頁面沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/SoftFever/OrcaSlicer/releases/tag/v2.5.0",
+      "title": "OrcaSlicer v2.5.0 release (arm64 installer and portable zip)",
+      "type": "release",
+      "checked": "2026-11-08"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "addedAt": "2026-11-08",
+  "verifiedAt": "2026-11-08"
+}

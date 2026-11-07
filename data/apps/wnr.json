@@ -1,0 +1,32 @@
+{
+  "id": "wnr",
+  "name": "Work/Break Timer (wnr)",
+  "vendor": "RoderickQiu",
+  "category": "productivity",
+  "status": "native",
+  "version": "1.35.0",
+  "homepage": "https://github.com/RoderickQiu/wnr",
+  "summary": {
+    "en": "Work and break timer with a separate Windows on Arm installer.",
+    "zh-TW": "工作與休息計時器，提供專用的 Windows on Arm 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "The release notes say the arm64 installer is only for Windows on ARM devices; the asset list was not visible on the page and no RTX Spark test is stated.",
+      "zh-TW": "發行說明寫明 arm64 安裝程式僅適用 Windows on ARM 裝置；頁面未顯示檔案清單，也沒有 RTX Spark 的測試說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/RoderickQiu/wnr/releases/tag/v1.35.0-patch",
+      "title": "wnr v1.35.0-patch release notes (arm64 installer note)",
+      "type": "release",
+      "checked": "2026-11-08"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "addedAt": "2026-11-08",
+  "verifiedAt": "2026-11-08"
+}

@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "8.9.8.1",
+  "version": "8.9.9",
   "homepage": "https://notepad-plus-plus.org",
   "summary": {
     "en": "Text and code editor with an official native Arm64 installer.",
@@ -22,11 +22,11 @@
   "evidence": [
     {
       "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest",
-      "title": "Notepad++ 8.9.8.1 release assets (npp.8.9.8.1.Installer.arm64.exe)",
+      "title": "Notepad++ 8.9.9 release assets (npp.8.9.9.Installer.arm64.exe)",
       "type": "release",
-      "checked": "2026-11-02"
+      "checked": "2026-11-08"
     }
   ],
   "addedAt": "2026-11-02",
-  "verifiedAt": "2026-11-02"
+  "verifiedAt": "2026-11-08"
 }

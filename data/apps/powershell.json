@@ -24,9 +24,9 @@
       "url": "https://github.com/PowerShell/PowerShell/releases/latest",
       "title": "PowerShell 7.6.9 release (PowerShell-7.6.9-win-arm64.msi)",
       "type": "release",
-      "checked": "2026-11-02"
+      "checked": "2026-11-08"
     }
   ],
   "addedAt": "2026-11-02",
-  "verifiedAt": "2026-11-02"
+  "verifiedAt": "2026-11-08"
 }
