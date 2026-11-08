@@ -37,28 +37,6 @@ const nvRows = JSON.stringify(
 ).replaceAll('<', '\\u003c');
 ---
 <Base locale={locale} active="list">
-  {latestAdded.apps.length > 0 && (
-    <section class="wrap latest" aria-labelledby="latest-title">
-      <div class="latest-head">
-        <h2 id="latest-title" class="latest-title">{t.latest.title}</h2>
-        <p class="muted small latest-sub">
-          {fill(t.latest.added, { date: formatDate(latestAdded.date, locale), n: latestAdded.apps.length })}
-        </p>
-        <a class="small latest-all" href={`${home}updates/`}>{t.latest.all}</a>
-      </div>
-      <ul class="latest-list">
-        {latestAdded.apps.map((app) => (
-          <li>
-            <a class="latest-item" href={`${home}apps/${app.id}/`}>
-              <span class="status" data-status={app.status}><StatusGlyph status={app.status} /><span class="visually-hidden">{t.status[app.status]}</span></span>
-              <span class="latest-name">{app.name}</span>
-              <span class="muted small">{app.vendor}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
   <section class="wrap hero">
     <div class="hero-copy">
       <h1>{t.hero.title}</h1>
@@ -66,6 +44,28 @@ const nvRows = JSON.stringify(
         <label class="visually-hidden" for="q">{t.hero.search}</label>
         <input id="q" type="search" placeholder={t.hero.search} autocomplete="off" />
       </div>
+      {latestAdded.apps.length > 0 && (
+        <section class="latest" aria-labelledby="latest-title">
+          <div class="latest-head">
+            <h2 id="latest-title" class="latest-title">{t.latest.title}</h2>
+            <p class="muted small latest-sub">
+              {fill(t.latest.added, { date: formatDate(latestAdded.date, locale), n: latestAdded.apps.length })}
+            </p>
+            <a class="small latest-all" href={`${home}updates/`}>{t.latest.all}</a>
+          </div>
+          <ul class="latest-list">
+            {latestAdded.apps.map((app) => (
+              <li>
+                <a class="latest-item" href={`${home}apps/${app.id}/`}>
+                  <span class="status" data-status={app.status}><StatusGlyph status={app.status} /><span class="visually-hidden">{t.status[app.status]}</span></span>
+                  <span class="latest-name">{app.name}</span>
+                  <span class="muted small">{app.vendor}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <fieldset class="tally">
         <legend class="visually-hidden">{t.list.filterStatus}</legend>
         <div class="bar" aria-hidden="true">
@@ -398,7 +398,7 @@ const nvRows = JSON.stringify(
 </script>
 
 <style>
-  .latest { padding-top: 20px; }
+  .latest { margin-top: 20px; }
   .latest-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 10px; }
   .latest-title { margin: 0; font-size: 0.9375rem; }
   .latest-sub { margin: 0; }
@@ -419,7 +419,7 @@ const nvRows = JSON.stringify(
   .hero { padding-block: clamp(24px, 4vw, 40px) clamp(24px, 3vw, 32px); }
   .hero-copy { max-width: 880px; }
   @media (max-width: 759px) {
-    .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .broken-note { display: none; }
+    .hero.is-searching .latest, .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .broken-note { display: none; }
     .hero.is-searching { padding-bottom: 16px; }
     .hero.is-searching .tally-option { padding-block: 6px; }
   }

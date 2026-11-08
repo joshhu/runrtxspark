@@ -120,8 +120,11 @@ for (const scheme of ['light', 'dark']) {
     await p.goto(`${BASE}zh-tw/`);
     const got = (await p.locator('.latest-item').evaluateAll((as) => as.map((a) => a.getAttribute('href').split('/apps/')[1].replace('/', '')))).sort();
     check(`${width}px: latest update lists the programs added ${latest}`, JSON.stringify(got) === JSON.stringify(want), got.join(','));
-    const first = await p.evaluate(() => document.querySelector('main').firstElementChild.classList.contains('latest'));
-    check(`${width}px: latest update comes before the hero`, first);
+    const placed = await p.evaluate(() => {
+      const latest = document.querySelector('.latest');
+      return latest.previousElementSibling?.classList.contains('search') && latest.parentElement.classList.contains('hero-copy');
+    });
+    check(`${width}px: latest update sits under the title and search box`, placed);
     check(`${width}px: latest update fits without sideways scroll`, await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     if (width === 1280) {
       const tagged = (await p.locator('.row[data-id]:has(.tag-new)').evaluateAll((rs) => rs.map((r) => r.dataset.id))).sort();
