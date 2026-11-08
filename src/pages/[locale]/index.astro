@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Wafer from '../../components/Wafer.astro';
 import StatusGlyph from '../../components/StatusGlyph.astro';
 import { LOCALES, LOCALE_META } from '../../lib/locale.mjs';
 import { fill, getDict } from '../../lib/i18n.mjs';
@@ -83,7 +82,6 @@ const nvRows = JSON.stringify(
       </fieldset>
       <p class="muted small broken-note">{t.list.brokenNote}</p>
     </div>
-    <Wafer apps={apps} locale={locale} />
   </section>
 
   <section
@@ -214,10 +212,6 @@ const nvRows = JSON.stringify(
   const pagerNums = document.getElementById('pager-nums');
   const pagerPrev = document.getElementById('pager-prev');
   const pagerNext = document.getElementById('pager-next');
-  const wafer = document.querySelector('.wafer');
-  const dies = new Map(
-    [...document.querySelectorAll('[data-wafer-die]')].map((d) => [d.dataset.waferDie, d]),
-  );
   const fromTuple = (source) => ([name, publisher, status, version, checked, url, category]) => ({
     name, publisher, status, version, checked, url, category, source,
     hay: `${name} ${publisher}`.toLowerCase(),
@@ -345,12 +339,8 @@ const nvRows = JSON.stringify(
     const from = (page - 1) * PER_PAGE;
     const to = Math.min(from + PER_PAGE, total);
 
-    const matched = new Set(ownMatch);
     const onPage = new Set(ownMatch.slice(from, to));
-    for (const row of ownRows) {
-      row.hidden = !onPage.has(row);
-      dies.get(row.dataset.id)?.classList.toggle('is-match', matched.has(row));
-    }
+    for (const row of ownRows) row.hidden = !onPage.has(row);
     extBox.replaceChildren(...ext
       .slice(Math.max(0, from - ownMatch.length), Math.max(0, to - ownMatch.length))
       .map(buildRow));
@@ -361,7 +351,6 @@ const nvRows = JSON.stringify(
       ? messages.error
       : messages.loading.replace('{n}', Number(catalog.dataset.indexTotal).toLocaleString('en'));
 
-    wafer.classList.toggle('wafer-filtered', Boolean(q || cat || wanted.length || src));
     // On phones the results would sit a full screen below the search box.
     document.querySelector('.hero').classList.toggle('is-searching', Boolean(q));
     count.textContent = messages.count.replace('{n}', total.toLocaleString('en'));
@@ -411,14 +400,14 @@ const nvRows = JSON.stringify(
 <style>
   .latest { padding-top: 20px; }
   .latest-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 10px; }
-  .latest-title { margin: 0; font-family: var(--display); font-size: 1.125rem; }
+  .latest-title { margin: 0; font-size: 0.9375rem; }
   .latest-sub { margin: 0; }
   .latest-all { margin-inline-start: auto; color: var(--ink); }
   .latest-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .latest-item {
     /* Relative, so the hidden status text stays inside the scroller on phones. */
     position: relative;
-    display: flex; align-items: baseline; gap: 8px; min-height: 44px; padding: 10px 14px;
+    display: flex; align-items: baseline; gap: 8px; min-height: 40px; padding: 8px 12px; font-size: 0.875rem;
     color: var(--ink); text-decoration: none; background: var(--surface);
     border: 1px solid var(--rule); border-radius: var(--radius-control);
   }
@@ -427,31 +416,22 @@ const nvRows = JSON.stringify(
   .latest-item .status { align-self: center; }
   .latest-name { font-weight: 600; }
   .tag-new { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .hero {
-    display: grid;
-    gap: 32px;
-    padding-block: clamp(32px, 6vw, 72px) clamp(32px, 5vw, 56px);
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-  .hero :global(.wafer) { width: min(100%, 440px); justify-self: center; }
-  @media (min-width: 900px) {
-    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 64px; }
-    .hero :global(.wafer) { justify-self: end; }
-  }
-  @media (max-width: 899px) {
-    .hero :global(.wafer) { width: min(70%, 300px); }
-    .hero.is-searching :global(.wafer), .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .broken-note { display: none; }
-    .hero.is-searching { padding-bottom: 16px; gap: 0; }
+  .hero { padding-block: clamp(24px, 4vw, 40px) clamp(24px, 3vw, 32px); }
+  .hero-copy { max-width: 880px; }
+  @media (max-width: 759px) {
+    .hero.is-searching .tally-def, .hero.is-searching .bar, .hero.is-searching .broken-note { display: none; }
+    .hero.is-searching { padding-bottom: 16px; }
     .hero.is-searching .tally-option { padding-block: 6px; }
   }
-  .search { margin-top: 24px; }
+  .search { margin-top: 16px; }
   .search input {
-    width: 100%; font: inherit; font-size: clamp(1.125rem, 1rem + 0.8vw, 1.5rem);
-    padding: 14px 16px; min-height: 56px;
+    width: 100%; font: inherit; font-size: 1rem;
+    padding: 10px 14px; min-height: 46px;
     background: var(--surface); color: var(--ink);
-    border: 2px solid var(--ink); border-radius: var(--radius-control);
+    border: 1px solid var(--rule); border-radius: var(--radius-control);
   }
+  .search input:hover { border-color: var(--muted); }
+  .search input:focus { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: -1px; }
   .search input::placeholder { color: var(--muted); }
   .table[hidden], .pager[hidden], .index-status[hidden] { display: none; }
   .sources { margin-bottom: 10px; }
@@ -459,7 +439,7 @@ const nvRows = JSON.stringify(
   .index-status { margin: 12px 0 0; }
   .tag-unchecked { border-style: dashed; }
   .rowgroup { display: contents; }
-  .broken-note { margin-top: 12px; max-width: 46ch; }
+  .broken-note { margin-top: 10px; max-width: 72ch; }
   .list-note { margin: 12px 0 0; max-width: 72ch; }
 
   .pager { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
@@ -471,7 +451,7 @@ const nvRows = JSON.stringify(
   .pager-step:disabled { opacity: 0.4; cursor: default; }
   .pager-gap { padding-inline: 2px; color: var(--muted); }
 
-  .tally { border: 0; margin: 28px 0 0; padding: 0; }
+  .tally { border: 0; margin: 20px 0 0; padding: 0; }
   .bar { display: flex; height: 8px; gap: 2px; margin-bottom: 8px; }
   .seg { flex: 0 0 auto; flex-basis: 0; min-width: 4px; border-radius: 1px; }
   .seg-native { background: var(--die-native); }
@@ -482,27 +462,33 @@ const nvRows = JSON.stringify(
     padding: 10px 0; border-bottom: 1px solid var(--rule); cursor: pointer;
   }
   .tally-option input { width: 18px; height: 18px; margin: 0; accent-color: var(--ink); }
-  .tally-num { justify-self: end; font-family: var(--display); font-size: 1.375rem; font-weight: 700; line-height: 1; }
+  .tally-num { justify-self: end; font-size: 1.125rem; font-weight: 600; line-height: 1; }
   .tally-def { grid-column: 2 / -1; margin-top: 2px; }
+  /* Wide screens put the three results side by side under one bar. */
+  @media (min-width: 760px) {
+    .tally { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; }
+    .bar { grid-column: 1 / -1; }
+    .tally-option { align-content: start; border-bottom: 0; padding-top: 6px; }
+  }
 
   .catalog { scroll-margin-top: 16px; }
   .catalog-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
   .cats { display: flex; flex-wrap: wrap; gap: 6px; }
   .cat {
-    font: inherit; font-size: 0.9375rem; color: var(--ink); background: transparent;
-    border: 1px solid var(--rule); border-radius: var(--radius-control); padding: 6px 12px; min-height: 40px; cursor: pointer;
+    font: inherit; font-size: 0.8125rem; color: var(--ink); background: transparent;
+    border: 1px solid var(--rule); border-radius: var(--radius-control); padding: 5px 10px; min-height: 36px; cursor: pointer;
   }
   .cat:hover { border-color: var(--ink); }
   .cat[aria-pressed='true'] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
-  .table { border-top: 2px solid var(--ink); }
+  .table { border-top: 1px solid var(--ink); }
   .head, .row {
     display: grid;
     grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.8fr) minmax(0, 1fr) 64px 112px;
     gap: 16px; align-items: center;
   }
   .head { padding: 8px 4px; font-size: 0.8125rem; color: var(--muted); border-bottom: 1px solid var(--rule); }
-  .row { position: relative; padding: 10px 4px; border-bottom: 1px solid var(--rule); }
+  .row { position: relative; padding: 8px 4px; border-bottom: 1px solid var(--rule); }
   .row[hidden] { display: none; }
   .row:hover { background: var(--surface); }
   .row-link { color: var(--ink); font-weight: 600; text-decoration: none; }
@@ -513,9 +499,9 @@ const nvRows = JSON.stringify(
   .name { display: flex; gap: 12px; align-items: center; min-width: 0; }
   .name-text { display: grid; min-width: 0; line-height: 1.35; }
   .mono {
-    flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 5px;
+    flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 5px;
     background: var(--surface); border: 1px solid var(--rule);
-    font-family: var(--display); font-weight: 700; color: var(--muted);
+    font-size: 0.8125rem; font-weight: 600; color: var(--muted);
   }
   .result { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
   .flags { display: inline-flex; gap: 4px; flex-wrap: wrap; }
@@ -536,8 +522,8 @@ const nvRows = JSON.stringify(
     .head { display: none; }
     .row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding-block: 12px; }
     .name { grid-column: 1 / -1; }
-    .result { grid-column: 1 / -1; padding-inline-start: 48px; }
-    .version { grid-column: 1; padding-inline-start: 48px; }
+    .result { grid-column: 1 / -1; padding-inline-start: 42px; }
+    .version { grid-column: 1; padding-inline-start: 42px; }
     .checked { grid-column: 2; grid-row: 3; text-align: end; }
     .reports { display: none; }
   }

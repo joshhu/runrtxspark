@@ -90,6 +90,24 @@ const errors = [];
 page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('pageerror', (e) => errors.push(e.message));
 
+// The theme button switches light and dark, and the choice survives a reload.
+for (const scheme of ['light', 'dark']) {
+  const c = await browser.newContext({ colorScheme: scheme });
+  const p = await c.newPage();
+  await p.goto(`${BASE}zh-tw/`);
+  const bg = () => p.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  const before = await bg();
+  const other = scheme === 'light' ? 'dark' : 'light';
+  check(`${scheme} system: button offers the ${other} theme`, (await p.locator('#theme').getAttribute('aria-label')).includes(other === 'dark' ? '深色' : '淺色'));
+  await p.locator('#theme').click();
+  check(`${scheme} system: button switches to ${other}`, (await p.evaluate(() => document.documentElement.dataset.theme)) === other && (await bg()) !== before);
+  await p.reload();
+  check(`${scheme} system: ${other} theme survives a reload`, (await p.evaluate(() => document.documentElement.dataset.theme)) === other && (await bg()) !== before);
+  await p.locator('#theme').click();
+  check(`${scheme} system: button switches back`, (await bg()) === before);
+  await c.close();
+}
+
 // The latest update leads the home page, and its programs are tagged in the list.
 {
   const all = readdirSync('data/apps').filter((f) => f.endsWith('.json'))
@@ -197,7 +215,6 @@ await srcButton('').click();
 await page.fill('#q', 'vllm');
 check('search finds both vLLM builds', (await visible()) === 2, `${await visible()}`);
 check('search syncs to the URL', page.url().includes('q=vllm'));
-check('wafer highlights matches', (await page.locator('[data-wafer-die].is-match').count()) === 2);
 await page.fill('#q', 'office');
 check('alias search finds Office apps', (await ownVisible()) === OFFICE, `${await ownVisible()} of ${OFFICE}`);
 await page.fill('#q', 'notarealprogram');
@@ -224,14 +241,6 @@ check('filters restore from a URL', (await visible()) === 2 && (await page.input
   check('phone search shows results on the first screen', top < 780, `${Math.round(top)}px`);
   await c.close();
 }
-
-// Wafer.
-await page.goto(`${BASE}zh-tw/`);
-check('every program has a die', (await page.locator('[data-wafer-die]').count()) === OWN);
-await page.locator('[data-wafer-die="adobe-photoshop"]').focus();
-await page.keyboard.press('Enter');
-await page.waitForURL('**/apps/adobe-photoshop/');
-check('die opens the program page', true);
 
 // Detail pages.
 await page.goto(`${BASE}zh-tw/apps/vllm-devjeonghwan/`);

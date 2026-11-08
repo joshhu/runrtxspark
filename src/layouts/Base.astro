@@ -1,5 +1,4 @@
 ---
-import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/ibm-plex-sans';
 import '../styles/global.css';
 import { LOCALES, LOCALE_META } from '../lib/locale.mjs';
@@ -36,6 +35,13 @@ const nav = [
     ))}
     <link rel="alternate" hreflang="x-default" href={new URL(path ? `${base}en/${path}` : base, Astro.site)} />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <script is:inline>
+      // Apply a saved theme before the first paint, so the page never flashes the other one.
+      try {
+        const saved = localStorage.getItem('rtxspark-theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">{t.nav.skip}</a>
@@ -47,17 +53,23 @@ const nav = [
             <a href={item.href} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>
           ))}
         </nav>
-        <details class="lang">
-          <summary>
-            <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="8" cy="8" r="6.5" /><ellipse cx="8" cy="8" rx="2.75" ry="6.5" /><path d="M1.5 8h13" /></svg>
-            <span class="visually-hidden">{t.nav.language} </span>{LOCALE_META[locale].label}
-          </summary>
-          <ul>
-            {LOCALES.map((l) => (
-              <li><a data-set-locale={l} lang={LOCALE_META[l].lang} href={`${base}${l}/${path}`} aria-current={l === locale ? 'true' : undefined}>{LOCALE_META[l].label}</a></li>
-            ))}
-          </ul>
-        </details>
+        <div class="tools">
+          <details class="lang">
+            <summary>
+              <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="8" cy="8" r="6.5" /><ellipse cx="8" cy="8" rx="2.75" ry="6.5" /><path d="M1.5 8h13" /></svg>
+              <span class="visually-hidden">{t.nav.language} </span>{LOCALE_META[locale].label}
+            </summary>
+            <ul>
+              {LOCALES.map((l) => (
+                <li><a data-set-locale={l} lang={LOCALE_META[l].lang} href={`${base}${l}/${path}`} aria-current={l === locale ? 'true' : undefined}>{LOCALE_META[l].label}</a></li>
+              ))}
+            </ul>
+          </details>
+          <button type="button" class="theme" id="theme" data-to-dark={t.nav.toDark} data-to-light={t.nav.toLight} aria-label={t.nav.toDark} title={t.nav.toDark}>
+            <svg class="moon" aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"><path d="M13.5 9.6A5.75 5.75 0 0 1 6.4 2.5a5.75 5.75 0 1 0 7.1 7.1Z" /></svg>
+            <svg class="sun" aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="3" /><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1.06 1.06M11.54 11.54l1.06 1.06M3.4 12.6l1.06-1.06M11.54 4.46l1.06-1.06" /></svg>
+          </button>
+        </div>
         <a class="button report-link" href={`${home}report/`}>{t.nav.report}</a>
       </div>
     </header>
@@ -90,6 +102,28 @@ const nav = [
         });
       });
 
+      // The theme button flips between light and dark and remembers the choice.
+      const root = document.documentElement;
+      const themeButton = document.getElementById('theme');
+      const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+      const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : darkQuery.matches);
+      const labelTheme = () => {
+        const label = isDark() ? themeButton.dataset.toLight : themeButton.dataset.toDark;
+        themeButton.setAttribute('aria-label', label);
+        themeButton.title = label;
+      };
+      themeButton.addEventListener('click', () => {
+        root.dataset.theme = isDark() ? 'light' : 'dark';
+        try {
+          localStorage.setItem('rtxspark-theme', root.dataset.theme);
+        } catch {
+          // Storage can be blocked; the theme still changes for this page.
+        }
+        labelTheme();
+      });
+      darkQuery.addEventListener('change', labelTheme);
+      labelTheme();
+
       // The menu floats over the page, so it has to close without another click on its label.
       const languageMenu = document.querySelector('details.lang');
       document.addEventListener('click', (event) => {
@@ -108,14 +142,27 @@ const nav = [
 <style>
   .site-header { border-bottom: 1px solid var(--rule); background: var(--bg); }
   .bar { display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
-  .wordmark { font-family: var(--display); font-weight: 800; font-size: 1.125rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .wordmark { font-family: var(--display); font-weight: 650; font-size: 1rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
   nav { display: flex; gap: 4px 16px; flex-wrap: wrap; order: 3; width: 100%; }
-  nav a { color: var(--muted); text-decoration: none; padding-block: 8px; min-height: 40px; }
+  nav a { color: var(--muted); text-decoration: none; padding-block: 8px; min-height: 40px; font-size: 0.9375rem; }
   nav a:hover, nav a[aria-current='page'] { color: var(--ink); }
   nav a[aria-current='page'] { box-shadow: inset 0 -2px 0 var(--ink); }
-  .report-link { font-size: 0.9375rem; }
-  .lang { position: relative; margin-inline-start: auto; }
-  .lang summary { display: flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; color: var(--muted); font-size: 0.9375rem; list-style: none; white-space: nowrap; }
+  .report-link { font-size: 0.875rem; }
+  .theme {
+    display: grid; place-items: center; width: 36px; height: 36px; padding: 0; cursor: pointer;
+    color: var(--muted); background: transparent; border: 1px solid var(--rule); border-radius: var(--radius-control);
+  }
+  .theme:hover { color: var(--ink); border-color: var(--ink); }
+  .theme .sun { display: none; }
+  :root[data-theme='dark'] .theme .sun { display: block; }
+  :root[data-theme='dark'] .theme .moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .theme .sun { display: block; }
+    :root:not([data-theme='light']) .theme .moon { display: none; }
+  }
+  .tools { display: flex; align-items: center; gap: 12px; margin-inline-start: auto; }
+  .lang { position: relative; }
+  .lang summary { display: flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; color: var(--muted); font-size: 0.875rem; list-style: none; white-space: nowrap; }
   .lang summary::-webkit-details-marker { display: none; }
   .lang summary:hover, .lang[open] summary { color: var(--ink); }
   .lang ul { position: absolute; z-index: 10; inset-block-start: 100%; inset-inline-end: 0; min-width: 9em; margin: 4px 0 0; padding: 4px; list-style: none; background: var(--bg); border: 1px solid var(--rule); }
@@ -125,14 +172,13 @@ const nav = [
   /* A phone cannot fit the name, the language and the button on one line, so the language goes above them. */
   @media (max-width: 479px) {
     .bar { gap: 4px 8px; padding-block-start: 4px; }
-    .lang { order: -1; width: 100%; margin-inline-start: 0; }
-    .lang summary { width: fit-content; margin-inline-start: auto; }
+    .tools { order: -1; width: 100%; justify-content: flex-end; }
     .report-link { margin-inline-start: auto; }
   }
   @media (min-width: 860px) {
     nav { order: 0; width: auto; }
   }
-  .site-footer { margin-top: 72px; border-top: 1px solid var(--rule); padding-block: 32px 40px; font-size: 0.9375rem; }
+  .site-footer { margin-top: 64px; border-top: 1px solid var(--rule); padding-block: 28px 36px; font-size: 0.875rem; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
   .foot p + p { margin-top: 4px; }
   .foot-links { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; }

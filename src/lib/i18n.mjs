@@ -2,8 +2,8 @@ export const SITE_NAME = 'Runs on RTX Spark';
 
 const en = {
   metaDescription: 'Which Windows apps run on NVIDIA RTX Spark laptops: native Arm64, under Prism, or not at all. Sourced entries and community test reports, reviewed daily.',
-  nav: { skip: 'Skip to content', list: 'Software', machines: 'Machines', updates: 'Updates', about: 'How it works', report: 'Report a result', language: 'Language' },
-  hero: { title: 'Will your software run on RTX Spark?', search: 'Search software or vendor', waferCaption: 'Each square is one program. Select one to open it. Empty squares are waiting for a result.' },
+  nav: { skip: 'Skip to content', list: 'Software', machines: 'Machines', updates: 'Updates', about: 'How it works', report: 'Report a result', language: 'Language', toDark: 'Switch to dark theme', toLight: 'Switch to light theme' },
+  hero: { title: 'Will your software run on RTX Spark?', search: 'Search software or vendor' },
   status: {
     native: 'Native', prism: 'Runs under Prism', broken: 'Fails under Prism',
     nativeDef: 'A Windows Arm64 build exists and runs directly on the chip.',
@@ -80,8 +80,8 @@ const en = {
 
 const zhTW = {
   metaDescription: '查詢 Windows 軟體能否在 NVIDIA RTX Spark 筆電上執行：原生 Arm64、透過 Prism 執行，或無法執行。每筆資料都有來源或測試回報，每天維護。',
-  nav: { skip: '跳到主要內容', list: '軟體', machines: '機種', updates: '最近更新', about: '運作方式', report: '回報測試結果', language: '語言' },
-  hero: { title: '你的軟體，RTX Spark 跑得動嗎？', search: '搜尋軟體或廠商', waferCaption: '每個方格是一套軟體，選取即可開啟。空白方格是還沒有結果的位置。' },
+  nav: { skip: '跳到主要內容', list: '軟體', machines: '機種', updates: '最近更新', about: '運作方式', report: '回報測試結果', language: '語言', toDark: '切換成深色主題', toLight: '切換成淺色主題' },
+  hero: { title: '你的軟體，RTX Spark 跑得動嗎？', search: '搜尋軟體或廠商' },
   status: {
     native: '原生', prism: 'Prism 可執行', broken: 'Prism 無法執行',
     nativeDef: '有 Windows Arm64 版本，直接在晶片上執行。',
@@ -158,8 +158,8 @@ const zhTW = {
 
 const zhCN = {
   metaDescription: '查询 Windows 软件能否在 NVIDIA RTX Spark 笔记本上运行：原生 Arm64、通过 Prism 运行，或无法运行。每条数据都有来源或测试报告，每天维护。',
-  nav: { skip: '跳到主要内容', list: '软件', machines: '机型', updates: '最近更新', about: '工作方式', report: '报告测试结果', language: '语言' },
-  hero: { title: '你的软件，RTX Spark 能运行吗？', search: '搜索软件或厂商', waferCaption: '每个方格代表一款软件，选择即可打开。空白方格是还没有结果的位置。' },
+  nav: { skip: '跳到主要内容', list: '软件', machines: '机型', updates: '最近更新', about: '工作方式', report: '报告测试结果', language: '语言', toDark: '切换为深色主题', toLight: '切换为浅色主题' },
+  hero: { title: '你的软件，RTX Spark 能运行吗？', search: '搜索软件或厂商' },
   status: {
     native: '原生', prism: 'Prism 可运行', broken: 'Prism 无法运行',
     nativeDef: '有 Windows Arm64 版本，直接在芯片上运行。',
@@ -221,8 +221,8 @@ const zhCN = {
 
 const ja = {
   metaDescription: 'NVIDIA RTX Spark ノートPCで Windows ソフトが動くかを確認できます。ネイティブ Arm64、Prism で動作、動作不可の3区分。出典またはテスト報告付きで毎日更新します。',
-  nav: { skip: '本文へ移動', list: 'ソフト', machines: '機種', updates: '更新履歴', about: '仕組み', report: 'テスト結果を報告', language: '言語' },
-  hero: { title: 'そのソフト、RTX Spark で動きますか？', search: 'ソフト名やメーカーで検索', waferCaption: '1マスが1本のソフトです。選択すると詳細が開きます。空きマスはまだ結果がない枠です。' },
+  nav: { skip: '本文へ移動', list: 'ソフト', machines: '機種', updates: '更新履歴', about: '仕組み', report: 'テスト結果を報告', language: '言語', toDark: 'ダークテーマに切り替え', toLight: 'ライトテーマに切り替え' },
+  hero: { title: 'そのソフト、RTX Spark で動きますか？', search: 'ソフト名やメーカーで検索' },
   status: {
     native: 'ネイティブ', prism: 'Prism で動作', broken: 'Prism で動作不可',
     nativeDef: 'Windows Arm64 版があり、チップ上で直接動作します。',
@@ -284,8 +284,8 @@ const ja = {
 
 const ko = {
   metaDescription: 'NVIDIA RTX Spark 노트북에서 Windows 프로그램이 실행되는지 확인하세요. 네이티브 Arm64, Prism 실행, 실행 불가로 구분하며 출처나 테스트 보고와 함께 매일 관리합니다.',
-  nav: { skip: '본문으로 건너뛰기', list: '소프트웨어', machines: '기기', updates: '업데이트', about: '운영 방식', report: '테스트 결과 보고', language: '언어' },
-  hero: { title: '내 소프트웨어, RTX Spark에서 돌아갈까요?', search: '소프트웨어 또는 제조사 검색', waferCaption: '칸 하나가 프로그램 하나입니다. 선택하면 열립니다. 빈 칸은 아직 결과가 없는 자리입니다.' },
+  nav: { skip: '본문으로 건너뛰기', list: '소프트웨어', machines: '기기', updates: '업데이트', about: '운영 방식', report: '테스트 결과 보고', language: '언어', toDark: '다크 테마로 전환', toLight: '라이트 테마로 전환' },
+  hero: { title: '내 소프트웨어, RTX Spark에서 돌아갈까요?', search: '소프트웨어 또는 제조사 검색' },
   status: {
     native: '네이티브', prism: 'Prism에서 실행', broken: 'Prism에서 실행 불가',
     nativeDef: 'Windows Arm64 버전이 있어 칩에서 직접 실행됩니다.',
