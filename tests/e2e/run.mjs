@@ -90,6 +90,33 @@ const errors = [];
 page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('pageerror', (e) => errors.push(e.message));
 
+// The latest update leads the home page, and its programs are tagged in the list.
+{
+  const all = readdirSync('data/apps').filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(`data/apps/${f}`, 'utf8')));
+  const latest = all.map((a) => a.addedAt).sort().at(-1);
+  const want = all.filter((a) => a.addedAt === latest).map((a) => a.id).sort();
+  for (const width of [390, 1280]) {
+    const p = await ctx.newPage();
+    await p.setViewportSize({ width, height: 800 });
+    await p.goto(`${BASE}zh-tw/`);
+    const got = (await p.locator('.latest-item').evaluateAll((as) => as.map((a) => a.getAttribute('href').split('/apps/')[1].replace('/', '')))).sort();
+    check(`${width}px: latest update lists the programs added ${latest}`, JSON.stringify(got) === JSON.stringify(want), got.join(','));
+    const first = await p.evaluate(() => document.querySelector('main').firstElementChild.classList.contains('latest'));
+    check(`${width}px: latest update comes before the hero`, first);
+    check(`${width}px: latest update fits without sideways scroll`, await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    if (width === 1280) {
+      const tagged = (await p.locator('.row[data-id]:has(.tag-new)').evaluateAll((rs) => rs.map((r) => r.dataset.id))).sort();
+      check('list tags the same programs as new', JSON.stringify(tagged) === JSON.stringify(want), tagged.join(','));
+      const href = await p.locator('.latest-item').first().getAttribute('href');
+      await p.locator('.latest-item').first().click();
+      await p.waitForURL(`**${href}`);
+      check('a latest update card opens its program', p.url().endsWith(href) && (await p.locator('h1').count()) === 1);
+    }
+    await p.close();
+  }
+}
+
 // Search and filters. The whole index is listed after this site's and NVIDIA's rows.
 const INDEX = JSON.parse(readFileSync('dist/api/index-rows.json', 'utf8')).length;
 const asked = [];

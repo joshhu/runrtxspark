@@ -4,7 +4,7 @@ import Wafer from '../../components/Wafer.astro';
 import StatusGlyph from '../../components/StatusGlyph.astro';
 import { LOCALES, LOCALE_META } from '../../lib/locale.mjs';
 import { fill, getDict } from '../../lib/i18n.mjs';
-import { apps, formatDate, listedCount, nvidiaApps, otherIndex, statusCounts, usedCategories } from '../../lib/data.mjs';
+import { apps, formatDate, latestAdded, listedCount, nvidiaApps, otherIndex, statusCounts, usedCategories } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -25,6 +25,7 @@ const messages = {
   error: t.src.error,
 };
 const indexTotal = otherIndex.length.toLocaleString('en');
+const latestIds = new Set(latestAdded.apps.map((a) => a.id));
 const sources = [
   ['', t.src.all, listedCount],
   ['own', t.src.own, apps.length],
@@ -37,6 +38,28 @@ const nvRows = JSON.stringify(
 ).replaceAll('<', '\\u003c');
 ---
 <Base locale={locale} active="list">
+  {latestAdded.apps.length > 0 && (
+    <section class="wrap latest" aria-labelledby="latest-title">
+      <div class="latest-head">
+        <h2 id="latest-title" class="latest-title">{t.latest.title}</h2>
+        <p class="muted small latest-sub">
+          {fill(t.latest.added, { date: formatDate(latestAdded.date, locale), n: latestAdded.apps.length })}
+        </p>
+        <a class="small latest-all" href={`${home}updates/`}>{t.latest.all}</a>
+      </div>
+      <ul class="latest-list">
+        {latestAdded.apps.map((app) => (
+          <li>
+            <a class="latest-item" href={`${home}apps/${app.id}/`}>
+              <span class="status" data-status={app.status}><StatusGlyph status={app.status} /><span class="visually-hidden">{t.status[app.status]}</span></span>
+              <span class="latest-name">{app.name}</span>
+              <span class="muted small">{app.vendor}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
   <section class="wrap hero">
     <div class="hero-copy">
       <h1>{t.hero.title}</h1>
@@ -117,6 +140,7 @@ const nvRows = JSON.stringify(
           <span class="result" role="cell">
             <span class="status" data-status={app.status}><StatusGlyph status={app.status} />{t.status[app.status]}</span>
             <span class="flags">
+              {latestIds.has(app.id) && <span class="tag tag-new">{t.latest.tag}</span>}
               {app.maturity && app.maturity !== 'stable' && <span class="tag">{t.maturity[app.maturity]}</span>}
               {app.caveats?.length > 0 && <span class="tag">{t.list.caveat}</span>}
             </span>
@@ -385,6 +409,24 @@ const nvRows = JSON.stringify(
 </script>
 
 <style>
+  .latest { padding-top: 20px; }
+  .latest-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 10px; }
+  .latest-title { margin: 0; font-family: var(--display); font-size: 1.125rem; }
+  .latest-sub { margin: 0; }
+  .latest-all { margin-inline-start: auto; color: var(--ink); }
+  .latest-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .latest-item {
+    /* Relative, so the hidden status text stays inside the scroller on phones. */
+    position: relative;
+    display: flex; align-items: baseline; gap: 8px; min-height: 44px; padding: 10px 14px;
+    color: var(--ink); text-decoration: none; background: var(--surface);
+    border: 1px solid var(--rule); border-radius: var(--radius-control);
+  }
+  .latest-item:hover { border-color: var(--ink); }
+  .latest-item:hover .latest-name { text-decoration: underline; }
+  .latest-item .status { align-self: center; }
+  .latest-name { font-weight: 600; }
+  .tag-new { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .hero {
     display: grid;
     gap: 32px;
@@ -483,6 +525,10 @@ const nvRows = JSON.stringify(
 
   @media (max-width: 760px) {
     /* One swipeable line each, so results still start on the first screen. */
+    .latest-list { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+    .latest-list::-webkit-scrollbar { display: none; }
+    .latest-list li { flex: none; }
+    .latest-item { white-space: nowrap; }
     .cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
     .cats::-webkit-scrollbar { display: none; }
     .cats .cat { flex: none; white-space: nowrap; }

@@ -47,6 +47,13 @@ export const lastUpdated = [
   .sort()
   .at(-1);
 
+// The programs added in the most recent update, shown first on the home page.
+const latestDate = apps.map((a) => a.addedAt).filter(Boolean).sort().at(-1);
+export const latestAdded = {
+  date: latestDate,
+  apps: apps.filter((a) => a.addedAt === latestDate),
+};
+
 const listed = [...apps, ...softwareIndex];
 export const listedCount = listed.length;
 
