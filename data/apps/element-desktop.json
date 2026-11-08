@@ -1,0 +1,32 @@
+{
+  "id": "element-desktop",
+  "name": "Element",
+  "vendor": "Element",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.12.33",
+  "homepage": "https://element.io",
+  "summary": {
+    "en": "Matrix chat client with an arm64 Windows installer on packages.element.io.",
+    "zh-TW": "Matrix 聊天用戶端，packages.element.io 提供 Windows arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Element/Element/1.12.33/Element.Element.installer.yaml",
+      "title": "winget manifest 1.12.33: Element Setup 1.12.33.exe (arm64)",
+      "type": "release",
+      "checked": "2026-11-09"
+    }
+  ],
+  "addedAt": "2026-11-09",
+  "verifiedAt": "2026-11-09"
+}

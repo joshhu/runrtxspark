@@ -1,0 +1,32 @@
+{
+  "id": "mattermost-desktop",
+  "name": "Mattermost Desktop",
+  "vendor": "Mattermost",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "6.3.2",
+  "homepage": "https://mattermost.com",
+  "summary": {
+    "en": "Team chat desktop app with a Windows arm64 MSI on GitHub releases.",
+    "zh-TW": "團隊聊天桌面應用程式，GitHub 發行頁提供 Windows arm64 MSI。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Mattermost/MattermostDesktop/6.3.2/Mattermost.MattermostDesktop.installer.yaml",
+      "title": "winget manifest 6.3.2: mattermost-desktop-6.3.2-win-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-09"
+    }
+  ],
+  "addedAt": "2026-11-09",
+  "verifiedAt": "2026-11-09"
+}

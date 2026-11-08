@@ -57,7 +57,7 @@
       "image": "dell-xps-16.webp",
       "imageSource": "https://i.dell.com/assetlink/img/global/laptop-xps-dx16263-gy-gallery-1-dl12v3lo-large.png?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=549&qlt=100,0&resMode=sharp2&size=549,402",
       "source": "https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263",
-      "verifiedAt": "2026-10-31"
+      "verifiedAt": "2026-11-09"
     },
     {
       "id": "hp-omnibook-ultra-16",
@@ -175,7 +175,7 @@
       "image": "microsoft-surface-dev-box.webp",
       "imageSource": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-RTX-Spark-Dev-Box-Logo-Corner-Angled?fmt=png-alpha&wid=1000",
       "source": "https://www.microsoft.com/en-us/store/configure/surface-rtx-spark-dev-box/8wg5vqp0x4gr",
-      "verifiedAt": "2026-11-08"
+      "verifiedAt": "2026-11-09"
     },
     {
       "id": "asus-proart-gr1x",
@@ -191,7 +191,7 @@
       "image": "asus-proart-gr1x.webp",
       "imageSource": "https://dlcdnwebimgs.asus.com/gain/4962aa42-efe6-4db1-bad9-5b61e99b30ca/",
       "source": "https://www.asus.com/us/news/proart-rtx-spark/",
-      "verifiedAt": "2026-11-08",
+      "verifiedAt": "2026-11-09",
       "imageCrop": {
         "left": 0,
         "top": 0,

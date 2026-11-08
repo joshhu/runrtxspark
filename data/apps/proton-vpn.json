@@ -1,0 +1,32 @@
+{
+  "id": "proton-vpn",
+  "name": "Proton VPN",
+  "vendor": "Proton AG",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "5.1.9",
+  "homepage": "https://protonvpn.com",
+  "summary": {
+    "en": "VPN client with a separate Windows arm64 installer (ProtonVPN_v5.1.9_arm64.exe).",
+    "zh-TW": "VPN 用戶端，提供獨立的 Windows arm64 安裝程式（ProtonVPN_v5.1.9_arm64.exe）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/p/Proton/ProtonVPN/5.1.9/Proton.ProtonVPN.installer.yaml",
+      "title": "winget manifest 5.1.9: ProtonVPN_v5.1.9_arm64.exe",
+      "type": "release",
+      "checked": "2026-11-09"
+    }
+  ],
+  "addedAt": "2026-11-09",
+  "verifiedAt": "2026-11-09"
+}

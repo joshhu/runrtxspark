@@ -1,0 +1,44 @@
+{
+  "id": "sogou-pinyin",
+  "name": "Sogou Pinyin IME",
+  "vendor": "Sogou",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "1.0+",
+  "homepage": "https://shurufa.sogou.com",
+  "aliases": [
+    "搜狗输入法",
+    "搜狗拼音"
+  ],
+  "summary": {
+    "en": "Chinese pinyin input method. Linaro's Works on WoA data lists it as native Arm64, validated by NVIDIA.",
+    "zh-TW": "中文拼音輸入法。Linaro 的 Works on WoA 資料列為原生 Arm64，並經 NVIDIA 驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    },
+    {
+      "en": "The catalog gives no version number; the version shown is a placeholder lower bound.",
+      "zh-TW": "目錄未提供版本號，所列版本僅為下限的暫定值。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: sogou-pinyin-ime (native)",
+      "type": "aggregator",
+      "checked": "2026-11-09"
+    }
+  ],
+  "addedAt": "2026-11-09",
+  "verifiedAt": "2026-11-09"
+}
