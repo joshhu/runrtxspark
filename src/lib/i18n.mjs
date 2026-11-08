@@ -17,7 +17,7 @@ const en = {
   },
   list: {
     all: 'All', allStatuses: 'All results', software: 'Software', result: 'Result', version: 'Version', checked: 'Checked', reports: 'Reports',
-    count: '{n} programs', none: 'No results for “{q}”.', noneAction: 'Report the first result', caveat: 'Has limits',
+    count: '{n} programs', none: 'No results for “{q}”.', noneAction: 'Report the first result', filtered: 'No results for “{q}” with the current filters. Without filters there are {n}.', clearFilters: 'Clear filters', caveat: 'Has limits',
     category: 'Category', filterStatus: 'Filter by result',
     pages: "Pages", prev: "Previous", next: "Next", range: "{from}–{to} of {n}", pageN: "Page {n}", brokenNote: "Catalogs mostly record software that works, so failures are under-counted. If something fails for you, report it.",
   },
@@ -95,7 +95,7 @@ const zhTW = {
   },
   list: {
     all: '全部', allStatuses: '全部結果', software: '軟體', result: '相容性', version: '版本', checked: '查證日期', reports: '回報',
-    count: '{n} 套軟體', none: '找不到「{q}」。', noneAction: '回報第一筆結果', caveat: '有限制',
+    count: '{n} 套軟體', none: '找不到「{q}」。', noneAction: '回報第一筆結果', filtered: '目前的篩選條件下找不到「{q}」，不設篩選時有 {n} 筆。', clearFilters: '清除篩選', caveat: '有限制',
     category: '分類', filterStatus: '依相容性篩選',
     pages: "分頁", prev: "上一頁", next: "下一頁", range: "第 {from}–{to} 筆，共 {n} 筆", pageN: "第 {n} 頁", brokenNote: "各資料庫大多只記錄能用的軟體，所以無法執行的數量偏低。遇到不能用的軟體，歡迎回報。",
   },
@@ -170,7 +170,7 @@ const zhCN = {
   scope: { 'rtx-spark': '已在 RTX Spark 确认', 'windows-on-arm': 'Windows on Arm 来源，尚未在 RTX Spark 确认' },
   list: {
     all: '全部', allStatuses: '全部结果', software: '软件', result: '兼容性', version: '版本', checked: '核实日期', reports: '报告',
-    count: '{n} 款软件', none: '找不到“{q}”。', noneAction: '报告第一条结果', caveat: '有限制', category: '分类', filterStatus: '按兼容性筛选',
+    count: '{n} 款软件', none: '找不到“{q}”。', noneAction: '报告第一条结果', filtered: '当前筛选条件下找不到“{q}”，不设筛选时有 {n} 条。', clearFilters: '清除筛选', caveat: '有限制', category: '分类', filterStatus: '按兼容性筛选',
     pages: "分页", prev: "上一页", next: "下一页", range: "第 {from}–{to} 条，共 {n} 条", pageN: "第 {n} 页", brokenNote: "各数据库大多只记录能用的软件，所以无法运行的数量偏低。遇到不能用的软件，欢迎反馈。",
   },
   latest: { title: "最新更新", added: "{date} 新增 {n} 款", all: "所有更新", tag: "新" },
@@ -233,7 +233,7 @@ const ja = {
   scope: { 'rtx-spark': 'RTX Spark で確認済み', 'windows-on-arm': 'Windows on Arm の情報で、RTX Spark では未確認' },
   list: {
     all: 'すべて', allStatuses: 'すべての結果', software: 'ソフト', result: '互換性', version: 'バージョン', checked: '確認日', reports: '報告',
-    count: '{n} 本', none: '「{q}」は見つかりませんでした。', noneAction: '最初の結果を報告', caveat: '制限あり', category: 'カテゴリ', filterStatus: '互換性で絞り込む',
+    count: '{n} 本', none: '「{q}」は見つかりませんでした。', noneAction: '最初の結果を報告', filtered: '現在の絞り込み条件では「{q}」は見つかりません。条件を外すと {n} 件あります。', clearFilters: '絞り込みを解除', caveat: '制限あり', category: 'カテゴリ', filterStatus: '互換性で絞り込む',
     pages: "ページ", prev: "前へ", next: "次へ", range: "{n} 件中 {from}–{to} 件", pageN: "{n} ページ目", brokenNote: "多くのカタログは動くソフトだけを記録するため、動かないソフトの数は少なめに出ています。動かないソフトを見つけたら報告してください。",
   },
   latest: { title: "最新の更新", added: "{date} に {n} 本を追加", all: "すべての更新", tag: "新着" },
@@ -296,7 +296,7 @@ const ko = {
   scope: { 'rtx-spark': 'RTX Spark에서 확인됨', 'windows-on-arm': 'Windows on Arm 자료이며 RTX Spark에서는 미확인' },
   list: {
     all: '전체', allStatuses: '모든 결과', software: '소프트웨어', result: '호환성', version: '버전', checked: '확인일', reports: '보고',
-    count: '{n}개 프로그램', none: '“{q}” 결과가 없습니다.', noneAction: '첫 결과 보고하기', caveat: '제한 있음', category: '분류', filterStatus: '호환성으로 필터',
+    count: '{n}개 프로그램', none: '“{q}” 결과가 없습니다.', noneAction: '첫 결과 보고하기', filtered: '현재 필터에서는 “{q}” 결과가 없습니다. 필터를 해제하면 {n}개가 있습니다.', clearFilters: '필터 해제', caveat: '제한 있음', category: '분류', filterStatus: '호환성으로 필터',
     pages: "페이지", prev: "이전", next: "다음", range: "{n}개 중 {from}–{to}", pageN: "{n}페이지", brokenNote: "대부분의 카탈로그는 작동하는 프로그램만 기록하므로 실행되지 않는 프로그램 수가 적게 나옵니다. 실행되지 않는 프로그램을 발견하면 제보해 주세요.",
   },
   latest: { title: "최신 업데이트", added: "{date}에 {n}개 추가", all: "모든 변경 사항", tag: "신규" },

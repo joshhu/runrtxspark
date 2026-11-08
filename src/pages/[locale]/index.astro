@@ -18,6 +18,7 @@ const PER_PAGE = 50;
 const messages = {
   count: t.list.count,
   none: t.list.none,
+  filtered: t.list.filtered,
   range: t.list.range,
   pageN: t.list.pageN,
   loading: t.src.loading,
@@ -186,6 +187,7 @@ const nvRows = JSON.stringify(
 
     <div class="empty" id="empty" hidden>
       <p id="empty-text"></p>
+      <button type="button" class="button" id="empty-clear" hidden>{t.list.clearFilters}</button>
       <a class="button" id="empty-action" href={`${home}report/`}>{t.list.noneAction}</a>
     </div>
   </section>
@@ -207,6 +209,7 @@ const nvRows = JSON.stringify(
   const empty = document.getElementById('empty');
   const emptyText = document.getElementById('empty-text');
   const emptyAction = document.getElementById('empty-action');
+  const emptyClear = document.getElementById('empty-clear');
   const pager = document.getElementById('pager');
   const pagerRange = document.getElementById('pager-range');
   const pagerNums = document.getElementById('pager-nums');
@@ -360,7 +363,19 @@ const nvRows = JSON.stringify(
     empty.hidden = !nothing;
     list.hidden = total === 0;
     if (nothing) {
-      emptyText.textContent = messages.none.replace('{q}', search.value.trim());
+      // A source, category or result filter can hide a match, so say so instead of "no results".
+      const filtered = Boolean(src || cat || wanted.length);
+      const hit = (hay) => !q || hay.includes(q);
+      const unfiltered = filtered
+        ? ownRows.filter((r) => hit(r.dataset.search)).length
+          + nvData.filter((e) => hit(e.hay)).length
+          + indexData.filter((e) => hit(e.hay)).length
+        : 0;
+      emptyText.textContent = unfiltered
+        ? messages.filtered.replace('{q}', search.value.trim()).replace('{n}', unfiltered.toLocaleString('en'))
+        : messages.none.replace('{q}', search.value.trim());
+      emptyClear.hidden = !unfiltered;
+      emptyAction.hidden = Boolean(unfiltered);
       emptyAction.href = `${catalog.dataset.report}?software=${encodeURIComponent(search.value.trim())}`;
     }
     if (syncUrl) {
@@ -389,7 +404,16 @@ const nvRows = JSON.stringify(
   page = Number.parseInt(params.get('page') ?? '1', 10) || 1;
 
   // A new search or filter starts again from the first page.
-  search.addEventListener('input', () => { page = 1; apply(); });
+  // While an input method is still composing, the box holds keystrokes, not the word yet.
+  search.addEventListener('input', (e) => { if (e.isComposing) return; page = 1; apply(); });
+  search.addEventListener('compositionend', () => { page = 1; apply(); });
+  emptyClear.addEventListener('click', () => {
+    src = '';
+    setCat('');
+    statusBoxes.forEach((b) => { b.checked = false; });
+    page = 1;
+    apply();
+  });
   srcButtons.forEach((b) => b.addEventListener('click', () => { src = b.dataset.src; page = 1; apply(); }));
   statusBoxes.forEach((b) => b.addEventListener('change', () => { page = 1; apply(); }));
   cats.forEach((b) => b.addEventListener('click', () => { setCat(b.dataset.cat); page = 1; apply(); }));
@@ -507,7 +531,7 @@ const nvRows = JSON.stringify(
   .flags { display: inline-flex; gap: 4px; flex-wrap: wrap; }
   .version { overflow-wrap: anywhere; }
   .empty { padding: 40px 0; display: grid; gap: 16px; justify-items: start; }
-  .empty[hidden] { display: none; }
+  .empty[hidden], .empty [hidden] { display: none; }
 
   @media (max-width: 760px) {
     /* One swipeable line each, so results still start on the first screen. */

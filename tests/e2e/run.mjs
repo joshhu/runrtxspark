@@ -234,6 +234,42 @@ await page.locator('.cat[data-cat=""]').click();
 await page.goto(`${BASE}zh-tw/?q=vllm&status=native`);
 check('filters restore from a URL', (await visible()) === 2 && (await page.inputValue('#q')) === 'vllm');
 
+// A filter that hides the match says so and offers to clear it.
+{
+  const p = await ctx.newPage();
+  await p.goto(`${BASE}zh-tw/?src=index`);
+  await p.locator('#index-status').waitFor({ state: 'hidden' });
+  await p.fill('#q', '嘸蝦米');
+  await p.locator('#empty').waitFor();
+  const text = await p.locator('#empty-text').textContent();
+  check('hidden match is explained, not "not found"', text.includes('篩選') && text.includes('1'), text);
+  check('clear filters is offered instead of reporting', (await p.locator('#empty-clear').isVisible()) && !(await p.locator('#empty-action').isVisible()));
+  await p.locator('#empty-clear').click();
+  const names = await p.locator('.row:visible .row-link').allTextContents();
+  check('clearing filters shows the match', names.some((n) => n.includes('嘸蝦米')), names.join(','));
+  check('clearing filters resets the source', !p.url().includes('src='));
+  for (const q of ['無蝦米', 'liu', '呒虾米']) {
+    await p.fill('#q', q);
+    const found = await p.locator('.row:visible .row-link').allTextContents();
+    check(`"${q}" finds Boshiamy`, found.some((n) => n.includes('嘸蝦米')), found.slice(0, 3).join(','));
+  }
+  // Typing through an input method: keystrokes in progress must not show "not found".
+  await p.fill('#q', '');
+  await p.click('#q');
+  const cdp = await p.context().newCDPSession(p);
+  let flashed = false;
+  for (const [comp, commit] of [['o'], ['of'], ['ofo'], [null, '嘸'], ['l'], ['lk'], [null, '蝦'], ['m'], [null, '米']]) {
+    if (comp) await cdp.send('Input.imeSetComposition', { text: comp, selectionStart: comp.length, selectionEnd: comp.length });
+    if (commit) await cdp.send('Input.insertText', { text: commit });
+    await p.waitForTimeout(50);
+    if (comp && await p.locator('#empty').isVisible()) flashed = true;
+  }
+  check('composing does not flash "not found"', !flashed);
+  const typed = await p.locator('.row:visible .row-link').allTextContents();
+  check('input method typing finds Boshiamy', typed.some((n) => n.includes('嘸蝦米')), typed.slice(0, 3).join(','));
+  await p.close();
+}
+
 // Phone: results must come right after the search box while searching.
 {
   const c = await browser.newContext({ viewport: { width: 390, height: 800 } });
