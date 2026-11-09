@@ -1,0 +1,32 @@
+{
+  "id": "zen-browser",
+  "name": "Zen Browser",
+  "vendor": "Zen Team",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.24.1b",
+  "homepage": "https://zen-browser.app",
+  "summary": {
+    "en": "Firefox-based browser with a Windows Arm64 installer on GitHub.",
+    "zh-TW": "以 Firefox 為基礎、在 GitHub 提供 Windows Arm64 安裝檔的瀏覽器。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/z/Zen-Team/Zen-Browser/1.24.1b/Zen-Team.Zen-Browser.installer.yaml",
+      "title": "winget manifest: Zen-Team.Zen-Browser 1.24.1b (zen.installer-arm64.exe)",
+      "type": "release",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

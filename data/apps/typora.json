@@ -1,0 +1,36 @@
+{
+  "id": "typora",
+  "name": "Typora",
+  "vendor": "Typora",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.14.9+",
+  "homepage": "https://typora.io",
+  "summary": {
+    "en": "Markdown editor whose winget manifest lists an Arm64 installer (typora-setup-arm64-1.14.9.exe).",
+    "zh-TW": "winget 資訊清單列有 Arm64 安裝檔（typora-setup-arm64-1.14.9.exe）的 Markdown 編輯器。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The manifest's Arm64 file is 1.14.9 while the manifest version is 1.14.15, so the newest Arm64 build is unconfirmed.",
+      "zh-TW": "資訊清單的 Arm64 檔案為 1.14.9，而清單版本為 1.14.15，最新的 Arm64 版本尚未確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/appmakes/Typora/1.14.15/appmakes.Typora.installer.yaml",
+      "title": "winget manifest: appmakes.Typora 1.14.15 (arm64 installer typora-setup-arm64-1.14.9.exe)",
+      "type": "release",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

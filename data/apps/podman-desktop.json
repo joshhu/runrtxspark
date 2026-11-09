@@ -1,0 +1,36 @@
+{
+  "id": "podman-desktop",
+  "name": "Podman Desktop",
+  "vendor": "Red Hat",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.30.5",
+  "homepage": "https://podman-desktop.io",
+  "summary": {
+    "en": "Container manager that ships a setup-arm64.exe installer.",
+    "zh-TW": "提供 setup-arm64.exe 安裝檔的容器管理工具。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Running containers needs WSL 2 or a Podman machine; that part was not checked.",
+      "zh-TW": "執行容器需要 WSL 2 或 Podman machine，此部分未檢查。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RedHat/Podman-Desktop/1.30.5/RedHat.Podman-Desktop.installer.yaml",
+      "title": "winget manifest: RedHat.Podman-Desktop 1.30.5 (podman-desktop-1.30.5-setup-arm64.exe)",
+      "type": "release",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

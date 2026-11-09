@@ -1,0 +1,32 @@
+{
+  "id": "warp-terminal",
+  "name": "Warp",
+  "vendor": "Warp",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.2026.11.04+",
+  "homepage": "https://www.warp.dev",
+  "summary": {
+    "en": "Terminal with an official Windows Arm64 download.",
+    "zh-TW": "提供官方 Windows Arm64 下載的終端機。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/w/Warp/Warp/v0.2026.11.04.08.17.stable_01/Warp.Warp.installer.yaml",
+      "title": "winget manifest: Warp.Warp v0.2026.11.04.08.17.stable_01 (arch=arm64 download)",
+      "type": "release",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

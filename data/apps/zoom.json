@@ -23,15 +23,15 @@
       "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/z/Zoom/Zoom",
       "title": "winget manifest: Zoom",
       "type": "release",
-      "checked": "2026-10-31"
+      "checked": "2026-11-10"
     },
     {
       "url": "https://learn.microsoft.com/surface/surface-arm-faq",
       "title": "Surface Arm FAQ",
       "type": "vendor",
-      "checked": "2026-11-02"
+      "checked": "2026-11-10"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-02"
+  "verifiedAt": "2026-11-10"
 }

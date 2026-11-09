@@ -1,0 +1,40 @@
+{
+  "id": "dingtalk",
+  "name": "DingTalk",
+  "vendor": "Alibaba",
+  "category": "communication",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 7.6.45+",
+  "homepage": "https://www.dingtalk.com",
+  "aliases": [
+    "釘釘",
+    "钉钉"
+  ],
+  "summary": {
+    "en": "Workplace chat and meetings app widely used in China. Linaro's catalog lists it as running under emulation.",
+    "zh-TW": "中國廣泛使用的職場通訊與會議軟體。Linaro 目錄列為透過模擬執行。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: dingtalk (emulation, from 7.6.45)",
+      "type": "aggregator",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

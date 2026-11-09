@@ -1,0 +1,35 @@
+{
+  "id": "drawio",
+  "name": "draw.io Desktop",
+  "vendor": "JGraph",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "32.6.10",
+  "homepage": "https://www.drawio.com",
+  "aliases": [
+    "diagrams.net"
+  ],
+  "summary": {
+    "en": "Diagramming app with a separate Windows Arm64 installer.",
+    "zh-TW": "附有獨立 Windows Arm64 安裝檔的流程圖繪製軟體。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/j/JGraph/Draw/32.6.10/JGraph.Draw.installer.yaml",
+      "title": "winget manifest: JGraph.Draw 32.6.10 (arm64 installer draw.io-arm64-32.6.10-windows-arm64-installer.exe)",
+      "type": "release",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

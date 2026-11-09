@@ -1,0 +1,44 @@
+{
+  "id": "naver-whale",
+  "name": "Naver Whale",
+  "vendor": "Naver",
+  "category": "browser",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "4.30.291.11+",
+  "homepage": "https://whale.naver.com",
+  "aliases": [
+    "네이버 웨일",
+    "웨일"
+  ],
+  "summary": {
+    "en": "Korean Chromium-based browser. Linaro's catalog lists a native Arm64 build.",
+    "zh-TW": "南韓以 Chromium 為基礎的瀏覽器。Linaro 目錄列有原生 Arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The Linaro entry was last updated 2026-05-08, so the current version is unconfirmed.",
+      "zh-TW": "Linaro 該筆資料最後更新於 2026-05-08，目前版本尚未確認。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: naverwhale (native, from 4.30.291.11)",
+      "type": "aggregator",
+      "checked": "2026-11-10"
+    }
+  ],
+  "addedAt": "2026-11-10",
+  "verifiedAt": "2026-11-10"
+}

@@ -17,14 +17,14 @@
       "checked": "2026-11-03"
     },
     {
-      "url": "https://github.com/ollama/ollama/releases/expanded_assets/v0.32.3",
-      "title": "Ollama v0.32.3 release assets (ollama-windows-arm64.zip)",
+      "url": "https://github.com/ollama/ollama/releases/expanded_assets/v0.40.15",
+      "title": "Ollama v0.40.15 release assets (ollama-windows-arm64.zip)",
       "type": "release",
-      "checked": "2026-11-03"
+      "checked": "2026-11-10"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-03",
+  "verifiedAt": "2026-11-10",
   "caveats": [
     {
       "en": "The Arm64 build ships as a ZIP; the release has no Arm64 OllamaSetup.exe.",

@@ -17,12 +17,12 @@
   ],
   "evidence": [
     {
-      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.43.0",
-      "title": "ComfyUI v0.43.0 release",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases",
+      "title": "ComfyUI releases (v0.44.0 latest; v0.40.0 added the ARM64 NVIDIA portable build)",
       "type": "release",
-      "checked": "2026-11-03"
+      "checked": "2026-11-10"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-03"
+  "verifiedAt": "2026-11-10"
 }
