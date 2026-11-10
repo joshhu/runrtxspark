@@ -1,0 +1,32 @@
+{
+  "id": "qoder-cli",
+  "name": "Qoder CLI",
+  "vendor": "Alibaba",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.1.80+",
+  "homepage": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/a/Alibaba/QoderCLI/1.1.80",
+  "summary": {
+    "en": "Alibaba AI coding agent CLI with a qodercli-windows-arm64 zip.",
+    "zh-TW": "阿里巴巴的 AI 編碼代理命令列工具，提供 qodercli-windows-arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Alibaba/QoderCLI/1.1.80/Alibaba.QoderCLI.installer.yaml",
+      "title": "winget manifest 1.1.80: qodercli-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

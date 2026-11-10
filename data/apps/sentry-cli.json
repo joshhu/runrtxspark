@@ -1,0 +1,32 @@
+{
+  "id": "sentry-cli",
+  "name": "Sentry CLI",
+  "vendor": "Sentry",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "3.8.2+",
+  "homepage": "https://github.com/getsentry/sentry-cli",
+  "summary": {
+    "en": "Sentry command-line tool with a native Windows aarch64 executable.",
+    "zh-TW": "Sentry 命令列工具，提供原生 Windows aarch64 執行檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/getsentry/sentry-cli/releases/expanded_assets/3.8.2",
+      "title": "sentry-cli 3.8.2 assets: sentry-cli-Windows-aarch64.exe",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

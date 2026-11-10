@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/DigitalScholar/Zotero/10.0.7/DigitalScholar.Zotero.installer.yaml",
       "title": "winget manifest 10.0.7: Zotero-10.0.7_arm64_setup.exe",
       "type": "release",
-      "checked": "2026-11-04"
+      "checked": "2026-11-11"
     }
   ],
   "addedAt": "2026-11-04",
-  "verifiedAt": "2026-11-04"
+  "verifiedAt": "2026-11-11"
 }

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/TheDocumentFoundation/LibreOffice/26.8.2.2/TheDocumentFoundation.LibreOffice.installer.yaml",
       "title": "winget manifest 26.8.2.2: arm64 installer LibreOffice_26.8.2_Win_aarch64.msi on download.documentfoundation.org",
       "type": "release",
-      "checked": "2026-11-04"
+      "checked": "2026-11-11"
     }
   ],
   "addedAt": "2026-11-04",
-  "verifiedAt": "2026-11-04"
+  "verifiedAt": "2026-11-11"
 }

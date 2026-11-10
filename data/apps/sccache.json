@@ -1,0 +1,32 @@
+{
+  "id": "sccache",
+  "name": "sccache",
+  "vendor": "Mozilla",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.19.0+",
+  "homepage": "https://github.com/mozilla/sccache",
+  "summary": {
+    "en": "Compiler cache for Rust, C and C++ with a Windows aarch64 release.",
+    "zh-TW": "支援 Rust、C、C++ 的編譯快取工具，Release 提供 Windows aarch64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/mozilla/sccache/releases/expanded_assets/v0.19.0",
+      "title": "sccache v0.19.0 assets: aarch64-pc-windows-msvc.zip",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

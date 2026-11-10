@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/Dropbox/Dropbox/270.4.3312/Dropbox.Dropbox.installer.yaml",
       "title": "winget manifest 270.4.3312: Offline Installer.arm64.exe and Enterprise Installer.arm64.msi",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-11"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-11"
 }

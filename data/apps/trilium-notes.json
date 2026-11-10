@@ -1,0 +1,32 @@
+{
+  "id": "trilium-notes",
+  "name": "TriliumNext Notes",
+  "vendor": "TriliumNext",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.107.0+",
+  "homepage": "https://github.com/TriliumNext/Trilium",
+  "summary": {
+    "en": "Hierarchical note-taking app with a Windows arm64 installer and zip.",
+    "zh-TW": "階層式筆記應用程式，提供 Windows arm64 安裝程式與 zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/TriliumNext/Trilium/releases/expanded_assets/v0.107.0",
+      "title": "TriliumNotes v0.107.0 assets: windows-arm64.exe and .zip",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

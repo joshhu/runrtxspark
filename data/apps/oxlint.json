@@ -1,0 +1,32 @@
+{
+  "id": "oxlint",
+  "name": "oxlint",
+  "vendor": "Oxc project",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.93.0+",
+  "homepage": "https://github.com/oxc-project/oxc",
+  "summary": {
+    "en": "JavaScript and TypeScript linter with an aarch64-pc-windows-msvc build.",
+    "zh-TW": "JavaScript 與 TypeScript 檢查工具，提供 aarch64-pc-windows-msvc 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/oxc-project/oxc/releases",
+      "title": "oxlint v1.93.0 release: oxlint-aarch64-pc-windows-msvc.zip",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "bazelisk",
+  "name": "Bazelisk",
+  "vendor": "Bazel",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.30.0+",
+  "homepage": "https://github.com/bazelbuild/bazelisk",
+  "summary": {
+    "en": "Launcher for Bazel with a native bazelisk-windows-arm64.exe.",
+    "zh-TW": "Bazel 啟動器，提供原生 bazelisk-windows-arm64.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/bazelbuild/bazelisk/releases/expanded_assets/v1.30.0",
+      "title": "Bazelisk v1.30.0 assets: bazelisk-windows-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}

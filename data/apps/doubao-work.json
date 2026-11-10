@@ -1,0 +1,36 @@
+{
+  "id": "doubao-work",
+  "name": "豆包 Work (Doubao Work)",
+  "vendor": "ByteDance",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.32.6",
+  "homepage": "https://www.doubao.com",
+  "summary": {
+    "en": "ByteDance workplace AI app with a separate DoubaoWork_Arm64 installer on the vendor CDN.",
+    "zh-TW": "字節跳動的職場 AI 應用，官方 CDN 另有 DoubaoWork_Arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/DoubaoWork/2.32.6/ByteDance.DoubaoWork.installer.yaml",
+      "title": "winget manifest 2.32.6: DoubaoWork_Arm64_installer_2.32.6.exe",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11",
+  "aliases": [
+    "Doubao Work",
+    "豆包"
+  ]
+}

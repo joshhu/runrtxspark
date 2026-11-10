@@ -34,9 +34,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Audacity/Audacity/4.0.2.263060742/Audacity.Audacity.installer.yaml",
       "title": "winget manifest: audacity-win-4.0.2-arm64.msi",
       "type": "release",
-      "checked": "2026-11-04"
+      "checked": "2026-11-11"
     }
   ],
   "addedAt": "2026-11-04",
-  "verifiedAt": "2026-11-04"
+  "verifiedAt": "2026-11-11"
 }

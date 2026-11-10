@@ -1,0 +1,32 @@
+{
+  "id": "temporal-cli",
+  "name": "Temporal CLI",
+  "vendor": "Temporal Technologies",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "1.10.0+",
+  "homepage": "https://github.com/temporalio/cli",
+  "summary": {
+    "en": "Temporal workflow command-line tool with windows_arm64 zip builds.",
+    "zh-TW": "Temporal 工作流程命令列工具，提供 windows_arm64 的 zip 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/temporalio/cli/releases/expanded_assets/v1.10.0",
+      "title": "Temporal CLI v1.10.0 assets: temporal_cli_1.10.0_windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-11"
+    }
+  ],
+  "addedAt": "2026-11-11",
+  "verifiedAt": "2026-11-11"
+}
