@@ -108,7 +108,8 @@ npm run validate
 git add data public/machines
 git commit -m "Daily update: <what changed>"
 git pull --rebase origin main
-git push origin main
+git push origin HEAD:main
+git branch --set-upstream-to=origin/main
 ```
 
-A push to `main` deploys the site. If validation or tests fail, fix your data, and never bypass the check. If nothing changed, do not commit. End with a short summary of what you added, changed, approved, and declined, and anything that needs a human.
+A push to `main` deploys the site. You start on a `claude/*` working branch. Push it to `main` only, never to a branch of its own. The last line makes the branch track `origin/main`, so the session no longer reports unpushed commits. If a hook still says commits are unpushed, run `git status -sb`. When it shows the branch level with `origin/main`, the work is already on `main`: say so and stop, without pushing a branch. Push a branch and open a pull request only when the push to `main` was refused. If validation or tests fail, fix your data, and never bypass the check. If nothing changed, do not commit. End with a short summary of what you added, changed, approved, and declined, and anything that needs a human.
