@@ -22,7 +22,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Tencent/QQ/NT/9.9.33.52230/Tencent.QQ.NT.installer.yaml",
       "title": "winget manifest 9.9.33.52230: QQ_9.9.33_260813_arm64_01.exe",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-12"
     }
   ],
   "caveats": [
@@ -33,5 +33,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-12"
 }

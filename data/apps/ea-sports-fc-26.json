@@ -19,13 +19,13 @@
       "url": "https://www.ea.com/games/ea-sports-fc/news/pitch-notes-fc26-pc-deep-dive",
       "title": "EA: FC 26 PC deep dive, protected by EA Javelin Anticheat",
       "type": "vendor",
-      "checked": "2026-11-03"
+      "checked": "2026-11-12"
     },
     {
       "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
       "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
       "type": "vendor",
-      "checked": "2026-11-03"
+      "checked": "2026-11-12"
     },
     {
       "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
@@ -35,7 +35,7 @@
     }
   ],
   "addedAt": "2026-11-03",
-  "verifiedAt": "2026-11-03",
+  "verifiedAt": "2026-11-12",
   "aliases": [
     "FC 26",
     "EA FC 26"

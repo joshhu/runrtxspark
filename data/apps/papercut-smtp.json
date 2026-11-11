@@ -1,0 +1,32 @@
+{
+  "id": "papercut-smtp",
+  "name": "Papercut SMTP",
+  "vendor": "Changemaker Studios",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "8.0.2",
+  "homepage": "https://github.com/ChangemakerStudios/Papercut-SMTP",
+  "summary": {
+    "en": "Local SMTP test server and mail viewer with a win-arm64 installer.",
+    "zh-TW": "本機 SMTP 測試伺服器與郵件檢視工具，提供 win-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/ChangemakerStudios/Papercut-SMTP/8.0.2/ChangemakerStudios.Papercut-SMTP.installer.yaml",
+      "title": "winget manifest 8.0.2: PapercutSMTP-win-arm64-stable-Setup.exe",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

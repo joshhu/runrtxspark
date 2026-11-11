@@ -1,0 +1,32 @@
+{
+  "id": "zcode",
+  "name": "Z Code",
+  "vendor": "Z.AI (Zhipu)",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.17.2",
+  "homepage": "https://zcode-ai.com/",
+  "summary": {
+    "en": "Z.AI (Zhipu, China) AI coding agent desktop app with a windows-arm64 installer.",
+    "zh-TW": "智譜 Z.AI（中國）的 AI 程式開發代理桌面應用，提供 windows-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/z/ZhipuAI/ZCode/3.17.2/ZhipuAI.ZCode.installer.yaml",
+      "title": "winget manifest 3.17.2: ZCode-3.17.2-win-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

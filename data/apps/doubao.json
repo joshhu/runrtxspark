@@ -21,7 +21,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/Doubao/2.32.5/ByteDance.Doubao.installer.yaml",
       "title": "winget manifest 2.32.5: Doubao_Arm64_installer_2.32.5.exe",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-12"
     }
   ],
   "caveats": [
@@ -32,5 +32,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-12"
 }

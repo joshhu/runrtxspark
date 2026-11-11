@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Mikrotik/Winbox/4.5/Mikrotik.Winbox.installer.yaml",
       "title": "winget manifest 4.5: download.mikrotik.com/.../WinBox_Windows_arm64.zip",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-12"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-12"
 }

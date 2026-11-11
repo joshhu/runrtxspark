@@ -1,0 +1,32 @@
+{
+  "id": "liberica-jre-21",
+  "name": "BellSoft Liberica JRE 21",
+  "vendor": "BellSoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "21.0.13.0.3+5",
+  "homepage": "https://bell-sw.com/libericajdk/",
+  "summary": {
+    "en": "Java 21 runtime with a Windows aarch64 MSI.",
+    "zh-TW": "Java 21 執行環境，提供 Windows aarch64 MSI。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/BellSoft/LibericaJRE/21/21.0.13.0.3+5/BellSoft.LibericaJRE.21.installer.yaml",
+      "title": "winget manifest 21.0.13.0.3+5: bellsoft-jre21.0.13.0.3+5-windows-aarch64.msi",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

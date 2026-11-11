@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OlegShparber/Zeal/0.9.2/OlegShparber.Zeal.installer.yaml",
       "title": "winget manifest 0.9.2: zeal-0.9.2-windows-arm64.msi",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-12"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-12"
 }

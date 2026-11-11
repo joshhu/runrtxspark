@@ -1,0 +1,32 @@
+{
+  "id": "kimi-code-cli",
+  "name": "Kimi Code CLI",
+  "vendor": "Moonshot AI",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.5.2",
+  "homepage": "https://moonshotai.github.io/kimi-code/",
+  "summary": {
+    "en": "Moonshot AI (China) coding agent CLI with a win32-arm64 binary on the vendor site.",
+    "zh-TW": "月之暗面（中國）的程式開發代理命令列工具，官方網站提供 win32-arm64 執行檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/MoonshotAI/KimiCodeCLI/2.5.2/MoonshotAI.KimiCodeCLI.installer.yaml",
+      "title": "winget manifest 2.5.2: kimi-code-win32-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

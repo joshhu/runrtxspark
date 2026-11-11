@@ -1,0 +1,36 @@
+{
+  "id": "clouddrive2",
+  "name": "CloudDrive2",
+  "vendor": "Waytech",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.1.3",
+  "homepage": "https://www.clouddrive2.com/",
+  "summary": {
+    "en": "Chinese cloud-drive manager that mounts cloud storage as local disks, with an Arm64 installer.",
+    "zh-TW": "可把多個雲端硬碟掛載為本機磁碟的中國雲端硬碟管理工具，提供 Arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Mounting cloud drives as local disks relies on a file-system driver; that part was not tested.",
+      "zh-TW": "把雲端硬碟掛載為本機磁碟需要檔案系統驅動程式，這部分未測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/w/Waytech/CloudDrive2/1.0/Waytech.CloudDrive2.installer.yaml",
+      "title": "winget manifest: CloudDrive2Setup-Arm64-1.1.3.exe",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "elgato-wave-link",
+  "name": "Elgato Wave Link",
+  "vendor": "Corsair (Elgato)",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.4.0.4650",
+  "homepage": "https://www.elgato.com/s/downloads",
+  "summary": {
+    "en": "Elgato audio mixing app for streamers with a separate arm64 MSIX package.",
+    "zh-TW": "Elgato 為實況主打造的音訊混音應用程式，另有 arm64 MSIX 安裝套件。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The app is native, but Elgato hardware and its drivers were not tested on RTX Spark.",
+      "zh-TW": "應用程式為原生版本，但 Elgato 硬體與驅動程式未在 RTX Spark 上測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Elgato/WaveLink/3.4.0.4650/Elgato.WaveLink.installer.yaml",
+      "title": "winget manifest 3.4.0.4650: Elgato.WaveLink_3.4.0.4650_arm64.msix",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

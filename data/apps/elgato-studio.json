@@ -1,0 +1,36 @@
+{
+  "id": "elgato-studio",
+  "name": "Elgato Studio",
+  "vendor": "Corsair (Elgato)",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.0.0.3364",
+  "homepage": "https://www.elgato.com/s/downloads",
+  "summary": {
+    "en": "Elgato capture and camera app with a separate arm64 MSIX package.",
+    "zh-TW": "Elgato 的擷取與攝影機應用程式，另有 arm64 MSIX 安裝套件。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The older Camera Hub and Video Capture apps are listed separately as not working on Windows on Arm; capture hardware drivers were not tested.",
+      "zh-TW": "舊版 Camera Hub 與 Video Capture 另列為無法在 Windows on Arm 使用；擷取硬體驅動程式未測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Elgato/Studio/2.0.0.3364/Elgato.Studio.installer.yaml",
+      "title": "winget manifest 2.0.0.3364: Elgato.Studio_2.0.0.3364_arm64.msix",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}

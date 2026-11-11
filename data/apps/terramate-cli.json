@@ -1,0 +1,32 @@
+{
+  "id": "terramate-cli",
+  "name": "Terramate CLI",
+  "vendor": "Terramate GmbH",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.17.4",
+  "homepage": "https://github.com/terramate-io/terramate",
+  "summary": {
+    "en": "Infrastructure-as-code orchestration CLI with a windows_arm64 release archive.",
+    "zh-TW": "基礎架構即程式碼協作命令列工具，提供 windows_arm64 發行壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Terramate/CLI/0.17.4/Terramate.CLI.installer.yaml",
+      "title": "winget manifest 0.17.4: terramate_0.17.4_windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-12"
+    }
+  ],
+  "addedAt": "2026-11-12",
+  "verifiedAt": "2026-11-12"
+}
