@@ -1,0 +1,32 @@
+{
+  "id": "microsoft-pix",
+  "name": "Microsoft PIX",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2610.28",
+  "homepage": "https://devblogs.microsoft.com/pix/",
+  "summary": {
+    "en": "DirectX 12 graphics debugging and profiling tool with an ARM64 installer.",
+    "zh-TW": "DirectX 12 繪圖除錯與效能分析工具，提供 ARM64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/PIX/2610.28/Microsoft.PIX.installer.yaml",
+      "title": "winget manifest 2610.28: PIX-2610.28-Installer-ARM64.exe",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}

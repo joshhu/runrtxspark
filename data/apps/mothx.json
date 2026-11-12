@@ -1,0 +1,32 @@
+{
+  "id": "mothx",
+  "name": "MothX",
+  "vendor": "OSCHINA",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.3.107",
+  "homepage": "https://github.com/oschina/mothx",
+  "summary": {
+    "en": "Terminal AI coding assistant from OSCHINA (開源中國) shipped as a single binary, with a windows-arm64 zip.",
+    "zh-TW": "開源中國（OSCHINA）的終端機 AI 程式助理，單一執行檔，提供 windows-arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OSCHINA/MothX/1.3.107/OSCHINA.MothX.installer.yaml",
+      "title": "winget manifest 1.3.107: mothx-1.3.107-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "podman",
+  "name": "Podman",
+  "vendor": "Red Hat",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "5.8.9",
+  "homepage": "https://podman.io",
+  "summary": {
+    "en": "Container engine with a windows-arm64 installer in the 5.8.9 release.",
+    "zh-TW": "容器引擎，5.8.9 版提供 windows-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Containers on Windows run through a Linux VM (WSL or Hyper-V), which this source does not cover.",
+      "zh-TW": "Windows 上的容器經由 Linux 虛擬機執行（WSL 或 Hyper-V），此來源未涵蓋這部分。"
+    },
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RedHat/Podman/5.8.9/RedHat.Podman.installer.yaml",
+      "title": "winget manifest 5.8.9: podman-installer-windows-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}

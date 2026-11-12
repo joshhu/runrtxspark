@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/Cockos/REAPER/7.84/Cockos.REAPER.installer.yaml",
       "title": "winget manifest 7.84: reaper784_win11_arm64ec_beta-install.exe",
       "type": "release",
-      "checked": "2026-11-05"
+      "checked": "2026-11-13"
     }
   ],
   "caveats": [
@@ -32,5 +32,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-05"
+  "verifiedAt": "2026-11-13"
 }

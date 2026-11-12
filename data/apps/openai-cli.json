@@ -1,0 +1,32 @@
+{
+  "id": "openai-cli",
+  "name": "OpenAI CLI",
+  "vendor": "OpenAI",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.51.5",
+  "homepage": "https://github.com/openai/openai-cli",
+  "summary": {
+    "en": "Command-line client for the OpenAI API, released with a windows_arm64 zip.",
+    "zh-TW": "OpenAI API 的命令列工具，release 提供 windows_arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OpenAI/OpenAICLI/1.51.5/OpenAI.OpenAICLI.installer.yaml",
+      "title": "winget manifest 1.51.5: openai_1.51.5_windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}

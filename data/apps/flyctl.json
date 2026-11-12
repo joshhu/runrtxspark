@@ -1,0 +1,32 @@
+{
+  "id": "flyctl",
+  "name": "flyctl",
+  "vendor": "Fly.io",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.5.8",
+  "homepage": "https://fly.io/docs/flyctl/",
+  "summary": {
+    "en": "Fly.io command-line tool, released with a Windows_arm64 zip.",
+    "zh-TW": "Fly.io 命令列工具，release 提供 Windows_arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/f/Fly-io/flyctl/0.5.8/Fly-io.flyctl.installer.yaml",
+      "title": "winget manifest 0.5.8: flyctl_0.5.8_Windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}

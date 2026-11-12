@@ -1,0 +1,32 @@
+{
+  "id": "octop",
+  "name": "Octop",
+  "vendor": "Tencent Cloud",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "beta",
+  "confidence": "medium",
+  "version": "1.0.3b4",
+  "homepage": "https://github.com/TencentCloud/Octop",
+  "summary": {
+    "en": "Self-hosted AI assistant from Tencent Cloud, with a windows-arm64 desktop installer in a beta release.",
+    "zh-TW": "騰訊雲推出的自架 AI 助理，beta 版提供 windows-arm64 桌面安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Tencent/Octop/1.0.3b4/Tencent.Octop.installer.yaml",
+      "title": "winget manifest 1.0.3b4: Octop-desktop-windows-arm64-1.0.3b4.exe",
+      "type": "release",
+      "checked": "2026-11-13"
+    }
+  ],
+  "addedAt": "2026-11-13",
+  "verifiedAt": "2026-11-13"
+}
