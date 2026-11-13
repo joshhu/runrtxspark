@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/GitHubDesktop/3.6.10/GitHub.GitHubDesktop.installer.yaml",
       "title": "winget manifest 3.6.10: GitHubDesktopSetup-arm64.exe",
       "type": "release",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-14"
 }

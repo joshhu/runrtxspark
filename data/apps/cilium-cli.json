@@ -1,0 +1,32 @@
+{
+  "id": "cilium-cli",
+  "name": "Cilium CLI",
+  "vendor": "Cilium",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.20.3",
+  "homepage": "https://github.com/cilium/cilium-cli",
+  "summary": {
+    "en": "Command-line tool for installing and checking Cilium; the release includes cilium-windows-arm64.zip.",
+    "zh-TW": "安裝與檢查 Cilium 的命令列工具；發行版含 cilium-windows-arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/Cilium/CiliumCLI/0.20.3/Cilium.CiliumCLI.installer.yaml",
+      "title": "winget manifest 0.20.3: cilium-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

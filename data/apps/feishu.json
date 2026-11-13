@@ -1,0 +1,36 @@
+{
+  "id": "feishu",
+  "name": "Feishu (Lark)",
+  "vendor": "ByteDance",
+  "category": "communication",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 7.38.6",
+  "homepage": "https://www.feishu.cn/download",
+  "summary": {
+    "en": "Chinese team chat and office suite. Linaro's Works on WoA data lists the x64 build as working under emulation, validated by Qualcomm and NVIDIA.",
+    "zh-TW": "中國的團隊通訊與辦公套件。Linaro 的 Works on WoA 資料列為 x64 版透過模擬執行，並經 Qualcomm 與 NVIDIA 驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: feishu (emulation, 7.38.6)",
+      "type": "aggregator",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

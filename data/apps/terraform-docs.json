@@ -1,0 +1,32 @@
+{
+  "id": "terraform-docs",
+  "name": "terraform-docs",
+  "vendor": "terraform-docs",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.25.1",
+  "homepage": "https://terraform-docs.io/",
+  "summary": {
+    "en": "Generates documentation from Terraform modules; the release includes a windows-arm64 zip.",
+    "zh-TW": "由 Terraform 模組產生文件的工具；發行版含 windows-arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Terraform-docs/Terraform-docs/v0.25.1/Terraform-docs.Terraform-docs.installer.yaml",
+      "title": "winget manifest v0.25.1: terraform-docs-v0.25.1-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

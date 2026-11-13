@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/k/kangfenmao/CherryStudio/2.1.10/kangfenmao.CherryStudio.installer.yaml",
       "title": "winget manifest 2.1.10: Cherry-Studio-2.1.10-win-arm64-setup.exe",
       "type": "release",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-14"
 }

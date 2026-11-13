@@ -7,16 +7,16 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "26.05",
+  "version": "26.06",
   "homepage": "https://www.7-zip.org",
   "evidence": [
     {
       "url": "https://www.7-zip.org/download.html",
       "title": "7-Zip downloads",
       "type": "vendor",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-14"
 }

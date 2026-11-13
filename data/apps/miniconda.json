@@ -17,13 +17,13 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Anaconda/Miniconda3/py314_26.9.3-0/Anaconda.Miniconda3.installer.yaml",
       "title": "winget manifest py314_26.9.3-0: Miniconda3-py314_26.9.3-0-Windows-arm64.exe",
       "type": "release",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     },
     {
       "url": "https://forums.developer.nvidia.com/t/rtx-spark-getting-started-with-development/385976",
       "title": "NVIDIA: RTX Spark getting started with development (native Windows ARM64 Miniconda installer)",
       "type": "vendor",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     }
   ],
   "caveats": [
@@ -34,5 +34,5 @@
   ],
   "scope": "rtx-spark",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-14"
 }

@@ -1,0 +1,36 @@
+{
+  "id": "personal-ai-router",
+  "name": "NVIDIA Personal AI Router (PAIR)",
+  "vendor": "NVIDIA",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.0.0",
+  "homepage": "https://www.nvidia.com/en-us/ai-on-rtx/personal-ai-router/",
+  "summary": {
+    "en": "Local inference router that spreads AI workloads across computers on the same network; the installer list includes an arm64 build.",
+    "zh-TW": "本機推論路由器，可把 AI 工作負載分配到同一網路上的電腦；安裝程式清單包含 arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Thurrott's report of NVIDIA's launch announcement lists PAIR as generally available alongside RTX Spark, but does not say the build was tested on RTX Spark hardware.",
+      "zh-TW": "Thurrott 報導 NVIDIA 發表會時將 PAIR 列為正式推出，與 RTX Spark 並列，但未說明該版本曾在 RTX Spark 硬體上測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/n/Nvidia/PersonalAIRouter/1.0.0/Nvidia.PersonalAIRouter.installer.yaml",
+      "title": "winget manifest 1.0.0: NVPAIR-Setup-1.0.0-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

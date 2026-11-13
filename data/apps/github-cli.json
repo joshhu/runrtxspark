@@ -17,7 +17,7 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/cli/2.103.3/GitHub.cli.installer.yaml",
       "title": "winget manifest 2.103.3: gh_2.103.3_windows_arm64.msi",
       "type": "release",
-      "checked": "2026-11-06"
+      "checked": "2026-11-14"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-14"
 }

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/Bruno/Bruno/4.3.0/Bruno.Bruno.installer.yaml",
       "title": "winget manifest 4.3.0: bruno_4.3.0_arm64_win installers",
       "type": "release",
-      "checked": "2026-11-07"
+      "checked": "2026-11-14"
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-14"
 }

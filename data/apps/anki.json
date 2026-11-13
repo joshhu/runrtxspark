@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Anki/Anki/26.09.4/Anki.Anki.installer.yaml",
       "title": "winget manifest 26.09.4: anki-26.09.4-win-arm64.msi",
       "type": "release",
-      "checked": "2026-11-07"
+      "checked": "2026-11-14"
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-14"
 }

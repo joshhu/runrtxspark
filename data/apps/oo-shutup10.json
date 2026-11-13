@@ -1,0 +1,32 @@
+{
+  "id": "oo-shutup10",
+  "name": "O&O ShutUp10++",
+  "vendor": "O&O Software",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.7.1143",
+  "homepage": "https://www.oo-software.com/en/shutup10",
+  "summary": {
+    "en": "Portable privacy and telemetry settings tool; the winget manifest lists a separate arm64 executable.",
+    "zh-TW": "可攜式隱私與遙測設定工具；winget 資訊清單列有獨立的 arm64 執行檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OO-Software/ShutUp10/3.7.1143/OO-Software.ShutUp10.installer.yaml",
+      "title": "winget manifest 3.7.1143: ooshutup10_3.7.1143_arm64.exe",
+      "type": "release",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

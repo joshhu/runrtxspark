@@ -1,0 +1,36 @@
+{
+  "id": "bandizip",
+  "name": "Bandizip",
+  "vendor": "Bandisoft",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "7.32",
+  "homepage": "https://www.bandisoft.com/bandizip/",
+  "summary": {
+    "en": "Korean file compression tool. Linaro's Works on WoA data lists it as native Arm64, validated by Qualcomm and NVIDIA.",
+    "zh-TW": "韓國的檔案壓縮工具。Linaro 的 Works on WoA 資料列為原生 Arm64，並經 Qualcomm 與 NVIDIA 驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: bandizip (native, 7.32)",
+      "type": "aggregator",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}

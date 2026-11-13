@@ -1,0 +1,32 @@
+{
+  "id": "dotnet-sdk-11",
+  "name": "Microsoft .NET SDK 11",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "11.0.100",
+  "homepage": "https://dotnet.microsoft.com",
+  "summary": {
+    "en": "The .NET 11 SDK ships a win-arm64 installer on download.microsoft.com.",
+    "zh-TW": ".NET 11 SDK 在 download.microsoft.com 提供 win-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/DotNet/SDK/11/11.0.100/Microsoft.DotNet.SDK.11.installer.yaml",
+      "title": "winget manifest 11.0.100: dotnet-sdk-11.0.100-win-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-14"
+    }
+  ],
+  "addedAt": "2026-11-14",
+  "verifiedAt": "2026-11-14"
+}
