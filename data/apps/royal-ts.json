@@ -1,0 +1,36 @@
+{
+  "id": "royal-ts",
+  "name": "Royal TS 7",
+  "vendor": "Royal Apps",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "7.4",
+  "homepage": "https://www.royalapps.com",
+  "summary": {
+    "en": "Remote connection manager with an Arm64 MSI (royaltsinstaller_7.04.51113.0_arm64.msi).",
+    "zh-TW": "遠端連線管理工具，提供 Arm64 MSI 安裝檔（royaltsinstaller_7.04.51113.0_arm64.msi）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Plug-ins and connection types may rely on x64 components; not tested.",
+      "zh-TW": "外掛與連線類型可能依賴 x64 元件，未測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RoyalApps/RoyalTS/7/7.4.51113.0/RoyalApps.RoyalTS.7.installer.yaml",
+      "title": "winget manifest: Royal TS 7.4.51113.0 (arm64 MSI)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

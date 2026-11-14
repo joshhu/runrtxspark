@@ -1,0 +1,36 @@
+{
+  "id": "ruby",
+  "name": "RubyInstaller",
+  "vendor": "RubyInstaller Team",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "4.0.9",
+  "homepage": "https://rubyinstaller.org",
+  "summary": {
+    "en": "Ruby for Windows has an Arm64 installer (rubyinstaller-4.0.9-1-arm.exe).",
+    "zh-TW": "Windows 版 Ruby 提供 Arm64 安裝程式（rubyinstaller-4.0.9-1-arm.exe）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Native gems that compile C extensions may need an Arm64 toolchain.",
+      "zh-TW": "需編譯 C 擴充的 gem 可能需要 Arm64 工具鏈。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RubyInstallerTeam/Ruby/4/0/4.0.9-1/RubyInstallerTeam.Ruby.4.0.installer.yaml",
+      "title": "winget manifest: RubyInstaller 4.0.9-1 (arm64 installer)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

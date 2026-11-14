@@ -1,0 +1,36 @@
+{
+  "id": "chewing-tsf",
+  "name": "新酷音輸入法 (Windows)",
+  "vendor": "Chewing 專案",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "beta",
+  "confidence": "low",
+  "version": "26.11.724+",
+  "homepage": "https://github.com/chewing/windows-chewing-tsf",
+  "summary": {
+    "en": "The Chewing Zhuyin input method for Windows added initial Windows on Arm support in v26.11.724.",
+    "zh-TW": "新酷音輸入法（Windows 版）於 v26.11.724 起初步支援 Windows on Arm。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The release notes call the support \"initial\"; the exact Arm64 installer asset was not visible on the page read.",
+      "zh-TW": "發行說明稱為「初步支援」；所讀頁面未顯示 Arm64 安裝檔的確切名稱。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/chewing/windows-chewing-tsf/releases",
+      "title": "windows-chewing-tsf releases: v26.11.724 \"Windows on Arm 支援\"",
+      "type": "release",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

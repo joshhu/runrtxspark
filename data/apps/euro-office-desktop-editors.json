@@ -1,0 +1,32 @@
+{
+  "id": "euro-office-desktop-editors",
+  "name": "Euro-Office Desktop Editors",
+  "vendor": "Euro-Office",
+  "category": "productivity",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "9.3.8",
+  "homepage": "https://github.com/Euro-Office/DesktopEditors",
+  "summary": {
+    "en": "Open-source office suite with a Windows Arm64 installer in v9.3.8 (released 2026-11-14).",
+    "zh-TW": "開源辦公室軟體，v9.3.8（2026-11-14 發行）提供 Windows Arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/EuroOffice/DesktopEditors/9.3.8.0/EuroOffice.DesktopEditors.installer.yaml",
+      "title": "winget manifest: Euro-Office Desktop Editors 9.3.8.0 (arm64 installer)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

@@ -14,12 +14,12 @@
   ],
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Google/Chrome/157.0.8103.39/Google.Chrome.installer.yaml",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Google/Chrome/157.0.8103.79/Google.Chrome.installer.yaml",
       "title": "winget manifest 157.0.8103.39: googlechromestandaloneenterprise_arm64.msi",
       "type": "release",
-      "checked": "2026-11-06"
+      "checked": "2026-11-15"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-06"
+  "verifiedAt": "2026-11-15"
 }

@@ -1,0 +1,36 @@
+{
+  "id": "dbeaver",
+  "name": "DBeaver Community",
+  "vendor": "DBeaver Corp",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "26.2.3",
+  "homepage": "https://dbeaver.io",
+  "summary": {
+    "en": "Database client with a Windows Arm64 (aarch64) installer in the 26.2.3 release.",
+    "zh-TW": "資料庫用戶端，26.2.3 版提供 Windows Arm64（aarch64）安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Listed from the winget manifest, which points to the vendor's GitHub release asset; the program was not run.",
+      "zh-TW": "依據 winget 資訊清單（指向原廠 GitHub 發行檔），未實際執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/DBeaver/DBeaver/Community/26.2.3/DBeaver.DBeaver.Community.installer.yaml",
+      "title": "winget manifest: DBeaver Community 26.2.3 (arm64 aarch64 installer)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

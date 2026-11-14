@@ -1,0 +1,36 @@
+{
+  "id": "openvpn",
+  "name": "OpenVPN Community",
+  "vendor": "OpenVPN Inc.",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.7.9",
+  "homepage": "https://openvpn.net",
+  "summary": {
+    "en": "VPN client with an Arm64 MSI (OpenVPN-2.7.9-I001-arm64.msi).",
+    "zh-TW": "VPN 用戶端，提供 Arm64 MSI 安裝檔（OpenVPN-2.7.9-I001-arm64.msi）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The tunnel driver must also work on Arm64; this was not tested here.",
+      "zh-TW": "通道驅動程式也須支援 Arm64，此處未實測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OpenVPNTechnologies/OpenVPN/2.7.901/OpenVPNTechnologies.OpenVPN.installer.yaml",
+      "title": "winget manifest: OpenVPN 2.7.901 (arm64 MSI)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "azure-storage-explorer",
+  "name": "Azure Storage Explorer",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.47.1",
+  "homepage": "https://azure.microsoft.com/products/storage/storage-explorer",
+  "summary": {
+    "en": "Azure Storage Explorer has a Windows Arm64 installer (StorageExplorer-windows-arm64.exe) in v1.47.1.",
+    "zh-TW": "Azure Storage Explorer 於 v1.47.1 提供 Windows Arm64 安裝程式（StorageExplorer-windows-arm64.exe）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/Azure/StorageExplorer/1.47.1/Microsoft.Azure.StorageExplorer.installer.yaml",
+      "title": "winget manifest: Azure Storage Explorer 1.47.1 (arm64 installer)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}

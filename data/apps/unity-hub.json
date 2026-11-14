@@ -1,0 +1,36 @@
+{
+  "id": "unity-hub",
+  "name": "Unity Hub",
+  "vendor": "Unity Technologies",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.22.6",
+  "homepage": "https://unity.com",
+  "summary": {
+    "en": "Unity Hub has a Windows Arm64 installer (UnityHubSetup-3.22.6-arm64.exe).",
+    "zh-TW": "Unity Hub 提供 Windows Arm64 安裝程式（UnityHubSetup-3.22.6-arm64.exe）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Covers the Hub only, not the Unity Editor.",
+      "zh-TW": "僅限 Hub，不含 Unity 編輯器。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/u/Unity/UnityHub/3.22.6.65535/Unity.UnityHub.installer.yaml",
+      "title": "winget manifest: Unity Hub 3.22.6 (arm64 installer)",
+      "type": "aggregator",
+      "checked": "2026-11-15"
+    }
+  ],
+  "addedAt": "2026-11-15",
+  "verifiedAt": "2026-11-15"
+}
