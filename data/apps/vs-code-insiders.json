@@ -1,0 +1,32 @@
+{
+  "id": "vs-code-insiders",
+  "name": "Visual Studio Code Insiders",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "beta",
+  "confidence": "medium",
+  "version": "1.146.0",
+  "homepage": "https://code.visualstudio.com/insiders/",
+  "summary": {
+    "en": "Daily-build channel of VS Code. The winget manifest lists VSCodeSetup-arm64 and VSCodeUserSetup-arm64 installers.",
+    "zh-TW": "VS Code 的每日建置版本，winget 清單提供 VSCodeSetup-arm64 與 VSCodeUserSetup-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/VisualStudioCode/Insiders/1.146.0/Microsoft.VisualStudioCode.Insiders.installer.yaml",
+      "title": "winget manifest 1.146.0: VSCodeSetup-arm64-1.146.0-insider.exe",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}

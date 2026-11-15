@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/Oven-sh/Bun/1.4.4/Oven-sh.Bun.installer.yaml",
       "title": "winget manifest 1.4.4: bun-windows-aarch64.zip",
       "type": "release",
-      "checked": "2026-11-07"
+      "checked": "2026-11-16"
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-16"
 }

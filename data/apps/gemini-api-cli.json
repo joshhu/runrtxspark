@@ -1,0 +1,32 @@
+{
+  "id": "gemini-api-cli",
+  "name": "Gemini API CLI",
+  "vendor": "Google",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.4.6",
+  "homepage": "https://github.com/google-gemini/gemini-api-cli",
+  "summary": {
+    "en": "Command-line client for the Gemini API. The v0.4.6 release ships gemini-api_Windows_arm64.zip.",
+    "zh-TW": "Gemini API 的命令列工具，v0.4.6 版提供 gemini-api_Windows_arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Google/GeminiAPICLI/0.4.6/Google.GeminiAPICLI.installer.yaml",
+      "title": "winget manifest 0.4.6: gemini-api_Windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}

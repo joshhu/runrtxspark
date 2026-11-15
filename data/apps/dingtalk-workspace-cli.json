@@ -1,0 +1,32 @@
+{
+  "id": "dingtalk-workspace-cli",
+  "name": "DingTalk Workspace CLI",
+  "vendor": "Alibaba",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.0.68",
+  "homepage": "https://github.com/DingTalk-Real-AI/dingtalk-workspace-cli",
+  "summary": {
+    "en": "Command-line tool for DingTalk workspace APIs. The v1.0.68 release ships dws-windows-arm64.zip.",
+    "zh-TW": "釘釘工作區的命令列工具，v1.0.68 版提供 dws-windows-arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Alibaba/DingTalkWorkspaceCLI/1.0.68/Alibaba.DingTalkWorkspaceCLI.installer.yaml",
+      "title": "winget manifest 1.0.68: dws-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}

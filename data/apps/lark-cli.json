@@ -1,0 +1,32 @@
+{
+  "id": "lark-cli",
+  "name": "Lark CLI",
+  "vendor": "ByteDance",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.0.100",
+  "homepage": "https://github.com/larksuite/cli",
+  "summary": {
+    "en": "Command-line tool for Lark (Feishu) APIs from ByteDance. The v1.0.100 release ships lark-cli-1.0.100-windows-arm64.zip.",
+    "zh-TW": "字節跳動 Lark（飛書）的命令列工具，v1.0.100 版提供 lark-cli-1.0.100-windows-arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/LarkCLI/1.0.100/ByteDance.LarkCLI.installer.yaml",
+      "title": "winget manifest 1.0.100: lark-cli-1.0.100-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}

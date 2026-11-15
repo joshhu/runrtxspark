@@ -1,0 +1,32 @@
+{
+  "id": "mimo-code",
+  "name": "MiMoCode",
+  "vendor": "Xiaomi",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.1.17",
+  "homepage": "https://github.com/XiaomiMiMo/MiMo-Code",
+  "summary": {
+    "en": "Terminal coding agent from Xiaomi. The v0.1.17 release ships mimocode-windows-arm64.zip.",
+    "zh-TW": "小米的終端機程式碼助理，v0.1.17 版提供 mimocode-windows-arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/x/Xiaomi/MiMoCode/0.1.17/Xiaomi.MiMoCode.installer.yaml",
+      "title": "winget manifest 0.1.17: mimocode-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}

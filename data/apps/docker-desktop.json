@@ -23,9 +23,9 @@
       "url": "https://docs.docker.com/desktop/setup/install/windows-install/",
       "title": "Install Docker Desktop on Windows",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-16"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-16"
 }

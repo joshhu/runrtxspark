@@ -1,0 +1,32 @@
+{
+  "id": "cyberduck-cli",
+  "name": "Cyberduck CLI (duck)",
+  "vendor": "iterate GmbH",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "9.6.0.46406",
+  "homepage": "https://duck.sh/",
+  "summary": {
+    "en": "Command-line file transfer client for FTP, SFTP, S3 and cloud storage. The release ships duck-9.6.0.46406-arm64.msi.",
+    "zh-TW": "支援 FTP、SFTP、S3 與雲端儲存的命令列檔案傳輸工具，版本提供 duck-9.6.0.46406-arm64.msi。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/i/Iterate/CyberduckCLI/9.6.0.46406/Iterate.CyberduckCLI.installer.yaml",
+      "title": "winget manifest 9.6.0.46406: duck-9.6.0.46406-arm64.msi",
+      "type": "release",
+      "checked": "2026-11-16"
+    }
+  ],
+  "addedAt": "2026-11-16",
+  "verifiedAt": "2026-11-16"
+}
