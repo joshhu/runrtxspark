@@ -1,0 +1,32 @@
+{
+  "id": "kubectl",
+  "name": "kubectl",
+  "vendor": "Kubernetes",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.37.2",
+  "homepage": "https://kubernetes.io/docs/reference/kubectl/",
+  "summary": {
+    "en": "Kubernetes command-line tool. The winget manifest lists a Windows arm64 kubectl.exe.",
+    "zh-TW": "Kubernetes 命令列工具，winget 清單提供 Windows arm64 版 kubectl.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/k/Kubernetes/kubectl/1.37.2/Kubernetes.kubectl.installer.yaml",
+      "title": "winget manifest 1.37.2: windows/arm64/kubectl.exe",
+      "type": "release",
+      "checked": "2026-11-17"
+    }
+  ],
+  "addedAt": "2026-11-17",
+  "verifiedAt": "2026-11-17"
+}

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/n/Neovim/Neovim/0.12.6/Neovim.Neovim.installer.yaml",
       "title": "winget manifest 0.12.6: nvim-win-arm64.msi",
       "type": "release",
-      "checked": "2026-11-07"
+      "checked": "2026-11-17"
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-17"
 }

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/l/Logseq/Logseq/2.0.2/Logseq.Logseq.installer.yaml",
       "title": "winget manifest 2.0.2: Logseq-win-arm64-2.0.2-nsis.exe",
       "type": "release",
-      "checked": "2026-11-07"
+      "checked": "2026-11-17"
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-17"
 }

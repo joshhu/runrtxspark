@@ -1,0 +1,32 @@
+{
+  "id": "llvm",
+  "name": "LLVM / Clang",
+  "vendor": "LLVM Project",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "23.1.5",
+  "homepage": "https://llvm.org",
+  "summary": {
+    "en": "Compiler toolchain. The winget manifest lists LLVM-23.1.5-woa64.msi, the Windows on Arm installer.",
+    "zh-TW": "編譯器工具鏈，winget 清單提供 LLVM-23.1.5-woa64.msi（Windows on Arm 版）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/l/LLVM/LLVM/23.1.5/LLVM.LLVM.installer.yaml",
+      "title": "winget manifest 23.1.5: LLVM-23.1.5-woa64.msi",
+      "type": "release",
+      "checked": "2026-11-17"
+    }
+  ],
+  "addedAt": "2026-11-17",
+  "verifiedAt": "2026-11-17"
+}

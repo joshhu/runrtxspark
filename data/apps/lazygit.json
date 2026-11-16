@@ -1,0 +1,32 @@
+{
+  "id": "lazygit",
+  "name": "lazygit",
+  "vendor": "Jesse Duffield",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.66.1",
+  "homepage": "https://github.com/jesseduffield/lazygit",
+  "summary": {
+    "en": "Terminal UI for Git. The winget manifest lists lazygit_0.66.1_Windows_arm64.zip.",
+    "zh-TW": "Git 終端機介面工具，winget 清單提供 Windows_arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/j/JesseDuffield/lazygit/0.66.1/JesseDuffield.lazygit.installer.yaml",
+      "title": "winget manifest 0.66.1: lazygit_0.66.1_Windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-17"
+    }
+  ],
+  "addedAt": "2026-11-17",
+  "verifiedAt": "2026-11-17"
+}

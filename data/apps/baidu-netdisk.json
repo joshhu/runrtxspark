@@ -1,0 +1,40 @@
+{
+  "id": "baidu-netdisk",
+  "name": "Baidu Netdisk",
+  "vendor": "Baidu",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 7.52.0.135",
+  "homepage": "https://pan.baidu.com",
+  "aliases": [
+    "百度网盘",
+    "百度網盤"
+  ],
+  "summary": {
+    "en": "Baidu's cloud storage client. Linaro's catalog lists it as working under x64 emulation.",
+    "zh-TW": "百度網盤雲端硬碟用戶端。Linaro 資料庫列為以 x64 轉譯執行可運作。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only Linaro's catalog (tested on a Qualcomm device, 2026-03-02) was found; no vendor statement.",
+      "zh-TW": "只找到 Linaro 資料庫的紀錄（2026-03-02 在高通裝置上測試），沒有原廠說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: baidunetdisk (emulation, v7.52.0.135)",
+      "type": "aggregator",
+      "checked": "2026-11-17"
+    }
+  ],
+  "addedAt": "2026-11-17",
+  "verifiedAt": "2026-11-17"
+}

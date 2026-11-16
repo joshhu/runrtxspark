@@ -1,0 +1,32 @@
+{
+  "id": "yt-dlp",
+  "name": "yt-dlp",
+  "vendor": "yt-dlp contributors",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2026.10.26",
+  "homepage": "https://github.com/yt-dlp/yt-dlp",
+  "summary": {
+    "en": "Command-line media downloader. The winget manifest lists yt-dlp_arm64.exe.",
+    "zh-TW": "影音下載命令列工具，winget 清單提供 yt-dlp_arm64.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/y/yt-dlp/yt-dlp/2026.10.26/yt-dlp.yt-dlp.installer.yaml",
+      "title": "winget manifest 2026.10.26: yt-dlp_arm64.exe",
+      "type": "release",
+      "checked": "2026-11-17"
+    }
+  ],
+  "addedAt": "2026-11-17",
+  "verifiedAt": "2026-11-17"
+}
