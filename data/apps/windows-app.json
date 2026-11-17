@@ -1,0 +1,32 @@
+{
+  "id": "windows-app",
+  "name": "Windows App (Remote Desktop)",
+  "vendor": "Microsoft",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.0.1485.0",
+  "homepage": "https://learn.microsoft.com/windows-app/overview",
+  "summary": {
+    "en": "Microsoft's remote desktop client. The winget manifest lists a separate arm64 MSIX build.",
+    "zh-TW": "微軟的遠端桌面用戶端，winget 清單提供獨立的 arm64 MSIX 套件。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/WindowsApp/2.0.1485.0/Microsoft.WindowsApp.installer.yaml",
+      "title": "winget manifest 2.0.1485.0: WindowsApp_arm64_Release msix",
+      "type": "release",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}

@@ -31,13 +31,13 @@
       "url": "https://helpcenter.trendmicro.com/zh-tw/article/TMKA-19439",
       "title": "PC-cillin 防毒軟體：Windows 安裝需求（ARM 架構僅雲端版支援）",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-18"
     },
     {
       "url": "https://www.trendmicro.com/zh_tw/forHome/products/pccillin.html",
       "title": "PC-cillin 產品頁：支援 Windows 11 on ARM，部分功能不支援",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-18"
     },
     {
       "url": "https://worksonwoa.com/en/applications/trendmicromaximumsecurity/",
@@ -47,5 +47,5 @@
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-18"
 }

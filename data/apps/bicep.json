@@ -1,0 +1,32 @@
+{
+  "id": "bicep",
+  "name": "Bicep",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.49.2",
+  "homepage": "https://github.com/Azure/bicep",
+  "summary": {
+    "en": "Azure infrastructure-as-code language CLI. Release 0.49.2 ships bicep-win-arm64.exe.",
+    "zh-TW": "Azure 基礎結構即程式碼語言的命令列工具，0.49.2 版提供 bicep-win-arm64.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/Bicep/0.49.2/Microsoft.Bicep.installer.yaml",
+      "title": "winget manifest 0.49.2: bicep-win-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}

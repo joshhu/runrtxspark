@@ -1,0 +1,36 @@
+{
+  "id": "wechat-ime",
+  "name": "WeChat Input Method (微信输入法)",
+  "vendor": "Tencent",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "1.2.8.12+",
+  "homepage": "https://z.weixin.qq.com/",
+  "summary": {
+    "en": "Chinese input method from the WeChat team. Linaro's Works on WoA data lists it as native Arm64, validated on Qualcomm hardware.",
+    "zh-TW": "微信團隊的中文輸入法。Linaro 的 Works on WoA 資料列為原生 Arm64，已在 Qualcomm 裝置驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取廠商頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: wechatime (native, 1.2.8.12)",
+      "type": "aggregator",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}

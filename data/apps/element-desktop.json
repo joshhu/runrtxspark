@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Element/Element/1.12.33/Element.Element.installer.yaml",
       "title": "winget manifest 1.12.33: Element Setup 1.12.33.exe (arm64)",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-18"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-18"
 }

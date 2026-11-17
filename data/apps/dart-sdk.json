@@ -1,0 +1,32 @@
+{
+  "id": "dart-sdk",
+  "name": "Dart SDK",
+  "vendor": "Google",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.13.6",
+  "homepage": "https://dart.dev",
+  "summary": {
+    "en": "Dart language SDK. The stable 3.13.6 release includes dartsdk-windows-arm64-release.zip.",
+    "zh-TW": "Dart 語言 SDK，穩定版 3.13.6 提供 dartsdk-windows-arm64-release.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Google/DartSDK/3.13.6/Google.DartSDK.installer.yaml",
+      "title": "winget manifest 3.13.6: dartsdk-windows-arm64-release.zip",
+      "type": "release",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}

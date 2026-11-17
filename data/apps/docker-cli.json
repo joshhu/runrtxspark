@@ -1,0 +1,32 @@
+{
+  "id": "docker-cli",
+  "name": "Docker CLI",
+  "vendor": "Docker",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "29.10.0",
+  "homepage": "https://docs.docker.com/engine/",
+  "summary": {
+    "en": "Docker command-line client and static binaries. The winget manifest lists an aarch64 Windows zip from download.docker.com.",
+    "zh-TW": "Docker 命令列用戶端，winget 清單提供 download.docker.com 的 Windows aarch64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/Docker/DockerCLI/29.10.0/Docker.DockerCLI.installer.yaml",
+      "title": "winget manifest 29.10.0: arm64 docker-29.10.0.zip (aarch64)",
+      "type": "release",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}

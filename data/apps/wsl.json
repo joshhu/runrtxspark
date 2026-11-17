@@ -6,7 +6,7 @@
   "status": "native",
   "scope": "rtx-spark",
   "maturity": "stable",
-  "confidence": "high",
+  "confidence": "medium",
   "version": "2.7.13",
   "homepage": "https://learn.microsoft.com/windows/wsl/",
   "aliases": [
@@ -17,6 +17,10 @@
     {
       "en": "CUDA inside WSL 2 has only community evidence so far.",
       "zh-TW": "WSL 2 內的 CUDA 目前只有社群證據。"
+    },
+    {
+      "en": "NVIDIA's launch release lists WSL among day-one tools but does not state the architecture; the native Arm64 result is not confirmed by that page.",
+      "zh-TW": "NVIDIA 發表稿列出 WSL 為首日可用工具，但未說明架構，該頁面並未證實原生 Arm64。"
     }
   ],
   "evidence": [
@@ -24,9 +28,9 @@
       "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
       "title": "NVIDIA: RTX Spark PCs available today",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-18"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-18"
 }

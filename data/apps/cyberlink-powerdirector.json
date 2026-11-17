@@ -30,7 +30,7 @@
       "url": "https://www.cyberlink.com/support-center/faq/content?id=29176",
       "title": "CyberLink FAQ: What versions of CyberLink software support Windows 11 ARM platforms with Qualcomm CPU?",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-18"
     },
     {
       "url": "https://worksonwoa.com/en/applications/cyberlinkpowerdirector/",
@@ -40,5 +40,5 @@
     }
   ],
   "addedAt": "2026-11-07",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-18"
 }

@@ -1,0 +1,32 @@
+{
+  "id": "kustomize",
+  "name": "kustomize",
+  "vendor": "Kubernetes SIGs",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "5.8.3",
+  "homepage": "https://kustomize.io",
+  "summary": {
+    "en": "Kubernetes configuration customization tool. Release v5.8.3 includes a windows_arm64 zip.",
+    "zh-TW": "Kubernetes 設定客製化工具，v5.8.3 版提供 windows_arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/k/Kubernetes/kustomize/5.8.3/Kubernetes.kustomize.installer.yaml",
+      "title": "winget manifest 5.8.3: kustomize_v5.8.3_windows_arm64.zip",
+      "type": "release",
+      "checked": "2026-11-18"
+    }
+  ],
+  "addedAt": "2026-11-18",
+  "verifiedAt": "2026-11-18"
+}
