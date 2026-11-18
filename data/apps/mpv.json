@@ -1,0 +1,32 @@
+{
+  "id": "mpv",
+  "name": "mpv",
+  "vendor": "mpv project",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "0.42.0",
+  "homepage": "https://mpv.io",
+  "summary": {
+    "en": "Open-source media player. Release v0.42.0 lists Windows arm64 builds (mpv and libmpv).",
+    "zh-TW": "開源媒體播放器，v0.42.0 版提供 Windows arm64 組建（mpv 與 libmpv）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/mpv-player/mpv/releases/tag/v0.42.0",
+      "title": "mpv v0.42.0 release: mpv-v0.42.0-aarch64-pc-windows-msvc.zip and aarch64-w64-mingw32 builds",
+      "type": "release",
+      "checked": "2026-11-19"
+    }
+  ],
+  "addedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19"
+}

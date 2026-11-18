@@ -1,0 +1,45 @@
+{
+  "id": "sumatra-pdf",
+  "name": "SumatraPDF",
+  "vendor": "Krzysztof Kowalczyk",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.5+",
+  "homepage": "https://www.sumatrapdfreader.org",
+  "aliases": [
+    "Sumatra PDF"
+  ],
+  "summary": {
+    "en": "Lightweight PDF and e-book reader. The 3.5 release notes list Arm 64-bit builds, and Linaro's data lists it as native.",
+    "zh-TW": "輕量 PDF 與電子書閱讀器，3.5 版發行說明列出 Arm 64 位元組建，Linaro 資料也列為原生。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "The current 3.6.1 release page did not show its file names, so the Arm build for that version was not confirmed directly.",
+      "zh-TW": "目前的 3.6.1 發行頁面未顯示檔名，因此該版本的 Arm 組建未直接確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/sumatrapdfreader/sumatrapdf/releases/tag/3.5rel",
+      "title": "SumatraPDF 3.5 release notes: Arm 64-bit builds",
+      "type": "release",
+      "checked": "2026-11-19"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: sumatrapdf (native, 3.5.2)",
+      "type": "aggregator",
+      "checked": "2026-11-19"
+    }
+  ],
+  "addedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19"
+}
