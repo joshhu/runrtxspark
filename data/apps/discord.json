@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "1.0.59",
+  "version": "1.0.61",
   "homepage": "https://discord.com",
   "caveats": [
     {
@@ -20,9 +20,9 @@
       "url": "https://discord.com/api/downloads/distributions/app/installers/latest?arch=arm64&channel=stable&platform=win",
       "title": "Discord Arm64 installer (starts a download)",
       "type": "vendor",
-      "checked": "2026-11-07"
+      "checked": "2026-11-20"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-07"
+  "verifiedAt": "2026-11-20"
 }

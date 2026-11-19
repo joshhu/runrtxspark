@@ -1,0 +1,39 @@
+{
+  "id": "naver-vaccine",
+  "name": "Naver Vaccine (네이버 백신)",
+  "vendor": "Naver",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64",
+  "homepage": "https://vaccine.naver.com",
+  "aliases": [
+    "네이버 백신"
+  ],
+  "summary": {
+    "en": "Korean antivirus tool. Linaro lists the x64 build running under emulation, validated by NVIDIA.",
+    "zh-TW": "韓國防毒工具。Linaro 列為 x64 版本透過模擬執行，並經 NVIDIA 驗證。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: naver-vaccine (x64 emulation)",
+      "type": "aggregator",
+      "checked": "2026-11-20"
+    }
+  ],
+  "addedAt": "2026-11-20",
+  "verifiedAt": "2026-11-20"
+}

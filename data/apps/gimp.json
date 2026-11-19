@@ -22,11 +22,11 @@
   "evidence": [
     {
       "url": "https://www.gimp.org/downloads/",
-      "title": "GIMP downloads (3.2.6, x86_64 and ARM64 installer)",
+      "title": "GIMP downloads (3.2.8, x86_64 and ARM64 installer)",
       "type": "vendor",
-      "checked": "2026-11-09"
+      "checked": "2026-11-20"
     }
   ],
   "addedAt": "2026-11-03",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-20"
 }

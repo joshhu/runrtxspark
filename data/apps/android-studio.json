@@ -1,0 +1,38 @@
+{
+  "id": "android-studio",
+  "name": "Android Studio",
+  "vendor": "Google",
+  "category": "developer",
+  "status": "broken",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "x64 2026.2.2",
+  "homepage": "https://developer.android.com/studio",
+  "summary": {
+    "en": "The IDE runs slowly under x64 emulation, but the Android device emulators cannot start. Google lists only 64-bit x64 Windows installers.",
+    "zh-TW": "IDE 可在 x64 模擬下執行但速度偏慢，Android 裝置模擬器則無法啟動。Google 僅提供 x64 的 Windows 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Linaro's test used an older release (2022.3.1.18); the device emulator failure was not re-tested on a current build or on RTX Spark.",
+      "zh-TW": "Linaro 的測試使用較舊版本（2022.3.1.18），裝置模擬器無法啟動的問題未在新版或 RTX Spark 上重測。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://developer.android.com/studio",
+      "title": "Android Studio downloads: Windows 64-bit installers only, no Arm64 (2026.2.2)",
+      "type": "vendor",
+      "checked": "2026-11-20"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: androidstudio (device emulators unable to start)",
+      "type": "aggregator",
+      "checked": "2026-11-20"
+    }
+  ],
+  "addedAt": "2026-11-20",
+  "verifiedAt": "2026-11-20"
+}

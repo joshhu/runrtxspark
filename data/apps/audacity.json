@@ -28,7 +28,7 @@
       "url": "https://www.audacityteam.org/download/windows/",
       "title": "Audacity download page: ARM64 MSI and portable, version 4.0.2",
       "type": "vendor",
-      "checked": "2026-11-04"
+      "checked": "2026-11-20"
     },
     {
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Audacity/Audacity/4.0.2.263060742/Audacity.Audacity.installer.yaml",
@@ -38,5 +38,5 @@
     }
   ],
   "addedAt": "2026-11-04",
-  "verifiedAt": "2026-11-11"
+  "verifiedAt": "2026-11-20"
 }
