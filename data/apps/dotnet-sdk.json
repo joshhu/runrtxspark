@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/DotNet/SDK/10/10.0.114/Microsoft.DotNet.SDK.10.installer.yaml",
       "title": "winget manifest 10.0.114: dotnet-sdk-10.0.114-win-arm64.exe",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-21"
 }

@@ -28,9 +28,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RedHat/Podman-Desktop/1.30.5/RedHat.Podman-Desktop.installer.yaml",
       "title": "winget manifest: RedHat.Podman-Desktop 1.30.5 (podman-desktop-1.30.5-setup-arm64.exe)",
       "type": "release",
-      "checked": "2026-11-10"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-10",
-  "verifiedAt": "2026-11-10"
+  "verifiedAt": "2026-11-21"
 }

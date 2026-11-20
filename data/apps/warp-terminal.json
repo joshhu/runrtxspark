@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/w/Warp/Warp/v0.2026.11.04.08.17.stable_01/Warp.Warp.installer.yaml",
       "title": "winget manifest: Warp.Warp v0.2026.11.04.08.17.stable_01 (arch=arm64 download)",
       "type": "release",
-      "checked": "2026-11-10"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-10",
-  "verifiedAt": "2026-11-10"
+  "verifiedAt": "2026-11-21"
 }

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Mattermost/MattermostDesktop/6.3.2/Mattermost.MattermostDesktop.installer.yaml",
       "title": "winget manifest 6.3.2: mattermost-desktop-6.3.2-win-arm64.msi",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-21"
 }

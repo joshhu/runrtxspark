@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/p/Proton/ProtonVPN/5.1.9/Proton.ProtonVPN.installer.yaml",
       "title": "winget manifest 5.1.9: ProtonVPN_v5.1.9_arm64.exe",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-21"
 }

@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/MullvadVPN/MullvadVPN/2026.5/MullvadVPN.MullvadVPN.installer.yaml",
       "title": "winget manifest 2026.5: MullvadVPN-2026.5_arm64.exe",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-21"
 }

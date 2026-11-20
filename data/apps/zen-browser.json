@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/z/Zen-Team/Zen-Browser/1.24.1b/Zen-Team.Zen-Browser.installer.yaml",
       "title": "winget manifest: Zen-Team.Zen-Browser 1.24.1b (zen.installer-arm64.exe)",
       "type": "release",
-      "checked": "2026-11-10"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-10",
-  "verifiedAt": "2026-11-10"
+  "verifiedAt": "2026-11-21"
 }

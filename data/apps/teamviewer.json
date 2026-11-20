@@ -3,15 +3,15 @@
   "name": "TeamViewer",
   "vendor": "TeamViewer",
   "category": "utility",
-  "status": "prism",
+  "status": "native",
   "scope": "windows-on-arm",
   "maturity": "stable",
-  "confidence": "low",
-  "version": "x64 15.44.4",
+  "confidence": "medium",
+  "version": "15.83.7",
   "homepage": "https://www.teamviewer.com",
   "summary": {
-    "en": "Remote support tool. Linaro lists the x64 build running under emulation, validated by NVIDIA.",
-    "zh-TW": "遠端支援工具。Linaro 列為 x64 版本透過模擬執行，並經 NVIDIA 驗證。"
+    "en": "Remote support tool. winget lists a native Arm64 installer package from 15.83.7; earlier Linaro data showed only the x64 build under emulation.",
+    "zh-TW": "遠端支援工具。winget 自 15.83.7 列有原生 Arm64 安裝套件；先前 Linaro 資料僅列 x64 模擬版本。"
   },
   "caveats": [
     {
@@ -19,11 +19,17 @@
       "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
     },
     {
-      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
-      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; the vendor page could not be read from this environment.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；此環境無法讀取原廠頁面。"
     }
   ],
   "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/TeamViewer/TeamViewer/15.83.7/TeamViewer.TeamViewer.installer.yaml",
+      "title": "winget manifest: TeamViewer.TeamViewer 15.83.7 (arm64 Update_msi_15.83.7_arm64.zip)",
+      "type": "release",
+      "checked": "2026-11-21"
+    },
     {
       "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
       "title": "Linaro Works on WoA catalog: teamviewer (x64 emulation)",
@@ -32,5 +38,5 @@
     }
   ],
   "addedAt": "2026-11-20",
-  "verifiedAt": "2026-11-20"
+  "verifiedAt": "2026-11-21"
 }

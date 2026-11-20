@@ -1,0 +1,36 @@
+{
+  "id": "eset-endpoint-antivirus",
+  "name": "ESET Endpoint Antivirus",
+  "vendor": "ESET",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "13.1.2036.0",
+  "homepage": "https://www.eset.com/us/business/download/endpoint-antivirus-windows/",
+  "summary": {
+    "en": "Business antivirus with a separate Arm64 MSI.",
+    "zh-TW": "附有獨立 Arm64 MSI 的企業防毒軟體。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; the vendor page could not be read from this environment.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；此環境無法讀取原廠頁面。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/ESET/EndpointAntivirus/13.1.2036.0/ESET.EndpointAntivirus.installer.yaml",
+      "title": "winget manifest: ESET.EndpointAntivirus (arm64 installer eea_arm64.msi)",
+      "type": "release",
+      "checked": "2026-11-21"
+    }
+  ],
+  "addedAt": "2026-11-21",
+  "verifiedAt": "2026-11-21"
+}

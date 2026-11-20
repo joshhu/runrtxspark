@@ -1,0 +1,36 @@
+{
+  "id": "clash-verge-rev",
+  "name": "Clash Verge Rev",
+  "vendor": "Clash Verge Rev",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "2.5.10",
+  "homepage": "https://github.com/clash-verge-rev/clash-verge-rev",
+  "summary": {
+    "en": "Proxy client popular in China with an Arm64 installer.",
+    "zh-TW": "廣受中國用戶使用的代理客戶端，附有 Arm64 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; the vendor page could not be read from this environment.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；此環境無法讀取原廠頁面。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/ClashVergeRev/ClashVergeRev/2.5.10/ClashVergeRev.ClashVergeRev.installer.yaml",
+      "title": "winget manifest: ClashVergeRev.ClashVergeRev (arm64 installer Clash.Verge_2.5.10_arm64-setup.exe)",
+      "type": "release",
+      "checked": "2026-11-21"
+    }
+  ],
+  "addedAt": "2026-11-21",
+  "verifiedAt": "2026-11-21"
+}

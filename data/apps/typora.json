@@ -28,9 +28,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/appmakes/Typora/1.14.15/appmakes.Typora.installer.yaml",
       "title": "winget manifest: appmakes.Typora 1.14.15 (arm64 installer typora-setup-arm64-1.14.9.exe)",
       "type": "release",
-      "checked": "2026-11-10"
+      "checked": "2026-11-21"
     }
   ],
   "addedAt": "2026-11-10",
-  "verifiedAt": "2026-11-10"
+  "verifiedAt": "2026-11-21"
 }

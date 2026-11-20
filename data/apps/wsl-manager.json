@@ -1,0 +1,36 @@
+{
+  "id": "wsl-manager",
+  "name": "WSL Manager",
+  "vendor": "Bostrot",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.6.1",
+  "homepage": "https://github.com/bostrot/wslmanager",
+  "summary": {
+    "en": "Manager for WSL distributions with a separate Windows Arm64 installer.",
+    "zh-TW": "管理 WSL 發行版的工具，附有獨立 Windows Arm64 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; the vendor page could not be read from this environment.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；此環境無法讀取原廠頁面。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/Bostrot/WSLManager/2.6.1.0/Bostrot.WSLManager.installer.yaml",
+      "title": "winget manifest: Bostrot.WSLManager (arm64 installer wsl2-distro-manager-v2.6.1-arm64-setup.exe)",
+      "type": "release",
+      "checked": "2026-11-21"
+    }
+  ],
+  "addedAt": "2026-11-21",
+  "verifiedAt": "2026-11-21"
+}
