@@ -1,0 +1,36 @@
+{
+  "id": "duckdb-cli",
+  "name": "DuckDB CLI",
+  "vendor": "DuckDB Foundation",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.0.1",
+  "homepage": "https://duckdb.org",
+  "summary": {
+    "en": "Analytical SQL database command-line shell with a native Windows Arm64 build.",
+    "zh-TW": "具有原生 Windows Arm64 版本的分析型 SQL 資料庫命令列工具。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/DuckDB/cli/2.0.1/DuckDB.cli.installer.yaml",
+      "title": "winget manifest 2.0.1: arm64 installer duckdb-cli-windows-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

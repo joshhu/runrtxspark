@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "2.32.6",
+  "version": "2.32.14",
   "homepage": "https://www.doubao.com",
   "summary": {
     "en": "ByteDance workplace AI app with a separate DoubaoWork_Arm64 installer on the vendor CDN.",
@@ -21,14 +21,14 @@
   ],
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/DoubaoWork/2.32.6/ByteDance.DoubaoWork.installer.yaml",
-      "title": "winget manifest 2.32.6: DoubaoWork_Arm64_installer_2.32.6.exe",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/DoubaoWork/2.32.14/ByteDance.DoubaoWork.installer.yaml",
+      "title": "winget manifest 2.32.14: DoubaoWork_Arm64_installer_2.32.14.exe",
       "type": "release",
-      "checked": "2026-11-21"
+      "checked": "2026-11-22"
     }
   ],
   "addedAt": "2026-11-11",
-  "verifiedAt": "2026-11-21",
+  "verifiedAt": "2026-11-22",
   "aliases": [
     "Doubao Work",
     "豆包"

@@ -1,0 +1,36 @@
+{
+  "id": "jlc-eda-pro",
+  "name": "嘉立创EDA 專業版 (LCEDA Pro)",
+  "vendor": "JLC (嘉立创)",
+  "category": "creative",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.2.186",
+  "homepage": "https://lceda.cn",
+  "summary": {
+    "en": "Chinese PCB and electronics design tool (JLCEDA Pro) with a Windows arm64 installer.",
+    "zh-TW": "嘉立創 EDA 專業版電路板設計工具，提供 Windows arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/j/JLC/LCEDA/Pro/3.2.186/JLC.LCEDA.Pro.installer.yaml",
+      "title": "winget manifest 3.2.186: arm64 installer lceda-pro-windows-arm64-3.2.186.exe",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

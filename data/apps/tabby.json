@@ -1,0 +1,36 @@
+{
+  "id": "tabby",
+  "name": "Tabby",
+  "vendor": "Eugene Pankov",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.0.238",
+  "homepage": "https://tabby.sh",
+  "summary": {
+    "en": "Terminal emulator and SSH/serial client with an arm64 installer.",
+    "zh-TW": "終端機模擬器與 SSH／序列埠用戶端，提供 arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Eugeny/Tabby/1.0.238/Eugeny.Tabby.installer.yaml",
+      "title": "winget manifest 1.0.238: arm64 installer tabby-1.0.238-setup-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

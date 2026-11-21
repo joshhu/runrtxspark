@@ -1,0 +1,36 @@
+{
+  "id": "tubatools",
+  "name": "圖吧工具箱 (Tuba Tools)",
+  "vendor": "luolangaga",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "1.9.1",
+  "homepage": "https://github.com/luolangaga/tubatools",
+  "summary": {
+    "en": "Popular Chinese PC hardware-testing toolbox (WinUI 3 port) with an arm64 installer.",
+    "zh-TW": "常見的中文電腦硬體檢測工具箱（WinUI 3 版），提供 arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/l/luolangaga/tubatools/1.9.1/luolangaga.tubatools.installer.yaml",
+      "title": "winget manifest 1.9.1: arm64 installer TubaWinUi3_Setup_1.9.1_arm64.exe",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

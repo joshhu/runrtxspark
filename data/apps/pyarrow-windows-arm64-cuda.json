@@ -1,0 +1,32 @@
+{
+  "id": "pyarrow-windows-arm64-cuda",
+  "name": "PyArrow (unofficial Arm64 CUDA build)",
+  "vendor": "LGCMcn (community)",
+  "category": "developer",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "low",
+  "version": "26.0.1",
+  "homepage": "https://github.com/LGCMcn/pyarrow-windows-arm64-cuda",
+  "summary": {
+    "en": "Unofficial community PyArrow 26.0.1 wheel for Windows ARM64 with CUDA, smoke-tested by its author on an RTX Spark N1X.",
+    "zh-TW": "社群非官方的 Windows ARM64 PyArrow 26.0.1 wheel（含 CUDA），作者曾在 RTX Spark N1X 上做基本測試。"
+  },
+  "caveats": [
+    {
+      "en": "Not an Apache Arrow or NVIDIA release. Built for CPython 3.14 and CUDA Toolkit 13.5.0; the author's tests (import, Parquet round trip, CUDA copy) were limited and used one driver.",
+      "zh-TW": "並非 Apache Arrow 或 NVIDIA 官方版本。僅針對 CPython 3.14 與 CUDA Toolkit 13.5.0 建置；作者的測試（匯入、Parquet 往返、CUDA 複製）範圍有限，且只用一個驅動程式版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/LGCMcn/pyarrow-windows-arm64-cuda",
+      "title": "README: PyArrow 26.0.1 Windows ARM64 CUDA build, tested on RTX Spark N1X",
+      "type": "community",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

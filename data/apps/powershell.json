@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "7.6.9",
+  "version": "7.7.0",
   "homepage": "https://github.com/PowerShell/PowerShell",
   "summary": {
     "en": "PowerShell 7 ships a native win-arm64 MSI and zip.",
@@ -24,9 +24,9 @@
       "url": "https://github.com/PowerShell/PowerShell/releases/latest",
       "title": "PowerShell 7.6.9 release (PowerShell-7.6.9-win-arm64.msi)",
       "type": "release",
-      "checked": "2026-11-08"
+      "checked": "2026-11-22"
     }
   ],
   "addedAt": "2026-11-02",
-  "verifiedAt": "2026-11-08"
+  "verifiedAt": "2026-11-22"
 }

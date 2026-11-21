@@ -1,0 +1,36 @@
+{
+  "id": "mediainfo-gui",
+  "name": "MediaInfo",
+  "vendor": "MediaArea",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "26.10",
+  "homepage": "https://mediaarea.net/en/MediaInfo",
+  "summary": {
+    "en": "Media file technical-information viewer with a separate ARM64 installer.",
+    "zh-TW": "影音檔技術資訊檢視工具，提供獨立的 ARM64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/MediaArea/MediaInfo/GUI/26.10/MediaArea.MediaInfo.GUI.installer.yaml",
+      "title": "winget manifest 26.10: arm64 installer MediaInfo_GUI_26.10_Windows_ARM64.exe",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22"
+}

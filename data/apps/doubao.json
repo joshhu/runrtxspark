@@ -4,33 +4,37 @@
   "vendor": "ByteDance",
   "category": "ai",
   "status": "native",
+  "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "2.32.5",
+  "version": "2.36.10",
   "homepage": "https://www.doubao.com",
-  "aliases": [
-    "Doubao",
-    "豆包"
-  ],
   "summary": {
-    "en": "ByteDance's AI assistant desktop app, with a separate Doubao_Arm64_installer on the vendor's CDN.",
-    "zh-TW": "字節跳動的 AI 助理桌面版，官方 CDN 另有 Doubao_Arm64_installer 安裝程式。"
+    "en": "ByteDance's Chinese AI chat assistant desktop app with a separate Arm64 installer on the vendor CDN.",
+    "zh-TW": "字節跳動的中文 AI 聊天助理桌面應用，官方 CDN 另有 Arm64 安裝程式。"
   },
-  "evidence": [
-    {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/Doubao/2.32.5/ByteDance.Doubao.installer.yaml",
-      "title": "winget manifest 2.32.5: Doubao_Arm64_installer_2.32.5.exe",
-      "type": "release",
-      "checked": "2026-11-12"
-    }
-  ],
   "caveats": [
     {
       "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
       "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
     }
   ],
-  "scope": "windows-on-arm",
-  "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-12"
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/ByteDance/Doubao/2.36.10/ByteDance.Doubao.installer.yaml",
+      "title": "winget manifest 2.36.10: arm64 installer Doubao_Arm64_installer_2.36.10.exe",
+      "type": "release",
+      "checked": "2026-11-22"
+    }
+  ],
+  "addedAt": "2026-11-22",
+  "verifiedAt": "2026-11-22",
+  "aliases": [
+    "Doubao",
+    "豆包"
+  ]
 }
