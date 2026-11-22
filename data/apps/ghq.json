@@ -21,12 +21,12 @@
       "url": "https://github.com/x-motemen/ghq/releases/tag/v1.12.0",
       "title": "ghq v1.12.0 release (ghq_windows_arm64.zip)",
       "type": "release",
-      "checked": "2026-11-08"
+      "checked": "2026-11-23"
     }
   ],
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
   "addedAt": "2026-11-08",
-  "verifiedAt": "2026-11-08"
+  "verifiedAt": "2026-11-23"
 }

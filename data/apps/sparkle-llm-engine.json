@@ -1,0 +1,39 @@
+{
+  "id": "sparkle-llm-engine",
+  "name": "Sparkle",
+  "vendor": "thelogicalgate (community)",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "low",
+  "version": "0.1.0",
+  "homepage": "https://github.com/thelogicalgate/sparkle",
+  "aliases": [
+    "Sparkle Studio"
+  ],
+  "summary": {
+    "en": "Community local LLM inference engine and chat app built natively for Windows 11 on Arm64 with RTX Spark.",
+    "zh-TW": "社群開發的本機 LLM 推論引擎與聊天應用程式，原生支援 Windows 11 Arm64 與 RTX Spark。"
+  },
+  "caveats": [
+    {
+      "en": "Self-reported by one developer in the repository README; no independent test and I did not run it or confirm a published release file.",
+      "zh-TW": "僅為單一開發者在 README 的自述；未經獨立測試，我也未執行或確認已發布的安裝檔。"
+    },
+    {
+      "en": "Early version 0.1.0; the repository states it targets the RTX Spark (GB10, sm_121) GPU only.",
+      "zh-TW": "早期版本 0.1.0；儲存庫說明僅針對 RTX Spark（GB10、sm_121）GPU。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/thelogicalgate/sparkle",
+      "title": "Sparkle README: native win-arm64 Setup and zip, benchmarks measured on RTX Spark N1X",
+      "type": "community",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

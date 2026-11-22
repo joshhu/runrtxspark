@@ -1,0 +1,43 @@
+{
+  "id": "fudemame-28",
+  "name": "Fudemame 28",
+  "vendor": "Sourcenext",
+  "category": "productivity",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 28",
+  "homepage": "https://fudemame.net",
+  "aliases": [
+    "筆まめ"
+  ],
+  "summary": {
+    "en": "Japanese New Year card and address-book software. Linaro's catalog lists it as working under Prism emulation.",
+    "zh-TW": "日本的賀年卡與通訊錄軟體。Linaro 目錄列為可透過 Prism 模擬執行。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Runs as an x64 build under Prism. The result rests on the Linaro catalog alone; the vendor page was not read.",
+      "zh-TW": "以 x64 版本透過 Prism 執行。結果僅依據 Linaro 目錄，未讀取原廠頁面。"
+    },
+    {
+      "en": "Linaro's catalog also lists an NVIDIA validation for this program.",
+      "zh-TW": "Linaro 目錄同時列有此程式的 NVIDIA 驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: fudemame-28 (emulation)",
+      "type": "aggregator",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

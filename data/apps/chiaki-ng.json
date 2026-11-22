@@ -1,0 +1,36 @@
+{
+  "id": "chiaki-ng",
+  "name": "chiaki-ng",
+  "vendor": "chiaki-ng project",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.10.1",
+  "homepage": "https://github.com/streetpea/chiaki-ng",
+  "summary": {
+    "en": "Open-source PlayStation Remote Play client with a Windows arm64 installer.",
+    "zh-TW": "開源 PlayStation 遠端遊玩用戶端，提供 Windows arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/s/StreetPea/chiaki-ng/1.10.1/StreetPea.chiaki-ng.installer.yaml",
+      "title": "winget manifest 1.10.1: arm64 installer chiaki-ng-win_arm64-MSYS2-installer.exe",
+      "type": "release",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

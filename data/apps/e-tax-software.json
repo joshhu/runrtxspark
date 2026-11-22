@@ -1,0 +1,40 @@
+{
+  "id": "e-tax-software",
+  "name": "e-Tax software (Windows)",
+  "vendor": "National Tax Agency of Japan",
+  "category": "productivity",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 001.025.004",
+  "homepage": "https://www.e-tax.nta.go.jp",
+  "aliases": [
+    "e-Taxソフト",
+    "e-Tax"
+  ],
+  "summary": {
+    "en": "Japanese national tax filing client. Linaro's catalog lists it as working under Prism emulation.",
+    "zh-TW": "日本國稅廳的電子報稅用戶端。Linaro 目錄列為可透過 Prism 模擬執行。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Runs as an x64 build under Prism. The result rests on the Linaro catalog alone; the vendor page was not read.",
+      "zh-TW": "以 x64 版本透過 Prism 執行。結果僅依據 Linaro 目錄，未讀取原廠頁面。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: etaxsoftwareforwindowsusers (emulation)",
+      "type": "aggregator",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

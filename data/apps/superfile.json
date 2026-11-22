@@ -1,0 +1,36 @@
+{
+  "id": "superfile",
+  "name": "superfile",
+  "vendor": "yorukot",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.6.1",
+  "homepage": "https://superfile.dev",
+  "summary": {
+    "en": "Terminal file manager with a Windows arm64 release archive.",
+    "zh-TW": "終端機檔案管理員，提供 Windows arm64 發行壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/y/yorukot/superfile/v1.6.1/yorukot.superfile.installer.yaml",
+      "title": "winget manifest v1.6.1: arm64 archive superfile-windows-v1.6.1-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "git-lfs",
+  "name": "Git LFS",
+  "vendor": "GitHub",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.8.1",
+  "homepage": "https://git-lfs.com",
+  "summary": {
+    "en": "Git extension for large files, with a Windows arm64 installer and zip.",
+    "zh-TW": "Git 大型檔案擴充工具，提供 Windows arm64 安裝程式與壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/GitLFS/3.8.1/GitHub.GitLFS.installer.yaml",
+      "title": "winget manifest 3.8.1: arm64 installer git-lfs-windows-v3.8.1.exe and arm64 zip",
+      "type": "release",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

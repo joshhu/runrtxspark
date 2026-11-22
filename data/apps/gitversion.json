@@ -1,0 +1,36 @@
+{
+  "id": "gitversion",
+  "name": "GitVersion",
+  "vendor": "GitTools",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "7.0.1",
+  "homepage": "https://gitversion.net",
+  "summary": {
+    "en": "Semantic versioning tool for Git repositories, with a Windows arm64 build.",
+    "zh-TW": "依 Git 歷程產生語意化版本號的工具，提供 Windows arm64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitTools/GitVersion/7.0.1/GitTools.GitVersion.installer.yaml",
+      "title": "winget manifest 7.0.1: arm64 archive gitversion-win-arm64-7.0.1.zip",
+      "type": "release",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}

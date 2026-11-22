@@ -1,0 +1,36 @@
+{
+  "id": "uutils-coreutils",
+  "name": "uutils coreutils",
+  "vendor": "uutils project",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.13.0",
+  "homepage": "https://uutils.github.io/coreutils/",
+  "summary": {
+    "en": "Rust rewrite of GNU coreutils, with a Windows aarch64 release archive.",
+    "zh-TW": "以 Rust 重寫的 GNU coreutils，提供 Windows aarch64 發行壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/u/uutils/coreutils/0.13.0/uutils.coreutils.installer.yaml",
+      "title": "winget manifest 0.13.0: arm64 archive coreutils-0.13.0-aarch64-pc-windows-msvc.zip",
+      "type": "release",
+      "checked": "2026-11-23"
+    }
+  ],
+  "addedAt": "2026-11-23",
+  "verifiedAt": "2026-11-23"
+}
