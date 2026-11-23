@@ -1,0 +1,36 @@
+{
+  "id": "starship",
+  "name": "Starship",
+  "vendor": "Starship",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.27.0",
+  "homepage": "https://starship.rs",
+  "summary": {
+    "en": "Cross-shell prompt with Windows aarch64 MSI and zip releases.",
+    "zh-TW": "跨 shell 的命令列提示工具，提供 Windows aarch64 的 MSI 與 zip 發行檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/s/Starship/Starship/1.27.0/Starship.Starship.installer.yaml",
+      "title": "winget manifest 1.27.0: arm64 installer starship-aarch64-pc-windows-msvc.msi",
+      "type": "release",
+      "checked": "2026-11-24"
+    }
+  ],
+  "addedAt": "2026-11-24",
+  "verifiedAt": "2026-11-24"
+}

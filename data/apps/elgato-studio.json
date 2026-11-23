@@ -28,9 +28,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Elgato/Studio/2.0.0.3364/Elgato.Studio.installer.yaml",
       "title": "winget manifest 2.0.0.3364: Elgato.Studio_2.0.0.3364_arm64.msix",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-24"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-24"
 }

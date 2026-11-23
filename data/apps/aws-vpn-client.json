@@ -1,0 +1,36 @@
+{
+  "id": "aws-vpn-client",
+  "name": "AWS VPN Client",
+  "vendor": "Amazon Web Services",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "6.3.1",
+  "homepage": "https://aws.amazon.com/vpn/client-vpn-download/",
+  "summary": {
+    "en": "VPN client for AWS Client VPN, with a separate ARM64 MSI.",
+    "zh-TW": "AWS Client VPN 用的 VPN 用戶端，提供獨立的 ARM64 MSI。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Amazon/AWSVPNClient/6.3.1/Amazon.AWSVPNClient.installer.yaml",
+      "title": "winget manifest 6.3.1: arm64 installer AWS_VPN_Client_ARM64.msi",
+      "type": "release",
+      "checked": "2026-11-24"
+    }
+  ],
+  "addedAt": "2026-11-24",
+  "verifiedAt": "2026-11-24"
+}

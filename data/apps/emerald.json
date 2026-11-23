@@ -1,0 +1,36 @@
+{
+  "id": "emerald",
+  "name": "Emerald",
+  "vendor": "BenGoldfeder17",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "low",
+  "version": "v0.2.0",
+  "homepage": "https://github.com/BenGoldfeder17/Emerald",
+  "summary": {
+    "en": "Local LLM inference platform with a prebuilt Windows ARM64 zip, measured by its author on an RTX Spark (N1X) laptop.",
+    "zh-TW": "本機 LLM 推論平台，提供預先編譯的 Windows ARM64 壓縮檔，作者在 RTX Spark（N1X）筆電上實測。"
+  },
+  "caveats": [
+    {
+      "en": "All measurements come from one laptop and are self-reported by the author; no independent verification.",
+      "zh-TW": "所有測量皆來自同一台筆電，由作者自行回報，未經獨立驗證。"
+    },
+    {
+      "en": "Executables are not code-signed; some models are unavailable on ARM64.",
+      "zh-TW": "執行檔未經程式碼簽署；部分模型在 ARM64 上無法使用。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/BenGoldfeder17/Emerald",
+      "title": "Emerald README: emerald-v0.2.0-windows-arm64.zip, tested on RTX Spark N1X",
+      "type": "community",
+      "checked": "2026-11-24"
+    }
+  ],
+  "addedAt": "2026-11-24",
+  "verifiedAt": "2026-11-24"
+}

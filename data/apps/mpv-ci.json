@@ -1,0 +1,39 @@
+{
+  "id": "mpv-ci",
+  "name": "mpv (official CI build)",
+  "vendor": "mpv-player",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.42.0",
+  "homepage": "https://mpv.io",
+  "aliases": [
+    "mpv"
+  ],
+  "summary": {
+    "en": "Media player; the official CI build ships an aarch64 MSVC zip for Windows.",
+    "zh-TW": "媒體播放器；官方 CI 組建提供 Windows aarch64 MSVC zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Result rests on the winget manifest, which lists an Arm64 installer; I did not run the build.",
+      "zh-TW": "結果依據 winget 資訊清單所列的 Arm64 安裝檔；未實際執行該版本。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/mpv-player/mpv-CI/MSVC/0.42.0/mpv-player.mpv-CI.MSVC.installer.yaml",
+      "title": "winget manifest 0.42.0: arm64 installer mpv-v0.42.0-aarch64-pc-windows-msvc.zip",
+      "type": "release",
+      "checked": "2026-11-24"
+    }
+  ],
+  "addedAt": "2026-11-24",
+  "verifiedAt": "2026-11-24"
+}

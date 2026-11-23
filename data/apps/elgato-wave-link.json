@@ -28,9 +28,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/e/Elgato/WaveLink/3.4.0.4650/Elgato.WaveLink.installer.yaml",
       "title": "winget manifest 3.4.0.4650: Elgato.WaveLink_3.4.0.4650_arm64.msix",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-24"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-24"
 }

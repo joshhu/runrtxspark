@@ -7,22 +7,22 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "b12020",
+  "version": "b12651",
   "homepage": "https://github.com/ggml-org/llama.cpp",
   "caveats": [
     {
-      "en": "Ships a win-cuda-13.4-arm64 build. A performance regression on arm64 and Blackwell is being tracked upstream.",
-      "zh-TW": "提供 win-cuda-13.4-arm64 版本。上游仍在追蹤 arm64 與 Blackwell 的效能回歸問題。"
+      "en": "Ships a win-cuda-13.5-arm64 build alongside cpu, vulkan and OpenCL (Adreno) arm64 builds. A performance regression on arm64 and Blackwell was tracked upstream and was not re-checked.",
+      "zh-TW": "提供 win-cuda-13.5-arm64 版本，另有 cpu、vulkan 與 OpenCL（Adreno）arm64 版本。上游曾追蹤 arm64 與 Blackwell 的效能回歸問題，本次未重新確認。"
     }
   ],
   "evidence": [
     {
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12020",
-      "title": "llama.cpp b12020 release",
+      "url": "https://github.com/ggml-org/llama.cpp/releases",
+      "title": "llama.cpp b12651 release assets: win-cpu/vulkan/opencl-adreno/cuda-13.5 arm64",
       "type": "release",
-      "checked": "2026-11-09"
+      "checked": "2026-11-24"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-24"
 }

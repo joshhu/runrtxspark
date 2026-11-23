@@ -32,9 +32,9 @@
       "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
       "title": "Linaro Works on WoA catalog: dingtalk (emulation, from 7.6.45)",
       "type": "aggregator",
-      "checked": "2026-11-10"
+      "checked": "2026-11-24"
     }
   ],
   "addedAt": "2026-11-10",
-  "verifiedAt": "2026-11-10"
+  "verifiedAt": "2026-11-24"
 }

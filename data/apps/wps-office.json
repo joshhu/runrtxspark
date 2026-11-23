@@ -3,11 +3,11 @@
   "name": "WPS Office",
   "vendor": "Kingsoft",
   "category": "productivity",
-  "status": "prism",
+  "status": "native",
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "x64 12.1.0.203+",
+  "version": "12.1.0.203+",
   "homepage": "https://www.wps.com",
   "aliases": [
     "WPS Office Professional",
@@ -15,8 +15,8 @@
     "WPS 辦公室"
   ],
   "summary": {
-    "en": "Office suite popular in China. Linaro's Works on WoA data lists it as running under emulation, validated by Qualcomm and NVIDIA.",
-    "zh-TW": "中國常用的辦公室軟體。Linaro 的 Works on WoA 資料列為透過模擬執行，並經 Qualcomm 與 NVIDIA 驗證。"
+    "en": "Office suite popular in China. Linaro's Works on WoA data lists it as native Arm64, validated by Qualcomm and NVIDIA.",
+    "zh-TW": "中國常用的辦公室軟體。Linaro 的 Works on WoA 資料列為原生 Arm64，並經 Qualcomm 與 NVIDIA 驗證。"
   },
   "caveats": [
     {
@@ -31,11 +31,11 @@
   "evidence": [
     {
       "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
-      "title": "Linaro Works on WoA catalog: wpsoffice (emulation, from 12.1.0.203)",
+      "title": "Linaro Works on WoA catalog: wpsoffice (native, from 12.1.0.203)",
       "type": "aggregator",
-      "checked": "2026-11-09"
+      "checked": "2026-11-24"
     }
   ],
   "addedAt": "2026-11-09",
-  "verifiedAt": "2026-11-09"
+  "verifiedAt": "2026-11-24"
 }
