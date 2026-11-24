@@ -1,0 +1,43 @@
+{
+  "id": "private-internet-access",
+  "name": "Private Internet Access",
+  "vendor": "Private Internet Access",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.8.0+",
+  "homepage": "https://www.privateinternetaccess.com",
+  "aliases": [
+    "PIA"
+  ],
+  "summary": {
+    "en": "VPN client; the 3.8.0 winget manifest lists a separate pia-windows-arm64 installer.",
+    "zh-TW": "VPN 用戶端，3.8.0 的 winget 資訊清單列有獨立的 pia-windows-arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    },
+    {
+      "en": "VPNs install network drivers; check the vendor's current support notes before relying on it.",
+      "zh-TW": "VPN 會安裝網路驅動程式，使用前請先確認原廠最新的支援說明。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/p/PrivateInternetAccess/PrivateInternetAccess/3.8.0+08539/PrivateInternetAccess.PrivateInternetAccess.installer.yaml",
+      "title": "winget manifest 3.8.0+08539: pia-windows-arm64-3.8-08539.exe",
+      "type": "release",
+      "checked": "2026-11-25"
+    }
+  ],
+  "addedAt": "2026-11-25",
+  "verifiedAt": "2026-11-25"
+}

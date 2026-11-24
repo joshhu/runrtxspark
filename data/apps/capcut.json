@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "9.7.0.4153",
+  "version": "9.8.0.4213",
   "homepage": "https://www.capcut.com",
   "aliases": [
     "剪映"
@@ -21,11 +21,11 @@
   "evidence": [
     {
       "url": "https://storeedgefd.dsx.mp.microsoft.com/v9.0/packageManifests/XP9KN75RRB9NHS?Market=US&Locale=en-US",
-      "title": "Microsoft Store package manifest: CapCut",
+      "title": "Microsoft Store package manifest: CapCut 9.8.0.4213 (arm64, x64)",
       "type": "release",
-      "checked": "2026-11-11"
+      "checked": "2026-11-25"
     }
   ],
   "addedAt": "2026-10-31",
-  "verifiedAt": "2026-11-11"
+  "verifiedAt": "2026-11-25"
 }

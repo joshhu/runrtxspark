@@ -1,0 +1,36 @@
+{
+  "id": "oxfmt",
+  "name": "oxfmt",
+  "vendor": "Oxc project",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.79.0+",
+  "homepage": "https://oxc.rs",
+  "summary": {
+    "en": "JavaScript/TypeScript code formatter; the oxfmt_v0.79.0 release ships an aarch64-pc-windows-msvc zip.",
+    "zh-TW": "JavaScript／TypeScript 程式碼格式化工具，oxfmt_v0.79.0 版提供 aarch64-pc-windows-msvc 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/oxc-project/oxfmt/0.79.0/oxc-project.oxfmt.installer.yaml",
+      "title": "winget manifest 0.79.0: oxfmt-aarch64-pc-windows-msvc.zip",
+      "type": "release",
+      "checked": "2026-11-25"
+    }
+  ],
+  "addedAt": "2026-11-25",
+  "verifiedAt": "2026-11-25"
+}

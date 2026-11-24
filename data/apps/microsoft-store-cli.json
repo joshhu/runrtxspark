@@ -1,0 +1,39 @@
+{
+  "id": "microsoft-store-cli",
+  "name": "Microsoft Store Developer CLI",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "0.4.3+",
+  "homepage": "https://github.com/microsoft/msstore-cli",
+  "aliases": [
+    "msstore"
+  ],
+  "summary": {
+    "en": "Command-line tool for publishing apps to the Microsoft Store; the v0.4.3 release ships MSStoreCLI-win-arm64.zip.",
+    "zh-TW": "用於將應用程式發布到 Microsoft Store 的命令列工具，v0.4.3 版提供 MSStoreCLI-win-arm64.zip。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/msstore-cli/0.4.3/Microsoft.msstore-cli.installer.yaml",
+      "title": "winget manifest 0.4.3: MSStoreCLI-win-arm64.zip",
+      "type": "release",
+      "checked": "2026-11-25"
+    }
+  ],
+  "addedAt": "2026-11-25",
+  "verifiedAt": "2026-11-25"
+}

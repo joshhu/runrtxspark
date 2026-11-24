@@ -1,0 +1,40 @@
+{
+  "id": "asus-webstorage",
+  "name": "ASUS WebStorage",
+  "vendor": "ASUS",
+  "category": "utility",
+  "status": "prism",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "low",
+  "version": "x64 6.17.1",
+  "homepage": "https://personal.asuswebstorage.com/download/?lang=en",
+  "aliases": [
+    "華碩雲端空間",
+    "ASUS WebStorage Sync"
+  ],
+  "summary": {
+    "en": "ASUS cloud storage client from Taiwan. Linaro's Works on WoA data lists it as working under emulation (6.17.1, validated by Qualcomm).",
+    "zh-TW": "華碩的雲端儲存用戶端。Linaro 的 Works on WoA 資料列為轉譯可運作（6.17.1，經 Qualcomm 驗證）。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: asuswebstorageclient (emulation, 6.17.1, last updated 2026-03-02)",
+      "type": "aggregator",
+      "checked": "2026-11-25"
+    }
+  ],
+  "addedAt": "2026-11-25",
+  "verifiedAt": "2026-11-25"
+}

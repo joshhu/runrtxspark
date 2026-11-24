@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Alibaba/QoderCLI/1.1.80/Alibaba.QoderCLI.installer.yaml",
       "title": "winget manifest 1.1.80: qodercli-windows-arm64.zip",
       "type": "release",
-      "checked": "2026-11-11"
+      "checked": "2026-11-25"
     }
   ],
   "addedAt": "2026-11-11",
-  "verifiedAt": "2026-11-11"
+  "verifiedAt": "2026-11-25"
 }

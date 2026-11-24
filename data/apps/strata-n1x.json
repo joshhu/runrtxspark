@@ -1,0 +1,36 @@
+{
+  "id": "strata-n1x",
+  "name": "Strata (N1X community build)",
+  "vendor": "zackyangzeqi-spec",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "low",
+  "version": "0.2.8",
+  "homepage": "https://github.com/zackyangzeqi-spec/strata-n1x-Zackyzq",
+  "summary": {
+    "en": "Experimental desktop app for running local LLMs, with a Windows ARM64 installer (strata_Zackyzq_0.2.8_arm64-setup.exe, release v0.2.8-n1x.1), run by its maintainer on one N1X 128GB laptop.",
+    "zh-TW": "本機執行 LLM 的實驗性桌面應用程式，提供 Windows ARM64 安裝程式（strata_Zackyzq_0.2.8_arm64-setup.exe，release v0.2.8-n1x.1），維護者在一台 N1X 128GB 筆電上執行。"
+  },
+  "caveats": [
+    {
+      "en": "Results come from one maintainer-owned laptop and are self-reported; other N1X laptops are not validated.",
+      "zh-TW": "結果來自維護者自己的一台筆電，由作者自行回報；其他 N1X 筆電未驗證。"
+    },
+    {
+      "en": "Experimental preview; the installer is unsigned and includes no model weights or NVIDIA drivers.",
+      "zh-TW": "實驗性預覽版；安裝程式未簽署，且不含模型權重與 NVIDIA 驅動程式。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/zackyangzeqi-spec/strata-n1x-Zackyzq",
+      "title": "strata-n1x README and release v0.2.8-n1x.1: Windows ARM64 installer, tested on one N1X laptop",
+      "type": "community",
+      "checked": "2026-11-25"
+    }
+  ],
+  "addedAt": "2026-11-25",
+  "verifiedAt": "2026-11-25"
+}
