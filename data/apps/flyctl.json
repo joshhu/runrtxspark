@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/f/Fly-io/flyctl/0.5.8/Fly-io.flyctl.installer.yaml",
       "title": "winget manifest 0.5.8: flyctl_0.5.8_Windows_arm64.zip",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-26"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-26"
 }

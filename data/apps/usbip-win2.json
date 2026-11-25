@@ -1,0 +1,36 @@
+{
+  "id": "usbip-win2",
+  "name": "USBip (usbip-win2)",
+  "vendor": "vadimgrn",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "0.9.8.1+",
+  "homepage": "https://github.com/vadimgrn/usbip-win2",
+  "summary": {
+    "en": "USB/IP client and driver for Windows; the 0.9.8.1 release ships an arm64 installer.",
+    "zh-TW": "Windows 版 USB/IP 用戶端與驅動程式；0.9.8.1 版提供 arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Installs a kernel driver; only the installer architecture in the winget manifest was confirmed and the driver's runtime behavior is untested.",
+      "zh-TW": "會安裝核心驅動程式；只確認 winget 資訊清單中的安裝檔架構，驅動程式執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/v/vadimgrn/usbip-win2/0.9.8.1/vadimgrn.usbip-win2.installer.yaml",
+      "title": "winget manifest 0.9.8.1: USBip-0.9.8.1-arm64.exe (released 2026-09-28)",
+      "type": "release",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

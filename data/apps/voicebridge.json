@@ -1,0 +1,42 @@
+{
+  "id": "voicebridge",
+  "name": "VoiceBridge",
+  "vendor": "cclngit",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "0.3.3+",
+  "homepage": "https://github.com/cclngit/VoiceBridge",
+  "summary": {
+    "en": "Offline real-time speech-to-text and translation app in Rust; v0.3.3 lists a Windows ARM64 setup installer.",
+    "zh-TW": "以 Rust 撰寫的離線即時語音轉文字與翻譯應用程式；v0.3.3 提供 Windows ARM64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Unofficial community project; only the installer listing and README were read, and it was not tested on RTX Spark or run.",
+      "zh-TW": "社群專案；只讀了安裝檔清單與 README，未在 RTX Spark 上測試或執行。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/cclngit/VoiceBridge/releases",
+      "title": "VoiceBridge v0.3.3 release: VoiceBridge-windows-arm64-setup-*.exe",
+      "type": "release",
+      "checked": "2026-11-26"
+    },
+    {
+      "url": "https://github.com/cclngit/VoiceBridge",
+      "title": "VoiceBridge README: Windows 10/11 (x86_64 & ARM64 Copilot+ / Snapdragon X)",
+      "type": "vendor",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

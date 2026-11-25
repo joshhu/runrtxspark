@@ -1,0 +1,42 @@
+{
+  "id": "rustdesk",
+  "name": "RustDesk",
+  "vendor": "RustDesk",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.5.3+",
+  "homepage": "https://github.com/rustdesk/rustdesk",
+  "summary": {
+    "en": "Open-source remote desktop; the 1.5.3 release ships Windows aarch64 .exe and .msi installers.",
+    "zh-TW": "開源遠端桌面軟體；1.5.3 版提供 Windows aarch64 的 .exe 與 .msi 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the presence of the aarch64 installers was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認有 aarch64 安裝檔，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/rustdesk/rustdesk/releases/latest",
+      "title": "RustDesk 1.5.3 release: rustdesk-1.5.3-aarch64.exe and rustdesk-1.5.3-aarch64.msi",
+      "type": "release",
+      "checked": "2026-11-26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: rustdesk (native, validated by NVIDIA, last updated 2026-09-29)",
+      "type": "aggregator",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

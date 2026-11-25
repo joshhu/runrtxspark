@@ -1,0 +1,41 @@
+{
+  "id": "sysinternals-suite",
+  "name": "Sysinternals Suite",
+  "vendor": "Microsoft",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "high",
+  "version": "ARM64 suite",
+  "homepage": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+  "aliases": [
+    "Process Explorer",
+    "Process Monitor",
+    "Sysinternals"
+  ],
+  "summary": {
+    "en": "Microsoft's troubleshooting tools; the suite has a separate ARM64 download.",
+    "zh-TW": "微軟的疑難排解工具集；提供獨立的 ARM64 下載。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Individual tools differ: the Linaro catalog lists some (for example BgInfo and DiskMon) as emulated, so check each tool.",
+      "zh-TW": "各工具不同：Linaro 目錄將部分工具（例如 BgInfo、DiskMon）列為模擬執行，請逐一確認。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+      "title": "Sysinternals Suite page (updated 2026-11-05): Download Sysinternals Suite for ARM64",
+      "type": "vendor",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

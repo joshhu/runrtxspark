@@ -1,0 +1,36 @@
+{
+  "id": "windows-terminal",
+  "name": "Windows Terminal",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.19.10821.0+",
+  "homepage": "https://github.com/microsoft/terminal",
+  "summary": {
+    "en": "Microsoft's tabbed terminal app; the Linaro catalog lists it as native on Arm.",
+    "zh-TW": "微軟的多分頁終端機應用程式；Linaro 目錄列為 Arm 原生。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Vendor page could not be read from this environment; the result rests on the Linaro catalog alone.",
+      "zh-TW": "此環境無法讀取原廠頁面，結果僅依據 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: windowsterminal (native, Microsoft app, 1.19.10821.0, last updated 2026-09-29)",
+      "type": "aggregator",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

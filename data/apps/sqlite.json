@@ -1,0 +1,36 @@
+{
+  "id": "sqlite",
+  "name": "SQLite",
+  "vendor": "SQLite Consortium",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "3.54.0+",
+  "homepage": "https://www.sqlite.org/",
+  "summary": {
+    "en": "Embedded SQL database; the 3.54.0 command-line tools ship as a Windows arm64 zip.",
+    "zh-TW": "內嵌式 SQL 資料庫；3.54.0 命令列工具提供 Windows arm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the winget manifest's installer architecture was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/s/SQLite/SQLite/3.54.0/SQLite.SQLite.installer.yaml",
+      "title": "winget manifest 3.54.0: sqlite-tools-win-arm64-3540000.zip (released 2026-10-09)",
+      "type": "release",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

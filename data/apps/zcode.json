@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/z/ZhipuAI/ZCode/3.17.2/ZhipuAI.ZCode.installer.yaml",
       "title": "winget manifest 3.17.2: ZCode-3.17.2-win-arm64.exe",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-26"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-26"
 }

@@ -1,0 +1,42 @@
+{
+  "id": "signal",
+  "name": "Signal",
+  "vendor": "Signal Foundation",
+  "category": "communication",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "7.34.0+",
+  "homepage": "https://signal.org/download/windows/",
+  "summary": {
+    "en": "Private messenger; Signal Desktop for Windows is Arm64-optimized, listed as native from 7.34.0.",
+    "zh-TW": "注重隱私的即時通訊軟體；Windows 版 Signal Desktop 已針對 Arm64 最佳化，自 7.34.0 起列為原生。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Signal.org could not be read from this environment; the news headline says Arm64-optimized and the native result comes from the Linaro catalog.",
+      "zh-TW": "此環境無法讀取 signal.org；新聞標題僅說明已針對 Arm64 最佳化，原生結果來自 Linaro 目錄。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.windowscentral.com/software-apps/signal-the-secure-messenger-finally-joins-the-arm64-club-for-windows-11",
+      "title": "Windows Central: Signal Messenger for Windows is now Arm64-optimized (headline read; article body truncated)",
+      "type": "review",
+      "checked": "2026-11-26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA catalog: signal (native, 7.34.0, last updated 2026-09-29)",
+      "type": "aggregator",
+      "checked": "2026-11-26"
+    }
+  ],
+  "addedAt": "2026-11-26",
+  "verifiedAt": "2026-11-26"
+}

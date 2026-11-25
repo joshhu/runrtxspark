@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "high",
-  "version": "1.93.0+",
+  "version": "1.95.0+",
   "homepage": "https://github.com/oxc-project/oxc",
   "summary": {
     "en": "JavaScript and TypeScript linter with an aarch64-pc-windows-msvc build.",
@@ -24,9 +24,9 @@
       "url": "https://github.com/oxc-project/oxc/releases",
       "title": "oxlint v1.93.0 release: oxlint-aarch64-pc-windows-msvc.zip",
       "type": "release",
-      "checked": "2026-11-11"
+      "checked": "2026-11-26"
     }
   ],
   "addedAt": "2026-11-11",
-  "verifiedAt": "2026-11-11"
+  "verifiedAt": "2026-11-26"
 }

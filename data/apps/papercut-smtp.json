@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/ChangemakerStudios/Papercut-SMTP/8.0.2/ChangemakerStudios.Papercut-SMTP.installer.yaml",
       "title": "winget manifest 8.0.2: PapercutSMTP-win-arm64-stable-Setup.exe",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-26"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-26"
 }

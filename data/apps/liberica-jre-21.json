@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/b/BellSoft/LibericaJRE/21/21.0.13.0.3+5/BellSoft.LibericaJRE.21.installer.yaml",
       "title": "winget manifest 21.0.13.0.3+5: bellsoft-jre21.0.13.0.3+5-windows-aarch64.msi",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-26"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-26"
 }
