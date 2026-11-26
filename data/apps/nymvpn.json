@@ -1,0 +1,36 @@
+{
+  "id": "nymvpn",
+  "name": "NymVPN",
+  "vendor": "Nym Technologies",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2026.15.0+",
+  "homepage": "https://nym.com",
+  "summary": {
+    "en": "Mixnet-based VPN client; 2026.15.0 ships an arm64 setup installer.",
+    "zh-TW": "以混合網路為基礎的 VPN 用戶端，2026.15.0 版提供 arm64 安裝程式。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/n/NymTech/NymVPNClient/2026.15.0/NymTech.NymVPNClient.installer.yaml",
+      "title": "winget manifest 2026.15.0: NymVPN_2026.15.0_arm64-setup.exe",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

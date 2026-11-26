@@ -6,7 +6,7 @@
   "status": "native",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "1.27.3",
+  "version": "1.27.4",
   "homepage": "https://go.dev",
   "summary": {
     "en": "Go programming language toolchain with an official windows-arm64 MSI installer.",
@@ -14,10 +14,10 @@
   },
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GoLang/Go/1.27.3/GoLang.Go.installer.yaml",
-      "title": "winget manifest 1.27.3: go1.27.3.windows-arm64.msi",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GoLang/Go/1.27.4/GoLang.Go.installer.yaml",
+      "title": "winget manifest 1.27.4: arm64 installer go1.27.4.windows-arm64.msi",
       "type": "release",
-      "checked": "2026-11-14"
+      "checked": "2026-11-27"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-14"
+  "verifiedAt": "2026-11-27"
 }

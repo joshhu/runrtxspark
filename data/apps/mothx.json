@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OSCHINA/MothX/1.3.107/OSCHINA.MothX.installer.yaml",
       "title": "winget manifest 1.3.107: mothx-1.3.107-windows-arm64.zip",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

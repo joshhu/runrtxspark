@@ -7,11 +7,11 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "5.8.9",
+  "version": "5.8.10",
   "homepage": "https://podman.io",
   "summary": {
-    "en": "Container engine with a windows-arm64 installer in the 5.8.9 release.",
-    "zh-TW": "容器引擎，5.8.9 版提供 windows-arm64 安裝程式。"
+    "en": "Container engine with a windows-arm64 installer in the 5.8.10 release.",
+    "zh-TW": "容器引擎，5.8.10 版提供 windows-arm64 安裝程式。"
   },
   "caveats": [
     {
@@ -25,12 +25,12 @@
   ],
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RedHat/Podman/5.8.9/RedHat.Podman.installer.yaml",
-      "title": "winget manifest 5.8.9: podman-installer-windows-arm64.exe",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/r/RedHat/Podman/5.8.10/RedHat.Podman.installer.yaml",
+      "title": "winget manifest 5.8.10: arm64 installer podman-installer-windows-arm64.exe",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

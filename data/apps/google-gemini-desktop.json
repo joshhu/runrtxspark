@@ -1,0 +1,36 @@
+{
+  "id": "google-gemini-desktop",
+  "name": "Gemini desktop app",
+  "vendor": "Google",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.21.1+",
+  "homepage": "https://gemini.google.com",
+  "summary": {
+    "en": "Google's Gemini app for Windows; the winget manifest lists a separate arm64 installer.",
+    "zh-TW": "Google 的 Windows 版 Gemini 應用程式，winget 資訊清單列有獨立的 arm64 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Google/GeminiDesktop/1.21.1/Google.GeminiDesktop.installer.yaml",
+      "title": "winget manifest 1.21.1: a separate arm64 GeminiSetup-1.21.1_uncompressed.exe on dl.google.com",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

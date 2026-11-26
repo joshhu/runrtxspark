@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/Tencent/Octop/1.0.3b4/Tencent.Octop.installer.yaml",
       "title": "winget manifest 1.0.3b4: Octop-desktop-windows-arm64-1.0.3b4.exe",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

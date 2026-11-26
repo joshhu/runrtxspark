@@ -28,9 +28,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/w/Waytech/CloudDrive2/1.0/Waytech.CloudDrive2.installer.yaml",
       "title": "winget manifest: CloudDrive2Setup-Arm64-1.1.3.exe",
       "type": "release",
-      "checked": "2026-11-12"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-12",
-  "verifiedAt": "2026-11-12"
+  "verifiedAt": "2026-11-27"
 }

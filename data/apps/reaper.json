@@ -6,7 +6,7 @@
   "status": "native",
   "maturity": "beta",
   "confidence": "medium",
-  "version": "7.84",
+  "version": "7.86",
   "homepage": "https://www.reaper.fm",
   "summary": {
     "en": "Digital audio workstation with an ARM64EC beta installer for Windows 11.",
@@ -14,10 +14,10 @@
   },
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/Cockos/REAPER/7.84/Cockos.REAPER.installer.yaml",
-      "title": "winget manifest 7.84: reaper784_win11_arm64ec_beta-install.exe",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/c/Cockos/REAPER/7.86/Cockos.REAPER.installer.yaml",
+      "title": "winget manifest 7.86: arm64 installer reaper786_win11_arm64ec_beta-install.exe",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "caveats": [
@@ -32,5 +32,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-05",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

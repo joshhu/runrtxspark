@@ -1,0 +1,36 @@
+{
+  "id": "fastfetch",
+  "name": "fastfetch",
+  "vendor": "Fastfetch-cli",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.71.0+",
+  "homepage": "https://github.com/fastfetch-cli/fastfetch",
+  "summary": {
+    "en": "System information display tool; 2.71.0 ships a windows-aarch64 zip.",
+    "zh-TW": "系統資訊顯示工具，2.71.0 版提供 windows-aarch64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/f/Fastfetch-cli/Fastfetch/2.71.0/Fastfetch-cli.Fastfetch.installer.yaml",
+      "title": "winget manifest 2.71.0: fastfetch-windows-aarch64.zip",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

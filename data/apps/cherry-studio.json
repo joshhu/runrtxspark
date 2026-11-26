@@ -6,7 +6,7 @@
   "status": "native",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "2.1.10",
+  "version": "2.2.3",
   "homepage": "https://www.cherry-ai.com",
   "summary": {
     "en": "Chinese-developed desktop client for multiple LLM providers, with a win-arm64 setup on GitHub releases.",
@@ -14,10 +14,10 @@
   },
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/k/kangfenmao/CherryStudio/2.1.10/kangfenmao.CherryStudio.installer.yaml",
-      "title": "winget manifest 2.1.10: Cherry-Studio-2.1.10-win-arm64-setup.exe",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/k/kangfenmao/CherryStudio/2.2.3/kangfenmao.CherryStudio.installer.yaml",
+      "title": "winget manifest 2.2.3: arm64 installer Cherry-Studio-2.2.3-win-arm64-setup.exe",
       "type": "release",
-      "checked": "2026-11-14"
+      "checked": "2026-11-27"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-14"
+  "verifiedAt": "2026-11-27"
 }

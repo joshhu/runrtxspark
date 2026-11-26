@@ -1,0 +1,36 @@
+{
+  "id": "microsoft-copilot",
+  "name": "Microsoft Copilot",
+  "vendor": "Microsoft",
+  "category": "ai",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "158.0.4370.45+",
+  "homepage": "https://copilot.microsoft.com",
+  "summary": {
+    "en": "Microsoft Copilot app; the enterprise MSI is published in an ARM64 variant.",
+    "zh-TW": "微軟 Copilot 應用程式，企業版 MSI 提供 ARM64 版本。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/Copilot/158.0.4370.45/Microsoft.Copilot.installer.yaml",
+      "title": "winget manifest 158.0.4370.45: CopilotStableEnterpriseARM64.msi",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

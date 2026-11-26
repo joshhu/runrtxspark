@@ -24,9 +24,9 @@
       "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/t/TrackerSoftware/PDF-XChangePRO/11.1.2.0/TrackerSoftware.PDF-XChangePRO.installer.yaml",
       "title": "winget manifest 11.1.2.0: ProV11.ARM64.msi",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

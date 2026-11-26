@@ -1,0 +1,36 @@
+{
+  "id": "yq",
+  "name": "yq",
+  "vendor": "Mike Farah",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "4.54.2+",
+  "homepage": "https://github.com/mikefarah/yq",
+  "summary": {
+    "en": "Command-line YAML, JSON and XML processor; 4.54.2 ships yq_windows_arm64.exe.",
+    "zh-TW": "命令列 YAML、JSON、XML 處理工具，4.54.2 版提供 yq_windows_arm64.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/MikeFarah/yq/4.54.2/MikeFarah.yq.installer.yaml",
+      "title": "winget manifest 4.54.2: yq_windows_arm64.exe",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

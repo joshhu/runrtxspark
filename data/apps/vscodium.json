@@ -1,0 +1,36 @@
+{
+  "id": "vscodium",
+  "name": "VSCodium",
+  "vendor": "VSCodium",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "1.143.17232+",
+  "homepage": "https://vscodium.com",
+  "summary": {
+    "en": "Community build of VS Code without Microsoft telemetry; the 1.143.17232 release ships arm64 installers.",
+    "zh-TW": "不含微軟遙測的 VS Code 社群建置版，1.143.17232 版提供 arm64 安裝檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/v/VSCodium/VSCodium/1.143.17232/VSCodium.VSCodium.installer.yaml",
+      "title": "winget manifest 1.143.17232: VSCodiumSetup-arm64-1.143.17232.exe",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

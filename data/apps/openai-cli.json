@@ -7,7 +7,7 @@
   "scope": "windows-on-arm",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "1.51.5",
+  "version": "1.57.0",
   "homepage": "https://github.com/openai/openai-cli",
   "summary": {
     "en": "Command-line client for the OpenAI API, released with a windows_arm64 zip.",
@@ -21,12 +21,12 @@
   ],
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OpenAI/OpenAICLI/1.51.5/OpenAI.OpenAICLI.installer.yaml",
-      "title": "winget manifest 1.51.5: openai_1.51.5_windows_arm64.zip",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/o/OpenAI/OpenAICLI/1.57.0/OpenAI.OpenAICLI.installer.yaml",
+      "title": "winget manifest 1.57.0: arm64 installer openai_1.57.0_windows_arm64.zip",
       "type": "release",
-      "checked": "2026-11-13"
+      "checked": "2026-11-27"
     }
   ],
   "addedAt": "2026-11-13",
-  "verifiedAt": "2026-11-13"
+  "verifiedAt": "2026-11-27"
 }

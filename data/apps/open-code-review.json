@@ -1,0 +1,36 @@
+{
+  "id": "open-code-review",
+  "name": "Open Code Review",
+  "vendor": "Alibaba",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.14.3+",
+  "homepage": "https://github.com/alibaba/open-code-review",
+  "summary": {
+    "en": "Open source AI code review agent from Alibaba; v1.14.3 ships opencodereview-windows-arm64.exe.",
+    "zh-TW": "阿里巴巴開源的 AI 程式碼審查代理，v1.14.3 提供 opencodereview-windows-arm64.exe。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/Alibaba/OpenCodeReview/1.14.3/Alibaba.OpenCodeReview.installer.yaml",
+      "title": "winget manifest 1.14.3: opencodereview-windows-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

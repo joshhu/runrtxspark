@@ -1,0 +1,36 @@
+{
+  "id": "openssl",
+  "name": "OpenSSL (Win64 ARM installer)",
+  "vendor": "Shining Light Productions",
+  "category": "developer",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "community",
+  "confidence": "medium",
+  "version": "4.1.0+",
+  "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
+  "summary": {
+    "en": "Third-party OpenSSL binary installers for Windows; 4.1.0 includes a Win64ARM build.",
+    "zh-TW": "Shining Light Productions 提供的 Windows 版 OpenSSL 安裝檔，4.1.0 版包含 Win64ARM 建置。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/s/ShiningLight/OpenSSL/Light/4.1.0/ShiningLight.OpenSSL.Light.installer.yaml",
+      "title": "winget manifest 4.1.0: Win64ARMOpenSSL_Light-4_1_0.msi",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

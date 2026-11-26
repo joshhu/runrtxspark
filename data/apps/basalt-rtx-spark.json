@@ -1,0 +1,42 @@
+{
+  "id": "basalt-rtx-spark",
+  "name": "Basalt RTX Spark",
+  "vendor": "SuperDistance",
+  "category": "ai",
+  "status": "native",
+  "scope": "rtx-spark",
+  "maturity": "community",
+  "confidence": "low",
+  "version": "0.4.1-rtx-spark.2",
+  "homepage": "https://github.com/SuperDistance/basalt-rtx-spark",
+  "summary": {
+    "en": "Community local LLM inference engine with a native Windows Arm64 CUDA (sm_121) build, measured by its author on an RTX Spark N1X laptop.",
+    "zh-TW": "社群製作的本機 LLM 推論引擎，提供原生 Windows Arm64 CUDA（sm_121）版本，作者在 RTX Spark N1X 筆電上實測。"
+  },
+  "caveats": [
+    {
+      "en": "Measurements are self-reported from one HP OmniBook X; no independent verification.",
+      "zh-TW": "測量結果由作者自行回報，僅來自一台 HP OmniBook X，未經獨立驗證。"
+    },
+    {
+      "en": "Community project; the release page did not show asset names, so the contents were taken from the release notes.",
+      "zh-TW": "社群專案；發行頁未顯示檔案名稱，內容以發行說明為準。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/SuperDistance/basalt-rtx-spark",
+      "title": "Basalt RTX Spark README: native Windows on Arm, RTX Spark N1X, CUDA sm_121",
+      "type": "community",
+      "checked": "2026-11-27"
+    },
+    {
+      "url": "https://github.com/SuperDistance/basalt-rtx-spark/releases",
+      "title": "Release v0.4.1-rtx-spark.2: Windows Arm64 ZIP, tested on HP OmniBook X with RTX Spark N1X",
+      "type": "community",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}

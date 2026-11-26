@@ -6,7 +6,7 @@
   "status": "native",
   "maturity": "stable",
   "confidence": "medium",
-  "version": "2.103.3",
+  "version": "2.106.0",
   "homepage": "https://cli.github.com",
   "summary": {
     "en": "GitHub's command-line tool, with windows_arm64 MSI and zip release assets.",
@@ -14,10 +14,10 @@
   },
   "evidence": [
     {
-      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/cli/2.103.3/GitHub.cli.installer.yaml",
-      "title": "winget manifest 2.103.3: gh_2.103.3_windows_arm64.msi",
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/GitHub/cli/2.106.0/GitHub.cli.installer.yaml",
+      "title": "winget manifest 2.106.0: arm64 installer gh_2.106.0_windows_arm64.msi",
       "type": "release",
-      "checked": "2026-11-14"
+      "checked": "2026-11-27"
     }
   ],
   "caveats": [
@@ -28,5 +28,5 @@
   ],
   "scope": "windows-on-arm",
   "addedAt": "2026-11-06",
-  "verifiedAt": "2026-11-14"
+  "verifiedAt": "2026-11-27"
 }

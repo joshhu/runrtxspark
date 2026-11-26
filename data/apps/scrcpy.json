@@ -1,0 +1,36 @@
+{
+  "id": "scrcpy",
+  "name": "scrcpy",
+  "vendor": "Genymobile",
+  "category": "utility",
+  "status": "native",
+  "scope": "windows-on-arm",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "5.0+",
+  "homepage": "https://github.com/Genymobile/scrcpy",
+  "summary": {
+    "en": "Android screen mirroring and control tool; v5.0 ships a scrcpy-winarm64 zip.",
+    "zh-TW": "Android 螢幕鏡像與控制工具，v5.0 提供 scrcpy-winarm64 壓縮檔。"
+  },
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    },
+    {
+      "en": "Only the installer architecture in the winget manifest was confirmed; runtime behavior is untested.",
+      "zh-TW": "只確認了 winget 資訊清單中的安裝檔架構，執行行為尚未驗證。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/g/Genymobile/scrcpy/5.0/Genymobile.scrcpy.installer.yaml",
+      "title": "winget manifest 5.0: scrcpy-winarm64-v5.0.zip",
+      "type": "release",
+      "checked": "2026-11-27"
+    }
+  ],
+  "addedAt": "2026-11-27",
+  "verifiedAt": "2026-11-27"
+}
