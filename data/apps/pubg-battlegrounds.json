@@ -22,7 +22,7 @@
       "url": "https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/",
       "title": "NVIDIA: RTX Spark launch games and anti-cheat roadmap (Oct 13, 2026)",
       "type": "vendor",
-      "checked": "2026-11-11"
+      "checked": "2026-11-28"
     },
     {
       "url": "https://www.xda-developers.com/nvidia-rtx-spark-passed-most-anti-cheat-tests-valorant-and-call-of-duty-still-wont-run/",
@@ -32,5 +32,5 @@
     }
   ],
   "addedAt": "2026-11-03",
-  "verifiedAt": "2026-11-11"
+  "verifiedAt": "2026-11-28"
 }

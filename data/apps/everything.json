@@ -1,0 +1,32 @@
+{
+  "id": "everything",
+  "name": "Everything",
+  "vendor": "voidtools",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.4.1.1024",
+  "homepage": "https://www.voidtools.com",
+  "summary": {
+    "en": "Instant file-name search tool; Linaro lists it as native Arm64.",
+    "zh-TW": "極速檔案名稱搜尋工具；Linaro 列為原生 Arm64。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA record: Everything, native, from 1.4.1.1024",
+      "type": "aggregator",
+      "checked": "2026-11-28"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general (validated on Qualcomm hardware, last updated 2026-03-02); RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm（於 Qualcomm 硬體驗證，最後更新 2026-03-02），未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-28",
+  "verifiedAt": "2026-11-28"
+}

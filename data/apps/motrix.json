@@ -1,0 +1,32 @@
+{
+  "id": "motrix",
+  "name": "Motrix",
+  "vendor": "Motrix (agalwood)",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "2.4.7",
+  "homepage": "https://motrix.app",
+  "summary": {
+    "en": "Download manager with a separate arm64 installer.",
+    "zh-TW": "下載管理工具，提供獨立的 arm64 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/a/agalwood/Motrix/2.4.7/agalwood.Motrix.installer.yaml",
+      "title": "winget manifest 2.4.7: arm64 installer Motrix-Setup-2.4.7-arm64.exe",
+      "type": "release",
+      "checked": "2026-11-28"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-28",
+  "verifiedAt": "2026-11-28"
+}

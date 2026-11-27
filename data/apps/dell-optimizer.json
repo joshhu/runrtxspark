@@ -1,0 +1,32 @@
+{
+  "id": "dell-optimizer",
+  "name": "Dell Optimizer",
+  "vendor": "Dell",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "6.3.7.0",
+  "homepage": "https://www.dell.com",
+  "summary": {
+    "en": "Dell's system tuning application with a dedicated WINARM64 installer.",
+    "zh-TW": "戴爾系統調校應用程式，提供專屬 WINARM64 安裝程式。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/d/Dell/Optimizer/6.3.7.0/Dell.Optimizer.installer.yaml",
+      "title": "winget manifest 6.3.7.0: arm64 installer Dell-Optimizer-Application_FC6CC_WINARM64_6.3.7.0_A00.EXE",
+      "type": "release",
+      "checked": "2026-11-28"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-28",
+  "verifiedAt": "2026-11-28"
+}

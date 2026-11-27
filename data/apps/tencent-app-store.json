@@ -1,0 +1,32 @@
+{
+  "id": "tencent-app-store",
+  "name": "Tencent App Store (Yingyongbao)",
+  "vendor": "Tencent",
+  "category": "utility",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "5.20.17.10",
+  "homepage": "https://sj.qq.com/download",
+  "summary": {
+    "en": "Tencent's Windows app store client (應用寶); Linaro lists it as native Arm64.",
+    "zh-TW": "騰訊應用寶 Windows 用戶端；Linaro 列為原生 Arm64。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/Linaro/works-on-woa/staging/src/data/content/projects.json",
+      "title": "Linaro Works on WoA record: 腾讯应用宝 (Tencent App Store), native, from 5.20.17.10",
+      "type": "aggregator",
+      "checked": "2026-11-28"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general (validated on Qualcomm hardware, last updated 2026-03-02); RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm（於 Qualcomm 硬體驗證，最後更新 2026-03-02），未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-28",
+  "verifiedAt": "2026-11-28"
+}

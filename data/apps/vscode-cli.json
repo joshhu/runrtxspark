@@ -1,0 +1,32 @@
+{
+  "id": "vscode-cli",
+  "name": "Visual Studio Code CLI",
+  "vendor": "Microsoft",
+  "category": "developer",
+  "status": "native",
+  "maturity": "stable",
+  "confidence": "medium",
+  "version": "1.148.0",
+  "homepage": "https://code.visualstudio.com",
+  "summary": {
+    "en": "Standalone VS Code CLI (tunnels, extension management) with an arm64 build.",
+    "zh-TW": "獨立的 VS Code 命令列工具（通道、延伸模組管理），提供 arm64 版本。"
+  },
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/m/Microsoft/VisualStudioCode/CLI/1.148.0/Microsoft.VisualStudioCode.CLI.installer.yaml",
+      "title": "winget manifest 1.148.0: arm64 installer vscode_cli_win32_arm64_cli.zip",
+      "type": "release",
+      "checked": "2026-11-28"
+    }
+  ],
+  "caveats": [
+    {
+      "en": "Source covers Windows on Arm in general; RTX Spark was not tested.",
+      "zh-TW": "來源涵蓋一般 Windows on Arm，未針對 RTX Spark 測試。"
+    }
+  ],
+  "scope": "windows-on-arm",
+  "addedAt": "2026-11-28",
+  "verifiedAt": "2026-11-28"
+}
